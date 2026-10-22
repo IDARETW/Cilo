@@ -111,6 +111,12 @@ is 3:1. Speeds include checksums and file I/O. `list` checks metadata integrity;
 ## Development and reproducible experiments
 
 For the general Python build downloader, see [NGDP/CASC downloading](docs/DOWNLOADER.md).
+
+Launch its desktop build browser with `py tools\casc_download.py gui` on Windows
+or `python3 tools/casc_download.py gui` on Linux. It includes a searchable catalog
+of 35,536 records, an **Update availability from GitHub** button, live checks,
+and download controls. Availability labels describe the evidence actually checked;
+sample downloads never imply that an entire game build is available.
 It supports catalog-based selection, verified local mirrors, resumable downloads,
 regional CDN fallback, archive-backed objects, and named MW2019 file extraction.
 Use its `diagnose` command to distinguish catalog errors, CDN HTTP failures,

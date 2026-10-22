@@ -6,6 +6,63 @@ dependencies**. It reads the actual `versions` and `cdns` tables maintained by
 configuration hashes and product base URLs. The large uploaded text list is not
 required at runtime.
 
+## Desktop GUI and availability cache
+
+```powershell
+py tools\casc_download.py gui
+```
+
+Use `python3 tools/casc_download.py gui` on Linux. Python's standard Tk GUI
+library is required (included with the usual python.org Windows installer;
+Debian/Ubuntu package `python3-tk`). The CLI works without Tk or a display.
+
+The Windows release also provides `CiloDownloader-windows-x64.zip`. Extract the
+whole folder and open `CiloDownloader.exe`; keep its `_internal` folder beside
+it. Python is bundled. It is a directory bundle so launching it does not unpack
+a runtime into TEMP. Use `CiloDownloader.exe --cli ...` for the same CLI commands.
+
+Choose a product, search a build/version/config, and select a row. **Download**
+uses that row's exact configuration hashes, preserving distinct variants with
+the same build number. Choose named extraction or encoded mirroring, a filename
+pattern, and optionally a file limit. Downloads go into separate product/build
+subdirectories of your chosen destination. Downloaded files are never executed.
+
+**Update availability from GitHub** retrieves the published compressed catalog
+from this repository. All 35,536 distinct records across 500 products from the
+supplied `ngdp_data` snapshot are included, including records with failed or
+unverified config checks. This button downloads a published snapshot; it does
+not rescan every CDN from your PC. Check the per-build observation timestamp.
+Newer checks you performed locally survive an update to an older published cache.
+For a private repository, the updater uses `GH_TOKEN`, `GITHUB_TOKEN`, or an
+existing `gh auth login`. If access fails, the GUI offers a masked token prompt;
+use a token with Contents read access to `IDARETW/Cilo`. Entered tokens stay in
+memory for that session and are never written into the cache. Cancel keeps the
+bundled cache usable offline.
+
+The labels distinguish config, DOWNLOAD manifest, TVFS manifest, and sample
+verification. **Sample verified** means the stated sample succeeded, never that
+every payload is retained. Imported US-only observations are identified in the
+details. A timeout, 403, 404, hash mismatch, and unsupported format are distinct
+evidence, not interchangeable claims that a build was deleted.
+
+**Check selected build** performs a fresh check of configs/manifests and up to
+three sample files (at most 32 MiB decoded each). These bounded checks try loose
+objects; they do not assert that an unsuccessful archive search was completed.
+The CLI probe's `--archive-search` option enables that more expensive search.
+Probe configs, manifests, `.part` files, and decoded samples live in a dedicated
+temporary directory removed on normal completion or an exception. The GUI waits
+for active tasks before closing. Forced process termination or power loss can
+interrupt cleanup, as with any application.
+
+Only the small availability cache persists after a check, under
+`%LOCALAPPDATA%\Cilo` on Windows or `$XDG_CACHE_HOME/Cilo` (normally
+`~/.cache/Cilo`) on Linux. Cache updates validate before atomic replacement and
+remove their temporary files on failure. Explicit game downloads retain their
+output and resumable `.part` files in the destination you chose.
+
+Maintain or refresh the published cache with the commands in
+[the catalog documentation](../data/README.md).
+
 There are two different outputs:
 
 - **`mirror`** saves verified, encoded CASC content under `OUTPUT/cdn/data/...`,
@@ -36,6 +93,10 @@ region, then falls back to **all other regions advertised in the table**.
 Both `Servers` and additional `Hosts` entries are considered. A verified working
 endpoint is preferred for subsequent objects. Change `--region` and
 `--catalog-region` when needed; they do not select a different build silently.
+The bundled [historical endpoint map](../data/cdn-endpoints.json) adds documented
+older endpoints for the same storage path, respecting `--cdn-region`. Use
+`--current-cdns-only` to disable that addition, or `--cdn-map FILE` for another map.
+Explicit `--cdn-base` values replace both current and historical selection.
 
 To restrict CDN selection or set its order, repeat `--cdn-region`:
 
@@ -84,9 +145,41 @@ separately and includes the actual URL in CDN retrieval failures. Archive lookup
 continues past missing unrelated indexes; if no match is found and some indexes
 could not be read, it reports an **incomplete search**, not proof of deletion.
 Failed indexes remain retryable after a 30-second cooldown or on the next run.
+Index lookups use bounded parallel batches; a new failure is not immediately
+retried again in the same search.
+
+When normal config retrieval fails, commands using `--product` also try
+BlizzTrack's public cached config page. A bounded set of HTML whitespace variants
+is checked against the exact requested MD5. Unmatched content is rejected; a
+nearby build is never substituted. This recovered the original config for
+`brynhildr_odin` build `10885062`, whose `brynhildr.sys` payload was still available.
+Use `--config-fallback none` to disable this external metadata cache. `diagnose`
+continues to test CDN URLs directly; it does not conceal their failures with a
+cached page. Public caches can be incomplete or rate limited.
 
 See [the dated regional investigation](CDN_FINDINGS.md) for the tested builds,
 regional hosts, historical hosts, and limitations of the availability results.
+
+## Map and inspect the storage layout
+
+```powershell
+py tools\casc_download.py layout --product odin --build 11521872 --output D:\CASC\layout
+py tools\casc_cdn_map.py discover --family odin --history-product odin --output endpoints.json
+py tools\casc_cdn_map.py matrix --product odin --kind build_config --map endpoints.json --output matrix.jsonl --jobs 4
+```
+
+`discover` records regions, paths, table revisions and lookup failures. Repeat
+`--history-product` to traverse other product histories; `--all-products`
+selects every catalog product. `matrix` deduplicates identical config URLs while
+retaining their product/build references. It uses GET plus MD5, distinguishes
+proxy transport errors and rate limits, and pauses a rate-limited host for the
+rest of the run. No response-body downloads are retained after a probe.
+
+`layout` accounts for direct manifest EKeys, data/patch archives, loose-file
+indexes, patch configs, unresolved content keys, client-generated group indexes,
+and unclassified config fields. Group-index hashes are not assumed to be remote
+objects. Patch reconstruction and content-key-only ENCODING resolution remain
+unsupported; listing those references does not imply they can be extracted.
 
 ## Explicit configuration data
 

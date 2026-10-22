@@ -4,6 +4,7 @@ import hashlib
 import http.server
 import importlib.util
 import io
+import html
 import json
 from pathlib import Path
 import struct
@@ -24,15 +25,65 @@ def blte(raw, mode=b'Z'):
     return header + chunk, casc.md5(header).hex()
 
 
-def index_fixture(key, offset, size):
-    page = bytes.fromhex(key) + struct.pack('>II', size, offset) + bytes(4096 - 24)
+def index_fixture(key, offset, size, offset_bytes=4):
+    entry = bytes.fromhex(key) + size.to_bytes(4, 'big') + offset.to_bytes(offset_bytes, 'big')
+    page = entry + bytes(4096 - len(entry))
     toc = bytes.fromhex(key) + casc.md5(page)[:8]
-    fields = bytes([1, 0, 0, 4, 4, 4, 16, 8]) + struct.pack('<I', 1)
+    fields = bytes([1, 0, 0, 4, offset_bytes, 4, 16, 8]) + struct.pack('<I', 1)
     data = page + toc + casc.md5(toc)[:8] + fields + casc.md5(fields + bytes(8))[:8]
     return data, casc.md5(data[-28:]).hex()
 
 
 class Formats(unittest.TestCase):
+    def test_loose_and_local_group_index_formats(self):
+        key = '42' * 16
+        for width, kind, offset in [(0, 'loose', 0), (6, 'group', (7 << 32) + 123)]:
+            data, identity = index_fixture(key, offset, 1234, width)
+            parsed = casc.parse_cdn_index(data, identity)
+            self.assertEqual(parsed['kind'], kind)
+            self.assertEqual(parsed['entries'][key], {'size': 1234, 'offset': offset if width else None})
+            with self.assertRaisesRegex(casc.CascError, 'individual archive'):
+                casc.parse_archive_index(data, identity)
+            corrupt = bytearray(data)
+            corrupt[1] ^= 1
+            with self.assertRaisesRegex(casc.CascError, 'page checksum'):
+                casc.parse_cdn_index(corrupt, identity)
+
+    def test_layout_distinguishes_group_identifiers_and_patch_namespace(self):
+        key, patch = '12' * 16, '34' * 16
+        report = casc.describe_layout({'root': [key], 'download': [key, patch], 'future-field': ['keep-me']}, {
+            'archives': [key], 'archives-index-size': ['4156'], 'archive-group': [patch],
+            'patch-archives': [patch], 'patch-file-index': [key], 'patch-archive-group': [key],
+            'file-index': [patch], 'future-cdn-field': ['retain-this-too'],
+        })
+        self.assertEqual(len(report['derived_references']), 2)
+        self.assertTrue(all('relative_path' not in r for r in report['derived_references']))
+        self.assertTrue(any(r['relative_path'].startswith('patch/') for r in report['objects']))
+        self.assertEqual(report['other_build_fields'], {'future-field': ['keep-me']})
+        self.assertEqual(report['other_cdn_fields'], {'future-cdn-field': ['retain-this-too']})
+        self.assertEqual(report['content_key_references'][0]['content_key'], key)
+        with self.assertRaisesRegex(casc.CascError, 'count mismatch'):
+            casc.describe_layout({}, {'archives': [key], 'archives-index-size': ['1', '2']})
+
+    def test_cached_config_requires_exact_hash_after_html_formatting(self):
+        raw = b'# Build Configuration\n\nbuild-name = a & b\n\n'
+        key = casc.md5(raw).hex()
+        page = ('<html><pre>\n' + html.escape(raw.decode().strip()) + '\n    </pre></html>').encode()
+        self.assertEqual(casc.config_from_cache_page(page, key), raw)
+        self.assertEqual(casc.config_from_cache_page(raw, key), raw)
+        with self.assertRaisesRegex(casc.CascError, 'no bytes matching'):
+            casc.config_from_cache_page(page.replace(b'a &amp; b', b'another build'), key)
+
+    def test_historical_endpoints_respect_region_restrictions(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / 'map.json'
+            path.write_text(json.dumps({'schema': 1, 'endpoints': [
+                {'base': 'http://old-us/game', 'path': 'game', 'regions': ['us']},
+                {'base': 'http://old-kr/game', 'path': 'game', 'regions': ['kr']},
+                {'base': 'http://other/elsewhere', 'path': 'elsewhere', 'regions': ['kr']},
+            ]}))
+            self.assertEqual(casc.historical_cdn_bases('game', ['kr'], path), ['http://old-kr/game'])
+
     def test_all_regional_cdn_endpoints_and_overrides(self):
         rows = [
             {'Name': 'eu', 'Path': 'tpr/game', 'Hosts': 'eu.example', 'Servers': 'https://eu.example/?fallback=1'},
@@ -278,7 +329,7 @@ class Network(unittest.TestCase):
         self.routes['/present/' + casc.key_path('config', key)] = cfg
         self.routes['/present/' + casc.key_path('data', ekey)] = blob
         args = ['info', '--product', 'odin', '--build', '123', '--ngdp-root', self.base + '/catalog',
-                '--cdn-table', self.base + '/live/cdns', '--output', str(self.root / 'regional')]
+                '--cdn-table', self.base + '/live/cdns', '--config-fallback', 'none', '--output', str(self.root / 'regional')]
         with contextlib.redirect_stdout(io.StringIO()) as stdout:
             casc.main(args)
         report = json.loads(stdout.getvalue())
@@ -294,6 +345,22 @@ class Network(unittest.TestCase):
         with self.assertRaises(casc.CascError):
             storage.fetch('data', key)
         self.assertFalse(storage.path(casc.key_path('data', key)).exists())
+
+    def test_public_config_recovery_and_failed_page_cleanup(self):
+        raw = b'# Build Configuration\n\nbuild-name = recovered\n\n'
+        key = casc.md5(raw).hex()
+        self.routes['/cached/bc/' + key] = b'<pre>\n' + raw.strip() + b'\n    </pre>'
+        output = self.root / 'recovered'
+        storage = casc.Storage([self.base], output, config_fallback=lambda kind, value: f'{self.base}/cached/{kind}/{value}')
+        self.assertEqual(storage.fetch('config', key).read_bytes(), raw)
+        self.assertEqual(storage.recovered_configs[key], f'{self.base}/cached/bc/{key}')
+        self.assertEqual([p.name for p in output.iterdir()], ['cdn'])
+        bad = '12' * 16
+        self.routes['/cached/bc/' + bad] = self.routes['/cached/bc/' + key]
+        with self.assertRaisesRegex(casc.CascError, 'no bytes matching'):
+            storage.fetch('config', bad)
+        self.assertFalse(storage.path(casc.key_path('config', bad)).exists())
+        self.assertEqual([p.name for p in output.iterdir()], ['cdn'])
 
 
 if __name__ == '__main__':

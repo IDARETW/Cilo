@@ -1,0 +1,122 @@
+[
+  {
+    "ok": false,
+    "path": "aerial_crash_temp.bik",
+    "error": "could not retrieve data/fb0f47215707738773030750623928ac from the tested endpoints: http://us.cdn.blizzard.com/tpr/odin/data/fb/0f/fb0f47215707738773030750623928ac: HTTP Error 404: Not Found"
+  },
+  {
+    "ok": false,
+    "path": "cp_arms_dealer_cg_00427_tr.ff",
+    "error": "could not retrieve data/10bce25566dfc5176e08154409034c4c from the tested endpoints: http://us.cdn.blizzard.com/tpr/odin/data/10/bc/10bce25566dfc5176e08154409034c4c: HTTP Error 404: Not Found"
+  },
+  {
+    "ok": false,
+    "path": "cp_armsdealer_2_cg_00382_tr.ff",
+    "error": "could not retrieve data/36fee2fd78583327de4efb7bec92924f from the tested endpoints: http://us.cdn.blizzard.com/tpr/odin/data/36/fe/36fee2fd78583327de4efb7bec92924f: HTTP Error 404: Not Found"
+  },
+  {
+    "ok": false,
+    "path": "cp_dwn_twn_2_cg_00337_tr.ff",
+    "error": "could not retrieve data/4305a23c0e543709376f371fe5e89f62 from the tested endpoints: http://us.cdn.blizzard.com/tpr/odin/data/43/05/4305a23c0e543709376f371fe5e89f62: HTTP Error 404: Not Found"
+  },
+  {
+    "ok": false,
+    "path": "cp_landlord_2_00292_tr.ff",
+    "error": "could not retrieve data/f64b217faeb676661c8fd015d67514e4 from the tested endpoints: http://us.cdn.blizzard.com/tpr/odin/data/f6/4b/f64b217faeb676661c8fd015d67514e4: HTTP Error 404: Not Found"
+  },
+  {
+    "ok": false,
+    "path": "cp_landlord_cg_00247_tr.ff",
+    "error": "could not retrieve data/5a8b59ade8a09bfc644e280d4b802acc from the tested endpoints: http://us.cdn.blizzard.com/tpr/odin/data/5a/8b/5a8b59ade8a09bfc644e280d4b802acc: HTTP Error 404: Not Found"
+  },
+  {
+    "ok": false,
+    "path": "cp_smuggler_2_00203_tr.ff",
+    "error": "could not retrieve data/4e05f33453c9220a841ac4a81ebd9bf3 from the tested endpoints: http://us.cdn.blizzard.com/tpr/odin/data/4e/05/4e05f33453c9220a841ac4a81ebd9bf3: HTTP Error 404: Not Found"
+  },
+  {
+    "ok": false,
+    "path": "cp_smuggler_cg_00158_tr.ff",
+    "error": "could not retrieve data/217ba5e7e3eaa688dc9f5dde0882f243 from the tested endpoints: http://us.cdn.blizzard.com/tpr/odin/data/21/7b/217ba5e7e3eaa688dc9f5dde0882f243: HTTP Error 404: Not Found"
+  },
+  {
+    "ok": false,
+    "path": "french/fra_patch_marines.sabs",
+    "error": "could not retrieve data/b5128a7e21a64e3291bd21314b85ad08 from the tested endpoints: http://us.cdn.blizzard.com/tpr/odin/data/b5/12/b5128a7e21a64e3291bd21314b85ad08: HTTP Error 404: Not Found"
+  },
+  {
+    "ok": false,
+    "path": "japanese_full/jpf_ui_boot.ff",
+    "error": "could not retrieve data/d4cfb6d182b5b6cfae54ef967c3d4738 from the tested endpoints: http://us.cdn.blizzard.com/tpr/odin/data/d4/cf/d4cfb6d182b5b6cfae54ef967c3d4738: HTTP Error 404: Not Found"
+  },
+  {
+    "ok": false,
+    "path": "mp_av_attachment_vm_ar_falima_stock_v2_tr.ff",
+    "error": "could not retrieve data/a926fef33fabf8a46e0a6bf6ecfd76c1 from the tested endpoints: http://us.cdn.blizzard.com/tpr/odin/data/a9/26/a926fef33fabf8a46e0a6bf6ecfd76c1: HTTP Error 404: Not Found"
+  },
+  {
+    "ok": false,
+    "path": "mp_aw_attachment_wm_ar_falima_reciever_v2_lod1_s2_l22_tr.ff",
+    "error": "could not retrieve data/f3f04977243c535d8f22b7e61858ca53 from the tested endpoints: http://us.cdn.blizzard.com/tpr/odin/data/f3/f0/f3f04977243c535d8f22b7e61858ca53: HTTP Error 404: Not Found"
+  },
+  {
+    "ok": false,
+    "path": "mp_ay_cosmetic_vm_charm_018_c4_tr.ff",
+    "error": "could not retrieve data/3a58f049fc316f50a467648ffedfda40 from the tested endpoints: http://us.cdn.blizzard.com/tpr/odin/data/3a/58/3a58f049fc316f50a467648ffedfda40: HTTP Error 404: Not Found"
+  },
+  {
+    "ok": false,
+    "path": "mp_boneyard_gw_00390_tr.ff",
+    "error": "could not retrieve data/15b27c0208098e6134ad10785a453ec8 from the tested endpoints: http://us.cdn.blizzard.com/tpr/odin/data/15/b2/15b27c0208098e6134ad10785a453ec8: HTTP Error 404: Not Found"
+  },
+  {
+    "ok": false,
+    "path": "mp_br_quarry_00347_tr.ff",
+    "error": "could not retrieve data/d3b792e681e2604f93532486e7624d82 from the tested endpoints: http://us.cdn.blizzard.com/tpr/odin/data/d3/b7/d3b792e681e2604f93532486e7624d82: HTTP Error 404: Not Found"
+  },
+  {
+    "ok": false,
+    "path": "mp_donetsk_00316_tr.ff",
+    "error": "could not retrieve data/ab2beebb83a014de953219f3a6427df0 from the tested endpoints: http://us.cdn.blizzard.com/tpr/odin/data/ab/2b/ab2beebb83a014de953219f3a6427df0: HTTP Error 404: Not Found"
+  },
+  {
+    "ok": false,
+    "path": "mp_downtown_gw_00270_tr.ff",
+    "error": "could not retrieve data/d0e167f9507f7f431ec9171cf81cb312 from the tested endpoints: http://us.cdn.blizzard.com/tpr/odin/data/d0/e1/d0e167f9507f7f431ec9171cf81cb312: HTTP Error 404: Not Found"
+  },
+  {
+    "ok": false,
+    "path": "mp_farms2_gw_00089_tr.ff",
+    "error": "could not retrieve data/8079dd1bb3c8e21462facf4e375880ae from the tested endpoints: http://us.cdn.blizzard.com/tpr/odin/data/80/79/8079dd1bb3c8e21462facf4e375880ae: HTTP Error 404: Not Found"
+  },
+  {
+    "ok": false,
+    "path": "mp_hd_head_mp_eastern_bale_3_1_l15_tr.ff",
+    "error": "could not retrieve data/52134575207ddafc883c928541f0f5bd from the tested endpoints: http://us.cdn.blizzard.com/tpr/odin/data/52/13/52134575207ddafc883c928541f0f5bd: HTTP Error 404: Not Found"
+  },
+  {
+    "ok": false,
+    "path": "mp_port2_gw_cg_00695_tr.ff",
+    "error": "could not retrieve data/bbf76f90d2b2cd9561e3928f410e1e7d from the tested endpoints: http://us.cdn.blizzard.com/tpr/odin/data/bb/f7/bbf76f90d2b2cd9561e3928f410e1e7d: HTTP Error 404: Not Found"
+  },
+  {
+    "ok": false,
+    "path": "mp_vh_mp_western_vm_arms_wyatt_7_1_lod0_tr.ff",
+    "error": "could not retrieve data/83df063816207f9629f1c1d73b7e8238 from the tested endpoints: http://us.cdn.blizzard.com/tpr/odin/data/83/df/83df063816207f9629f1c1d73b7e8238: HTTP Error 404: Not Found"
+  },
+  {
+    "ok": false,
+    "path": "portuguese/por_pak_launch_tu04.xpak",
+    "error": "could not retrieve data/965855e3be06674950ccfdb62cd64e2d from the tested endpoints: http://us.cdn.blizzard.com/tpr/odin/data/96/58/965855e3be06674950ccfdb62cd64e2d: HTTP Error 404: Not Found"
+  },
+  {
+    "ok": false,
+    "path": "spanish/spa_patch_highway.sabs",
+    "error": "could not retrieve data/2493c9cfd37a65a870d6edd0675468d3 from the tested endpoints: http://us.cdn.blizzard.com/tpr/odin/data/24/93/2493c9cfd37a65a870d6edd0675468d3: HTTP Error 404: Not Found"
+  },
+  {
+    "ok": false,
+    "path": "worldwide/ww_ui_mp.xpak",
+    "error": "could not retrieve data/965855e3be06674950ccfdb62cd64e2d from the tested endpoints: http://us.cdn.blizzard.com/tpr/odin/data/96/58/965855e3be06674950ccfdb62cd64e2d: HTTP Error 404: Not Found"
+  }
+]

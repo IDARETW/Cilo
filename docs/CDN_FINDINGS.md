@@ -48,53 +48,102 @@ control config but did not recover the two older target configs. These are
 requests from one cloud environment to regional hostnames, not measurements
 from physical machines in each country.
 
-## All 315 retail odin build configurations
+## Expanded retail and product-family survey
 
-The build/config pairs came from the uploaded list derived from catalog snapshot
-`d8bcfafa67e7408c95d33caa3733729aff17c6fe`. Each build config was requested from:
+The supplied catalog snapshot contains **315 retail `odin` records**. An initial
+US/Korean survey verified 87 build configs. The expanded 4,410-request matrix
+across 14 working endpoint variants verified **101/315**, recovering **14 more
+build configurations on historical Akamai endpoints**. These are configuration
+counts, not complete downloadable builds. Some variants returned transient
+errors; the union of verified results is what matters.
 
-```text
-http://us.cdn.blizzard.com/tpr/odin/config/AA/BB/KEY
-http://blizzard.gcdn.cloudn.co.kr/tpr/odin/config/AA/BB/KEY
-```
+The additional build IDs are `7243209`, `7256861`, `7274739`, `7276347`,
+`11116736`, `11155708`, `11222167`, `11227632`, `11281361`, `11330025`,
+`11364056`, `11383760`, `11419693`, and `11494759`. See the
+[exact keys and successful URLs](../reports/cdn-2026-10-22/expanded/additional-retail-configs.json).
+All four historical US/Korean Akamai HTTP/HTTPS variants contributed verified
+responses. The downloader includes these advertised historical endpoints by default.
 
-Four concurrent requests, an 8-second socket timeout, and at most one retry on
-transient errors were used. Successful bodies were checked against the requested
-MD5. Final results were identical on both hosts:
+The broader inventory covers **2,192 records across 27 Odin-related products**,
+with four distinct storage paths: `tpr/odin`, `tpr/odinv`, `tpr/odind`, and
+`tpr/odine`. Eighteen historical retail CDN-table revisions and the product tables
+produced 29 distinct advertised base/path combinations; the user-supplied HTTPS
+Level3 spelling brings the map to 30. There are 17 distinct retail variants;
+the control run included one duplicate spelling, retained in its raw evidence.
+The 3,917 distinct family configuration requests yielded 119 MD5-verified configs
+and 187 HTTP-200 bodies whose raw MD5 did not match. Those 187 are **unverified**;
+encryption/format differences have not been established as their cause.
 
-| Build configuration result | Builds |
-|---|---:|
-| HTTP 200 and correct MD5 | 87 |
-| HTTP 404 | 228 |
-| Total | 315 |
+The [expanded report](../reports/cdn-2026-10-22/expanded/README.md) includes the
+per-request CSVs, compressed raw results, endpoint provenance, payload evidence,
+and explicit unfinished checks. Failures remain observations of exact URLs at a
+time and location; a transient or denied request is not proof of deletion.
 
-These results matched the uploaded list's build-configuration classifications;
-this survey did not recover additional build configs. The complete
-[CSV](../reports/cdn-2026-10-22/odin-build-configs.csv) records every build, key,
-status, and verification result. **This is not a count of fully downloadable
-game builds.** Payload completeness was not checked for all 315 builds.
+## Payload checks and the user-supplied config
 
-## Payload checks and limits
+The original 87 readable retail configs all yielded verified DOWNLOAD and TVFS
+manifests. A `code_post_gfx.fp` sample verified for **86 of those 87 builds**.
+This was a one-file sample per build, not a full payload audit. The separate
+[compression corpus](../benchmarks/README.md) contains 33 files from three builds.
+New three-sample probes for the 14 additional configs are recorded separately;
+proxy failures during those probes leave parts of their payload status unresolved.
 
-The updated downloader downloaded and extracted `code_post_gfx.fp` from builds
-`10056273`, `10885062`, and `26668155`. BLTE encoding/chunk verification passed,
-TVFS lengths matched, and output SHA-256 hashes were recorded in the
-[payload report](../reports/cdn-2026-10-22/payload-checks.json).
-An additional extraction of `common.ff` from `11521872` succeeded with CDN
-selection restricted to the Korean region (`--cdn-region kr`).
+The user-supplied `ec4dc25c00b68ccf203cb0d1eaa77283` is the build config for
+**`brynhildr_odin` 10885062**, a companion product. It is not the retail `odin`
+config for that number. BlizzTrack's public cached config page contained the
+exact original 741 bytes after HTML whitespace restoration, verified against
+that MD5. Its DOWNLOAD/TVFS manifests and `brynhildr.sys` payload remained
+retrievable. The extracted 2,355,952-byte file has SHA-256
+`707fdf62fe278cf7b4ea753fddaa145e4a3817d6c1f5b9bf3e5b920b9f70c224`.
+It was downloaded for integrity checks and never executed.
 
-Build `7547738` illustrates why a verified config is insufficient: its build
-config, DOWNLOAD manifest, TVFS root, CDN config, and loose-file index were
-retrievable. Requests for two selected payloads returned 404 on both the US and
-Korean endpoints. Four sampled archive indexes and the archive-group index also
-returned 404 on the US endpoint. The full archive search was not completed, so
-this is not a claim that every payload is gone.
+The Level3 S3 `ListBucket` denial also occurred for an intentionally nonexistent
+all-zero key, while known configs succeeded on the same host. Thus this message
+alone does not establish that the requested object exists or that listing the
+bucket would reveal it. The downloader uses exact object paths; no listing
+permission is required for objects the server makes publicly readable.
 
-For a build with an unavailable configuration, a locally cached original config
-from an installation or a known working mirror can provide the missing manifest
-keys. A config can be placed in `OUTPUT/cdn/config/AA/BB/KEY`; the downloader
-requires its MD5 to match `KEY` before using it. That can unblock metadata
-resolution, but it does not guarantee the referenced payloads are available.
+## CDN object layout
+
+| Configuration reference | Meaning / URL |
+|---|---|
+| Build/CDN configuration hash | `config/AA/BB/KEY`, exact raw MD5 |
+| Manifest EKey or payload EKey | `data/AA/BB/KEY`, BLTE encoding checks |
+| `archives` | `data/AA/BB/ARCHIVE` plus `.index`; payloads fetched by verified HTTP Range |
+| `file-index` | Loose-object `.index` under `data`; entries have zero offset bytes |
+| `patch-archives`, `patch-file-index` | Corresponding index/archive namespace under `patch` |
+| `patch-config` | Another configuration object under `config` |
+| `archive-group`, `patch-archive-group` | Locally generated combined-index identities, not required remote objects |
+| Content key without an EKey | Requires an ENCODING mapping; it is not automatically a CDN URL |
+
+The group-index distinction is documented in
+[TACT.Net IndexFile.Write](https://github.com/wowdev/TACT.Net/blob/master/TACT.Net/Indices/IndexFile.cs):
+group indexes are generated client-side and skipped when publishing individual
+indexes. An earlier test of a guessed group URL returned 404; **that response
+says nothing about the constituent archive payloads**. The parser now accounts
+for loose, archive, and group offset widths (0, 4, and 6 bytes), retaining footer,
+identity, table-of-contents, and page checksum validation.
+
+`layout` lists every recognized object reference and preserves unclassified
+fields from the supplied configs. The recorded accounting includes all 119
+locally retained verified family configs. Patch reconstruction, legacy
+content-key-only resolution, encrypted config decoding, and nested TVFS mounting
+remain unsupported; they are reported explicitly.
+
+Build `7547738` has retrievable configs, manifests, and a 5,237-entry loose-file
+index. Two failed sample EKeys are present in that loose index, demonstrating
+that index membership alone is not live availability. Twenty-four distributed
+small loose-file samples failed on the tested endpoint. Of 52 historical archive
+indexes checked on two endpoints, two verified; other requests failed or were
+transient. A separate 171-index newer-CDN search verified 151 indexes with 20
+transient failures and did not find the target sample. **Neither is a completed
+historical-host archive search**, and neither proves all payloads are gone.
+
+For unavailable configs, exact original bytes from an installation or public
+cache can unblock manifest resolution. BlizzTrack fallback accepts only bytes
+matching the requested config MD5. It never substitutes a nearby build. Public
+cache scans were throttled after rate limiting; unresolved requests are retained
+in the report rather than treated as missing metadata.
 
 ## Downloader changes
 
@@ -111,7 +160,8 @@ resolution, but it does not guarantee the referenced payloads are available.
 
 Local HTTP regression tests cover regional fallback, endpoint preference,
 diagnostics, catalog errors, unavailable-index continuation, and recovery of a
-previously missing index. The Python suite contains 14 passing tests.
+previously missing index. The expanded Python suite also covers cache validation/cleanup, GUI dispatch,
+public-config recovery, layout accounting, and rate-limit handling.
 
 Reproduce a target-build check with:
 

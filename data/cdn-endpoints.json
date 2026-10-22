@@ -1,0 +1,668 @@
+{
+  "schema": 1,
+  "observed_at_utc": "2026-10-22",
+  "catalog_revision": "d8bcfafa67e7408c95d33caa3733729aff17c6fe",
+  "scope": "27 Odin-family product tables and every US/odin/cdns revision in mdX7/ngdp_data history (18 revisions). Endpoint presence is not object availability.",
+  "endpoints": [
+    {
+      "base": "http://level3.blizzard.com/tpr/odin",
+      "path": "tpr/odin",
+      "regions": [
+        "eu",
+        "kr",
+        "us"
+      ],
+      "sources": [
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/0c8a49c13c3c1ead138e3fb65174addb71c27d34/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/11021154a4696285c379877100c15707e16de53c/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/26922160bf5857d8831b84d746c23ce0905d5217/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/374528c0a748e7b93da93c44df1ad71b3ddf8111/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/3a9c8ae091f70f8becf7b2494acb8c46e1c85412/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/43ddfa4f93a393525579d5da566158bfa3ade4a8/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/57ef29b541d82f69d9f1304434ac932bd23b869d/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/6881d5c666edc56d5a1f9c2cb3e350505e15cd49/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/6f58df0c2456e6046d668433d8d52ac3692542c3/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/7885b2538dd50476301e09d69dfd89bf6f2ebb9f/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/856338e1ac527ffbbac1c4f7a4b9b7ae6d96e60e/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/9e5435ce8de7d7cb596a1d7eca05e9d570ef9552/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/a834c3d78d1ababa9c7fb686bfae108c5ceb2f77/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d0f40770f6b3b80a3a7e36cbd225676a45702272/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d6b0e36fbb375f8be1c4fe4149b81b956041ac64/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/brynhildr_odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/brynhildr_odin2/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odinb/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d930ca588bf37b3918a832ebb0e9fb51e1690745/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/e93c2b3080d8f5fbd3fd50945c233aca58e59ffe/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/fa2c1962a040e4b8ce391f04154ef4e4fad85c06/US/odin/cdns"
+      ]
+    },
+    {
+      "base": "http://us.cdn.blizzard.com/tpr/odin",
+      "path": "tpr/odin",
+      "regions": [
+        "us"
+      ],
+      "sources": [
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/0c8a49c13c3c1ead138e3fb65174addb71c27d34/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/11021154a4696285c379877100c15707e16de53c/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/26922160bf5857d8831b84d746c23ce0905d5217/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/374528c0a748e7b93da93c44df1ad71b3ddf8111/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/3a9c8ae091f70f8becf7b2494acb8c46e1c85412/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/43ddfa4f93a393525579d5da566158bfa3ade4a8/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/57ef29b541d82f69d9f1304434ac932bd23b869d/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/6881d5c666edc56d5a1f9c2cb3e350505e15cd49/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/6f58df0c2456e6046d668433d8d52ac3692542c3/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/7885b2538dd50476301e09d69dfd89bf6f2ebb9f/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/9e5435ce8de7d7cb596a1d7eca05e9d570ef9552/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/a834c3d78d1ababa9c7fb686bfae108c5ceb2f77/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d0f40770f6b3b80a3a7e36cbd225676a45702272/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d6b0e36fbb375f8be1c4fe4149b81b956041ac64/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/brynhildr_odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/brynhildr_odin2/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odinb/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d930ca588bf37b3918a832ebb0e9fb51e1690745/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/e93c2b3080d8f5fbd3fd50945c233aca58e59ffe/US/odin/cdns"
+      ]
+    },
+    {
+      "base": "https://level3.ssl.blizzard.com/tpr/odin",
+      "path": "tpr/odin",
+      "regions": [
+        "eu",
+        "kr",
+        "us"
+      ],
+      "sources": [
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/0c8a49c13c3c1ead138e3fb65174addb71c27d34/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/11021154a4696285c379877100c15707e16de53c/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/26922160bf5857d8831b84d746c23ce0905d5217/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/374528c0a748e7b93da93c44df1ad71b3ddf8111/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/3a9c8ae091f70f8becf7b2494acb8c46e1c85412/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/43ddfa4f93a393525579d5da566158bfa3ade4a8/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/57ef29b541d82f69d9f1304434ac932bd23b869d/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/6881d5c666edc56d5a1f9c2cb3e350505e15cd49/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/6f58df0c2456e6046d668433d8d52ac3692542c3/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/7885b2538dd50476301e09d69dfd89bf6f2ebb9f/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/856338e1ac527ffbbac1c4f7a4b9b7ae6d96e60e/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/9e5435ce8de7d7cb596a1d7eca05e9d570ef9552/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/a834c3d78d1ababa9c7fb686bfae108c5ceb2f77/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d0f40770f6b3b80a3a7e36cbd225676a45702272/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d6b0e36fbb375f8be1c4fe4149b81b956041ac64/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/brynhildr_odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/brynhildr_odin2/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odinb/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d930ca588bf37b3918a832ebb0e9fb51e1690745/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/e93c2b3080d8f5fbd3fd50945c233aca58e59ffe/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/fa2c1962a040e4b8ce391f04154ef4e4fad85c06/US/odin/cdns"
+      ]
+    },
+    {
+      "base": "https://us.cdn.blizzard.com/tpr/odin",
+      "path": "tpr/odin",
+      "regions": [
+        "us"
+      ],
+      "sources": [
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/0c8a49c13c3c1ead138e3fb65174addb71c27d34/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/11021154a4696285c379877100c15707e16de53c/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/26922160bf5857d8831b84d746c23ce0905d5217/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/374528c0a748e7b93da93c44df1ad71b3ddf8111/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/3a9c8ae091f70f8becf7b2494acb8c46e1c85412/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/43ddfa4f93a393525579d5da566158bfa3ade4a8/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/57ef29b541d82f69d9f1304434ac932bd23b869d/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/6881d5c666edc56d5a1f9c2cb3e350505e15cd49/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/6f58df0c2456e6046d668433d8d52ac3692542c3/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/7885b2538dd50476301e09d69dfd89bf6f2ebb9f/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/9e5435ce8de7d7cb596a1d7eca05e9d570ef9552/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/a834c3d78d1ababa9c7fb686bfae108c5ceb2f77/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d0f40770f6b3b80a3a7e36cbd225676a45702272/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d6b0e36fbb375f8be1c4fe4149b81b956041ac64/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/brynhildr_odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/brynhildr_odin2/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odinb/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d930ca588bf37b3918a832ebb0e9fb51e1690745/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/e93c2b3080d8f5fbd3fd50945c233aca58e59ffe/US/odin/cdns"
+      ]
+    },
+    {
+      "base": "http://eu.cdn.blizzard.com/tpr/odin",
+      "path": "tpr/odin",
+      "regions": [
+        "eu"
+      ],
+      "sources": [
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/0c8a49c13c3c1ead138e3fb65174addb71c27d34/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/11021154a4696285c379877100c15707e16de53c/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/26922160bf5857d8831b84d746c23ce0905d5217/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/374528c0a748e7b93da93c44df1ad71b3ddf8111/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/3a9c8ae091f70f8becf7b2494acb8c46e1c85412/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/43ddfa4f93a393525579d5da566158bfa3ade4a8/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/57ef29b541d82f69d9f1304434ac932bd23b869d/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/6881d5c666edc56d5a1f9c2cb3e350505e15cd49/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/6f58df0c2456e6046d668433d8d52ac3692542c3/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/7885b2538dd50476301e09d69dfd89bf6f2ebb9f/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/9e5435ce8de7d7cb596a1d7eca05e9d570ef9552/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/a834c3d78d1ababa9c7fb686bfae108c5ceb2f77/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d0f40770f6b3b80a3a7e36cbd225676a45702272/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d6b0e36fbb375f8be1c4fe4149b81b956041ac64/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/brynhildr_odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/brynhildr_odin2/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odinb/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d930ca588bf37b3918a832ebb0e9fb51e1690745/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/e93c2b3080d8f5fbd3fd50945c233aca58e59ffe/US/odin/cdns"
+      ]
+    },
+    {
+      "base": "https://eu.cdn.blizzard.com/tpr/odin",
+      "path": "tpr/odin",
+      "regions": [
+        "eu"
+      ],
+      "sources": [
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/0c8a49c13c3c1ead138e3fb65174addb71c27d34/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/11021154a4696285c379877100c15707e16de53c/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/26922160bf5857d8831b84d746c23ce0905d5217/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/374528c0a748e7b93da93c44df1ad71b3ddf8111/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/3a9c8ae091f70f8becf7b2494acb8c46e1c85412/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/43ddfa4f93a393525579d5da566158bfa3ade4a8/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/57ef29b541d82f69d9f1304434ac932bd23b869d/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/6881d5c666edc56d5a1f9c2cb3e350505e15cd49/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/6f58df0c2456e6046d668433d8d52ac3692542c3/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/7885b2538dd50476301e09d69dfd89bf6f2ebb9f/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/9e5435ce8de7d7cb596a1d7eca05e9d570ef9552/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/a834c3d78d1ababa9c7fb686bfae108c5ceb2f77/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d0f40770f6b3b80a3a7e36cbd225676a45702272/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d6b0e36fbb375f8be1c4fe4149b81b956041ac64/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/brynhildr_odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/brynhildr_odin2/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odinb/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d930ca588bf37b3918a832ebb0e9fb51e1690745/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/e93c2b3080d8f5fbd3fd50945c233aca58e59ffe/US/odin/cdns"
+      ]
+    },
+    {
+      "base": "http://blizzard.gcdn.cloudn.co.kr/tpr/odin",
+      "path": "tpr/odin",
+      "regions": [
+        "kr"
+      ],
+      "sources": [
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/0c8a49c13c3c1ead138e3fb65174addb71c27d34/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/11021154a4696285c379877100c15707e16de53c/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/26922160bf5857d8831b84d746c23ce0905d5217/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/374528c0a748e7b93da93c44df1ad71b3ddf8111/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/3a9c8ae091f70f8becf7b2494acb8c46e1c85412/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/43ddfa4f93a393525579d5da566158bfa3ade4a8/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/57ef29b541d82f69d9f1304434ac932bd23b869d/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/6881d5c666edc56d5a1f9c2cb3e350505e15cd49/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/6f58df0c2456e6046d668433d8d52ac3692542c3/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/7885b2538dd50476301e09d69dfd89bf6f2ebb9f/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/856338e1ac527ffbbac1c4f7a4b9b7ae6d96e60e/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/9e5435ce8de7d7cb596a1d7eca05e9d570ef9552/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/a834c3d78d1ababa9c7fb686bfae108c5ceb2f77/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d0f40770f6b3b80a3a7e36cbd225676a45702272/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d6b0e36fbb375f8be1c4fe4149b81b956041ac64/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/brynhildr_odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/brynhildr_odin2/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odinb/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d930ca588bf37b3918a832ebb0e9fb51e1690745/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/e93c2b3080d8f5fbd3fd50945c233aca58e59ffe/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/fa2c1962a040e4b8ce391f04154ef4e4fad85c06/US/odin/cdns"
+      ]
+    },
+    {
+      "base": "http://kr.cdn.blizzard.com/tpr/odin",
+      "path": "tpr/odin",
+      "regions": [
+        "kr"
+      ],
+      "sources": [
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/0c8a49c13c3c1ead138e3fb65174addb71c27d34/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/26922160bf5857d8831b84d746c23ce0905d5217/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/374528c0a748e7b93da93c44df1ad71b3ddf8111/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/3a9c8ae091f70f8becf7b2494acb8c46e1c85412/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/57ef29b541d82f69d9f1304434ac932bd23b869d/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/7885b2538dd50476301e09d69dfd89bf6f2ebb9f/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/9e5435ce8de7d7cb596a1d7eca05e9d570ef9552/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/a834c3d78d1ababa9c7fb686bfae108c5ceb2f77/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d6b0e36fbb375f8be1c4fe4149b81b956041ac64/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/brynhildr_odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/brynhildr_odin2/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odinb/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/e93c2b3080d8f5fbd3fd50945c233aca58e59ffe/US/odin/cdns"
+      ]
+    },
+    {
+      "base": "https://blizzard.gcdn.cloudn.co.kr/tpr/odin",
+      "path": "tpr/odin",
+      "regions": [
+        "kr"
+      ],
+      "sources": [
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/0c8a49c13c3c1ead138e3fb65174addb71c27d34/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/11021154a4696285c379877100c15707e16de53c/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/26922160bf5857d8831b84d746c23ce0905d5217/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/374528c0a748e7b93da93c44df1ad71b3ddf8111/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/3a9c8ae091f70f8becf7b2494acb8c46e1c85412/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/43ddfa4f93a393525579d5da566158bfa3ade4a8/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/57ef29b541d82f69d9f1304434ac932bd23b869d/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/6881d5c666edc56d5a1f9c2cb3e350505e15cd49/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/6f58df0c2456e6046d668433d8d52ac3692542c3/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/7885b2538dd50476301e09d69dfd89bf6f2ebb9f/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/9e5435ce8de7d7cb596a1d7eca05e9d570ef9552/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/a834c3d78d1ababa9c7fb686bfae108c5ceb2f77/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d0f40770f6b3b80a3a7e36cbd225676a45702272/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d6b0e36fbb375f8be1c4fe4149b81b956041ac64/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/brynhildr_odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/brynhildr_odin2/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odinb/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d930ca588bf37b3918a832ebb0e9fb51e1690745/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/e93c2b3080d8f5fbd3fd50945c233aca58e59ffe/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/fa2c1962a040e4b8ce391f04154ef4e4fad85c06/US/odin/cdns"
+      ]
+    },
+    {
+      "base": "https://kr.cdn.blizzard.com/tpr/odin",
+      "path": "tpr/odin",
+      "regions": [
+        "kr"
+      ],
+      "sources": [
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/0c8a49c13c3c1ead138e3fb65174addb71c27d34/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/26922160bf5857d8831b84d746c23ce0905d5217/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/374528c0a748e7b93da93c44df1ad71b3ddf8111/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/3a9c8ae091f70f8becf7b2494acb8c46e1c85412/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/57ef29b541d82f69d9f1304434ac932bd23b869d/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/7885b2538dd50476301e09d69dfd89bf6f2ebb9f/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/9e5435ce8de7d7cb596a1d7eca05e9d570ef9552/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/a834c3d78d1ababa9c7fb686bfae108c5ceb2f77/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d6b0e36fbb375f8be1c4fe4149b81b956041ac64/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/brynhildr_odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/brynhildr_odin2/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odinb/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/e93c2b3080d8f5fbd3fd50945c233aca58e59ffe/US/odin/cdns"
+      ]
+    },
+    {
+      "base": "http://eu.cdn.blizzard.com/tpr/odinv",
+      "path": "tpr/odinv",
+      "regions": [
+        "eu"
+      ],
+      "sources": [
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/brynhildr_odin_qa/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/brynhildr_odin_qa2/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/brynhildr_odin_vendor/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/brynhildr_odin_vendor2/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odinv1/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odinv10/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odinv11/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odinv12/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odinv13/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odinv14/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odinv15/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odinv16/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odinv2/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odinv3/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odinv4/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odinv5/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odinv6/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odinv7/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odinv8/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odinv9/cdns"
+      ]
+    },
+    {
+      "base": "http://level3.blizzard.com/tpr/odinv",
+      "path": "tpr/odinv",
+      "regions": [
+        "eu",
+        "us"
+      ],
+      "sources": [
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/brynhildr_odin_qa/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/brynhildr_odin_qa2/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/brynhildr_odin_vendor/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/brynhildr_odin_vendor2/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odinv1/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odinv10/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odinv11/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odinv12/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odinv13/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odinv14/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odinv15/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odinv16/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odinv2/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odinv3/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odinv4/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odinv5/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odinv6/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odinv7/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odinv8/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odinv9/cdns"
+      ]
+    },
+    {
+      "base": "https://eu.cdn.blizzard.com/tpr/odinv",
+      "path": "tpr/odinv",
+      "regions": [
+        "eu"
+      ],
+      "sources": [
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/brynhildr_odin_qa/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/brynhildr_odin_qa2/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/brynhildr_odin_vendor/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/brynhildr_odin_vendor2/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odinv1/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odinv10/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odinv11/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odinv12/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odinv13/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odinv14/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odinv15/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odinv16/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odinv2/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odinv3/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odinv4/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odinv5/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odinv6/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odinv7/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odinv8/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odinv9/cdns"
+      ]
+    },
+    {
+      "base": "https://level3.ssl.blizzard.com/tpr/odinv",
+      "path": "tpr/odinv",
+      "regions": [
+        "eu",
+        "us"
+      ],
+      "sources": [
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/brynhildr_odin_qa/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/brynhildr_odin_qa2/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/brynhildr_odin_vendor/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/brynhildr_odin_vendor2/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odinv1/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odinv10/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odinv11/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odinv12/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odinv13/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odinv14/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odinv15/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odinv16/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odinv2/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odinv3/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odinv4/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odinv5/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odinv6/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odinv7/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odinv8/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odinv9/cdns"
+      ]
+    },
+    {
+      "base": "http://us.cdn.blizzard.com/tpr/odinv",
+      "path": "tpr/odinv",
+      "regions": [
+        "us"
+      ],
+      "sources": [
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/brynhildr_odin_qa/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/brynhildr_odin_qa2/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/brynhildr_odin_vendor/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/brynhildr_odin_vendor2/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odinv1/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odinv10/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odinv11/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odinv12/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odinv13/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odinv14/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odinv15/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odinv16/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odinv2/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odinv3/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odinv4/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odinv5/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odinv6/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odinv7/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odinv8/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odinv9/cdns"
+      ]
+    },
+    {
+      "base": "https://us.cdn.blizzard.com/tpr/odinv",
+      "path": "tpr/odinv",
+      "regions": [
+        "us"
+      ],
+      "sources": [
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/brynhildr_odin_qa/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/brynhildr_odin_qa2/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/brynhildr_odin_vendor/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/brynhildr_odin_vendor2/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odinv1/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odinv10/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odinv11/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odinv12/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odinv13/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odinv14/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odinv15/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odinv16/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odinv2/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odinv3/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odinv4/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odinv5/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odinv6/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odinv7/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odinv8/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odinv9/cdns"
+      ]
+    },
+    {
+      "base": "http://level3.blizzard.com/tpr/odind",
+      "path": "tpr/odind",
+      "regions": [
+        "eu",
+        "us"
+      ],
+      "sources": [
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odina/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odindev/cdns"
+      ]
+    },
+    {
+      "base": "https://level3.ssl.blizzard.com/tpr/odind",
+      "path": "tpr/odind",
+      "regions": [
+        "eu",
+        "us"
+      ],
+      "sources": [
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odina/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odindev/cdns"
+      ]
+    },
+    {
+      "base": "https://us.cdn.blizzard.com/tpr/odind",
+      "path": "tpr/odind",
+      "regions": [
+        "eu",
+        "us"
+      ],
+      "sources": [
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odina/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odindev/cdns"
+      ]
+    },
+    {
+      "base": "http://level3.blizzard.com/tpr/odine",
+      "path": "tpr/odine",
+      "regions": [
+        "eu",
+        "kr",
+        "us"
+      ],
+      "sources": [
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odine/cdns"
+      ]
+    },
+    {
+      "base": "https://level3.ssl.blizzard.com/tpr/odine",
+      "path": "tpr/odine",
+      "regions": [
+        "eu",
+        "us"
+      ],
+      "sources": [
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odine/cdns"
+      ]
+    },
+    {
+      "base": "http://blizzard.gcdn.cloudn.co.kr/tpr/odine",
+      "path": "tpr/odine",
+      "regions": [
+        "kr"
+      ],
+      "sources": [
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odine/cdns"
+      ]
+    },
+    {
+      "base": "https://blizzard.gcdn.cloudn.co.kr/tpr/odine",
+      "path": "tpr/odine",
+      "regions": [
+        "kr"
+      ],
+      "sources": [
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d8bcfafa67e7408c95d33caa3733729aff17c6fe/US/odine/cdns"
+      ]
+    },
+    {
+      "base": "http://blzddist1-a.akamaihd.net/tpr/odin",
+      "path": "tpr/odin",
+      "regions": [
+        "eu",
+        "kr",
+        "us"
+      ],
+      "sources": [
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/0c8a49c13c3c1ead138e3fb65174addb71c27d34/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/11021154a4696285c379877100c15707e16de53c/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/26922160bf5857d8831b84d746c23ce0905d5217/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/3a9c8ae091f70f8becf7b2494acb8c46e1c85412/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/43ddfa4f93a393525579d5da566158bfa3ade4a8/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/57ef29b541d82f69d9f1304434ac932bd23b869d/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d930ca588bf37b3918a832ebb0e9fb51e1690745/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/e93c2b3080d8f5fbd3fd50945c233aca58e59ffe/US/odin/cdns"
+      ]
+    },
+    {
+      "base": "https://blzddist1-a.akamaihd.net/tpr/odin",
+      "path": "tpr/odin",
+      "regions": [
+        "eu",
+        "kr",
+        "us"
+      ],
+      "sources": [
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/0c8a49c13c3c1ead138e3fb65174addb71c27d34/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/11021154a4696285c379877100c15707e16de53c/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/26922160bf5857d8831b84d746c23ce0905d5217/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/3a9c8ae091f70f8becf7b2494acb8c46e1c85412/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/43ddfa4f93a393525579d5da566158bfa3ade4a8/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/57ef29b541d82f69d9f1304434ac932bd23b869d/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/6881d5c666edc56d5a1f9c2cb3e350505e15cd49/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/6f58df0c2456e6046d668433d8d52ac3692542c3/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/7885b2538dd50476301e09d69dfd89bf6f2ebb9f/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/856338e1ac527ffbbac1c4f7a4b9b7ae6d96e60e/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/9e5435ce8de7d7cb596a1d7eca05e9d570ef9552/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/a834c3d78d1ababa9c7fb686bfae108c5ceb2f77/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d0f40770f6b3b80a3a7e36cbd225676a45702272/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d6b0e36fbb375f8be1c4fe4149b81b956041ac64/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d930ca588bf37b3918a832ebb0e9fb51e1690745/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/e93c2b3080d8f5fbd3fd50945c233aca58e59ffe/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/fa2c1962a040e4b8ce391f04154ef4e4fad85c06/US/odin/cdns"
+      ]
+    },
+    {
+      "base": "https://blzddistkr1-a.akamaihd.net/tpr/odin",
+      "path": "tpr/odin",
+      "regions": [
+        "kr"
+      ],
+      "sources": [
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/0c8a49c13c3c1ead138e3fb65174addb71c27d34/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/11021154a4696285c379877100c15707e16de53c/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/26922160bf5857d8831b84d746c23ce0905d5217/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/3a9c8ae091f70f8becf7b2494acb8c46e1c85412/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/43ddfa4f93a393525579d5da566158bfa3ade4a8/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/57ef29b541d82f69d9f1304434ac932bd23b869d/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/6881d5c666edc56d5a1f9c2cb3e350505e15cd49/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/6f58df0c2456e6046d668433d8d52ac3692542c3/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/7885b2538dd50476301e09d69dfd89bf6f2ebb9f/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/856338e1ac527ffbbac1c4f7a4b9b7ae6d96e60e/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/9e5435ce8de7d7cb596a1d7eca05e9d570ef9552/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/a834c3d78d1ababa9c7fb686bfae108c5ceb2f77/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d0f40770f6b3b80a3a7e36cbd225676a45702272/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d6b0e36fbb375f8be1c4fe4149b81b956041ac64/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d930ca588bf37b3918a832ebb0e9fb51e1690745/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/e93c2b3080d8f5fbd3fd50945c233aca58e59ffe/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/fa2c1962a040e4b8ce391f04154ef4e4fad85c06/US/odin/cdns"
+      ]
+    },
+    {
+      "base": "http://blzddistkr1-a.akamaihd.net/tpr/odin",
+      "path": "tpr/odin",
+      "regions": [
+        "kr"
+      ],
+      "sources": [
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/11021154a4696285c379877100c15707e16de53c/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/3a9c8ae091f70f8becf7b2494acb8c46e1c85412/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/43ddfa4f93a393525579d5da566158bfa3ade4a8/US/odin/cdns",
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d930ca588bf37b3918a832ebb0e9fb51e1690745/US/odin/cdns"
+      ]
+    },
+    {
+      "base": "http://gcp.cdn.blizzard.com/tpr/odin",
+      "path": "tpr/odin",
+      "regions": [
+        "eu"
+      ],
+      "sources": [
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d930ca588bf37b3918a832ebb0e9fb51e1690745/US/odin/cdns"
+      ]
+    },
+    {
+      "base": "https://gcp.cdn.blizzard.com/tpr/odin",
+      "path": "tpr/odin",
+      "regions": [
+        "eu"
+      ],
+      "sources": [
+        "https://raw.githubusercontent.com/mdX7/ngdp_data/d930ca588bf37b3918a832ebb0e9fb51e1690745/US/odin/cdns"
+      ]
+    },
+    {
+      "base": "https://level3.blizzard.com/tpr/odin",
+      "path": "tpr/odin",
+      "regions": [
+        "us"
+      ],
+      "sources": [
+        "User-supplied URL; known-good control downloaded and MD5 verified on 2026-10-22"
+      ]
+    }
+  ]
+}

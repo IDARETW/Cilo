@@ -1,0 +1,2841 @@
+{
+  "configs": 119,
+  "field_counts": {
+    "build:root": 88,
+    "build:install": 88,
+    "build:install-size": 88,
+    "build:download": 88,
+    "build:download-size": 88,
+    "build:size": 88,
+    "build:size-size": 88,
+    "build:encoding": 88,
+    "build:encoding-size": 88,
+    "build:patch-index": 82,
+    "build:patch-index-size": 82,
+    "build:patch-config": 82,
+    "build:build-name": 88,
+    "build:build-product": 88,
+    "build:build-uid": 85,
+    "build:vfs-root": 88,
+    "build:vfs-root-size": 88,
+    "build:vfs-1": 88,
+    "build:vfs-1-size": 88,
+    "cdn:archives": 31,
+    "cdn:archives-index-size": 31,
+    "cdn:archive-group": 31,
+    "cdn:patch-archives": 27,
+    "cdn:patch-archives-index-size": 27,
+    "cdn:patch-archive-group": 27,
+    "cdn:file-index": 31,
+    "cdn:file-index-size": 31,
+    "cdn:patch-file-index": 27,
+    "cdn:patch-file-index-size": 27,
+    "build:build-type": 1,
+    "build:feature-placeholder": 3
+  },
+  "layouts": [
+    {
+      "key": "bb3281f6c0584078e601cb42ba7995c8",
+      "kind": "build",
+      "objects": 8,
+      "derived_references": [],
+      "content_key_references": [
+        {
+          "source": "root",
+          "content_key": "61e008cb88e72555842c4000a3c088fd",
+          "reason": "content key; not necessarily a CDN object name; TVFS builds use vfs-root for named extraction"
+        }
+      ],
+      "other_build_fields": {
+        "build-name": [
+          "live_12047793_TU_WZ345_7_18_A_r_signed_ship"
+        ],
+        "build-product": [
+          "odin"
+        ],
+        "build-uid": [
+          "odin"
+        ]
+      },
+      "other_cdn_fields": {}
+    },
+    {
+      "key": "7e939c4948542a9ced50c0949033b02c",
+      "kind": "build",
+      "objects": 8,
+      "derived_references": [],
+      "content_key_references": [
+        {
+          "source": "root",
+          "content_key": "881fe26d565fdd9ee917c4f97f49557b",
+          "reason": "content key; not necessarily a CDN object name; TVFS builds use vfs-root for named extraction"
+        }
+      ],
+      "other_build_fields": {
+        "build-name": [
+          "live_15708959_TU_LAZE_2_21_U_r_signed_ship"
+        ],
+        "build-product": [
+          "odin"
+        ],
+        "build-uid": [
+          "odin"
+        ]
+      },
+      "other_cdn_fields": {}
+    },
+    {
+      "key": "b1ea777add07b4617e7c22fa50d298f5",
+      "kind": "cdn",
+      "objects": 458,
+      "derived_references": [
+        {
+          "source": "archive-group",
+          "key": "d6cf4dc6e3cb98376b79b2d535e86286",
+          "meaning": "client-generated combined index identity; not a required CDN object URL"
+        },
+        {
+          "source": "patch-archive-group",
+          "key": "17aedcd54015fd9a0bfb2d8a017a449f",
+          "meaning": "client-generated combined index identity; not a required CDN object URL"
+        }
+      ],
+      "content_key_references": [],
+      "other_build_fields": {},
+      "other_cdn_fields": {}
+    },
+    {
+      "key": "5765b86e33f48559e4855c7a3f4b7718",
+      "kind": "build",
+      "objects": 7,
+      "derived_references": [],
+      "content_key_references": [
+        {
+          "source": "root",
+          "content_key": "add260a0c1a9f9644938e993cc0bce47",
+          "reason": "content key; not necessarily a CDN object name; TVFS builds use vfs-root for named extraction"
+        }
+      ],
+      "other_build_fields": {
+        "build-name": [
+          "magma_13739813_vk_valkyrie_brynhildr_r_ship"
+        ],
+        "build-product": [
+          "brynhildr_odin2"
+        ]
+      },
+      "other_cdn_fields": {}
+    },
+    {
+      "key": "146f7d0096a761902bb08d188fca21ba",
+      "kind": "build",
+      "objects": 8,
+      "derived_references": [],
+      "content_key_references": [
+        {
+          "source": "root",
+          "content_key": "a6b8eae6b155dfd473797deed70bebf3",
+          "reason": "content key; not necessarily a CDN object name; TVFS builds use vfs-root for named extraction"
+        }
+      ],
+      "other_build_fields": {
+        "build-name": [
+          "live_11715736_WZ335_5_17_D_r_signed_ship"
+        ],
+        "build-product": [
+          "odin"
+        ],
+        "build-uid": [
+          "odin"
+        ]
+      },
+      "other_cdn_fields": {}
+    },
+    {
+      "key": "85bfa2bb3c5b40e4c3f277eb8487acec",
+      "kind": "cdn",
+      "objects": 356,
+      "derived_references": [
+        {
+          "source": "archive-group",
+          "key": "d364802077bea5a17af0f61f7e2f4c00",
+          "meaning": "client-generated combined index identity; not a required CDN object URL"
+        },
+        {
+          "source": "patch-archive-group",
+          "key": "b897ff9624a2d56bfad2c0ad2cafe662",
+          "meaning": "client-generated combined index identity; not a required CDN object URL"
+        }
+      ],
+      "content_key_references": [],
+      "other_build_fields": {},
+      "other_cdn_fields": {}
+    },
+    {
+      "key": "bca6d708121780f57de50f3003ad285f",
+      "kind": "cdn",
+      "objects": 398,
+      "derived_references": [
+        {
+          "source": "archive-group",
+          "key": "b97fe67b03521cb18f14a1f2dd44e5c8",
+          "meaning": "client-generated combined index identity; not a required CDN object URL"
+        },
+        {
+          "source": "patch-archive-group",
+          "key": "17aedcd54015fd9a0bfb2d8a017a449f",
+          "meaning": "client-generated combined index identity; not a required CDN object URL"
+        }
+      ],
+      "content_key_references": [],
+      "other_build_fields": {},
+      "other_cdn_fields": {}
+    },
+    {
+      "key": "aa1747d31b99f4b1fc3c149eff517c1f",
+      "kind": "build",
+      "objects": 8,
+      "derived_references": [],
+      "content_key_references": [
+        {
+          "source": "root",
+          "content_key": "03d60acb25e8a5aca7ece526b12787bb",
+          "reason": "content key; not necessarily a CDN object name; TVFS builds use vfs-root for named extraction"
+        }
+      ],
+      "other_build_fields": {
+        "build-name": [
+          "live_15079557_TU_LAZE_2_21_N3_r_signed_ship"
+        ],
+        "build-product": [
+          "odin"
+        ],
+        "build-uid": [
+          "odin"
+        ]
+      },
+      "other_cdn_fields": {}
+    },
+    {
+      "key": "8740db48d294f5f5e0dfcc66d8c97998",
+      "kind": "build",
+      "objects": 8,
+      "derived_references": [],
+      "content_key_references": [
+        {
+          "source": "root",
+          "content_key": "e7fb62dcf1ad823cdcc0c86e94a02957",
+          "reason": "content key; not necessarily a CDN object name; TVFS builds use vfs-root for named extraction"
+        }
+      ],
+      "other_build_fields": {
+        "build-name": [
+          "live_12374094_TU_WZ351_8_24_A3_r_signed_ship"
+        ],
+        "build-product": [
+          "odin"
+        ],
+        "build-uid": [
+          "odin"
+        ]
+      },
+      "other_cdn_fields": {}
+    },
+    {
+      "key": "1fb3476d878eedc96434b7e872728f89",
+      "kind": "cdn",
+      "objects": 438,
+      "derived_references": [
+        {
+          "source": "archive-group",
+          "key": "e7deddc92c19198e17278cccff3735a9",
+          "meaning": "client-generated combined index identity; not a required CDN object URL"
+        },
+        {
+          "source": "patch-archive-group",
+          "key": "17aedcd54015fd9a0bfb2d8a017a449f",
+          "meaning": "client-generated combined index identity; not a required CDN object URL"
+        }
+      ],
+      "content_key_references": [],
+      "other_build_fields": {},
+      "other_cdn_fields": {}
+    },
+    {
+      "key": "250785d87c25836f2d453a9022389a49",
+      "kind": "cdn",
+      "objects": 105,
+      "derived_references": [
+        {
+          "source": "archive-group",
+          "key": "4b5aaf8706880c7b7e115f9e5edc8db9",
+          "meaning": "client-generated combined index identity; not a required CDN object URL"
+        }
+      ],
+      "content_key_references": [],
+      "other_build_fields": {},
+      "other_cdn_fields": {}
+    },
+    {
+      "key": "ccff9ffbcd6857dd49ee222f4e9b7aaf",
+      "kind": "build",
+      "objects": 8,
+      "derived_references": [],
+      "content_key_references": [
+        {
+          "source": "root",
+          "content_key": "cb9e2e61adae0438e3fa0ae064a4675d",
+          "reason": "content key; not necessarily a CDN object name; TVFS builds use vfs-root for named extraction"
+        }
+      ],
+      "other_build_fields": {
+        "build-name": [
+          "live_15889661_TU_LAZE_2_21_W2_r_signed_ship"
+        ],
+        "build-product": [
+          "odin"
+        ],
+        "build-uid": [
+          "odin"
+        ]
+      },
+      "other_cdn_fields": {}
+    },
+    {
+      "key": "6d9975f46e0210cfea261eb8047d2c61",
+      "kind": "build",
+      "objects": 8,
+      "derived_references": [],
+      "content_key_references": [
+        {
+          "source": "root",
+          "content_key": "54727cd4973dcc099f9f366d0f47f372",
+          "reason": "content key; not necessarily a CDN object name; TVFS builds use vfs-root for named extraction"
+        }
+      ],
+      "other_build_fields": {
+        "build-name": [
+          "live_13848720_TU_WZ360_11_4_J_r_signed_ship"
+        ],
+        "build-product": [
+          "odin"
+        ],
+        "build-uid": [
+          "odin"
+        ]
+      },
+      "other_cdn_fields": {}
+    },
+    {
+      "key": "2f228e5ba34378d8131b0955737c39be",
+      "kind": "build",
+      "objects": 8,
+      "derived_references": [],
+      "content_key_references": [
+        {
+          "source": "root",
+          "content_key": "e9f3e9970755fccad2017feaca1de547",
+          "reason": "content key; not necessarily a CDN object name; TVFS builds use vfs-root for named extraction"
+        }
+      ],
+      "other_build_fields": {
+        "build-name": [
+          "magrel_15967738_TU_WZSUNSET_9_12_DWLIVE_patch_r_signed_ship"
+        ],
+        "build-product": [
+          "odin"
+        ],
+        "build-uid": [
+          "odin"
+        ],
+        "build-type": [
+          "Release"
+        ]
+      },
+      "other_cdn_fields": {}
+    },
+    {
+      "key": "92e101360bd2fc34fdc1c26722c4b25c",
+      "kind": "build",
+      "objects": 8,
+      "derived_references": [],
+      "content_key_references": [
+        {
+          "source": "root",
+          "content_key": "24e65dd307c99080673665e4ff7b200e",
+          "reason": "content key; not necessarily a CDN object name; TVFS builds use vfs-root for named extraction"
+        }
+      ],
+      "other_build_fields": {
+        "build-name": [
+          "release_11976759_TU_WZ345_7_18_V2_DWLIVE_patch_r_signed2_ship"
+        ],
+        "build-product": [
+          "odin"
+        ],
+        "build-uid": [
+          "odin"
+        ]
+      },
+      "other_cdn_fields": {}
+    },
+    {
+      "key": "a7153d85b828e801b270cfa7237febec",
+      "kind": "build",
+      "objects": 8,
+      "derived_references": [],
+      "content_key_references": [
+        {
+          "source": "root",
+          "content_key": "440fae4624ee582f05e5debdc2fab2bf",
+          "reason": "content key; not necessarily a CDN object name; TVFS builds use vfs-root for named extraction"
+        }
+      ],
+      "other_build_fields": {
+        "build-name": [
+          "sub_12087051_ETU_WZ346_8_1_r_signed2_ship"
+        ],
+        "build-product": [
+          "odin"
+        ],
+        "build-uid": [
+          "odin"
+        ]
+      },
+      "other_cdn_fields": {}
+    },
+    {
+      "key": "fe5d7a5860ee932d6ead7cee5bc61bd7",
+      "kind": "build",
+      "objects": 8,
+      "derived_references": [],
+      "content_key_references": [
+        {
+          "source": "root",
+          "content_key": "3288bd97e43e182d4d80dc229ac64579",
+          "reason": "content key; not necessarily a CDN object name; TVFS builds use vfs-root for named extraction"
+        }
+      ],
+      "other_build_fields": {
+        "build-name": [
+          "live_11464871_WZ330_4_14_nobik_A_r_signed_ship"
+        ],
+        "build-product": [
+          "odin"
+        ],
+        "build-uid": [
+          "odin"
+        ]
+      },
+      "other_cdn_fields": {}
+    },
+    {
+      "key": "af590272f31a4e82d0617c11a564a965",
+      "kind": "build",
+      "objects": 8,
+      "derived_references": [],
+      "content_key_references": [
+        {
+          "source": "root",
+          "content_key": "f921cc44696ceb1554d59649cdd4eda4",
+          "reason": "content key; not necessarily a CDN object name; TVFS builds use vfs-root for named extraction"
+        }
+      ],
+      "other_build_fields": {
+        "build-name": [
+          "magrel_10885062_TUGvk_1_7_dwl_R_signed_ship"
+        ],
+        "build-product": [
+          "odin"
+        ],
+        "build-uid": [
+          "odin"
+        ]
+      },
+      "other_cdn_fields": {}
+    },
+    {
+      "key": "5f45cdb01b6eb5f9ff286ba1c64a0730",
+      "kind": "build",
+      "objects": 8,
+      "derived_references": [],
+      "content_key_references": [
+        {
+          "source": "root",
+          "content_key": "91185e49e2bce8690b4fd80e0c790ce7",
+          "reason": "content key; not necessarily a CDN object name; TVFS builds use vfs-root for named extraction"
+        }
+      ],
+      "other_build_fields": {
+        "build-name": [
+          "live_11810757_WZ340_6_10_A_r_signed_ship"
+        ],
+        "build-product": [
+          "odin"
+        ],
+        "build-uid": [
+          "odin"
+        ]
+      },
+      "other_cdn_fields": {}
+    },
+    {
+      "key": "b02de40c63726709f0ebe46f1083199f",
+      "kind": "build",
+      "objects": 8,
+      "derived_references": [],
+      "content_key_references": [
+        {
+          "source": "root",
+          "content_key": "4ef020f4ba6439738f310e686e883cb2",
+          "reason": "content key; not necessarily a CDN object name; TVFS builds use vfs-root for named extraction"
+        }
+      ],
+      "other_build_fields": {
+        "build-name": [
+          "live_11303845_WZ325_3_15_C_r_signed_ship"
+        ],
+        "build-product": [
+          "odin"
+        ],
+        "build-uid": [
+          "odin"
+        ]
+      },
+      "other_cdn_fields": {}
+    },
+    {
+      "key": "6a33bb212a850824428d39033ffd7564",
+      "kind": "build",
+      "objects": 8,
+      "derived_references": [],
+      "content_key_references": [
+        {
+          "source": "root",
+          "content_key": "95c22e5ad65376a4191944fc61a3514d",
+          "reason": "content key; not necessarily a CDN object name; TVFS builds use vfs-root for named extraction"
+        }
+      ],
+      "other_build_fields": {
+        "build-name": [
+          "live_15321234_TU_LAZE_2_21_Q_r_signed_ship"
+        ],
+        "build-product": [
+          "odin"
+        ],
+        "build-uid": [
+          "odin"
+        ]
+      },
+      "other_cdn_fields": {}
+    },
+    {
+      "key": "ae03600aa72e155d96ba0b17c002a911",
+      "kind": "build",
+      "objects": 8,
+      "derived_references": [],
+      "content_key_references": [
+        {
+          "source": "root",
+          "content_key": "f2ff16f80830184a2843f2af60cc75e8",
+          "reason": "content key; not necessarily a CDN object name; TVFS builds use vfs-root for named extraction"
+        }
+      ],
+      "other_build_fields": {
+        "build-name": [
+          "live_13402798_TU_WZ360_11_4_D_r_signed_ship"
+        ],
+        "build-product": [
+          "odin"
+        ],
+        "build-uid": [
+          "odin"
+        ]
+      },
+      "other_cdn_fields": {}
+    },
+    {
+      "key": "665037d6b3a71c19fac62ec2562c7d1e",
+      "kind": "build",
+      "objects": 8,
+      "derived_references": [],
+      "content_key_references": [
+        {
+          "source": "root",
+          "content_key": "5a7ed23bf422cab213d133bbc4eec414",
+          "reason": "content key; not necessarily a CDN object name; TVFS builds use vfs-root for named extraction"
+        }
+      ],
+      "other_build_fields": {
+        "build-name": [
+          "live_15629918_TU_LAZE_2_21_T_r_signed_ship"
+        ],
+        "build-product": [
+          "odin"
+        ],
+        "build-uid": [
+          "odin"
+        ]
+      },
+      "other_cdn_fields": {}
+    },
+    {
+      "key": "e6be8fa470ee4720cc9a2fdd83e202da",
+      "kind": "build",
+      "objects": 8,
+      "derived_references": [],
+      "content_key_references": [
+        {
+          "source": "root",
+          "content_key": "6bb9c39f9b4e1b8d699943b283896ee8",
+          "reason": "content key; not necessarily a CDN object name; TVFS builds use vfs-root for named extraction"
+        }
+      ],
+      "other_build_fields": {
+        "build-name": [
+          "magrel_12194754_WZ350_8_14_r_signed_ship"
+        ],
+        "build-product": [
+          "odin"
+        ],
+        "build-uid": [
+          "odin"
+        ]
+      },
+      "other_cdn_fields": {}
+    },
+    {
+      "key": "a9e6430b4d9865d753e936b57c956316",
+      "kind": "build",
+      "objects": 8,
+      "derived_references": [],
+      "content_key_references": [
+        {
+          "source": "root",
+          "content_key": "5a669228e922bcf82927f82815ddee03",
+          "reason": "content key; not necessarily a CDN object name; TVFS builds use vfs-root for named extraction"
+        }
+      ],
+      "other_build_fields": {
+        "build-name": [
+          "magrel_11399652_WZ330_4_14_nobik_r_signed_ship"
+        ],
+        "build-product": [
+          "odin"
+        ],
+        "build-uid": [
+          "odin"
+        ]
+      },
+      "other_cdn_fields": {}
+    },
+    {
+      "key": "c89f53a143e3527adae2e16806730168",
+      "kind": "build",
+      "objects": 8,
+      "derived_references": [],
+      "content_key_references": [
+        {
+          "source": "root",
+          "content_key": "6240c7214475a984ab49cd9261c78a03",
+          "reason": "content key; not necessarily a CDN object name; TVFS builds use vfs-root for named extraction"
+        }
+      ],
+      "other_build_fields": {
+        "build-name": [
+          "live_14580756_TU_LAZE_2_21_G_r_signed_ship"
+        ],
+        "build-product": [
+          "odin"
+        ],
+        "build-uid": [
+          "odin"
+        ]
+      },
+      "other_cdn_fields": {}
+    },
+    {
+      "key": "91fb8dea0db76570d77f9255c40012c9",
+      "kind": "build",
+      "objects": 8,
+      "derived_references": [],
+      "content_key_references": [
+        {
+          "source": "root",
+          "content_key": "637c093e01f0f71cf65f9dc61061c32e",
+          "reason": "content key; not necessarily a CDN object name; TVFS builds use vfs-root for named extraction"
+        }
+      ],
+      "other_build_fields": {
+        "build-name": [
+          "live_12881783_TU_WZ355_9_15_C_r_signed_ship"
+        ],
+        "build-product": [
+          "odin"
+        ],
+        "build-uid": [
+          "odin"
+        ]
+      },
+      "other_cdn_fields": {}
+    },
+    {
+      "key": "20f953688be08805c3b3cc0f1e820ff4",
+      "kind": "build",
+      "objects": 7,
+      "derived_references": [],
+      "content_key_references": [
+        {
+          "source": "root",
+          "content_key": "6ecbce6316b8205dc35af0707db722b5",
+          "reason": "content key; not necessarily a CDN object name; TVFS builds use vfs-root for named extraction"
+        }
+      ],
+      "other_build_fields": {
+        "build-name": [
+          "magma_release_20230110_vk_valkyrie_brynhildr_r_ship"
+        ],
+        "build-product": [
+          "brynhildr_odin"
+        ]
+      },
+      "other_cdn_fields": {}
+    },
+    {
+      "key": "a57dcece488b1ee1d4b9cc3e172119e9",
+      "kind": "build",
+      "objects": 8,
+      "derived_references": [],
+      "content_key_references": [
+        {
+          "source": "root",
+          "content_key": "337856b530bf6a2ec75f509b871dc242",
+          "reason": "content key; not necessarily a CDN object name; TVFS builds use vfs-root for named extraction"
+        }
+      ],
+      "other_build_fields": {
+        "build-name": [
+          "live_12484851_TU_WZ351_9_15_D_r_signed_ship"
+        ],
+        "build-product": [
+          "odin"
+        ],
+        "build-uid": [
+          "odin"
+        ]
+      },
+      "other_cdn_fields": {}
+    },
+    {
+      "key": "0f991e464d4491080bd5ba93e4e18063",
+      "kind": "build",
+      "objects": 8,
+      "derived_references": [],
+      "content_key_references": [
+        {
+          "source": "root",
+          "content_key": "d109783031413afefb8766c7aece95a6",
+          "reason": "content key; not necessarily a CDN object name; TVFS builds use vfs-root for named extraction"
+        }
+      ],
+      "other_build_fields": {
+        "build-name": [
+          "live_14633877_TU_LAZE_2_21_H_r_signed_ship"
+        ],
+        "build-product": [
+          "odin"
+        ],
+        "build-uid": [
+          "odin"
+        ]
+      },
+      "other_cdn_fields": {}
+    },
+    {
+      "key": "4f61034672eb031064dae87dd0415418",
+      "kind": "build",
+      "objects": 8,
+      "derived_references": [],
+      "content_key_references": [
+        {
+          "source": "root",
+          "content_key": "bdd7093cc6082b8ee3c5fd1791ef9d0f",
+          "reason": "content key; not necessarily a CDN object name; TVFS builds use vfs-root for named extraction"
+        }
+      ],
+      "other_build_fields": {
+        "build-name": [
+          "live_14360630_TU_LAZE_2_21_E2_r_signed_ship"
+        ],
+        "build-product": [
+          "odin"
+        ],
+        "build-uid": [
+          "odin"
+        ]
+      },
+      "other_cdn_fields": {}
+    },
+    {
+      "key": "0a3e936a0cb043eb0efbe502ec9020d6",
+      "kind": "build",
+      "objects": 8,
+      "derived_references": [],
+      "content_key_references": [
+        {
+          "source": "root",
+          "content_key": "9fc23076090fed0fb8d1e0f46b51da98",
+          "reason": "content key; not necessarily a CDN object name; TVFS builds use vfs-root for named extraction"
+        }
+      ],
+      "other_build_fields": {
+        "build-name": [
+          "live_9873021_TU_A_7_7_F_R_signed_ship"
+        ],
+        "build-product": [
+          "odin"
+        ],
+        "build-uid": [
+          "odin"
+        ]
+      },
+      "other_cdn_fields": {}
+    },
+    {
+      "key": "b069e4bd5e0be60a77a5e84885a99492",
+      "kind": "build",
+      "objects": 8,
+      "derived_references": [],
+      "content_key_references": [
+        {
+          "source": "root",
+          "content_key": "7d579ed55a523514130b5fb4721277e5",
+          "reason": "content key; not necessarily a CDN object name; TVFS builds use vfs-root for named extraction"
+        }
+      ],
+      "other_build_fields": {
+        "build-name": [
+          "live_13356919_TU_WZ360_11_4_B_r_signed_ship"
+        ],
+        "build-product": [
+          "odin"
+        ],
+        "build-uid": [
+          "odin"
+        ]
+      },
+      "other_cdn_fields": {}
+    },
+    {
+      "key": "c40a3d978b05e960ee81d72f7b7b1734",
+      "kind": "build",
+      "objects": 8,
+      "derived_references": [],
+      "content_key_references": [
+        {
+          "source": "root",
+          "content_key": "df9182ef26ca37af5c36f497f3f1c5dd",
+          "reason": "content key; not necessarily a CDN object name; TVFS builds use vfs-root for named extraction"
+        }
+      ],
+      "other_build_fields": {
+        "build-name": [
+          "magrel_11976759_TU_WZ345_7_18_V2_DWLIVE_patch_r_signed_ship"
+        ],
+        "build-product": [
+          "odin"
+        ],
+        "build-uid": [
+          "odin"
+        ]
+      },
+      "other_cdn_fields": {}
+    },
+    {
+      "key": "af1e6d25b60aaf6677b4e5cc6d516865",
+      "kind": "build",
+      "objects": 8,
+      "derived_references": [],
+      "content_key_references": [
+        {
+          "source": "root",
+          "content_key": "ca44230a577ccb270db6ea9f71cafd12",
+          "reason": "content key; not necessarily a CDN object name; TVFS builds use vfs-root for named extraction"
+        }
+      ],
+      "other_build_fields": {
+        "build-name": [
+          "live_15473234_TU_LAZE_2_21_R_r_signed_ship"
+        ],
+        "build-product": [
+          "odin"
+        ],
+        "build-uid": [
+          "odin"
+        ]
+      },
+      "other_cdn_fields": {}
+    },
+    {
+      "key": "1e1b55218a04263029945d887779b7d4",
+      "kind": "build",
+      "objects": 8,
+      "derived_references": [],
+      "content_key_references": [
+        {
+          "source": "root",
+          "content_key": "7d27b9a3bbf99e957d09453a3410c863",
+          "reason": "content key; not necessarily a CDN object name; TVFS builds use vfs-root for named extraction"
+        }
+      ],
+      "other_build_fields": {
+        "build-name": [
+          "live_13789124_TU_WZ360_11_4_I_r_signed_ship"
+        ],
+        "build-product": [
+          "odin"
+        ],
+        "build-uid": [
+          "odin"
+        ]
+      },
+      "other_cdn_fields": {}
+    },
+    {
+      "key": "b1f7fbecc4347bc674cc9effa7fa82f3",
+      "kind": "build",
+      "objects": 8,
+      "derived_references": [],
+      "content_key_references": [
+        {
+          "source": "root",
+          "content_key": "05e63925d4658652fe5a1a494f7ecd94",
+          "reason": "content key; not necessarily a CDN object name; TVFS builds use vfs-root for named extraction"
+        }
+      ],
+      "other_build_fields": {
+        "build-name": [
+          "live_13395434_TU_WZ360_11_4_C_r_signed_ship"
+        ],
+        "build-product": [
+          "odin"
+        ],
+        "build-uid": [
+          "odin"
+        ]
+      },
+      "other_cdn_fields": {}
+    },
+    {
+      "key": "6a49cba190aebf6d8ac5782958c9e22e",
+      "kind": "cdn",
+      "objects": 424,
+      "derived_references": [
+        {
+          "source": "archive-group",
+          "key": "8cbf2b1b0eb60c7d15650dec670fb1ec",
+          "meaning": "client-generated combined index identity; not a required CDN object URL"
+        },
+        {
+          "source": "patch-archive-group",
+          "key": "17aedcd54015fd9a0bfb2d8a017a449f",
+          "meaning": "client-generated combined index identity; not a required CDN object URL"
+        }
+      ],
+      "content_key_references": [],
+      "other_build_fields": {},
+      "other_cdn_fields": {}
+    },
+    {
+      "key": "74f71dfd8305cf0feae9b3c476a3e051",
+      "kind": "cdn",
+      "objects": 392,
+      "derived_references": [
+        {
+          "source": "archive-group",
+          "key": "2ed4b308150fead38681d4eb59ebd449",
+          "meaning": "client-generated combined index identity; not a required CDN object URL"
+        },
+        {
+          "source": "patch-archive-group",
+          "key": "25b7bd7fcea6dc77d2c5bb22aaaa28f0",
+          "meaning": "client-generated combined index identity; not a required CDN object URL"
+        }
+      ],
+      "content_key_references": [],
+      "other_build_fields": {},
+      "other_cdn_fields": {}
+    },
+    {
+      "key": "32a3db4c9b7b3cb175fdf69998d943dd",
+      "kind": "build",
+      "objects": 8,
+      "derived_references": [],
+      "content_key_references": [
+        {
+          "source": "root",
+          "content_key": "e3c153690e4d97c2230c6296502c57e9",
+          "reason": "content key; not necessarily a CDN object name; TVFS builds use vfs-root for named extraction"
+        }
+      ],
+      "other_build_fields": {
+        "build-name": [
+          "magrel_13858333_TU_LAZE_2_21_r_signed_ship"
+        ],
+        "build-product": [
+          "odin"
+        ],
+        "build-uid": [
+          "odin"
+        ]
+      },
+      "other_cdn_fields": {}
+    },
+    {
+      "key": "af6f811f0e52a768ce0b8e70c51e38cf",
+      "kind": "build",
+      "objects": 8,
+      "derived_references": [],
+      "content_key_references": [
+        {
+          "source": "root",
+          "content_key": "34255b02702746dc99d4aa7b349d87fc",
+          "reason": "content key; not necessarily a CDN object name; TVFS builds use vfs-root for named extraction"
+        }
+      ],
+      "other_build_fields": {
+        "build-name": [
+          "live_17008517_TU_WZSUNSET_1_8_A2_r_signed_ship"
+        ],
+        "build-product": [
+          "odin"
+        ],
+        "build-uid": [
+          "odin"
+        ]
+      },
+      "other_cdn_fields": {}
+    },
+    {
+      "key": "8bca60beb76ac7d0a7278479dba731e2",
+      "kind": "build",
+      "objects": 8,
+      "derived_references": [],
+      "content_key_references": [
+        {
+          "source": "root",
+          "content_key": "47bd4fa2dd9fac94cfc5c47d8c9215a5",
+          "reason": "content key; not necessarily a CDN object name; TVFS builds use vfs-root for named extraction"
+        }
+      ],
+      "other_build_fields": {
+        "build-name": [
+          "live_14843327_TU_LAZE_2_21_K_r_signed_ship"
+        ],
+        "build-product": [
+          "odin"
+        ],
+        "build-uid": [
+          "odin"
+        ]
+      },
+      "other_cdn_fields": {}
+    },
+    {
+      "key": "abee7d0efe63ab149ab2742cc1e58139",
+      "kind": "cdn",
+      "objects": 458,
+      "derived_references": [
+        {
+          "source": "archive-group",
+          "key": "b1957244b87858c356ae2da3f8ef55ce",
+          "meaning": "client-generated combined index identity; not a required CDN object URL"
+        },
+        {
+          "source": "patch-archive-group",
+          "key": "17aedcd54015fd9a0bfb2d8a017a449f",
+          "meaning": "client-generated combined index identity; not a required CDN object URL"
+        }
+      ],
+      "content_key_references": [],
+      "other_build_fields": {},
+      "other_cdn_fields": {}
+    },
+    {
+      "key": "fcc022ca2912d8fe182b87afa181cf95",
+      "kind": "cdn",
+      "objects": 458,
+      "derived_references": [
+        {
+          "source": "archive-group",
+          "key": "49941b4f54b85e2a886de45aae9ff03e",
+          "meaning": "client-generated combined index identity; not a required CDN object URL"
+        },
+        {
+          "source": "patch-archive-group",
+          "key": "17aedcd54015fd9a0bfb2d8a017a449f",
+          "meaning": "client-generated combined index identity; not a required CDN object URL"
+        }
+      ],
+      "content_key_references": [],
+      "other_build_fields": {},
+      "other_cdn_fields": {}
+    },
+    {
+      "key": "95e548e8c4bf2715ab3e8d653be47c85",
+      "kind": "build",
+      "objects": 8,
+      "derived_references": [],
+      "content_key_references": [
+        {
+          "source": "root",
+          "content_key": "eab2c75b4fbe56a210d079b5b3192108",
+          "reason": "content key; not necessarily a CDN object name; TVFS builds use vfs-root for named extraction"
+        }
+      ],
+      "other_build_fields": {
+        "build-name": [
+          "live_12283188_TU_WZ350_8_14_A_r_signed_ship"
+        ],
+        "build-product": [
+          "odin"
+        ],
+        "build-uid": [
+          "odin"
+        ]
+      },
+      "other_cdn_fields": {}
+    },
+    {
+      "key": "d81ab37777a3bb33283e4a0e4027a508",
+      "kind": "build",
+      "objects": 8,
+      "derived_references": [],
+      "content_key_references": [
+        {
+          "source": "root",
+          "content_key": "3eacbddd2e5e959b33b54a579bfb838a",
+          "reason": "content key; not necessarily a CDN object name; TVFS builds use vfs-root for named extraction"
+        }
+      ],
+      "other_build_fields": {
+        "build-name": [
+          "live_13273688_TU_WZ360_11_4_A_r_signed_ship"
+        ],
+        "build-product": [
+          "odin"
+        ],
+        "build-uid": [
+          "odin"
+        ]
+      },
+      "other_cdn_fields": {}
+    },
+    {
+      "key": "050ebdecefa64af1a274bab67795e7cd",
+      "kind": "cdn",
+      "objects": 356,
+      "derived_references": [
+        {
+          "source": "archive-group",
+          "key": "dbc23318d2240dd075c96581cfa18703",
+          "meaning": "client-generated combined index identity; not a required CDN object URL"
+        },
+        {
+          "source": "patch-archive-group",
+          "key": "b897ff9624a2d56bfad2c0ad2cafe662",
+          "meaning": "client-generated combined index identity; not a required CDN object URL"
+        }
+      ],
+      "content_key_references": [],
+      "other_build_fields": {},
+      "other_cdn_fields": {}
+    },
+    {
+      "key": "30b90a901d9697ca49bdadaa8c194f1f",
+      "kind": "cdn",
+      "objects": 438,
+      "derived_references": [
+        {
+          "source": "archive-group",
+          "key": "8f8c07a63ea39fe2ef642f9e543ae9a4",
+          "meaning": "client-generated combined index identity; not a required CDN object URL"
+        },
+        {
+          "source": "patch-archive-group",
+          "key": "17aedcd54015fd9a0bfb2d8a017a449f",
+          "meaning": "client-generated combined index identity; not a required CDN object URL"
+        }
+      ],
+      "content_key_references": [],
+      "other_build_fields": {},
+      "other_cdn_fields": {}
+    },
+    {
+      "key": "2cdddf87fca50c88243238b9d30146b0",
+      "kind": "cdn",
+      "objects": 458,
+      "derived_references": [
+        {
+          "source": "archive-group",
+          "key": "154e863752df39c2591065417f81bd62",
+          "meaning": "client-generated combined index identity; not a required CDN object URL"
+        },
+        {
+          "source": "patch-archive-group",
+          "key": "17aedcd54015fd9a0bfb2d8a017a449f",
+          "meaning": "client-generated combined index identity; not a required CDN object URL"
+        }
+      ],
+      "content_key_references": [],
+      "other_build_fields": {},
+      "other_cdn_fields": {}
+    },
+    {
+      "key": "0da91bc57ef9e333ac0183a037a27412",
+      "kind": "build",
+      "objects": 7,
+      "derived_references": [],
+      "content_key_references": [
+        {
+          "source": "root",
+          "content_key": "bba6dbc3bf0de5448baa41174c849625",
+          "reason": "content key; not necessarily a CDN object name; TVFS builds use vfs-root for named extraction"
+        }
+      ],
+      "other_build_fields": {
+        "build-name": [
+          "magmarelease_26668155_TU_OTRN_04_13_patch_r_signed_ship"
+        ],
+        "build-product": [
+          "odinv8"
+        ],
+        "build-uid": [
+          "odin"
+        ],
+        "feature-placeholder": [
+          "true"
+        ]
+      },
+      "other_cdn_fields": {}
+    },
+    {
+      "key": "d88aae6a2bcd3944b48a6b80b5b46c26",
+      "kind": "build",
+      "objects": 8,
+      "derived_references": [],
+      "content_key_references": [
+        {
+          "source": "root",
+          "content_key": "65f23135e7527fd898200ca89858b235",
+          "reason": "content key; not necessarily a CDN object name; TVFS builds use vfs-root for named extraction"
+        }
+      ],
+      "other_build_fields": {
+        "build-name": [
+          "live_11521872_WZ330_4_14_C_r_signed_ship"
+        ],
+        "build-product": [
+          "odin"
+        ],
+        "build-uid": [
+          "odin"
+        ]
+      },
+      "other_cdn_fields": {}
+    },
+    {
+      "key": "db883197b8c21ec29650db548b9427fd",
+      "kind": "build",
+      "objects": 8,
+      "derived_references": [],
+      "content_key_references": [
+        {
+          "source": "root",
+          "content_key": "5a3114adc357d07d7b06fdc477750eca",
+          "reason": "content key; not necessarily a CDN object name; TVFS builds use vfs-root for named extraction"
+        }
+      ],
+      "other_build_fields": {
+        "build-name": [
+          "live_11888139_WZ340_6_10_C_r_signed_ship"
+        ],
+        "build-product": [
+          "odin"
+        ],
+        "build-uid": [
+          "odin"
+        ]
+      },
+      "other_cdn_fields": {}
+    },
+    {
+      "key": "613a234025c360e1635f7ece0664dbbd",
+      "kind": "build",
+      "objects": 8,
+      "derived_references": [],
+      "content_key_references": [
+        {
+          "source": "root",
+          "content_key": "5c02a4515a19df49b2dad24b1ebed9eb",
+          "reason": "content key; not necessarily a CDN object name; TVFS builds use vfs-root for named extraction"
+        }
+      ],
+      "other_build_fields": {
+        "build-name": [
+          "live_12405035_TU_WZ_351_8_24_B_r_signed_ship"
+        ],
+        "build-product": [
+          "odin"
+        ],
+        "build-uid": [
+          "odin"
+        ]
+      },
+      "other_cdn_fields": {}
+    },
+    {
+      "key": "be8faabca9deba0cc2decf211f7faa53",
+      "kind": "build",
+      "objects": 8,
+      "derived_references": [],
+      "content_key_references": [
+        {
+          "source": "root",
+          "content_key": "05b579a777b0e676e60aa9fe8553c5b6",
+          "reason": "content key; not necessarily a CDN object name; TVFS builds use vfs-root for named extraction"
+        }
+      ],
+      "other_build_fields": {
+        "build-name": [
+          "live_11588296_WZ330_4_14_F_r_signed_ship"
+        ],
+        "build-product": [
+          "odin"
+        ],
+        "build-uid": [
+          "odin"
+        ]
+      },
+      "other_cdn_fields": {}
+    },
+    {
+      "key": "8154211798a68cf9e9c176797e9d013b",
+      "kind": "build",
+      "objects": 8,
+      "derived_references": [],
+      "content_key_references": [
+        {
+          "source": "root",
+          "content_key": "dcddc2655d9dfc5a2ec4010496a2c871",
+          "reason": "content key; not necessarily a CDN object name; TVFS builds use vfs-root for named extraction"
+        }
+      ],
+      "other_build_fields": {
+        "build-name": [
+          "live_12658874_TU_WZ355_9_15_B_r_signed_ship"
+        ],
+        "build-product": [
+          "odin"
+        ],
+        "build-uid": [
+          "odin"
+        ]
+      },
+      "other_cdn_fields": {}
+    },
+    {
+      "key": "87d8c8449ac6ec8fead26b8a6e832f00",
+      "kind": "build",
+      "objects": 8,
+      "derived_references": [],
+      "content_key_references": [
+        {
+          "source": "root",
+          "content_key": "0b6d3f6a137b193b4d9b99759d347af7",
+          "reason": "content key; not necessarily a CDN object name; TVFS builds use vfs-root for named extraction"
+        }
+      ],
+      "other_build_fields": {
+        "build-name": [
+          "live_14228804_TU_LAZE_2_21_C2_r_signed_ship"
+        ],
+        "build-product": [
+          "odin"
+        ],
+        "build-uid": [
+          "odin"
+        ]
+      },
+      "other_cdn_fields": {}
+    },
+    {
+      "key": "23a1014b51bc5305b3b61bdd7fe17b2f",
+      "kind": "build",
+      "objects": 8,
+      "derived_references": [],
+      "content_key_references": [
+        {
+          "source": "root",
+          "content_key": "f30aed624afb9297513f09417227c03a",
+          "reason": "content key; not necessarily a CDN object name; TVFS builds use vfs-root for named extraction"
+        }
+      ],
+      "other_build_fields": {
+        "build-name": [
+          "live_11920874_WZ340_6_10_D_r_signed_ship"
+        ],
+        "build-product": [
+          "odin"
+        ],
+        "build-uid": [
+          "odin"
+        ]
+      },
+      "other_cdn_fields": {}
+    },
+    {
+      "key": "758598b9992dc7e4b815543c75088057",
+      "kind": "cdn",
+      "objects": 390,
+      "derived_references": [
+        {
+          "source": "archive-group",
+          "key": "e87f41663047aff874d04f5aa60ceccc",
+          "meaning": "client-generated combined index identity; not a required CDN object URL"
+        },
+        {
+          "source": "patch-archive-group",
+          "key": "17aedcd54015fd9a0bfb2d8a017a449f",
+          "meaning": "client-generated combined index identity; not a required CDN object URL"
+        }
+      ],
+      "content_key_references": [],
+      "other_build_fields": {},
+      "other_cdn_fields": {}
+    },
+    {
+      "key": "017f171cfff7a1c211c87292e032146f",
+      "kind": "cdn",
+      "objects": 390,
+      "derived_references": [
+        {
+          "source": "archive-group",
+          "key": "e87f41663047aff874d04f5aa60ceccc",
+          "meaning": "client-generated combined index identity; not a required CDN object URL"
+        },
+        {
+          "source": "patch-archive-group",
+          "key": "17aedcd54015fd9a0bfb2d8a017a449f",
+          "meaning": "client-generated combined index identity; not a required CDN object URL"
+        }
+      ],
+      "content_key_references": [],
+      "other_build_fields": {},
+      "other_cdn_fields": {}
+    },
+    {
+      "key": "2d405cbdc23335ea4bace107e12a9ce6",
+      "kind": "build",
+      "objects": 8,
+      "derived_references": [],
+      "content_key_references": [
+        {
+          "source": "root",
+          "content_key": "170f247c2caca2967e57f2dce7d1afd6",
+          "reason": "content key; not necessarily a CDN object name; TVFS builds use vfs-root for named extraction"
+        }
+      ],
+      "other_build_fields": {
+        "build-name": [
+          "live_12552903_TU_WZ355_9_15_A2_r_signed_ship"
+        ],
+        "build-product": [
+          "odin"
+        ],
+        "build-uid": [
+          "odin"
+        ]
+      },
+      "other_cdn_fields": {}
+    },
+    {
+      "key": "71659cecfa055030d1a463617bf9b9cd",
+      "kind": "cdn",
+      "objects": 458,
+      "derived_references": [
+        {
+          "source": "archive-group",
+          "key": "06f68e03d1f2d8328ca7251ae81a5683",
+          "meaning": "client-generated combined index identity; not a required CDN object URL"
+        },
+        {
+          "source": "patch-archive-group",
+          "key": "17aedcd54015fd9a0bfb2d8a017a449f",
+          "meaning": "client-generated combined index identity; not a required CDN object URL"
+        }
+      ],
+      "content_key_references": [],
+      "other_build_fields": {},
+      "other_cdn_fields": {}
+    },
+    {
+      "key": "c8462b2c82deb9ade68b2c507ecfe663",
+      "kind": "build",
+      "objects": 8,
+      "derived_references": [],
+      "content_key_references": [
+        {
+          "source": "root",
+          "content_key": "dc13f513c267011413313a4cb7a53e83",
+          "reason": "content key; not necessarily a CDN object name; TVFS builds use vfs-root for named extraction"
+        }
+      ],
+      "other_build_fields": {
+        "build-name": [
+          "live_9786493_TU_A_7_7_C_R_signed_ship"
+        ],
+        "build-product": [
+          "odin"
+        ],
+        "build-uid": [
+          "odin"
+        ]
+      },
+      "other_cdn_fields": {}
+    },
+    {
+      "key": "a33230c291e9dc9bbeb4443af838e4b6",
+      "kind": "cdn",
+      "objects": 458,
+      "derived_references": [
+        {
+          "source": "archive-group",
+          "key": "32bb2ddf99be9ab0626e332780a9eb4f",
+          "meaning": "client-generated combined index identity; not a required CDN object URL"
+        },
+        {
+          "source": "patch-archive-group",
+          "key": "17aedcd54015fd9a0bfb2d8a017a449f",
+          "meaning": "client-generated combined index identity; not a required CDN object URL"
+        }
+      ],
+      "content_key_references": [],
+      "other_build_fields": {},
+      "other_cdn_fields": {}
+    },
+    {
+      "key": "54985dbaf6a1982299ef4c921df43515",
+      "kind": "build",
+      "objects": 8,
+      "derived_references": [],
+      "content_key_references": [
+        {
+          "source": "root",
+          "content_key": "ee40494875ad930bd86b4875f9fb32d7",
+          "reason": "content key; not necessarily a CDN object name; TVFS builds use vfs-root for named extraction"
+        }
+      ],
+      "other_build_fields": {
+        "build-name": [
+          "live_15947459_TU_LAZE_2_21_X_r_signed_ship"
+        ],
+        "build-product": [
+          "odin"
+        ],
+        "build-uid": [
+          "odin"
+        ]
+      },
+      "other_cdn_fields": {}
+    },
+    {
+      "key": "7fb3b588c3fe3e0134bf3353278369f9",
+      "kind": "build",
+      "objects": 6,
+      "derived_references": [],
+      "content_key_references": [
+        {
+          "source": "root",
+          "content_key": "28588779613ed5e1d180d9cc9fdef123",
+          "reason": "content key; not necessarily a CDN object name; TVFS builds use vfs-root for named extraction"
+        }
+      ],
+      "other_build_fields": {
+        "build-name": [
+          "beta_7089334_9_15_exec_patch_etu2_signed_ship"
+        ],
+        "build-product": [
+          "Odin"
+        ],
+        "build-uid": [
+          "odinb"
+        ]
+      },
+      "other_cdn_fields": {}
+    },
+    {
+      "key": "939e50be8d39c6b2423a272d4ee71afd",
+      "kind": "cdn",
+      "objects": 346,
+      "derived_references": [
+        {
+          "source": "archive-group",
+          "key": "7bf522431b427a19fb97ab705a5c0b61",
+          "meaning": "client-generated combined index identity; not a required CDN object URL"
+        },
+        {
+          "source": "patch-archive-group",
+          "key": "7a8734f6fa5989df39c7f93bccfbe52d",
+          "meaning": "client-generated combined index identity; not a required CDN object URL"
+        }
+      ],
+      "content_key_references": [],
+      "other_build_fields": {},
+      "other_cdn_fields": {}
+    },
+    {
+      "key": "0c5f8e51074fcd97fb9e76b16a6594ab",
+      "kind": "cdn",
+      "objects": 424,
+      "derived_references": [
+        {
+          "source": "archive-group",
+          "key": "fbd14937573684903d294e3282fe68d2",
+          "meaning": "client-generated combined index identity; not a required CDN object URL"
+        },
+        {
+          "source": "patch-archive-group",
+          "key": "17aedcd54015fd9a0bfb2d8a017a449f",
+          "meaning": "client-generated combined index identity; not a required CDN object URL"
+        }
+      ],
+      "content_key_references": [],
+      "other_build_fields": {},
+      "other_cdn_fields": {}
+    },
+    {
+      "key": "b71218a8b24f57cc86304ca5ed648c73",
+      "kind": "build",
+      "objects": 7,
+      "derived_references": [],
+      "content_key_references": [
+        {
+          "source": "root",
+          "content_key": "b89eeee22ea081205f571589c78a94b1",
+          "reason": "content key; not necessarily a CDN object name; TVFS builds use vfs-root for named extraction"
+        }
+      ],
+      "other_build_fields": {
+        "build-name": [
+          "magmarelease_26168382_TU_OTRN_03_09_patch_signed_ship_r"
+        ],
+        "build-product": [
+          "odinv8"
+        ],
+        "build-uid": [
+          "odin"
+        ],
+        "feature-placeholder": [
+          "true"
+        ]
+      },
+      "other_cdn_fields": {}
+    },
+    {
+      "key": "e9cdb22226ebef8c77d51bde8ba1976c",
+      "kind": "build",
+      "objects": 8,
+      "derived_references": [],
+      "content_key_references": [
+        {
+          "source": "root",
+          "content_key": "462c26a74cfa9aa75110dc8c83754a29",
+          "reason": "content key; not necessarily a CDN object name; TVFS builds use vfs-root for named extraction"
+        }
+      ],
+      "other_build_fields": {
+        "build-name": [
+          "live_12145825_TU_WZ346_8_1_A_r_signed_ship"
+        ],
+        "build-product": [
+          "odin"
+        ],
+        "build-uid": [
+          "odin"
+        ]
+      },
+      "other_cdn_fields": {}
+    },
+    {
+      "key": "5cdc80c0fc0fcca71a45ef25600b9daf",
+      "kind": "build",
+      "objects": 8,
+      "derived_references": [],
+      "content_key_references": [
+        {
+          "source": "root",
+          "content_key": "7019f7e9ae30ebe4642c6ad85bbfc1dd",
+          "reason": "content key; not necessarily a CDN object name; TVFS builds use vfs-root for named extraction"
+        }
+      ],
+      "other_build_fields": {
+        "build-name": [
+          "live_13668260_TU_WZ360_11_4_H_r_signed_ship"
+        ],
+        "build-product": [
+          "odin"
+        ],
+        "build-uid": [
+          "odin"
+        ]
+      },
+      "other_cdn_fields": {}
+    },
+    {
+      "key": "7edd7a7bc6be04b10d6cbb6547923489",
+      "kind": "build",
+      "objects": 6,
+      "derived_references": [],
+      "content_key_references": [
+        {
+          "source": "root",
+          "content_key": "027b10b3ab9185b85145b343fcecafdf",
+          "reason": "content key; not necessarily a CDN object name; TVFS builds use vfs-root for named extraction"
+        }
+      ],
+      "other_build_fields": {
+        "build-name": [
+          "rel_7547737_TU_J_3_30_v1_DL_A_signed_ship"
+        ],
+        "build-product": [
+          "Odin"
+        ],
+        "build-uid": [
+          "odin"
+        ]
+      },
+      "other_cdn_fields": {}
+    },
+    {
+      "key": "fde6f07509d55690b1a83a6a78f4e868",
+      "kind": "build",
+      "objects": 8,
+      "derived_references": [],
+      "content_key_references": [
+        {
+          "source": "root",
+          "content_key": "5754134baf8767def44cb254105e5ac5",
+          "reason": "content key; not necessarily a CDN object name; TVFS builds use vfs-root for named extraction"
+        }
+      ],
+      "other_build_fields": {
+        "build-name": [
+          "live_11846511_WZ340_6_10_B_r_signed_ship"
+        ],
+        "build-product": [
+          "odin"
+        ],
+        "build-uid": [
+          "odin"
+        ]
+      },
+      "other_cdn_fields": {}
+    },
+    {
+      "key": "fbc1dc6f6ee4bc024bf2e0f3af7e5e02",
+      "kind": "cdn",
+      "objects": 105,
+      "derived_references": [
+        {
+          "source": "archive-group",
+          "key": "4b5aaf8706880c7b7e115f9e5edc8db9",
+          "meaning": "client-generated combined index identity; not a required CDN object URL"
+        }
+      ],
+      "content_key_references": [],
+      "other_build_fields": {},
+      "other_cdn_fields": {}
+    },
+    {
+      "key": "6a25d5d105beed705cc47b6de642d738",
+      "kind": "build",
+      "objects": 8,
+      "derived_references": [],
+      "content_key_references": [
+        {
+          "source": "root",
+          "content_key": "efbe0222d788418d50eee77e4333ffe4",
+          "reason": "content key; not necessarily a CDN object name; TVFS builds use vfs-root for named extraction"
+        }
+      ],
+      "other_build_fields": {
+        "build-name": [
+          "live_11558592_WZ330_4_14_E_r_signed_ship"
+        ],
+        "build-product": [
+          "odin"
+        ],
+        "build-uid": [
+          "odin"
+        ]
+      },
+      "other_cdn_fields": {}
+    },
+    {
+      "key": "a112d5c3765671dfef35cbd34891260b",
+      "kind": "build",
+      "objects": 8,
+      "derived_references": [],
+      "content_key_references": [
+        {
+          "source": "root",
+          "content_key": "2aa0a9df7616eb512fe52b32035b0875",
+          "reason": "content key; not necessarily a CDN object name; TVFS builds use vfs-root for named extraction"
+        }
+      ],
+      "other_build_fields": {
+        "build-name": [
+          "live_9348574_TUY_5_13_G_R_signed_ship"
+        ],
+        "build-product": [
+          "odin"
+        ],
+        "build-uid": [
+          "odin"
+        ]
+      },
+      "other_cdn_fields": {}
+    },
+    {
+      "key": "57698f577b5cd92747b6c3b8ffcddd71",
+      "kind": "cdn",
+      "objects": 105,
+      "derived_references": [
+        {
+          "source": "archive-group",
+          "key": "4b5aaf8706880c7b7e115f9e5edc8db9",
+          "meaning": "client-generated combined index identity; not a required CDN object URL"
+        }
+      ],
+      "content_key_references": [],
+      "other_build_fields": {},
+      "other_cdn_fields": {}
+    },
+    {
+      "key": "858895e4d988c8f2b1f497d42a39f26c",
+      "kind": "cdn",
+      "objects": 458,
+      "derived_references": [
+        {
+          "source": "archive-group",
+          "key": "03d08a19b9165ada232b2e8aaceda9a7",
+          "meaning": "client-generated combined index identity; not a required CDN object URL"
+        },
+        {
+          "source": "patch-archive-group",
+          "key": "17aedcd54015fd9a0bfb2d8a017a449f",
+          "meaning": "client-generated combined index identity; not a required CDN object URL"
+        }
+      ],
+      "content_key_references": [],
+      "other_build_fields": {},
+      "other_cdn_fields": {}
+    },
+    {
+      "key": "c03ef918e45fab9c9c24a0f14067f9af",
+      "kind": "build",
+      "objects": 8,
+      "derived_references": [],
+      "content_key_references": [
+        {
+          "source": "root",
+          "content_key": "dad9c1bcd8338dc0efc5c134c75a4b7b",
+          "reason": "content key; not necessarily a CDN object name; TVFS builds use vfs-root for named extraction"
+        }
+      ],
+      "other_build_fields": {
+        "build-name": [
+          "live_11674731_WZ335_5_17_B_r_signed_ship"
+        ],
+        "build-product": [
+          "odin"
+        ],
+        "build-uid": [
+          "odin"
+        ]
+      },
+      "other_cdn_fields": {}
+    },
+    {
+      "key": "fc1dd0cae8ddc9880191b3dbcf6c36c6",
+      "kind": "build",
+      "objects": 8,
+      "derived_references": [],
+      "content_key_references": [
+        {
+          "source": "root",
+          "content_key": "f7809cea3d4ddcf0d4a6c4af2b270e77",
+          "reason": "content key; not necessarily a CDN object name; TVFS builds use vfs-root for named extraction"
+        }
+      ],
+      "other_build_fields": {
+        "build-name": [
+          "live_13050304_TU_WZ355_9_15_D_r_signed_ship"
+        ],
+        "build-product": [
+          "odin"
+        ],
+        "build-uid": [
+          "odin"
+        ]
+      },
+      "other_cdn_fields": {}
+    },
+    {
+      "key": "61a239afb216c49afe025eb2f9555c9e",
+      "kind": "build",
+      "objects": 8,
+      "derived_references": [],
+      "content_key_references": [
+        {
+          "source": "root",
+          "content_key": "fc6399c439e9aaa372730c69cd03b3f5",
+          "reason": "content key; not necessarily a CDN object name; TVFS builds use vfs-root for named extraction"
+        }
+      ],
+      "other_build_fields": {
+        "build-name": [
+          "live_12181591_WZ346_8_1_B_r_signed_ship"
+        ],
+        "build-product": [
+          "odin"
+        ],
+        "build-uid": [
+          "odin"
+        ]
+      },
+      "other_cdn_fields": {}
+    },
+    {
+      "key": "ff6cd0db23a012bffddc22d40c461be7",
+      "kind": "build",
+      "objects": 8,
+      "derived_references": [],
+      "content_key_references": [
+        {
+          "source": "root",
+          "content_key": "a119e3b7f8ecba8bad4bfabf4b30c63f",
+          "reason": "content key; not necessarily a CDN object name; TVFS builds use vfs-root for named extraction"
+        }
+      ],
+      "other_build_fields": {
+        "build-name": [
+          "magrel_12452741_WZ355_9_15_r_signed_ship"
+        ],
+        "build-product": [
+          "odin"
+        ],
+        "build-uid": [
+          "odin"
+        ]
+      },
+      "other_cdn_fields": {}
+    },
+    {
+      "key": "227264c48cc53ec84a09d798f0c85277",
+      "kind": "build",
+      "objects": 8,
+      "derived_references": [],
+      "content_key_references": [
+        {
+          "source": "root",
+          "content_key": "dd77d8d2f72a52be71b0e91965805dbc",
+          "reason": "content key; not necessarily a CDN object name; TVFS builds use vfs-root for named extraction"
+        }
+      ],
+      "other_build_fields": {
+        "build-name": [
+          "magrel_13142214_WZ360_11_4_r_signed_ship"
+        ],
+        "build-product": [
+          "odin"
+        ],
+        "build-uid": [
+          "odin"
+        ]
+      },
+      "other_cdn_fields": {}
+    },
+    {
+      "key": "8eaf2a9454608501004d28c7d9c09ec7",
+      "kind": "cdn",
+      "objects": 424,
+      "derived_references": [
+        {
+          "source": "archive-group",
+          "key": "3e1a4bbf03179fc1215fd1108dedc014",
+          "meaning": "client-generated combined index identity; not a required CDN object URL"
+        },
+        {
+          "source": "patch-archive-group",
+          "key": "17aedcd54015fd9a0bfb2d8a017a449f",
+          "meaning": "client-generated combined index identity; not a required CDN object URL"
+        }
+      ],
+      "content_key_references": [],
+      "other_build_fields": {},
+      "other_cdn_fields": {}
+    },
+    {
+      "key": "9d46541f614b1b4fbcf054893fab5cf6",
+      "kind": "build",
+      "objects": 6,
+      "derived_references": [],
+      "content_key_references": [
+        {
+          "source": "root",
+          "content_key": "2572d55de49cf0650c8e4207d9997322",
+          "reason": "content key; not necessarily a CDN object name; TVFS builds use vfs-root for named extraction"
+        }
+      ],
+      "other_build_fields": {
+        "build-name": [
+          "magma_22330203_vk_valkyrie_brynhildr_r_ship"
+        ],
+        "build-product": [
+          "brynhildr_odin"
+        ],
+        "feature-placeholder": [
+          "true"
+        ]
+      },
+      "other_cdn_fields": {}
+    },
+    {
+      "key": "4b0a6862308d753143dcb7b0a1d1c6db",
+      "kind": "build",
+      "objects": 8,
+      "derived_references": [],
+      "content_key_references": [
+        {
+          "source": "root",
+          "content_key": "642cf2d85ebbbd39c5f59064e018421d",
+          "reason": "content key; not necessarily a CDN object name; TVFS builds use vfs-root for named extraction"
+        }
+      ],
+      "other_build_fields": {
+        "build-name": [
+          "live_14699633_TU_LAZE_2_21_I_r_signed_ship"
+        ],
+        "build-product": [
+          "odin"
+        ],
+        "build-uid": [
+          "odin"
+        ]
+      },
+      "other_cdn_fields": {}
+    },
+    {
+      "key": "0467e4747ad93e8e841c0233c73b42d7",
+      "kind": "cdn",
+      "objects": 458,
+      "derived_references": [
+        {
+          "source": "archive-group",
+          "key": "34a704fa5dfd259523e6d1fbc6004a0e",
+          "meaning": "client-generated combined index identity; not a required CDN object URL"
+        },
+        {
+          "source": "patch-archive-group",
+          "key": "17aedcd54015fd9a0bfb2d8a017a449f",
+          "meaning": "client-generated combined index identity; not a required CDN object URL"
+        }
+      ],
+      "content_key_references": [],
+      "other_build_fields": {},
+      "other_cdn_fields": {}
+    },
+    {
+      "key": "a85168fd2a6dad54ab6e417015c4e3a5",
+      "kind": "build",
+      "objects": 8,
+      "derived_references": [],
+      "content_key_references": [
+        {
+          "source": "root",
+          "content_key": "0ee860e13adc6cf8a94dbfea330d0e43",
+          "reason": "content key; not necessarily a CDN object name; TVFS builds use vfs-root for named extraction"
+        }
+      ],
+      "other_build_fields": {
+        "build-name": [
+          "sub_12273715_ETU_WZ351_8_24_r_signed_ship"
+        ],
+        "build-product": [
+          "odin"
+        ],
+        "build-uid": [
+          "odin"
+        ]
+      },
+      "other_cdn_fields": {}
+    },
+    {
+      "key": "7efd43b9b2a5bdffb5e6c468f69e54b1",
+      "kind": "build",
+      "objects": 8,
+      "derived_references": [],
+      "content_key_references": [
+        {
+          "source": "root",
+          "content_key": "208902857bc474e691081f15d11d6137",
+          "reason": "content key; not necessarily a CDN object name; TVFS builds use vfs-root for named extraction"
+        }
+      ],
+      "other_build_fields": {
+        "build-name": [
+          "live_11642448_WZ335_5_17_A_r_signed_ship"
+        ],
+        "build-product": [
+          "odin"
+        ],
+        "build-uid": [
+          "odin"
+        ]
+      },
+      "other_cdn_fields": {}
+    },
+    {
+      "key": "caac67bae8c5cbe4d2f2f60c4b877295",
+      "kind": "build",
+      "objects": 8,
+      "derived_references": [],
+      "content_key_references": [
+        {
+          "source": "root",
+          "content_key": "552a25eedc3f12d2053c8c9f3cb7b1bd",
+          "reason": "content key; not necessarily a CDN object name; TVFS builds use vfs-root for named extraction"
+        }
+      ],
+      "other_build_fields": {
+        "build-name": [
+          "live_11343887_WZ325_3_15_D_r_signed_ship"
+        ],
+        "build-product": [
+          "odin"
+        ],
+        "build-uid": [
+          "odin"
+        ]
+      },
+      "other_cdn_fields": {}
+    },
+    {
+      "key": "bac2b89e7596aebef37b724a056a8d3e",
+      "kind": "build",
+      "objects": 8,
+      "derived_references": [],
+      "content_key_references": [
+        {
+          "source": "root",
+          "content_key": "fa62ff42dd698b8ed14a265257b1f90c",
+          "reason": "content key; not necessarily a CDN object name; TVFS builds use vfs-root for named extraction"
+        }
+      ],
+      "other_build_fields": {
+        "build-name": [
+          "magrel_11591958_WZ335_5_17_r_signed_ship"
+        ],
+        "build-product": [
+          "odin"
+        ],
+        "build-uid": [
+          "odin"
+        ]
+      },
+      "other_cdn_fields": {}
+    },
+    {
+      "key": "62194b2ae6896d23aaade2266043ef0b",
+      "kind": "build",
+      "objects": 8,
+      "derived_references": [],
+      "content_key_references": [
+        {
+          "source": "root",
+          "content_key": "184f3d46d2361fe312a1e8fe08e856eb",
+          "reason": "content key; not necessarily a CDN object name; TVFS builds use vfs-root for named extraction"
+        }
+      ],
+      "other_build_fields": {
+        "build-name": [
+          "live_11115544_WZ320_2_7_B_r_signed_ship"
+        ],
+        "build-product": [
+          "odin"
+        ],
+        "build-uid": [
+          "odin"
+        ]
+      },
+      "other_cdn_fields": {}
+    },
+    {
+      "key": "8429ca4513e894bc28232b61ad1321fd",
+      "kind": "build",
+      "objects": 8,
+      "derived_references": [],
+      "content_key_references": [
+        {
+          "source": "root",
+          "content_key": "5c384942f0e01815fccaf2b4feb8a97b",
+          "reason": "content key; not necessarily a CDN object name; TVFS builds use vfs-root for named extraction"
+        }
+      ],
+      "other_build_fields": {
+        "build-name": [
+          "magrel_11744825_WZ340_6_10_r_signed_ship"
+        ],
+        "build-product": [
+          "odin"
+        ],
+        "build-uid": [
+          "odin"
+        ]
+      },
+      "other_cdn_fields": {}
+    },
+    {
+      "key": "86c5a0d35d6e309db0c4347e36b4e2b7",
+      "kind": "build",
+      "objects": 8,
+      "derived_references": [],
+      "content_key_references": [
+        {
+          "source": "root",
+          "content_key": "2be4ef6566d71058c8af6cc5d480b07c",
+          "reason": "content key; not necessarily a CDN object name; TVFS builds use vfs-root for named extraction"
+        }
+      ],
+      "other_build_fields": {
+        "build-name": [
+          "live_14910993_TU_LAZE_2_21_L_r_signed_ship"
+        ],
+        "build-product": [
+          "odin"
+        ],
+        "build-uid": [
+          "odin"
+        ]
+      },
+      "other_cdn_fields": {}
+    },
+    {
+      "key": "2196c01e3a530f073b22f2e83707a403",
+      "kind": "build",
+      "objects": 8,
+      "derived_references": [],
+      "content_key_references": [
+        {
+          "source": "root",
+          "content_key": "4d5b7cbebb17707959424a77248f97ad",
+          "reason": "content key; not necessarily a CDN object name; TVFS builds use vfs-root for named extraction"
+        }
+      ],
+      "other_build_fields": {
+        "build-name": [
+          "live_10909157_TUGvk_1_7_A2_R_signed_ship"
+        ],
+        "build-product": [
+          "odin"
+        ],
+        "build-uid": [
+          "odin"
+        ]
+      },
+      "other_cdn_fields": {}
+    },
+    {
+      "key": "1653bbeb97ee8606ab32bf08130ca47d",
+      "kind": "cdn",
+      "objects": 346,
+      "derived_references": [
+        {
+          "source": "archive-group",
+          "key": "95fb0c520139f11717ebfa692fa084ab",
+          "meaning": "client-generated combined index identity; not a required CDN object URL"
+        },
+        {
+          "source": "patch-archive-group",
+          "key": "7a8734f6fa5989df39c7f93bccfbe52d",
+          "meaning": "client-generated combined index identity; not a required CDN object URL"
+        }
+      ],
+      "content_key_references": [],
+      "other_build_fields": {},
+      "other_cdn_fields": {}
+    },
+    {
+      "key": "dcb57bd74ffbcc7bd3e702008f57f28f",
+      "kind": "build",
+      "objects": 8,
+      "derived_references": [],
+      "content_key_references": [
+        {
+          "source": "root",
+          "content_key": "bd9903733707d6eb99f25052fd1943ae",
+          "reason": "content key; not necessarily a CDN object name; TVFS builds use vfs-root for named extraction"
+        }
+      ],
+      "other_build_fields": {
+        "build-name": [
+          "live_15791281_TU_LAZE_2_21_V_r_signed_ship"
+        ],
+        "build-product": [
+          "odin"
+        ],
+        "build-uid": [
+          "odin"
+        ]
+      },
+      "other_cdn_fields": {}
+    },
+    {
+      "key": "f286473e4140bc4bb60ad4512a981cf9",
+      "kind": "cdn",
+      "objects": 105,
+      "derived_references": [
+        {
+          "source": "archive-group",
+          "key": "4b5aaf8706880c7b7e115f9e5edc8db9",
+          "meaning": "client-generated combined index identity; not a required CDN object URL"
+        }
+      ],
+      "content_key_references": [],
+      "other_build_fields": {},
+      "other_cdn_fields": {}
+    },
+    {
+      "key": "3effd26adcd9ed79a6ec082c9c48ce42",
+      "kind": "build",
+      "objects": 8,
+      "derived_references": [],
+      "content_key_references": [
+        {
+          "source": "root",
+          "content_key": "7883be946d64c655a5ff3ce5995f2b87",
+          "reason": "content key; not necessarily a CDN object name; TVFS builds use vfs-root for named extraction"
+        }
+      ],
+      "other_build_fields": {
+        "build-name": [
+          "live_10930490_TUGvk_1_7_B_R_signed_ship"
+        ],
+        "build-product": [
+          "odin"
+        ],
+        "build-uid": [
+          "odin"
+        ]
+      },
+      "other_cdn_fields": {}
+    },
+    {
+      "key": "1f6a84f3171c65e2c0e3d741e7d0afd3",
+      "kind": "build",
+      "objects": 8,
+      "derived_references": [],
+      "content_key_references": [
+        {
+          "source": "root",
+          "content_key": "ed5f865bc30e04603d0d875a48897002",
+          "reason": "content key; not necessarily a CDN object name; TVFS builds use vfs-root for named extraction"
+        }
+      ],
+      "other_build_fields": {
+        "build-name": [
+          "live_12428344_TU_WZ_351_8_24_C_r_signed_ship"
+        ],
+        "build-product": [
+          "odin"
+        ],
+        "build-uid": [
+          "odin"
+        ]
+      },
+      "other_cdn_fields": {}
+    },
+    {
+      "key": "5c48b7fc5825129c383ca8beb45cff9f",
+      "kind": "build",
+      "objects": 8,
+      "derived_references": [],
+      "content_key_references": [
+        {
+          "source": "root",
+          "content_key": "440fae4624ee582f05e5debdc2fab2bf",
+          "reason": "content key; not necessarily a CDN object name; TVFS builds use vfs-root for named extraction"
+        }
+      ],
+      "other_build_fields": {
+        "build-name": [
+          "sub_12087051_ETU_WZ346_8_1_r_signed_ship"
+        ],
+        "build-product": [
+          "odin"
+        ],
+        "build-uid": [
+          "odin"
+        ]
+      },
+      "other_cdn_fields": {}
+    },
+    {
+      "key": "c173bb7d99de90c821b944cd74a2aec4",
+      "kind": "build",
+      "objects": 8,
+      "derived_references": [],
+      "content_key_references": [
+        {
+          "source": "root",
+          "content_key": "e42d7cf968e073badfb9dc5836ad4dbf",
+          "reason": "content key; not necessarily a CDN object name; TVFS builds use vfs-root for named extraction"
+        }
+      ],
+      "other_build_fields": {
+        "build-name": [
+          "live_15119212_TU_LAZE_2_21_O_r_signed_ship"
+        ],
+        "build-product": [
+          "odin"
+        ],
+        "build-uid": [
+          "odin"
+        ]
+      },
+      "other_cdn_fields": {}
+    },
+    {
+      "key": "2e98a17a59123c7e53f05599947e5801",
+      "kind": "cdn",
+      "objects": 356,
+      "derived_references": [
+        {
+          "source": "archive-group",
+          "key": "08991a2e1e3f51c118e9a753ad22dcad",
+          "meaning": "client-generated combined index identity; not a required CDN object URL"
+        },
+        {
+          "source": "patch-archive-group",
+          "key": "b897ff9624a2d56bfad2c0ad2cafe662",
+          "meaning": "client-generated combined index identity; not a required CDN object URL"
+        }
+      ],
+      "content_key_references": [],
+      "other_build_fields": {},
+      "other_cdn_fields": {}
+    },
+    {
+      "key": "a8179b4eb29562ed8b0b4b3e547fd85a",
+      "kind": "build",
+      "objects": 8,
+      "derived_references": [],
+      "content_key_references": [
+        {
+          "source": "root",
+          "content_key": "75d963dcaa16254c5894be095b3fa473",
+          "reason": "content key; not necessarily a CDN object name; TVFS builds use vfs-root for named extraction"
+        }
+      ],
+      "other_build_fields": {
+        "build-name": [
+          "live_15244192_TU_LAZE_2_21_P_r_signed_ship"
+        ],
+        "build-product": [
+          "odin"
+        ],
+        "build-uid": [
+          "odin"
+        ]
+      },
+      "other_cdn_fields": {}
+    },
+    {
+      "key": "59bd76ebf5fc2b41535ccf802dd3b59e",
+      "kind": "build",
+      "objects": 8,
+      "derived_references": [],
+      "content_key_references": [
+        {
+          "source": "root",
+          "content_key": "659582821b76a2c113aca5a7bac69cb9",
+          "reason": "content key; not necessarily a CDN object name; TVFS builds use vfs-root for named extraction"
+        }
+      ],
+      "other_build_fields": {
+        "build-name": [
+          "live_18290054_TU_WZSUNSET_1_8_C_r_signed_ship"
+        ],
+        "build-product": [
+          "odin"
+        ],
+        "build-uid": [
+          "odin"
+        ]
+      },
+      "other_cdn_fields": {}
+    },
+    {
+      "key": "4fab5e8ceb5eaaddaa82015517a036c7",
+      "kind": "build",
+      "objects": 8,
+      "derived_references": [],
+      "content_key_references": [
+        {
+          "source": "root",
+          "content_key": "0ee860e13adc6cf8a94dbfea330d0e43",
+          "reason": "content key; not necessarily a CDN object name; TVFS builds use vfs-root for named extraction"
+        }
+      ],
+      "other_build_fields": {
+        "build-name": [
+          "sub_12273715_ETU_WZ351_8_24_rb_signed_ship"
+        ],
+        "build-product": [
+          "odin"
+        ],
+        "build-uid": [
+          "odin"
+        ]
+      },
+      "other_cdn_fields": {}
+    },
+    {
+      "key": "5ca56fcabfba76fc2e966ac115ebd9e4",
+      "kind": "cdn",
+      "objects": 458,
+      "derived_references": [
+        {
+          "source": "archive-group",
+          "key": "65742737e35f81ebef576012a72bc865",
+          "meaning": "client-generated combined index identity; not a required CDN object URL"
+        },
+        {
+          "source": "patch-archive-group",
+          "key": "17aedcd54015fd9a0bfb2d8a017a449f",
+          "meaning": "client-generated combined index identity; not a required CDN object URL"
+        }
+      ],
+      "content_key_references": [],
+      "other_build_fields": {},
+      "other_cdn_fields": {}
+    },
+    {
+      "key": "b166bdb29359f05a2e876423f413a89c",
+      "kind": "build",
+      "objects": 6,
+      "derived_references": [],
+      "content_key_references": [
+        {
+          "source": "root",
+          "content_key": "c52d4860acaee0fbf6d57f8dfb36ca27",
+          "reason": "content key; not necessarily a CDN object name; TVFS builds use vfs-root for named extraction"
+        }
+      ],
+      "other_build_fields": {
+        "build-name": [
+          "rel_8403677_TU_T_12_10_DWL_R_signed_ship"
+        ],
+        "build-product": [
+          "odin"
+        ],
+        "build-uid": [
+          "odin"
+        ]
+      },
+      "other_cdn_fields": {}
+    },
+    {
+      "key": "243b0b62b90deed25dc83f6ede34b046",
+      "kind": "build",
+      "objects": 8,
+      "derived_references": [],
+      "content_key_references": [
+        {
+          "source": "root",
+          "content_key": "e592d705f0aef6cdb44785ddea8c26fb",
+          "reason": "content key; not necessarily a CDN object name; TVFS builds use vfs-root for named extraction"
+        }
+      ],
+      "other_build_fields": {
+        "build-name": [
+          "live_15546934_TU_LAZE_2_21_S_r_signed_ship"
+        ],
+        "build-product": [
+          "odin"
+        ],
+        "build-uid": [
+          "odin"
+        ]
+      },
+      "other_cdn_fields": {}
+    },
+    {
+      "key": "2b6a0e20b865c2ef01a4b2c72d177942",
+      "kind": "build",
+      "objects": 8,
+      "derived_references": [],
+      "content_key_references": [
+        {
+          "source": "root",
+          "content_key": "d33460cee1c6d02b8691c955f3e3b362",
+          "reason": "content key; not necessarily a CDN object name; TVFS builds use vfs-root for named extraction"
+        }
+      ],
+      "other_build_fields": {
+        "build-name": [
+          "live_11691177_WZ335_5_17_C_r_signed_ship"
+        ],
+        "build-product": [
+          "odin"
+        ],
+        "build-uid": [
+          "odin"
+        ]
+      },
+      "other_cdn_fields": {}
+    },
+    {
+      "key": "f2a2dfa1449de0c66f5d7b0ae31fd004",
+      "kind": "cdn",
+      "objects": 398,
+      "derived_references": [
+        {
+          "source": "archive-group",
+          "key": "3fefbc46fd5fc5ec4ba593a49a75bd34",
+          "meaning": "client-generated combined index identity; not a required CDN object URL"
+        },
+        {
+          "source": "patch-archive-group",
+          "key": "17aedcd54015fd9a0bfb2d8a017a449f",
+          "meaning": "client-generated combined index identity; not a required CDN object URL"
+        }
+      ],
+      "content_key_references": [],
+      "other_build_fields": {},
+      "other_cdn_fields": {}
+    },
+    {
+      "key": "05336972b890c1681cf2e12ecbfc0b40",
+      "kind": "build",
+      "objects": 8,
+      "derived_references": [],
+      "content_key_references": [
+        {
+          "source": "root",
+          "content_key": "1f32c28e2ee386c985c25fabcebe72d7",
+          "reason": "content key; not necessarily a CDN object name; TVFS builds use vfs-root for named extraction"
+        }
+      ],
+      "other_build_fields": {
+        "build-name": [
+          "live_8643996_TU_175_2_10_D_R_signed_ship"
+        ],
+        "build-product": [
+          "odin"
+        ],
+        "build-uid": [
+          "odin"
+        ]
+      },
+      "other_cdn_fields": {}
+    },
+    {
+      "key": "5c1fce9025664b84c54d6d00b482e1e8",
+      "kind": "build",
+      "objects": 8,
+      "derived_references": [],
+      "content_key_references": [
+        {
+          "source": "root",
+          "content_key": "86da218dec44a413b9ac2ea32de32951",
+          "reason": "content key; not necessarily a CDN object name; TVFS builds use vfs-root for named extraction"
+        }
+      ],
+      "other_build_fields": {
+        "build-name": [
+          "live_14023464_TU_LAZE_2_21_A2_r_signed_ship"
+        ],
+        "build-product": [
+          "odin"
+        ],
+        "build-uid": [
+          "odin"
+        ]
+      },
+      "other_cdn_fields": {}
+    },
+    {
+      "key": "0bed5e967f17d258a971ff7e302baf5b",
+      "kind": "build",
+      "objects": 8,
+      "derived_references": [],
+      "content_key_references": [
+        {
+          "source": "root",
+          "content_key": "5507c4e5310c8b7867d67d7c63c92657",
+          "reason": "content key; not necessarily a CDN object name; TVFS builds use vfs-root for named extraction"
+        }
+      ],
+      "other_build_fields": {
+        "build-name": [
+          "live_11751758_WZ335_5_17_E_R_signed_ship"
+        ],
+        "build-product": [
+          "odin"
+        ],
+        "build-uid": [
+          "odin"
+        ]
+      },
+      "other_cdn_fields": {}
+    },
+    {
+      "key": "51690445c62cf7270f9152afea0cc115",
+      "kind": "cdn",
+      "objects": 438,
+      "derived_references": [
+        {
+          "source": "archive-group",
+          "key": "e7deddc92c19198e17278cccff3735a9",
+          "meaning": "client-generated combined index identity; not a required CDN object URL"
+        },
+        {
+          "source": "patch-archive-group",
+          "key": "17aedcd54015fd9a0bfb2d8a017a449f",
+          "meaning": "client-generated combined index identity; not a required CDN object URL"
+        }
+      ],
+      "content_key_references": [],
+      "other_build_fields": {},
+      "other_cdn_fields": {}
+    },
+    {
+      "key": "8ea1297e80f07598e0cd10429501f043",
+      "kind": "cdn",
+      "objects": 398,
+      "derived_references": [
+        {
+          "source": "archive-group",
+          "key": "f755a57c514f70e1f52ac1b87036bf16",
+          "meaning": "client-generated combined index identity; not a required CDN object URL"
+        },
+        {
+          "source": "patch-archive-group",
+          "key": "17aedcd54015fd9a0bfb2d8a017a449f",
+          "meaning": "client-generated combined index identity; not a required CDN object URL"
+        }
+      ],
+      "content_key_references": [],
+      "other_build_fields": {},
+      "other_cdn_fields": {}
+    },
+    {
+      "key": "9cf14092e7d4cc4bfa310a2f43d94ea9",
+      "kind": "build",
+      "objects": 8,
+      "derived_references": [],
+      "content_key_references": [
+        {
+          "source": "root",
+          "content_key": "e8202ca45e488ebc30e96475a1477134",
+          "reason": "content key; not necessarily a CDN object name; TVFS builds use vfs-root for named extraction"
+        }
+      ],
+      "other_build_fields": {
+        "build-name": [
+          "live_13113888_TU_WZ355_9_15_E_r_signed_ship"
+        ],
+        "build-product": [
+          "odin"
+        ],
+        "build-uid": [
+          "odin"
+        ]
+      },
+      "other_cdn_fields": {}
+    },
+    {
+      "key": "1ae3e76b4a348a8c268cc1561a7c5842",
+      "kind": "build",
+      "objects": 8,
+      "derived_references": [],
+      "content_key_references": [
+        {
+          "source": "root",
+          "content_key": "5a7dddbab141b1063fdb6b2a8d9311f4",
+          "reason": "content key; not necessarily a CDN object name; TVFS builds use vfs-root for named extraction"
+        }
+      ],
+      "other_build_fields": {
+        "build-name": [
+          "live_11948640_WZ340_6_10_E_r_signed_ship"
+        ],
+        "build-product": [
+          "odin"
+        ],
+        "build-uid": [
+          "odin"
+        ]
+      },
+      "other_cdn_fields": {}
+    },
+    {
+      "key": "f1609561eee4d2b40cc96e7d808b1631",
+      "kind": "build",
+      "objects": 8,
+      "derived_references": [],
+      "content_key_references": [
+        {
+          "source": "root",
+          "content_key": "a43167a979ff54137f0976463e436d32",
+          "reason": "content key; not necessarily a CDN object name; TVFS builds use vfs-root for named extraction"
+        }
+      ],
+      "other_build_fields": {
+        "build-name": [
+          "live_14299935_TU_LAZE_2_21_D_r_signed_ship"
+        ],
+        "build-product": [
+          "odin"
+        ],
+        "build-uid": [
+          "odin"
+        ]
+      },
+      "other_cdn_fields": {}
+    },
+    {
+      "key": "f3a9384778c4777177e9a91f9d3163e9",
+      "kind": "cdn",
+      "objects": 370,
+      "derived_references": [
+        {
+          "source": "archive-group",
+          "key": "dcb35b1ca670e73deb1d86a2c1fca43e",
+          "meaning": "client-generated combined index identity; not a required CDN object URL"
+        },
+        {
+          "source": "patch-archive-group",
+          "key": "b897ff9624a2d56bfad2c0ad2cafe662",
+          "meaning": "client-generated combined index identity; not a required CDN object URL"
+        }
+      ],
+      "content_key_references": [],
+      "other_build_fields": {},
+      "other_cdn_fields": {}
+    }
+  ]
+}

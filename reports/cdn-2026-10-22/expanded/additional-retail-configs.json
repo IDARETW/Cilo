@@ -1,0 +1,212 @@
+[
+  {
+    "product": "odin",
+    "build": "7243209",
+    "build_config": "f15d9d3dced303bd94b215d47987cb04",
+    "checked_at_utc": "2026-10-22T20:17:44.317401+00:00",
+    "timestamp_basis": "End of the endpoint survey (output-file modification time), not the individual request start.",
+    "stage": "config_verified",
+    "scope": "GET and exact MD5 for build configs only; payloads not checked by this observation.",
+    "verified_bases": [
+      "http://blzddist1-a.akamaihd.net/tpr/odin",
+      "https://blzddist1-a.akamaihd.net/tpr/odin",
+      "https://blzddistkr1-a.akamaihd.net/tpr/odin",
+      "http://blzddistkr1-a.akamaihd.net/tpr/odin"
+    ]
+  },
+  {
+    "product": "odin",
+    "build": "7256861",
+    "build_config": "238ac6541d796edadf352212fb4c044a",
+    "checked_at_utc": "2026-10-22T20:17:44.317401+00:00",
+    "timestamp_basis": "End of the endpoint survey (output-file modification time), not the individual request start.",
+    "stage": "config_verified",
+    "scope": "GET and exact MD5 for build configs only; payloads not checked by this observation.",
+    "verified_bases": [
+      "http://blzddist1-a.akamaihd.net/tpr/odin",
+      "https://blzddist1-a.akamaihd.net/tpr/odin",
+      "https://blzddistkr1-a.akamaihd.net/tpr/odin",
+      "http://blzddistkr1-a.akamaihd.net/tpr/odin"
+    ]
+  },
+  {
+    "product": "odin",
+    "build": "7274739",
+    "build_config": "12e621f4fa7d684e48022e7b362f396e",
+    "checked_at_utc": "2026-10-22T20:17:44.317401+00:00",
+    "timestamp_basis": "End of the endpoint survey (output-file modification time), not the individual request start.",
+    "stage": "config_verified",
+    "scope": "GET and exact MD5 for build configs only; payloads not checked by this observation.",
+    "verified_bases": [
+      "http://blzddist1-a.akamaihd.net/tpr/odin",
+      "https://blzddist1-a.akamaihd.net/tpr/odin",
+      "https://blzddistkr1-a.akamaihd.net/tpr/odin",
+      "http://blzddistkr1-a.akamaihd.net/tpr/odin"
+    ]
+  },
+  {
+    "product": "odin",
+    "build": "7276347",
+    "build_config": "c1dd35f0689b44fa2814a2966aa950a3",
+    "checked_at_utc": "2026-10-22T20:17:44.317401+00:00",
+    "timestamp_basis": "End of the endpoint survey (output-file modification time), not the individual request start.",
+    "stage": "config_verified",
+    "scope": "GET and exact MD5 for build configs only; payloads not checked by this observation.",
+    "verified_bases": [
+      "http://blzddist1-a.akamaihd.net/tpr/odin",
+      "https://blzddist1-a.akamaihd.net/tpr/odin",
+      "https://blzddistkr1-a.akamaihd.net/tpr/odin",
+      "http://blzddistkr1-a.akamaihd.net/tpr/odin"
+    ]
+  },
+  {
+    "product": "odin",
+    "build": "11116736",
+    "build_config": "2ad3af877cd717561b96c9e3a7198db9",
+    "checked_at_utc": "2026-10-22T20:17:44.317401+00:00",
+    "timestamp_basis": "End of the endpoint survey (output-file modification time), not the individual request start.",
+    "stage": "config_verified",
+    "scope": "GET and exact MD5 for build configs only; payloads not checked by this observation.",
+    "verified_bases": [
+      "http://blzddist1-a.akamaihd.net/tpr/odin",
+      "https://blzddist1-a.akamaihd.net/tpr/odin",
+      "https://blzddistkr1-a.akamaihd.net/tpr/odin",
+      "http://blzddistkr1-a.akamaihd.net/tpr/odin"
+    ]
+  },
+  {
+    "product": "odin",
+    "build": "11155708",
+    "build_config": "7226c2a891dc9d7faec1a93d15d9bfb1",
+    "checked_at_utc": "2026-10-22T20:17:44.317401+00:00",
+    "timestamp_basis": "End of the endpoint survey (output-file modification time), not the individual request start.",
+    "stage": "config_verified",
+    "scope": "GET and exact MD5 for build configs only; payloads not checked by this observation.",
+    "verified_bases": [
+      "http://blzddist1-a.akamaihd.net/tpr/odin",
+      "https://blzddist1-a.akamaihd.net/tpr/odin",
+      "https://blzddistkr1-a.akamaihd.net/tpr/odin",
+      "http://blzddistkr1-a.akamaihd.net/tpr/odin"
+    ]
+  },
+  {
+    "product": "odin",
+    "build": "11222167",
+    "build_config": "b02fa6b4cf5a595e3d34b5a04227a45a",
+    "checked_at_utc": "2026-10-22T20:17:44.317401+00:00",
+    "timestamp_basis": "End of the endpoint survey (output-file modification time), not the individual request start.",
+    "stage": "config_verified",
+    "scope": "GET and exact MD5 for build configs only; payloads not checked by this observation.",
+    "verified_bases": [
+      "http://blzddist1-a.akamaihd.net/tpr/odin",
+      "https://blzddist1-a.akamaihd.net/tpr/odin",
+      "https://blzddistkr1-a.akamaihd.net/tpr/odin",
+      "http://blzddistkr1-a.akamaihd.net/tpr/odin"
+    ]
+  },
+  {
+    "product": "odin",
+    "build": "11227632",
+    "build_config": "52d8fae9961bb41d6e251a119d585e5e",
+    "checked_at_utc": "2026-10-22T20:17:44.317401+00:00",
+    "timestamp_basis": "End of the endpoint survey (output-file modification time), not the individual request start.",
+    "stage": "config_verified",
+    "scope": "GET and exact MD5 for build configs only; payloads not checked by this observation.",
+    "verified_bases": [
+      "http://blzddist1-a.akamaihd.net/tpr/odin",
+      "https://blzddist1-a.akamaihd.net/tpr/odin",
+      "https://blzddistkr1-a.akamaihd.net/tpr/odin",
+      "http://blzddistkr1-a.akamaihd.net/tpr/odin"
+    ]
+  },
+  {
+    "product": "odin",
+    "build": "11281361",
+    "build_config": "52d8fae9961bb41d6e251a119d585e5e",
+    "checked_at_utc": "2026-10-22T20:17:44.317401+00:00",
+    "timestamp_basis": "End of the endpoint survey (output-file modification time), not the individual request start.",
+    "stage": "config_verified",
+    "scope": "GET and exact MD5 for build configs only; payloads not checked by this observation.",
+    "verified_bases": [
+      "http://blzddist1-a.akamaihd.net/tpr/odin",
+      "https://blzddist1-a.akamaihd.net/tpr/odin",
+      "https://blzddistkr1-a.akamaihd.net/tpr/odin",
+      "http://blzddistkr1-a.akamaihd.net/tpr/odin"
+    ]
+  },
+  {
+    "product": "odin",
+    "build": "11330025",
+    "build_config": "b4df96a5483a2627e894b49fbc85591c",
+    "checked_at_utc": "2026-10-22T20:17:44.317401+00:00",
+    "timestamp_basis": "End of the endpoint survey (output-file modification time), not the individual request start.",
+    "stage": "config_verified",
+    "scope": "GET and exact MD5 for build configs only; payloads not checked by this observation.",
+    "verified_bases": [
+      "http://blzddist1-a.akamaihd.net/tpr/odin",
+      "https://blzddist1-a.akamaihd.net/tpr/odin",
+      "https://blzddistkr1-a.akamaihd.net/tpr/odin",
+      "http://blzddistkr1-a.akamaihd.net/tpr/odin"
+    ]
+  },
+  {
+    "product": "odin",
+    "build": "11364056",
+    "build_config": "bbea53e6a6c2bc27c9170565c7c0fa37",
+    "checked_at_utc": "2026-10-22T20:17:44.317401+00:00",
+    "timestamp_basis": "End of the endpoint survey (output-file modification time), not the individual request start.",
+    "stage": "config_verified",
+    "scope": "GET and exact MD5 for build configs only; payloads not checked by this observation.",
+    "verified_bases": [
+      "http://blzddist1-a.akamaihd.net/tpr/odin",
+      "https://blzddist1-a.akamaihd.net/tpr/odin",
+      "https://blzddistkr1-a.akamaihd.net/tpr/odin",
+      "http://blzddistkr1-a.akamaihd.net/tpr/odin"
+    ]
+  },
+  {
+    "product": "odin",
+    "build": "11383760",
+    "build_config": "15da05151846cae6bd91477b516b0607",
+    "checked_at_utc": "2026-10-22T20:17:44.317401+00:00",
+    "timestamp_basis": "End of the endpoint survey (output-file modification time), not the individual request start.",
+    "stage": "config_verified",
+    "scope": "GET and exact MD5 for build configs only; payloads not checked by this observation.",
+    "verified_bases": [
+      "http://blzddist1-a.akamaihd.net/tpr/odin",
+      "https://blzddist1-a.akamaihd.net/tpr/odin",
+      "https://blzddistkr1-a.akamaihd.net/tpr/odin",
+      "http://blzddistkr1-a.akamaihd.net/tpr/odin"
+    ]
+  },
+  {
+    "product": "odin",
+    "build": "11419693",
+    "build_config": "c801fcb80d0d9227e6ac1f61bb7a95cb",
+    "checked_at_utc": "2026-10-22T20:17:44.317401+00:00",
+    "timestamp_basis": "End of the endpoint survey (output-file modification time), not the individual request start.",
+    "stage": "config_verified",
+    "scope": "GET and exact MD5 for build configs only; payloads not checked by this observation.",
+    "verified_bases": [
+      "http://blzddist1-a.akamaihd.net/tpr/odin",
+      "https://blzddist1-a.akamaihd.net/tpr/odin",
+      "https://blzddistkr1-a.akamaihd.net/tpr/odin",
+      "http://blzddistkr1-a.akamaihd.net/tpr/odin"
+    ]
+  },
+  {
+    "product": "odin",
+    "build": "11494759",
+    "build_config": "02d638c858724155c494e625f736a166",
+    "checked_at_utc": "2026-10-22T20:17:44.317401+00:00",
+    "timestamp_basis": "End of the endpoint survey (output-file modification time), not the individual request start.",
+    "stage": "config_verified",
+    "scope": "GET and exact MD5 for build configs only; payloads not checked by this observation.",
+    "verified_bases": [
+      "http://blzddist1-a.akamaihd.net/tpr/odin",
+      "https://blzddist1-a.akamaihd.net/tpr/odin",
+      "https://blzddistkr1-a.akamaihd.net/tpr/odin",
+      "http://blzddistkr1-a.akamaihd.net/tpr/odin"
+    ]
+  }
+]

@@ -1,0 +1,172 @@
+{
+  "scope": "Recorded public endpoint observations; no full game-build verification.",
+  "retail_builds": 315,
+  "retail_build_configs_verified": 101,
+  "retail_config_only_gains": 14,
+  "original_retail_sample_checks": 87,
+  "retail_samples_verified": 86,
+  "family_build_records": 2192,
+  "family_products": 27,
+  "family_distinct_config_requests": 3917,
+  "family_raw_hash_unverified": 187,
+  "family_configs_verified": 119,
+  "endpoint_results": [
+    {
+      "base": "http://level3.blizzard.com/tpr/odin",
+      "requests": 315,
+      "verified": 87,
+      "statuses": {
+        "403": 209,
+        "transport": 19,
+        "200": 87
+      }
+    },
+    {
+      "base": "http://us.cdn.blizzard.com/tpr/odin",
+      "requests": 315,
+      "verified": 86,
+      "statuses": {
+        "404": 228,
+        "200": 86,
+        "503": 1
+      }
+    },
+    {
+      "base": "https://level3.ssl.blizzard.com/tpr/odin",
+      "requests": 315,
+      "verified": 84,
+      "statuses": {
+        "403": 177,
+        "transport": 51,
+        "200": 84,
+        "503": 3
+      }
+    },
+    {
+      "base": "https://us.cdn.blizzard.com/tpr/odin",
+      "requests": 315,
+      "verified": 70,
+      "statuses": {
+        "404": 228,
+        "200": 70,
+        "503": 17
+      }
+    },
+    {
+      "base": "http://eu.cdn.blizzard.com/tpr/odin",
+      "requests": 315,
+      "verified": 87,
+      "statuses": {
+        "404": 228,
+        "200": 87
+      }
+    },
+    {
+      "base": "https://eu.cdn.blizzard.com/tpr/odin",
+      "requests": 315,
+      "verified": 68,
+      "statuses": {
+        "404": 228,
+        "200": 68,
+        "503": 19
+      }
+    },
+    {
+      "base": "http://blizzard.gcdn.cloudn.co.kr/tpr/odin",
+      "requests": 315,
+      "verified": 80,
+      "statuses": {
+        "404": 221,
+        "200": 80,
+        "503": 14
+      }
+    },
+    {
+      "base": "http://kr.cdn.blizzard.com/tpr/odin",
+      "requests": 315,
+      "verified": 87,
+      "statuses": {
+        "404": 228,
+        "200": 87
+      }
+    },
+    {
+      "base": "https://kr.cdn.blizzard.com/tpr/odin",
+      "requests": 315,
+      "verified": 69,
+      "statuses": {
+        "404": 228,
+        "200": 69,
+        "503": 18
+      }
+    },
+    {
+      "base": "http://blzddist1-a.akamaihd.net/tpr/odin",
+      "requests": 315,
+      "verified": 99,
+      "statuses": {
+        "404": 216,
+        "200": 99
+      }
+    },
+    {
+      "base": "https://blzddist1-a.akamaihd.net/tpr/odin",
+      "requests": 315,
+      "verified": 97,
+      "statuses": {
+        "404": 214,
+        "200": 97,
+        "503": 4
+      }
+    },
+    {
+      "base": "https://blzddistkr1-a.akamaihd.net/tpr/odin",
+      "requests": 315,
+      "verified": 96,
+      "statuses": {
+        "404": 215,
+        "200": 96,
+        "503": 4
+      }
+    },
+    {
+      "base": "http://blzddistkr1-a.akamaihd.net/tpr/odin",
+      "requests": 315,
+      "verified": 99,
+      "statuses": {
+        "404": 216,
+        "200": 99
+      }
+    },
+    {
+      "base": "https://level3.blizzard.com/tpr/odin",
+      "requests": 315,
+      "verified": 83,
+      "statuses": {
+        "403": 154,
+        "transport": 74,
+        "200": 83,
+        "503": 4
+      }
+    }
+  ],
+  "public_cache_missing_retail_checks": 225,
+  "public_cache_statuses": {
+    "404": 221,
+    "503": 4
+  },
+  "unfinished": [
+    "Three-sample checks attempted for all 14 new configs; some bytes verified, multiple stages unresolved due to transient/proxy failures. See raw probes.",
+    "Transient 503/timeouts in endpoint and archive-index runs; origin attribution not known for prior 503s.",
+    "Complete historical-host matrix for vendor/dev paths (US-only family survey so far).",
+    "Patch payload reconstruction, encrypted config decoding, legacy ENCODING fallback, nested TVFS mounting."
+  ],
+  "additional_retail_probe_stages": {
+    "not_retrieved": 6,
+    "config_verified": 4,
+    "sample_partial": 1,
+    "download_manifest_verified": 3
+  },
+  "additional_retail_builds_with_verified_payload": 1,
+  "distinct_retail_endpoint_variants": 17
+}

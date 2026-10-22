@@ -1,0 +1,55 @@
+name: Windows release
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Existing version tag to build and publish
+        required: true
+        type: string
+permissions:
+  contents: write
+jobs:
+  windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.tag }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install pinned Rust
+        run: rustup toolchain install 1.90.0 --profile minimal
+      - run: cargo test --locked
+      - run: python -m unittest discover -s tests -p "test_*.py" -v
+      - run: cargo build --release --locked
+      - run: ./scripts/build-downloader-windows.ps1
+      - name: Stage checksummed release assets
+        shell: pwsh
+        run: |
+          Copy-Item target/release/cilo.exe dist/cilo.exe
+          $lines = Get-Item dist/cilo.exe, dist/CiloDownloader-windows-x64.zip | ForEach-Object {
+            $hash = (Get-FileHash $_.FullName -Algorithm SHA256).Hash.ToLower()
+            "$hash  $($_.Name)"
+          }
+          $lines | Set-Content dist/SHA256SUMS.txt -Encoding utf8
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Windows-release
+          path: |
+            dist/cilo.exe
+            dist/CiloDownloader-windows-x64.zip
+            dist/SHA256SUMS.txt
+      - name: Publish release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          CILO_RELEASE_TAG: ${{ inputs.tag }}
+        shell: pwsh
+        run: |
+          gh release view $env:CILO_RELEASE_TAG *> $null
+          if ($LASTEXITCODE -ne 0) {
+            gh release create $env:CILO_RELEASE_TAG --verify-tag --title "Cilo $env:CILO_RELEASE_TAG" --generate-notes
+            if ($LASTEXITCODE -ne 0) { throw 'Release creation failed' }
+          }
+          gh release upload $env:CILO_RELEASE_TAG dist/cilo.exe dist/CiloDownloader-windows-x64.zip dist/SHA256SUMS.txt --clobber
+          if ($LASTEXITCODE -ne 0) { throw 'Release upload failed' }
