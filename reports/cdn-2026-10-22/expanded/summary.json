@@ -168,5 +168,15 @@
     "download_manifest_verified": 3
   },
   "additional_retail_builds_with_verified_payload": 1,
-  "distinct_retail_endpoint_variants": 17
+  "distinct_retail_endpoint_variants": 17,
+  "old_akamai_archive_checks": {
+    "requests": 104,
+    "verified_requests": 6,
+    "unique_indexes_verified": 3,
+    "http_statuses": {
+      "404": 98,
+      "200": 6
+    },
+    "target_payloads_found": 0
+  }
 }

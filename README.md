@@ -20,6 +20,11 @@ See [the corpus, comparisons, and reproducible results](benchmarks/README.md).
 
 ## Windows
 
+Download the prebuilt files from [GitHub Releases](https://github.com/IDARETW/Cilo/releases):
+`cilo.exe` is the native archiver; `CiloDownloader-windows-x64.zip` contains the
+downloader GUI. Extract the whole GUI folder and run `CiloDownloader.exe`.
+The downloader bundles Python; the archiver is a standalone native executable.
+
 Build with Rust 1.90.0 and Visual Studio Build Tools (the **Desktop development
 with C++** workload):
 
@@ -38,7 +43,9 @@ The [GitHub Actions workflow](../../actions) is configured to publish
 `cilo-Windows-x64` and `cilo-Linux-x64` artifacts. As of 2026-10-22, this
 repository's Actions runs fail before starting jobs. A Windows x64 executable
 was cross-built locally and passed the applicable tests and a real-file round
-trip under Wine 10. Native Windows validation is still pending.
+trip under Wine 10. The Windows GUI bundle was built using Windows Python 3.12.10
+and PyInstaller under Wine; its Python suite and GUI/resource checks also passed.
+Native Windows validation is still pending.
 
 ## Linux
 

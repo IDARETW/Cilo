@@ -138,6 +138,10 @@ indexes checked on two endpoints, two verified; other requests failed or were
 transient. A separate 171-index newer-CDN search verified 151 indexes with 20
 transient failures and did not find the target sample. **Neither is a completed
 historical-host archive search**, and neither proves all payloads are gone.
+A follow-up checked all 52 old indexes on both historical Akamai HTTP hosts:
+6 requests verified 3 unique indexes; 98 returned 404. Neither target EKey was
+in those 3 indexes. This narrows that specific fallback without excluding all
+other hosts or configurations.
 
 For unavailable configs, exact original bytes from an installation or public
 cache can unblock manifest resolution. BlizzTrack fallback accepts only bytes

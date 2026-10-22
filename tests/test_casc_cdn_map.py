@@ -64,6 +64,26 @@ class Mapping(unittest.TestCase):
         redirected = catalog.GitHubRedirect().redirect_request(request, None, 302, '', {}, 'https://api.github.com/file')
         self.assertEqual(redirected.get_header('Authorization'), 'Bearer fixture')
 
+    def test_private_cache_update_retries_transient_without_saving_credentials(self):
+        import gzip
+        import tempfile
+        response = io.BytesIO(gzip.compress(json.dumps(fixture_catalog()).encode()))
+        failure = urllib.error.HTTPError(catalog.CATALOG_API_URL, 503, 'temporary', {}, io.BytesIO())
+        opener = mock.Mock()
+        opener.open.side_effect = [failure, response]
+        with tempfile.TemporaryDirectory() as directory, \
+             mock.patch.object(catalog.urllib.request, 'build_opener', return_value=opener), \
+             mock.patch.object(catalog.time, 'sleep'):
+            path = Path(directory) / 'cache.gz'
+            result = catalog.update_catalog(path, token='fixture-token')
+            self.assertEqual(len(result['builds']), 1)
+            self.assertNotIn(b'fixture-token', gzip.decompress(path.read_bytes()))
+            request = opener.open.call_args.args[0]
+            self.assertEqual(request.full_url, catalog.CATALOG_API_URL)
+            self.assertEqual(request.get_header('Authorization'), 'Bearer fixture-token')
+            self.assertEqual(opener.open.call_count, 2)
+            self.assertEqual(list(Path(directory).iterdir()), [path])
+
 
 if __name__ == '__main__':
     unittest.main()

@@ -3,7 +3,7 @@
 $ErrorActionPreference = 'Stop'
 $ciloRoot = Split-Path $PSScriptRoot -Parent
 Set-Location $ciloRoot
-python -m pip install --disable-pip-version-check 'pyinstaller==6.16.0'
+python -m pip install --disable-pip-version-check -r scripts/windows-build-requirements.txt
 if ($LASTEXITCODE -ne 0) { throw 'Could not install PyInstaller' }
 python -m PyInstaller --noconfirm --clean --onedir --console --name CiloDownloader `
   --paths tools --add-data 'data/casc-availability.json.gz;data' `
@@ -14,5 +14,8 @@ if ($LASTEXITCODE -ne 0) { throw 'Bundled GUI/resources smoke test failed' }
 & .\dist\CiloDownloader\CiloDownloader.exe --cli --help
 if ($LASTEXITCODE -ne 0) { throw 'Bundled CLI dispatch failed' }
 Copy-Item docs\DOWNLOADER.md dist\CiloDownloader\DOWNLOADER.md
+Copy-Item LICENSE dist\CiloDownloader\LICENSE.txt
+python scripts/bundle-windows-licenses.py
+if ($LASTEXITCODE -ne 0) { throw 'Could not collect runtime licenses' }
 Compress-Archive -Path dist\CiloDownloader -DestinationPath dist\CiloDownloader-windows-x64.zip -Force
 Get-FileHash dist\CiloDownloader-windows-x64.zip -Algorithm SHA256

@@ -197,6 +197,11 @@ class App:
             text += '\nLast error: ' + observation['error'][:600]
         elif 'source' in observation:
             text += f"\nSource: {observation['source']} | build: {observation.get('build_config')} | CDN: {observation.get('cdn_config')}"
+        if row.get('latest_attempt'):
+            latest = row['latest_attempt']
+            text += f"\nLater attempt {latest['checked_at_utc']}: {catalog.LABELS[latest['stage']]}"
+            if latest.get('error'):
+                text += ' | ' + latest['error'][:240]
         self.set_text(self.details, text)
 
     def browse(self):

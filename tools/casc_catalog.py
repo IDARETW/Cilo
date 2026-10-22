@@ -17,6 +17,7 @@ import re
 import subprocess
 import sys
 import tempfile
+import time
 import urllib.request
 import urllib.error
 import urllib.parse
@@ -137,16 +138,22 @@ def update_catalog(path, url=CATALOG_URL, timeout=30, token=None):
             url = CATALOG_API_URL
             headers.update(Authorization='Bearer ' + token, Accept='application/vnd.github.raw+json')
     request = urllib.request.Request(url, headers=headers)
-    try:
-        response = urllib.request.build_opener(GitHubRedirect()).open(request, timeout=timeout)
-    except urllib.error.HTTPError as exc:
-        if url in (CATALOG_URL, CATALOG_API_URL) and exc.code in (401, 403, 404):
-            raise CatalogAccessError('GitHub could not provide the cache. This repository may be private; '
-                                     'use a GitHub login/token with read access to IDARETW/Cilo. '
-                                     'A missing published cache or API limit can also cause this error.') from exc
-        raise
-    with response:
-        blob = response.read(MAX_COMPRESSED + 1)
+    for attempt in range(3):
+        try:
+            with urllib.request.build_opener(GitHubRedirect()).open(request, timeout=timeout) as response:
+                blob = response.read(MAX_COMPRESSED + 1)
+            break
+        except urllib.error.HTTPError as exc:
+            if url in (CATALOG_URL, CATALOG_API_URL) and exc.code in (401, 403, 404):
+                raise CatalogAccessError('GitHub could not provide the cache. This repository may be private; '
+                                         'use a GitHub login/token with read access to IDARETW/Cilo. '
+                                         'A missing published cache or API limit can also cause this error.') from exc
+            if exc.code not in (408, 500, 502, 503, 504) or attempt == 2:
+                raise
+        except (urllib.error.URLError, TimeoutError, ConnectionError):
+            if attempt == 2:
+                raise
+        time.sleep(2**attempt)
     data = decode_catalog(blob)
     if Path(path).exists():
         try:
@@ -223,6 +230,8 @@ def merge_probes(catalog, probes):
             row['availability'] = probe['stage']
             row['checked_at_utc'] = probe['checked_at_utc']
             row['probe'] = probe
+            if row.get('latest_attempt', {}).get('checked_at_utc', '') <= probe['checked_at_utc']:
+                row.pop('latest_attempt', None)
     catalog['generated_at_utc'] = utc_now()
     return catalog
 
