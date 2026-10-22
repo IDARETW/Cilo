@@ -1,0 +1,3 @@
+cbc4a07a18ab189dacba21c3444d7d57e4b44dacfceea1426883933b1a7aa720  cilo.exe
+3891fbc21c8c4c66d50528e3c91ca88b316881c2ad437239fae4400cac172ae2  cilo-windows-x64.zip
+51a9f7e0ec8adbef9e2e06ae0c647b355b05ef820b9e6bc0a25c9052872e0525  CiloDownloader-windows-x64.zip
