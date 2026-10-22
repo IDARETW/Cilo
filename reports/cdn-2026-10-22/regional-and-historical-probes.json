@@ -1,0 +1,268 @@
+{
+  "checked_date_utc": "2026-10-22",
+  "attempts_per_url": 1,
+  "timeout_seconds": 12,
+  "checks": [
+    {
+      "label": "11521872-build",
+      "url": "http://us.cdn.blizzard.com/tpr/odin/config/d8/8a/d88aae6a2bcd3944b48a6b80b5b46c26",
+      "status": 503,
+      "seconds": 0.168
+    },
+    {
+      "label": "11521872-build",
+      "url": "http://eu.cdn.blizzard.com/tpr/odin/config/d8/8a/d88aae6a2bcd3944b48a6b80b5b46c26",
+      "status": 200,
+      "size": 940,
+      "md5": "d88aae6a2bcd3944b48a6b80b5b46c26",
+      "verified": true,
+      "seconds": 0.089
+    },
+    {
+      "label": "10358353-build",
+      "url": "http://us.cdn.blizzard.com/tpr/odin/config/bc/90/bc90718ff5987302bf5b8496214ee32f",
+      "status": 404,
+      "seconds": 0.34
+    },
+    {
+      "label": "11521872-cdn",
+      "url": "http://us.cdn.blizzard.com/tpr/odin/config/70/be/70be2109cbf418718643727cb6198fc0",
+      "status": 404,
+      "seconds": 0.372
+    },
+    {
+      "label": "10296867-build",
+      "url": "http://us.cdn.blizzard.com/tpr/odin/config/92/db/92db83c9f6c501b5e288a506db05c506",
+      "status": 404,
+      "seconds": 0.41
+    },
+    {
+      "label": "10296867-build",
+      "url": "http://eu.cdn.blizzard.com/tpr/odin/config/92/db/92db83c9f6c501b5e288a506db05c506",
+      "status": 404,
+      "seconds": 0.423
+    },
+    {
+      "label": "10296867-build",
+      "url": "http://kr.cdn.blizzard.com/tpr/odin/config/92/db/92db83c9f6c501b5e288a506db05c506",
+      "status": 404,
+      "seconds": 0.143
+    },
+    {
+      "label": "11521872-build",
+      "url": "http://kr.cdn.blizzard.com/tpr/odin/config/d8/8a/d88aae6a2bcd3944b48a6b80b5b46c26",
+      "status": 503,
+      "seconds": 0.172
+    },
+    {
+      "label": "10358353-build",
+      "url": "http://kr.cdn.blizzard.com/tpr/odin/config/bc/90/bc90718ff5987302bf5b8496214ee32f",
+      "status": 404,
+      "seconds": 0.255
+    },
+    {
+      "label": "10358353-build",
+      "url": "http://eu.cdn.blizzard.com/tpr/odin/config/bc/90/bc90718ff5987302bf5b8496214ee32f",
+      "status": 404,
+      "seconds": 0.671
+    },
+    {
+      "label": "11521872-build",
+      "url": "http://level3.blizzard.com/tpr/odin/config/d8/8a/d88aae6a2bcd3944b48a6b80b5b46c26",
+      "status": 200,
+      "size": 940,
+      "md5": "d88aae6a2bcd3944b48a6b80b5b46c26",
+      "verified": true,
+      "seconds": 0.18
+    },
+    {
+      "label": "11521872-cdn",
+      "url": "http://kr.cdn.blizzard.com/tpr/odin/config/70/be/70be2109cbf418718643727cb6198fc0",
+      "status": 404,
+      "seconds": 0.393
+    },
+    {
+      "label": "11521872-cdn",
+      "url": "http://eu.cdn.blizzard.com/tpr/odin/config/70/be/70be2109cbf418718643727cb6198fc0",
+      "status": 404,
+      "seconds": 0.57
+    },
+    {
+      "label": "11521872-build",
+      "url": "https://level3.ssl.blizzard.com/tpr/odin/config/d8/8a/d88aae6a2bcd3944b48a6b80b5b46c26",
+      "status": 200,
+      "size": 940,
+      "md5": "d88aae6a2bcd3944b48a6b80b5b46c26",
+      "verified": true,
+      "seconds": 0.246
+    },
+    {
+      "label": "10296867-build",
+      "url": "https://level3.ssl.blizzard.com/tpr/odin/config/92/db/92db83c9f6c501b5e288a506db05c506",
+      "status": 403,
+      "seconds": 3.539
+    },
+    {
+      "label": "10296867-build",
+      "url": "http://blizzard.gcdn.cloudn.co.kr/tpr/odin/config/92/db/92db83c9f6c501b5e288a506db05c506",
+      "status": 404,
+      "seconds": 1.177
+    },
+    {
+      "label": "10296867-build",
+      "url": "http://level3.blizzard.com/tpr/odin/config/92/db/92db83c9f6c501b5e288a506db05c506",
+      "status": 403,
+      "seconds": 5.683
+    },
+    {
+      "label": "10358353-build",
+      "url": "http://blizzard.gcdn.cloudn.co.kr/tpr/odin/config/bc/90/bc90718ff5987302bf5b8496214ee32f",
+      "status": 404,
+      "seconds": 1.233
+    },
+    {
+      "label": "11521872-build",
+      "url": "http://blizzard.gcdn.cloudn.co.kr/tpr/odin/config/d8/8a/d88aae6a2bcd3944b48a6b80b5b46c26",
+      "status": 200,
+      "size": 940,
+      "md5": "d88aae6a2bcd3944b48a6b80b5b46c26",
+      "verified": true,
+      "seconds": 1.081
+    },
+    {
+      "label": "11521872-cdn",
+      "url": "http://blizzard.gcdn.cloudn.co.kr/tpr/odin/config/70/be/70be2109cbf418718643727cb6198fc0",
+      "status": 404,
+      "seconds": 0.727
+    },
+    {
+      "label": "10296867-build",
+      "url": "https://blizzard.gcdn.cloudn.co.kr/tpr/odin/config/92/db/92db83c9f6c501b5e288a506db05c506",
+      "status": 503,
+      "seconds": 0.83
+    },
+    {
+      "label": "10358353-build",
+      "url": "http://level3.blizzard.com/tpr/odin/config/bc/90/bc90718ff5987302bf5b8496214ee32f",
+      "status": 403,
+      "seconds": 7.777
+    },
+    {
+      "label": "10358353-build",
+      "url": "https://blizzard.gcdn.cloudn.co.kr/tpr/odin/config/bc/90/bc90718ff5987302bf5b8496214ee32f",
+      "status": 503,
+      "seconds": 1.224
+    },
+    {
+      "label": "11521872-build",
+      "url": "https://blizzard.gcdn.cloudn.co.kr/tpr/odin/config/d8/8a/d88aae6a2bcd3944b48a6b80b5b46c26",
+      "status": 503,
+      "seconds": 1.099
+    },
+    {
+      "label": "11521872-cdn",
+      "url": "https://blizzard.gcdn.cloudn.co.kr/tpr/odin/config/70/be/70be2109cbf418718643727cb6198fc0",
+      "status": 503,
+      "seconds": 0.846
+    },
+    {
+      "label": "11521872-cdn",
+      "url": "http://level3.blizzard.com/tpr/odin/config/70/be/70be2109cbf418718643727cb6198fc0",
+      "status": 403,
+      "seconds": 8.721
+    },
+    {
+      "label": "10358353-build",
+      "url": "https://level3.ssl.blizzard.com/tpr/odin/config/bc/90/bc90718ff5987302bf5b8496214ee32f",
+      "status": 403,
+      "seconds": 8.942
+    },
+    {
+      "label": "11521872-build",
+      "url": "http://blzddist1-a.akamaihd.net/tpr/odin/config/d8/8a/d88aae6a2bcd3944b48a6b80b5b46c26",
+      "status": 200,
+      "size": 940,
+      "md5": "d88aae6a2bcd3944b48a6b80b5b46c26",
+      "verified": true,
+      "seconds": 0.573
+    },
+    {
+      "label": "10296867-build",
+      "url": "http://blzddist1-a.akamaihd.net/tpr/odin/config/92/db/92db83c9f6c501b5e288a506db05c506",
+      "status": 404,
+      "seconds": 1.335
+    },
+    {
+      "label": "10358353-build",
+      "url": "http://blzddist1-a.akamaihd.net/tpr/odin/config/bc/90/bc90718ff5987302bf5b8496214ee32f",
+      "status": 404,
+      "seconds": 1.336
+    },
+    {
+      "label": "11521872-cdn",
+      "url": "http://blzddist1-a.akamaihd.net/tpr/odin/config/70/be/70be2109cbf418718643727cb6198fc0",
+      "status": 404,
+      "seconds": 1.191
+    },
+    {
+      "label": "11521872-build",
+      "url": "https://blzddist1-a.akamaihd.net/tpr/odin/config/d8/8a/d88aae6a2bcd3944b48a6b80b5b46c26",
+      "status": 200,
+      "size": 940,
+      "md5": "d88aae6a2bcd3944b48a6b80b5b46c26",
+      "verified": true,
+      "seconds": 0.692
+    },
+    {
+      "label": "10358353-build",
+      "url": "https://blzddist1-a.akamaihd.net/tpr/odin/config/bc/90/bc90718ff5987302bf5b8496214ee32f",
+      "status": 404,
+      "seconds": 1.827
+    },
+    {
+      "label": "11521872-build",
+      "url": "https://blzddistkr1-a.akamaihd.net/tpr/odin/config/d8/8a/d88aae6a2bcd3944b48a6b80b5b46c26",
+      "status": 200,
+      "size": 940,
+      "md5": "d88aae6a2bcd3944b48a6b80b5b46c26",
+      "verified": true,
+      "seconds": 0.237
+    },
+    {
+      "label": "10296867-build",
+      "url": "https://blzddist1-a.akamaihd.net/tpr/odin/config/92/db/92db83c9f6c501b5e288a506db05c506",
+      "status": 404,
+      "seconds": 2.359
+    },
+    {
+      "label": "10358353-build",
+      "url": "https://blzddistkr1-a.akamaihd.net/tpr/odin/config/bc/90/bc90718ff5987302bf5b8496214ee32f",
+      "status": 404,
+      "seconds": 1.453
+    },
+    {
+      "label": "10296867-build",
+      "url": "https://blzddistkr1-a.akamaihd.net/tpr/odin/config/92/db/92db83c9f6c501b5e288a506db05c506",
+      "status": 404,
+      "seconds": 1.935
+    },
+    {
+      "label": "11521872-cdn",
+      "url": "https://blzddist1-a.akamaihd.net/tpr/odin/config/70/be/70be2109cbf418718643727cb6198fc0",
+      "status": 404,
+      "seconds": 2.126
+    },
+    {
+      "label": "11521872-cdn",
+      "url": "https://blzddistkr1-a.akamaihd.net/tpr/odin/config/70/be/70be2109cbf418718643727cb6198fc0",
+      "status": 404,
+      "seconds": 0.938
+    },
+    {
+      "label": "11521872-cdn",
+      "url": "https://level3.ssl.blizzard.com/tpr/odin/config/70/be/70be2109cbf418718643727cb6198fc0",
+      "error": "The read operation timed out",
+      "seconds": 12.045
+    }
+  ]
+}

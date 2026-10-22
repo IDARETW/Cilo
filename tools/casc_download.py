@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import argparse
 import concurrent.futures
+import datetime
 import fnmatch
 import hashlib
 import http.client
@@ -78,7 +79,7 @@ def hash_file(path, algorithm="sha256"):
     return digest.hexdigest()
 
 
-def http_download(url, path, *, expected=None, limit=8 * 1024**3, start=None, attempts=4):
+def http_download(url, path, *, expected=None, limit=8 * 1024**3, start=None, attempts=4, timeout=30):
     """Resume into .part. Never silently accept ignored archive Range requests."""
     path = Path(path)
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -98,7 +99,7 @@ def http_download(url, path, *, expected=None, limit=8 * 1024**3, start=None, at
             headers["Range"] = f"bytes={pos}-"
         try:
             request = urllib.request.Request(url, headers=headers)
-            with urllib.request.urlopen(request, timeout=60) as response:
+            with urllib.request.urlopen(request, timeout=timeout) as response:
                 status = response.status
                 if start is not None or (pos and status == 206):
                     match = re.fullmatch(r"bytes (\d+)-(\d+)/(\d+|\*)", response.headers.get("Content-Range", ""))
@@ -345,7 +346,7 @@ def parse_archive_index(data, archive_key):
 
 
 class Storage:
-    def __init__(self, bases, output, cdn_key=None, max_object_gib=8):
+    def __init__(self, bases, output, cdn_key=None, max_object_gib=8, timeout=30):
         self.bases = [b.rstrip('/') for b in bases]
         check(self.bases, "no CDN base URLs supplied")
         for base in self.bases:
@@ -357,9 +358,23 @@ class Storage:
         self.cdn_key = cdn_key
         self.archive_map = {}
         self.archives = None
+        self.index_failures = {}
+        self.timeout = timeout
+        self.endpoint_lock = threading.Lock()
         self.lock = threading.Lock()
         self.object_locks = {}
         self.object_locks_guard = threading.Lock()
+
+    def ordered_bases(self):
+        with self.endpoint_lock:
+            return self.bases.copy()
+
+    def prefer(self, base):
+        # Promote a verified working mirror. A per-object 403/404 is not a
+        # reason to blacklist that server for unrelated objects.
+        with self.endpoint_lock:
+            self.bases.remove(base)
+            self.bases.insert(0, base)
 
     def path(self, relative):
         path = self.output / 'cdn' / relative
@@ -386,14 +401,16 @@ class Storage:
             validate(path)
             return path
         errors = []
-        for base in self.bases:
+        for base in self.ordered_bases():
+            url = f'{base}/{relative}'
             try:
-                part = http_download(f'{base}/{relative}', path, expected=size, limit=4*MIB if kind == 'config' else self.limit)
+                part = http_download(url, path, expected=size, limit=4*MIB if kind == 'config' else self.limit, timeout=self.timeout)
                 validate(part)
                 os.replace(part, path)
+                self.prefer(base)
                 return path
             except (CascError, urllib.error.URLError, OSError) as exc:
-                errors.append(str(exc))
+                errors.append(f'{url}: {exc}')
                 # Complete bad content must not become a reusable cache entry.
                 part = path.with_name(path.name + '.part')
                 if isinstance(exc, CascError) and part.exists():
@@ -403,17 +420,39 @@ class Storage:
             if location:
                 archive, offset, length = location
                 check(size is None or size == length, "archive index disagrees with DOWNLOAD size")
-                for base in self.bases:
+                for base in self.ordered_bases():
+                    url = f'{base}/{key_path("data", archive)}'
                     try:
-                        part = http_download(f'{base}/{key_path("data", archive)}', path, expected=length, start=offset, limit=self.limit)
+                        part = http_download(url, path, expected=length, start=offset, limit=self.limit, timeout=self.timeout)
                         validate(part)
                         os.replace(part, path)
+                        self.prefer(base)
                         return path
                     except (CascError, urllib.error.URLError, OSError) as exc:
-                        errors.append(str(exc))
+                        errors.append(f'{url} (range {offset}+{length}): {exc}')
                         if isinstance(exc, CascError):
                             path.with_name(path.name + '.part').unlink(missing_ok=True)
-        raise CascError(f'{kind}/{key} unavailable: ' + '; '.join(errors))
+        raise CascError(f'could not retrieve {kind}/{key} from the tested endpoints: ' + '; '.join(errors))
+
+    def archive_index(self, archive):
+        relative = key_path('data', archive) + '.index'
+        path = self.path(relative)
+        if path.exists():
+            return parse_archive_index(path.read_bytes(), archive)
+        failures = []
+        for base in self.ordered_bases():
+            url = f'{base}/{relative}'
+            try:
+                part = http_download(url, path, limit=64*MIB, timeout=self.timeout)
+                entries = parse_archive_index(part.read_bytes(), archive)
+                os.replace(part, path)
+                self.prefer(base)
+                return entries
+            except (CascError, urllib.error.URLError, OSError) as exc:
+                failures.append(f'{url}: {exc}')
+                if isinstance(exc, CascError):
+                    path.with_name(path.name + '.part').unlink(missing_ok=True)
+        raise CascError('; '.join(failures))
 
     def locate(self, key):
         with self.lock:
@@ -422,37 +461,73 @@ class Storage:
                     cfg = parse_config(self.fetch('config', self.cdn_key).read_bytes())
                     self.archives = iter(cfg.get('archives', []))
                 except (CascError, urllib.error.URLError) as exc:
-                    raise CascError(f'loose object missing and CDN configuration unavailable: {exc}') from exc
+                    raise CascError(f'loose-object retrieval failed and CDN configuration could not be retrieved: {exc}') from exc
+            def load_index(archive):
+                try:
+                    self.archive_map.update(self.archive_index(archive))
+                    self.index_failures.pop(archive, None)
+                except (CascError, urllib.error.URLError, OSError) as exc:
+                    self.index_failures[archive] = (time.monotonic(), str(exc))
+
             while key not in self.archive_map:
                 archive = next(self.archives, None)
                 if archive is None:
-                    return None
-                relative = key_path('data', archive) + '.index'
-                path = self.path(relative)
-                if not path.exists():
-                    failures = []
-                    for base in self.bases:
-                        try:
-                            part = http_download(f'{base}/{relative}', path, limit=64*MIB)
-                            entries = parse_archive_index(part.read_bytes(), archive)
-                            os.replace(part, path)
-                            break
-                        except (CascError, urllib.error.URLError, OSError) as exc:
-                            failures.append(str(exc))
-                    else:
-                        raise CascError(f'archive index {archive} unavailable: {failures}')
-                else:
-                    entries = parse_archive_index(path.read_bytes(), archive)
-                self.archive_map.update(entries)
-            return self.archive_map[key]
+                    break
+                # A missing unrelated index must not hide a later valid hit.
+                load_index(archive)
+            if key in self.archive_map:
+                return self.archive_map[key]
+            # Keep failed indexes retryable, with a cooldown to avoid hammering
+            # unavailable mirrors for every object in a multi-file download.
+            for archive, (last_attempt, _) in list(self.index_failures.items()):
+                if time.monotonic() - last_attempt >= 30:
+                    load_index(archive)
+                    if key in self.archive_map:
+                        return self.archive_map[key]
+            if self.index_failures:
+                examples = '; '.join(f'{k}: {v[1]}' for k, v in list(self.index_failures.items())[:3])
+                raise CascError(f'archive search incomplete: {len(self.index_failures)} indexes could not be read; '
+                                f'this does not establish that object {key} is missing. {examples}')
+            return None
 
 
-def metadata_source(root, relative):
-    if urllib.parse.urlsplit(root).scheme in ('http', 'https'):
+def read_source(source, timeout=30):
+    if urllib.parse.urlsplit(source).scheme in ('http', 'https'):
         with tempfile.TemporaryDirectory() as directory:
-            part = http_download(root.rstrip('/') + '/' + relative, Path(directory) / 'metadata', limit=16*MIB)
+            part = http_download(source, Path(directory) / 'metadata', limit=16*MIB, timeout=timeout)
             return part.read_bytes()
-    return (Path(root) / PurePosixPath(relative)).read_bytes()
+    return Path(source).read_bytes()
+
+
+def metadata_source(root, relative, timeout=30):
+    source = root.rstrip('/') + '/' + relative if urllib.parse.urlsplit(root).scheme in ('http', 'https') else str(Path(root) / PurePosixPath(relative))
+    try:
+        return read_source(source, timeout)
+    except urllib.error.HTTPError as exc:
+        raise CascError(f'NGDP catalog request returned HTTP {exc.code}: {source}. '
+                        'Check the product, build directory, and catalog revision; this is not a game-CDN response.') from exc
+
+
+def cdn_bases(rows, preferred='us', regions=None):
+    """Prefer the version region, then try every advertised CDN region by default."""
+    names = regions or [preferred] + [r['Name'] for r in rows if r['Name'] != preferred]
+    bases = []
+    for name in dict.fromkeys(names):
+        row = next((r for r in rows if r.get('Name') == name), None)
+        if row is None:
+            check(not regions, f'CDN table has no {name!r} row')
+            continue
+        # Servers' query parameters are client routing hints, not object URL
+        # queries. Hosts can advertise additional mirrors absent from Servers.
+        endpoints = row.get('Servers', '').split()
+        represented = {urllib.parse.urlsplit(u).netloc for u in endpoints}
+        endpoints += [f'http://{h}' for h in row.get('Hosts', '').split() if h not in represented]
+        for endpoint in endpoints:
+            u = urllib.parse.urlsplit(endpoint)
+            check(u.scheme in ('http', 'https') and u.hostname and not u.username, 'invalid CDN server URL')
+            bases.append(urllib.parse.urlunsplit((u.scheme, u.netloc, '/' + row['Path'].strip('/'), '', '')))
+    check(bases, 'no CDN endpoints; supply --cdn-base or --cdn-table')
+    return list(dict.fromkeys(bases))
 
 
 def resolve_build(args):
@@ -463,7 +538,7 @@ def resolve_build(args):
     for component in (args.product, args.build, args.catalog_region):
         check(re.fullmatch(r'[A-Za-z0-9_.-]+', component) and component not in ('.', '..'), 'invalid NGDP path component')
     prefix = f'{args.catalog_region}/{args.product}'
-    rows = parse_rows(metadata_source(args.ngdp_root, f'{prefix}/{args.build}/versions'))
+    rows = parse_rows(metadata_source(args.ngdp_root, f'{prefix}/{args.build}/versions', args.http_timeout))
     row = next((r for r in rows if r.get('Region') == args.region), None)
     if row is None:
         row = next((r for r in rows if r.get('Region') == 'xx'), None)
@@ -471,15 +546,44 @@ def resolve_build(args):
     if args.cdn_base:
         bases = args.cdn_base
     else:
-        cdns = parse_rows(metadata_source(args.ngdp_root, f'{prefix}/cdns'))
-        cdn = next((r for r in cdns if r.get('Name') == args.region), None)
-        check(cdn is not None, 'no CDN row; specify --cdn-base explicitly')
-        endpoints = cdn.get('Servers', '').split()
-        if endpoints:
-            bases = [urllib.parse.urlunsplit((*urllib.parse.urlsplit(u)[:2], '/' + cdn['Path'].strip('/'), '', '')) for u in endpoints]
-        else:
-            bases = [f'http://{host}/{cdn["Path"].strip("/")}' for host in cdn['Hosts'].split()]
+        data = read_source(args.cdn_table, args.http_timeout) if args.cdn_table else metadata_source(args.ngdp_root, f'{prefix}/cdns', args.http_timeout)
+        bases = cdn_bases(parse_rows(data), args.region, args.cdn_region)
     return row['BuildConfig'], args.cdn_config or row.get('CDNConfig') or None, list(dict.fromkeys(bases)), row
+
+
+def diagnose(storage, key, row, jobs):
+    """Probe each configuration URL directly, without trusting local cache hits."""
+    configs = [('build_config', key)] + ([('cdn_config', storage.cdn_key)] if storage.cdn_key else [])
+    tasks = [(name, value, f'{base}/{key_path("config", value)}') for name, value in configs for base in storage.ordered_bases()]
+    def probe(item):
+        name, value, url = item
+        result = {'kind': name, 'key': value, 'url': url, 'verified': False}
+        started = time.monotonic()
+        try:
+            with tempfile.TemporaryDirectory() as directory:
+                part = http_download(url, Path(directory) / 'probe', limit=4*MIB, attempts=1, timeout=storage.timeout)
+                digest = hash_file(part, 'md5')
+                result.update(http_status=200, bytes=part.stat().st_size, md5=digest, verified=digest == value)
+                if digest != value:
+                    result['error'] = 'HTTP success but configuration MD5 does not match; not accepted as usable configuration'
+        except urllib.error.HTTPError as exc:
+            result.update(http_status=exc.code, error=str(exc))
+        except (CascError, urllib.error.URLError, OSError) as exc:
+            result['error'] = str(exc)
+        result['elapsed_seconds'] = round(time.monotonic() - started, 3)
+        return result
+    with concurrent.futures.ThreadPoolExecutor(max_workers=jobs) as pool:
+        checks = list(pool.map(probe, tasks))
+    report = {'checked_at_utc': datetime.datetime.now(datetime.timezone.utc).isoformat(),
+              'build_config': key, 'cdn_config': storage.cdn_key, 'version_row': row,
+              'scope': 'Configuration URLs only. Success does not prove all payloads are available; failure does not prove they were deleted.',
+              'build_config_verified': any(c['kind'] == 'build_config' and c['verified'] for c in checks),
+              'cdn_config_verified': any(c['kind'] == 'cdn_config' and c['verified'] for c in checks), 'checks': checks}
+    path = storage.output / 'diagnostics.json'
+    check(not path.is_symlink(), 'symlink diagnostic report')
+    path.write_text(json.dumps(report, indent=2) + '\n', encoding='utf-8')
+    print(json.dumps(report, indent=2))
+    check(report['build_config_verified'], f'no verified build configuration from the tested endpoints; details saved to {path}')
 
 
 class Build:
@@ -554,10 +658,12 @@ def extract_file(storage, record):
 
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    parser.add_argument('command', choices=['info', 'list', 'extract', 'mirror'])
+    parser.add_argument('command', choices=['info', 'list', 'extract', 'mirror', 'diagnose'])
     parser.add_argument('--product')
     parser.add_argument('--build', help='build directory in mdX7/ngdp_data, e.g. 11521872')
-    parser.add_argument('--region', default='us')
+    parser.add_argument('--region', default='us', help='version row and preferred CDN region')
+    parser.add_argument('--cdn-region', action='append', help='limit CDN regions; repeat for fallback order (default: all advertised regions)')
+    parser.add_argument('--cdn-table', help='override cdns table with a URL or local file, e.g. live or historical metadata')
     parser.add_argument('--catalog-region', default='US')
     parser.add_argument('--ngdp-root', default='https://raw.githubusercontent.com/mdX7/ngdp_data/master', help='catalog URL (can pin a commit) or local clone root')
     parser.add_argument('--build-config')
@@ -568,15 +674,20 @@ def main(argv=None):
     parser.add_argument('--tag', action='append', default=[], help='mirror only objects with ALL these DOWNLOAD tags')
     parser.add_argument('--limit', type=int, default=0, help='maximum selected files/objects; 0 means all')
     parser.add_argument('--jobs', type=int, default=4)
+    parser.add_argument('--http-timeout', type=float, default=30, help='socket timeout in seconds; diagnose makes one attempt per URL')
     parser.add_argument('--max-object-gib', type=int, default=8)
     parser.add_argument('--max-total-gib', type=float, default=0, help='refuse a larger selection; 0 means no cap')
     parser.add_argument('--dry-run', action='store_true', help='resolve manifests and print selection without downloading payloads')
     args = parser.parse_args(argv)
-    check(1 <= args.jobs <= 32 and args.limit >= 0 and 1 <= args.max_object_gib <= 1024 and args.max_total_gib >= 0, 'invalid resource limits')
+    check(1 <= args.jobs <= 32 and args.limit >= 0 and 1 <= args.max_object_gib <= 1024
+          and args.max_total_gib >= 0 and 0 < args.http_timeout <= 600, 'invalid resource limits')
     check(not args.tag or args.command in ('mirror', 'info'), '--tag only applies to mirror/info')
     check(not args.pattern or args.command in ('list', 'extract'), '--pattern only applies to list/extract')
     key, cdn_key, bases, row = resolve_build(args)
-    storage = Storage(bases, args.output, cdn_key, args.max_object_gib)
+    storage = Storage(bases, args.output, cdn_key, args.max_object_gib, args.http_timeout)
+    if args.command == 'diagnose':
+        diagnose(storage, key, row, args.jobs)
+        return
     build = Build(storage, key)
     records = build.download_records()
     report = {'build_config': key, 'cdn_config': cdn_key, 'cdn_bases': bases, 'version_row': row,

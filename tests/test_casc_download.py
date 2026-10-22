@@ -1,8 +1,10 @@
 import concurrent.futures
+import contextlib
 import hashlib
 import http.server
 import importlib.util
 import io
+import json
 from pathlib import Path
 import struct
 import tempfile
@@ -31,6 +33,21 @@ def index_fixture(key, offset, size):
 
 
 class Formats(unittest.TestCase):
+    def test_all_regional_cdn_endpoints_and_overrides(self):
+        rows = [
+            {'Name': 'eu', 'Path': 'tpr/game', 'Hosts': 'eu.example', 'Servers': 'https://eu.example/?fallback=1'},
+            {'Name': 'us', 'Path': '/tpr/game/', 'Hosts': 'us.example extra.example',
+             'Servers': 'https://us.example/?maxhosts=4 https://eu.example/'},
+            {'Name': 'kr', 'Path': 'tpr/game', 'Hosts': 'kr.example', 'Servers': ''},
+        ]
+        self.assertEqual(casc.cdn_bases(rows), [
+            'https://us.example/tpr/game', 'https://eu.example/tpr/game',
+            'http://extra.example/tpr/game', 'http://kr.example/tpr/game'])
+        self.assertEqual(casc.cdn_bases(rows, regions=['kr', 'eu']), [
+            'http://kr.example/tpr/game', 'https://eu.example/tpr/game'])
+        with self.assertRaisesRegex(casc.CascError, 'no .* row'):
+            casc.cdn_bases(rows, regions=['xx'])
+
     def test_blte_modes_and_corruption(self):
         with tempfile.TemporaryDirectory() as directory:
             path = Path(directory) / 'object'
@@ -182,6 +199,93 @@ class Network(unittest.TestCase):
         ranges = [r for r in self.requests if r[1]]
         self.assertEqual(len(ranges), 1)
         self.assertEqual(ranges[0][1], f'bytes=17-{16 + len(encoded)}')
+
+    def test_missing_index_does_not_hide_later_archive_and_can_retry(self):
+        encoded, key = blte(b'reachable payload')
+        later_index, later_archive = index_fixture(key, 17, len(encoded))
+        lost_encoded, lost_key = blte(b'temporarily missing index payload')
+        lost_index, lost_archive = index_fixture(lost_key, 3, len(lost_encoded))
+        cfg = f'archives = {lost_archive} {later_archive}\n'.encode()
+        cdn_key = casc.md5(cfg).hex()
+        self.routes['/' + casc.key_path('config', cdn_key)] = cfg
+        self.routes['/' + casc.key_path('data', later_archive) + '.index'] = later_index
+        self.routes['/' + casc.key_path('data', later_archive)] = bytes(17) + encoded
+        storage = casc.Storage([self.base], self.root / 'mirror', cdn_key)
+        self.assertEqual(storage.fetch('data', key, len(encoded)).read_bytes(), encoded)
+        with self.assertRaisesRegex(casc.CascError, 'archive search incomplete'):
+            storage.fetch('data', lost_key, len(lost_encoded))
+        # Recover the initially missing index after the per-index retry cooldown.
+        self.routes['/' + casc.key_path('data', lost_archive) + '.index'] = lost_index
+        self.routes['/' + casc.key_path('data', lost_archive)] = bytes(3) + lost_encoded
+        storage.index_failures[lost_archive] = (float('-inf'), 'previous 404')
+        self.assertEqual(storage.fetch('data', lost_key, len(lost_encoded)).read_bytes(), lost_encoded)
+
+    def test_working_endpoint_is_preferred_without_blacklisting_others(self):
+        encoded, key = blte(b'first content')
+        other, other_key = blte(b'second content')
+        for blob, k in [(encoded, key), (other, other_key)]:
+            self.routes['/good/' + casc.key_path('data', k)] = blob
+        storage = casc.Storage([self.base + '/missing', self.base + '/good'], self.root / 'mirror')
+        storage.fetch('data', key)
+        self.assertEqual(storage.ordered_bases(), [self.base + '/good', self.base + '/missing'])
+        self.requests.clear()
+        storage.fetch('data', other_key)
+        self.assertEqual(len(self.requests), 1)
+        # A different object is allowed to exist only on the earlier failing endpoint.
+        third, third_key = blte(b'third content')
+        self.routes['/missing/' + casc.key_path('data', third_key)] = third
+        self.assertEqual(storage.fetch('data', third_key).read_bytes(), third)
+
+    def test_diagnose_distinguishes_config_hashes_http_failures_and_catalog_errors(self):
+        cfg = b'build-name = example\n'
+        key = casc.md5(cfg).hex()
+        relative = '/' + casc.key_path('config', key)
+        self.routes['/good' + relative] = cfg
+        self.routes['/bad' + relative] = b'unverified response'
+        output = self.root / 'report'
+        args = ['diagnose', '--build-config', key, '--cdn-base', self.base + '/missing',
+                '--cdn-base', self.base + '/bad', '--cdn-base', self.base + '/good', '--output', str(output)]
+        with contextlib.redirect_stdout(io.StringIO()):
+            casc.main(args)
+        report = json.loads((output / 'diagnostics.json').read_text())
+        self.assertTrue(report['build_config_verified'])
+        self.assertEqual([r['http_status'] for r in report['checks']], [404, 200, 200])
+        self.assertEqual([r['verified'] for r in report['checks']], [False, False, True])
+        # A cached good file must not conceal an endpoint outage in diagnostics.
+        self.routes.clear()
+        with contextlib.redirect_stdout(io.StringIO()), self.assertRaisesRegex(casc.CascError, 'no verified build configuration'):
+            casc.main(args)
+        with self.assertRaisesRegex(casc.CascError, 'NGDP catalog request returned HTTP 404'):
+            casc.metadata_source(self.base, 'US/odin/invalid/versions')
+
+    def test_regional_fallback_from_catalog_and_live_table_override(self):
+        cfg = b'build-name = regional-test\n'
+        key = casc.md5(cfg).hex()
+        self.routes['/catalog/US/odin/123/versions'] = (
+            'Region!STRING:0|BuildConfig!HEX:16|CDNConfig!HEX:16\nus|' + key + '|\n').encode()
+        self.routes['/live/cdns'] = (
+            'Name!STRING:0|Path!STRING:0|Hosts!STRING:0|Servers!STRING:0\n'
+            f'us|missing||{self.base}/\nkr|present||{self.base}/\n').encode()
+        self.routes['/present/' + casc.key_path('config', key)] = cfg
+        # Use info with a tiny empty DOWNLOAD fixture, proving normal downloads
+        # use regional fallback too, independently of diagnostic probing.
+        download = b'DL\x01\x10\x00' + bytes(6)
+        blob, ekey = blte(download)
+        cfg = f'build-name = regional-test\ndownload = {casc.md5(download).hex()} {ekey}\n'.encode()
+        key = casc.md5(cfg).hex()
+        self.routes['/catalog/US/odin/123/versions'] = (
+            'Region!STRING:0|BuildConfig!HEX:16|CDNConfig!HEX:16\nus|' + key + '|\n').encode()
+        self.routes['/present/' + casc.key_path('config', key)] = cfg
+        self.routes['/present/' + casc.key_path('data', ekey)] = blob
+        args = ['info', '--product', 'odin', '--build', '123', '--ngdp-root', self.base + '/catalog',
+                '--cdn-table', self.base + '/live/cdns', '--output', str(self.root / 'regional')]
+        with contextlib.redirect_stdout(io.StringIO()) as stdout:
+            casc.main(args)
+        report = json.loads(stdout.getvalue())
+        self.assertEqual(report['objects'], 0)
+        self.assertEqual(report['cdn_bases'], [self.base + '/missing', self.base + '/present'])
+        with contextlib.redirect_stdout(io.StringIO()), self.assertRaisesRegex(casc.CascError, 'could not retrieve config'):
+            casc.main(args[:-1] + [str(self.root / 'restricted'), '--cdn-region', 'us'])
 
     def test_corrupt_download_not_published(self):
         encoded, key = blte(b'valid bytes')

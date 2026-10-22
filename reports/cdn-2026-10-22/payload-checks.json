@@ -1,0 +1,82 @@
+{
+  "checked_date_utc": "2026-10-22",
+  "checks": [
+    {
+      "build": "10056273",
+      "build_config": "0cf5c1c0c43b718d32a03e7ddf0f4cbe",
+      "cdn_bases": [
+        "http://level3.blizzard.com/tpr/odin",
+        "http://us.cdn.blizzard.com/tpr/odin",
+        "https://level3.ssl.blizzard.com/tpr/odin",
+        "https://us.cdn.blizzard.com/tpr/odin",
+        "http://eu.cdn.blizzard.com/tpr/odin",
+        "https://eu.cdn.blizzard.com/tpr/odin",
+        "http://blizzard.gcdn.cloudn.co.kr/tpr/odin",
+        "http://kr.cdn.blizzard.com/tpr/odin",
+        "https://blizzard.gcdn.cloudn.co.kr/tpr/odin",
+        "https://kr.cdn.blizzard.com/tpr/odin"
+      ],
+      "ok": true,
+      "path": "code_post_gfx.fp",
+      "bytes": 9208136,
+      "sha256": "4efacee2ef6b1ae84d1ceb7607cf9f2549da847b8345ef067ae7b2b5384f7aec"
+    },
+    {
+      "build": "10885062",
+      "build_config": "af590272f31a4e82d0617c11a564a965",
+      "cdn_bases": [
+        "http://level3.blizzard.com/tpr/odin",
+        "http://us.cdn.blizzard.com/tpr/odin",
+        "https://level3.ssl.blizzard.com/tpr/odin",
+        "https://us.cdn.blizzard.com/tpr/odin",
+        "http://eu.cdn.blizzard.com/tpr/odin",
+        "https://eu.cdn.blizzard.com/tpr/odin",
+        "http://blizzard.gcdn.cloudn.co.kr/tpr/odin",
+        "http://kr.cdn.blizzard.com/tpr/odin",
+        "https://blizzard.gcdn.cloudn.co.kr/tpr/odin",
+        "https://kr.cdn.blizzard.com/tpr/odin"
+      ],
+      "ok": true,
+      "path": "code_post_gfx.fp",
+      "bytes": 14074184,
+      "sha256": "f4ec3e1cc53b16eab90309a37e0db473d3cb7de93853db30761814b0877f41d9"
+    },
+    {
+      "build": "26668155",
+      "build_config": "0da91bc57ef9e333ac0183a037a27412",
+      "cdn_bases": [
+        "http://level3.blizzard.com/tpr/odin",
+        "http://us.cdn.blizzard.com/tpr/odin",
+        "https://level3.ssl.blizzard.com/tpr/odin",
+        "https://us.cdn.blizzard.com/tpr/odin",
+        "http://eu.cdn.blizzard.com/tpr/odin",
+        "https://eu.cdn.blizzard.com/tpr/odin",
+        "http://blizzard.gcdn.cloudn.co.kr/tpr/odin",
+        "http://kr.cdn.blizzard.com/tpr/odin",
+        "https://blizzard.gcdn.cloudn.co.kr/tpr/odin",
+        "https://kr.cdn.blizzard.com/tpr/odin"
+      ],
+      "ok": true,
+      "path": "code_post_gfx.fp",
+      "bytes": 15958344,
+      "sha256": "ee810713e9ed737b76f89ae87b5b8df90b4115d24754b32645acc2cd43ab79cc"
+    },
+    {
+      "build": "11521872",
+      "cdn_region": "kr",
+      "build_config": "d88aae6a2bcd3944b48a6b80b5b46c26",
+      "cdn_bases": [
+        "http://blizzard.gcdn.cloudn.co.kr/tpr/odin",
+        "http://kr.cdn.blizzard.com/tpr/odin",
+        "http://level3.blizzard.com/tpr/odin",
+        "https://blizzard.gcdn.cloudn.co.kr/tpr/odin",
+        "https://kr.cdn.blizzard.com/tpr/odin",
+        "https://level3.ssl.blizzard.com/tpr/odin"
+      ],
+      "ok": true,
+      "path": "common.ff",
+      "bytes": 5570696,
+      "sha256": "16ae0526fd956cd7b29a773ceffd8492fb9d06b7d76d126dbcbc8df2964565f1"
+    }
+  ]
+}

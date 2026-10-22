@@ -112,7 +112,9 @@ is 3:1. Speeds include checksums and file I/O. `list` checks metadata integrity;
 
 For the general Python build downloader, see [NGDP/CASC downloading](docs/DOWNLOADER.md).
 It supports catalog-based selection, verified local mirrors, resumable downloads,
-archive-backed objects, and named MW2019 file extraction.
+regional CDN fallback, archive-backed objects, and named MW2019 file extraction.
+Use its `diagnose` command to distinguish catalog errors, CDN HTTP failures,
+and verified configurations; see the [regional investigation](docs/CDN_FINDINGS.md).
 
 ```sh
 cargo fmt --all -- --check

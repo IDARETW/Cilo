@@ -31,8 +31,17 @@ py tools\casc_download.py extract --product odin --build 11521872 --output D:\CA
 Product names are catalog directory names, such as `odin`, `s2`, `hero`, or
 `wow_classic_era`. `--build` is the corresponding build directory. By default,
 the script reads `US/PRODUCT/BUILD/versions` and `US/PRODUCT/cdns`, selecting the
-`us` version and CDN rows (or the global `xx` version row). Change `--region`
-and `--catalog-region` when needed.
+`us` version row (or the global `xx` version row). CDN retrieval prefers that
+region, then falls back to **all other regions advertised in the table**.
+Both `Servers` and additional `Hosts` entries are considered. A verified working
+endpoint is preferred for subsequent objects. Change `--region` and
+`--catalog-region` when needed; they do not select a different build silently.
+
+To restrict CDN selection or set its order, repeat `--cdn-region`:
+
+```powershell
+py tools\casc_download.py info --product odin --build 11521872 --cdn-region kr --cdn-region eu --output D:\CASC\11521872
+```
 
 Pin the catalog or use a local clone for reproducibility:
 
@@ -44,6 +53,40 @@ py tools\casc_download.py info --product odin --build 11521872 --output D:\CASC\
 If a catalog mirror is unavailable, specify `--cdn-base` to override the
 advertised endpoints. The known working US endpoint for the measured MW2019
 builds is `http://us.cdn.blizzard.com/tpr/odin`.
+
+## Diagnose HTTP errors and regional availability
+
+```powershell
+py tools\casc_download.py diagnose --product odin --build 10296867 --output D:\CASC\diagnose-10296867 --http-timeout 10
+
+# Use Blizzard's live CDN table, independently of the historical versions row.
+py tools\casc_download.py diagnose --product odin --build 11521872 --output D:\CASC\diagnose-11521872 --cdn-table https://us.version.battle.net/v2/products/odin/cdns
+
+# Or use an older CDN table from the catalog's history, including older hosts.
+py tools\casc_download.py diagnose --product odin --build 10296867 --output D:\CASC\diagnose-old-hosts --cdn-table https://raw.githubusercontent.com/mdX7/ngdp_data/d6b0e36fbb375f8be1c4fe4149b81b956041ac64/US/odin/cdns
+```
+
+`--cdn-table` also accepts a local `cdns` file and works with normal downloads.
+`--cdn-base` takes precedence over table selection. These checks use public CDN
+URLs; results can still differ by network location and time.
+
+`diagnose` makes one fresh request per build/CDN configuration URL, records the
+HTTP status, timeout/network errors, MD5 verification, and timing, and writes
+`diagnostics.json`. It ignores cached configuration hits and does not download
+game payloads. Exit status is nonzero if no build configuration was verified.
+HTTP 200 with the wrong MD5 is not accepted. These are configuration checks:
+neither success nor failure establishes whether **every game file** is retained.
+
+A GitHub/raw catalog 404 means the requested metadata path is absent; a CDN 404
+means that particular object URL failed. For example, the catalog contains
+`odin/10358353`, not `odin/10358343`. The downloader reports catalog failures
+separately and includes the actual URL in CDN retrieval failures. Archive lookup
+continues past missing unrelated indexes; if no match is found and some indexes
+could not be read, it reports an **incomplete search**, not proof of deletion.
+Failed indexes remain retryable after a 30-second cooldown or on the next run.
+
+See [the dated regional investigation](CDN_FINDINGS.md) for the tested builds,
+regional hosts, historical hosts, and limitations of the availability results.
 
 ## Explicit configuration data
 

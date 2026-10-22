@@ -1,0 +1,197 @@
+{
+  "checked_at_utc": "2026-10-22T18:44:10.369748+00:00",
+  "build_config": "bc90718ff5987302bf5b8496214ee32f",
+  "cdn_config": "759379dda2f6854b0c4736bee7d6b44a",
+  "version_row": {
+    "Region": "us",
+    "BuildConfig": "bc90718ff5987302bf5b8496214ee32f",
+    "CDNConfig": "759379dda2f6854b0c4736bee7d6b44a",
+    "KeyRing": "",
+    "BuildId": "10358353",
+    "VersionsName": "1.43.0.10358353",
+    "ProductConfig": "18a7890215b1a45772409cb963198a79"
+  },
+  "scope": "Configuration URLs only. Success does not prove all payloads are available; failure does not prove they were deleted.",
+  "build_config_verified": false,
+  "cdn_config_verified": false,
+  "checks": [
+    {
+      "kind": "build_config",
+      "key": "bc90718ff5987302bf5b8496214ee32f",
+      "url": "http://level3.blizzard.com/tpr/odin/config/bc/90/bc90718ff5987302bf5b8496214ee32f",
+      "verified": false,
+      "http_status": 403,
+      "error": "HTTP Error 403: Forbidden",
+      "elapsed_seconds": 4.513
+    },
+    {
+      "kind": "build_config",
+      "key": "bc90718ff5987302bf5b8496214ee32f",
+      "url": "http://us.cdn.blizzard.com/tpr/odin/config/bc/90/bc90718ff5987302bf5b8496214ee32f",
+      "verified": false,
+      "http_status": 404,
+      "error": "HTTP Error 404: Not Found",
+      "elapsed_seconds": 0.219
+    },
+    {
+      "kind": "build_config",
+      "key": "bc90718ff5987302bf5b8496214ee32f",
+      "url": "https://level3.ssl.blizzard.com/tpr/odin/config/bc/90/bc90718ff5987302bf5b8496214ee32f",
+      "verified": false,
+      "http_status": 403,
+      "error": "HTTP Error 403: Forbidden",
+      "elapsed_seconds": 5.65
+    },
+    {
+      "kind": "build_config",
+      "key": "bc90718ff5987302bf5b8496214ee32f",
+      "url": "https://us.cdn.blizzard.com/tpr/odin/config/bc/90/bc90718ff5987302bf5b8496214ee32f",
+      "verified": false,
+      "http_status": 404,
+      "error": "HTTP Error 404: Not Found",
+      "elapsed_seconds": 0.647
+    },
+    {
+      "kind": "build_config",
+      "key": "bc90718ff5987302bf5b8496214ee32f",
+      "url": "http://eu.cdn.blizzard.com/tpr/odin/config/bc/90/bc90718ff5987302bf5b8496214ee32f",
+      "verified": false,
+      "http_status": 404,
+      "error": "HTTP Error 404: Not Found",
+      "elapsed_seconds": 0.119
+    },
+    {
+      "kind": "build_config",
+      "key": "bc90718ff5987302bf5b8496214ee32f",
+      "url": "https://eu.cdn.blizzard.com/tpr/odin/config/bc/90/bc90718ff5987302bf5b8496214ee32f",
+      "verified": false,
+      "http_status": 404,
+      "error": "HTTP Error 404: Not Found",
+      "elapsed_seconds": 0.45
+    },
+    {
+      "kind": "build_config",
+      "key": "bc90718ff5987302bf5b8496214ee32f",
+      "url": "http://blizzard.gcdn.cloudn.co.kr/tpr/odin/config/bc/90/bc90718ff5987302bf5b8496214ee32f",
+      "verified": false,
+      "http_status": 404,
+      "error": "HTTP Error 404: Not Found",
+      "elapsed_seconds": 0.747
+    },
+    {
+      "kind": "build_config",
+      "key": "bc90718ff5987302bf5b8496214ee32f",
+      "url": "http://kr.cdn.blizzard.com/tpr/odin/config/bc/90/bc90718ff5987302bf5b8496214ee32f",
+      "verified": false,
+      "http_status": 404,
+      "error": "HTTP Error 404: Not Found",
+      "elapsed_seconds": 0.06
+    },
+    {
+      "kind": "build_config",
+      "key": "bc90718ff5987302bf5b8496214ee32f",
+      "url": "https://blizzard.gcdn.cloudn.co.kr/tpr/odin/config/bc/90/bc90718ff5987302bf5b8496214ee32f",
+      "verified": false,
+      "http_status": 503,
+      "error": "HTTP Error 503: Service Unavailable",
+      "elapsed_seconds": 1.467
+    },
+    {
+      "kind": "build_config",
+      "key": "bc90718ff5987302bf5b8496214ee32f",
+      "url": "https://kr.cdn.blizzard.com/tpr/odin/config/bc/90/bc90718ff5987302bf5b8496214ee32f",
+      "verified": false,
+      "http_status": 404,
+      "error": "HTTP Error 404: Not Found",
+      "elapsed_seconds": 0.384
+    },
+    {
+      "kind": "cdn_config",
+      "key": "759379dda2f6854b0c4736bee7d6b44a",
+      "url": "http://level3.blizzard.com/tpr/odin/config/75/93/759379dda2f6854b0c4736bee7d6b44a",
+      "verified": false,
+      "error": "timed out",
+      "elapsed_seconds": 8.01
+    },
+    {
+      "kind": "cdn_config",
+      "key": "759379dda2f6854b0c4736bee7d6b44a",
+      "url": "http://us.cdn.blizzard.com/tpr/odin/config/75/93/759379dda2f6854b0c4736bee7d6b44a",
+      "verified": false,
+      "http_status": 404,
+      "error": "HTTP Error 404: Not Found",
+      "elapsed_seconds": 0.326
+    },
+    {
+      "kind": "cdn_config",
+      "key": "759379dda2f6854b0c4736bee7d6b44a",
+      "url": "https://level3.ssl.blizzard.com/tpr/odin/config/75/93/759379dda2f6854b0c4736bee7d6b44a",
+      "verified": false,
+      "error": "The read operation timed out",
+      "elapsed_seconds": 8.021
+    },
+    {
+      "kind": "cdn_config",
+      "key": "759379dda2f6854b0c4736bee7d6b44a",
+      "url": "https://us.cdn.blizzard.com/tpr/odin/config/75/93/759379dda2f6854b0c4736bee7d6b44a",
+      "verified": false,
+      "http_status": 404,
+      "error": "HTTP Error 404: Not Found",
+      "elapsed_seconds": 0.19
+    },
+    {
+      "kind": "cdn_config",
+      "key": "759379dda2f6854b0c4736bee7d6b44a",
+      "url": "http://eu.cdn.blizzard.com/tpr/odin/config/75/93/759379dda2f6854b0c4736bee7d6b44a",
+      "verified": false,
+      "http_status": 404,
+      "error": "HTTP Error 404: Not Found",
+      "elapsed_seconds": 0.276
+    },
+    {
+      "kind": "cdn_config",
+      "key": "759379dda2f6854b0c4736bee7d6b44a",
+      "url": "https://eu.cdn.blizzard.com/tpr/odin/config/75/93/759379dda2f6854b0c4736bee7d6b44a",
+      "verified": false,
+      "http_status": 404,
+      "error": "HTTP Error 404: Not Found",
+      "elapsed_seconds": 0.402
+    },
+    {
+      "kind": "cdn_config",
+      "key": "759379dda2f6854b0c4736bee7d6b44a",
+      "url": "http://blizzard.gcdn.cloudn.co.kr/tpr/odin/config/75/93/759379dda2f6854b0c4736bee7d6b44a",
+      "verified": false,
+      "http_status": 404,
+      "error": "HTTP Error 404: Not Found",
+      "elapsed_seconds": 0.246
+    },
+    {
+      "kind": "cdn_config",
+      "key": "759379dda2f6854b0c4736bee7d6b44a",
+      "url": "http://kr.cdn.blizzard.com/tpr/odin/config/75/93/759379dda2f6854b0c4736bee7d6b44a",
+      "verified": false,
+      "http_status": 404,
+      "error": "HTTP Error 404: Not Found",
+      "elapsed_seconds": 0.039
+    },
+    {
+      "kind": "cdn_config",
+      "key": "759379dda2f6854b0c4736bee7d6b44a",
+      "url": "https://blizzard.gcdn.cloudn.co.kr/tpr/odin/config/75/93/759379dda2f6854b0c4736bee7d6b44a",
+      "verified": false,
+      "http_status": 503,
+      "error": "HTTP Error 503: Service Unavailable",
+      "elapsed_seconds": 0.554
+    },
+    {
+      "kind": "cdn_config",
+      "key": "759379dda2f6854b0c4736bee7d6b44a",
+      "url": "https://kr.cdn.blizzard.com/tpr/odin/config/75/93/759379dda2f6854b0c4736bee7d6b44a",
+      "verified": false,
+      "http_status": 404,
+      "error": "HTTP Error 404: Not Found",
+      "elapsed_seconds": 0.232
+    }
+  ]
+}
