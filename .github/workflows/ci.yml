@@ -1,0 +1,29 @@
+name: Build and test
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  native:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install pinned toolchain
+        run: rustup toolchain install 1.90.0 --profile minimal --component rustfmt --component clippy
+      - run: cargo fmt --all -- --check
+      - run: cargo clippy --all-targets --locked -- -D warnings
+      - run: cargo test --locked
+      - run: node --test tools/casc.test.mjs
+      - run: cargo build --release --locked
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cilo-${{ runner.os }}-x64
+          path: |
+            target/release/cilo
+            target/release/cilo.exe
+          if-no-files-found: error
