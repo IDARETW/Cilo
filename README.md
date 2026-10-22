@@ -12,6 +12,11 @@ own; repeated assets across builds are the main opportunity. Compression results
 depend on the files and versions selected; this is not a claim of universally
 optimal compression.
 
+On the measured 576.1 MiB, three-build MW2019 sample, max mode produced 197.1 MiB
+(2.92:1) at 31.9 MiB/s compression and 705.5 MiB/s restoration. Balanced produced
+198.9 MiB at 77.5 / 793.5 MiB/s. Single-build savings were 6–7%.
+See [the corpus, comparisons, and reproducible results](benchmarks/README.md).
+
 ## Windows
 
 Download `cilo-Windows-x64` from a successful [GitHub Actions run](../../actions)

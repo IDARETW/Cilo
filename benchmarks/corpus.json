@@ -1,0 +1,336 @@
+{
+  "source": "Every-US-CASC-Build-ngdp_data.txt, snapshot d8bcfafa67e7408c95d33caa3733729aff17c6fe",
+  "description": "Complete selected game files after BLTE transport decoding. Native game asset compression is preserved. No payload is committed.",
+  "records": [
+    {
+      "build": "11521872",
+      "build_config": "d88aae6a2bcd3944b48a6b80b5b46c26",
+      "path": "common.ff",
+      "bytes": 5570696,
+      "sha256": "16ae0526fd956cd7b29a773ceffd8492fb9d06b7d76d126dbcbc8df2964565f1",
+      "encoding_key": "4ca769d5620b3bced939f27d70e91bb2",
+      "encoded_bytes": 5571258,
+      "url": "http://us.cdn.blizzard.com/tpr/odin/data/4c/a7/4ca769d5620b3bced939f27d70e91bb2"
+    },
+    {
+      "build": "11521872",
+      "build_config": "d88aae6a2bcd3944b48a6b80b5b46c26",
+      "path": "captive_exterior_tr.ff",
+      "bytes": 23380104,
+      "sha256": "559973defdcc0c20ff2cdcce1a1acd25395c44331a1eb15af3cad473c28f3d50",
+      "encoding_key": "3d90d3782db6a1f545e3246f1cd52231",
+      "encoded_bytes": 23382366,
+      "url": "http://us.cdn.blizzard.com/tpr/odin/data/3d/90/3d90d3782db6a1f545e3246f1cd52231"
+    },
+    {
+      "build": "11521872",
+      "build_config": "d88aae6a2bcd3944b48a6b80b5b46c26",
+      "path": "pak_base_vol138.xpak",
+      "bytes": 22511616,
+      "sha256": "0a16c401fa0511e82f7d6805a8a344d9563af1e949bbe189f5310c7236080412",
+      "encoding_key": "34998f7ac004e4929db11f9c25a4429a",
+      "encoded_bytes": 22513778,
+      "url": "http://us.cdn.blizzard.com/tpr/odin/data/34/99/34998f7ac004e4929db11f9c25a4429a"
+    },
+    {
+      "build": "11521872",
+      "build_config": "d88aae6a2bcd3944b48a6b80b5b46c26",
+      "path": "pak_base_vol140.xpak",
+      "bytes": 40599552,
+      "sha256": "674008523bc497cca17c40da3e7e5daee073141691bcea5206c7df2ae8af522b",
+      "encoding_key": "422dc4ca5ad1c246f43a982f57162807",
+      "encoded_bytes": 40603439,
+      "url": "http://us.cdn.blizzard.com/tpr/odin/data/42/2d/422dc4ca5ad1c246f43a982f57162807"
+    },
+    {
+      "build": "11521872",
+      "build_config": "d88aae6a2bcd3944b48a6b80b5b46c26",
+      "path": "ai_chatter_wz.sabs",
+      "bytes": 5043456,
+      "sha256": "9af30d4dddd08782fd2308a779dad83e7dc0b300afff131abfa1f78cf47d64a4",
+      "encoding_key": "ad50ee5d0a540e00d148d1dce6a73562",
+      "encoded_bytes": 5043968,
+      "url": "http://us.cdn.blizzard.com/tpr/odin/data/ad/50/ad50ee5d0a540e00d148d1dce6a73562"
+    },
+    {
+      "build": "11521872",
+      "build_config": "d88aae6a2bcd3944b48a6b80b5b46c26",
+      "path": "br_event_x2_sfx.sabs",
+      "bytes": 33136128,
+      "sha256": "903567fdc044cff12f7a24818723f686c192f461b17c1a206c9e7b9a72d2a4bf",
+      "encoding_key": "4525589d6a4d79b97284481acef84625",
+      "encoded_bytes": 33139315,
+      "url": "http://us.cdn.blizzard.com/tpr/odin/data/45/25/4525589d6a4d79b97284481acef84625"
+    },
+    {
+      "build": "11521872",
+      "build_config": "d88aae6a2bcd3944b48a6b80b5b46c26",
+      "path": "nvngx_dlss.dll",
+      "bytes": 14463176,
+      "sha256": "201a9fa1bd89ce036fe88ecaf07a4bc4e2172780d82fb617e63ed4d5e143b6de",
+      "encoding_key": "71f1f7e02049ebb2f06ba54477de9850",
+      "encoded_bytes": 14464588,
+      "url": "http://us.cdn.blizzard.com/tpr/odin/data/71/f1/71f1f7e02049ebb2f06ba54477de9850"
+    },
+    {
+      "build": "11521872",
+      "build_config": "d88aae6a2bcd3944b48a6b80b5b46c26",
+      "path": "campaignmenu.bik",
+      "bytes": 14903532,
+      "sha256": "08257af55cef778b7ace159802f37dad00dfbe806bf85c306bd413e9f25517c4",
+      "encoding_key": "3d66160fc43ae89f8384fe5b31554813",
+      "encoded_bytes": 14904969,
+      "url": "http://us.cdn.blizzard.com/tpr/odin/data/3d/66/3d66160fc43ae89f8384fe5b31554813"
+    },
+    {
+      "build": "11521872",
+      "build_config": "d88aae6a2bcd3944b48a6b80b5b46c26",
+      "path": "code_post_gfx.fp",
+      "bytes": 15040840,
+      "sha256": "bacc250d297a24a5e306e9759fca5b8698b95bdb190e28135067d846510289a1",
+      "encoding_key": "5f7207848fa798d5c0ec554ff02414d2",
+      "encoded_bytes": 15042302,
+      "url": "http://us.cdn.blizzard.com/tpr/odin/data/5f/72/5f7207848fa798d5c0ec554ff02414d2"
+    },
+    {
+      "build": "11521872",
+      "build_config": "d88aae6a2bcd3944b48a6b80b5b46c26",
+      "path": "common_base_mp.fp",
+      "bytes": 18841928,
+      "sha256": "fdc095d0f581652bd1e5869028bb14dcab71dfcfdad98ed81885974075f801b2",
+      "encoding_key": "fd3192260985cd2148c94b4817c756e8",
+      "encoded_bytes": 18843740,
+      "url": "http://us.cdn.blizzard.com/tpr/odin/data/fd/31/fd3192260985cd2148c94b4817c756e8"
+    },
+    {
+      "build": "11521872",
+      "build_config": "d88aae6a2bcd3944b48a6b80b5b46c26",
+      "path": "cp_arms_dealer_00001_tr.ff",
+      "bytes": 7684232,
+      "sha256": "2a166566bf6023a7dda573171b716de05a4859baba6c625f37a4ca6f2ca20a90",
+      "encoding_key": "84d2cb3f7189278c872659bf4ae51700",
+      "encoded_bytes": 7684994,
+      "url": "http://us.cdn.blizzard.com/tpr/odin/data/84/d2/84d2cb3f7189278c872659bf4ae51700"
+    },
+    {
+      "build": "11531527",
+      "build_config": "c5dcafb637755b8f7398230f6e677303",
+      "path": "common.ff",
+      "bytes": 5570696,
+      "sha256": "16ae0526fd956cd7b29a773ceffd8492fb9d06b7d76d126dbcbc8df2964565f1",
+      "encoding_key": "4ca769d5620b3bced939f27d70e91bb2",
+      "encoded_bytes": 5571258,
+      "url": "http://us.cdn.blizzard.com/tpr/odin/data/4c/a7/4ca769d5620b3bced939f27d70e91bb2"
+    },
+    {
+      "build": "11531527",
+      "build_config": "c5dcafb637755b8f7398230f6e677303",
+      "path": "captive_exterior_tr.ff",
+      "bytes": 23380104,
+      "sha256": "559973defdcc0c20ff2cdcce1a1acd25395c44331a1eb15af3cad473c28f3d50",
+      "encoding_key": "3d90d3782db6a1f545e3246f1cd52231",
+      "encoded_bytes": 23382366,
+      "url": "http://us.cdn.blizzard.com/tpr/odin/data/3d/90/3d90d3782db6a1f545e3246f1cd52231"
+    },
+    {
+      "build": "11531527",
+      "build_config": "c5dcafb637755b8f7398230f6e677303",
+      "path": "pak_base_vol138.xpak",
+      "bytes": 22511616,
+      "sha256": "0a16c401fa0511e82f7d6805a8a344d9563af1e949bbe189f5310c7236080412",
+      "encoding_key": "34998f7ac004e4929db11f9c25a4429a",
+      "encoded_bytes": 22513778,
+      "url": "http://us.cdn.blizzard.com/tpr/odin/data/34/99/34998f7ac004e4929db11f9c25a4429a"
+    },
+    {
+      "build": "11531527",
+      "build_config": "c5dcafb637755b8f7398230f6e677303",
+      "path": "pak_base_vol140.xpak",
+      "bytes": 40599552,
+      "sha256": "674008523bc497cca17c40da3e7e5daee073141691bcea5206c7df2ae8af522b",
+      "encoding_key": "422dc4ca5ad1c246f43a982f57162807",
+      "encoded_bytes": 40603439,
+      "url": "http://us.cdn.blizzard.com/tpr/odin/data/42/2d/422dc4ca5ad1c246f43a982f57162807"
+    },
+    {
+      "build": "11531527",
+      "build_config": "c5dcafb637755b8f7398230f6e677303",
+      "path": "ai_chatter_wz.sabs",
+      "bytes": 5043456,
+      "sha256": "9af30d4dddd08782fd2308a779dad83e7dc0b300afff131abfa1f78cf47d64a4",
+      "encoding_key": "ad50ee5d0a540e00d148d1dce6a73562",
+      "encoded_bytes": 5043968,
+      "url": "http://us.cdn.blizzard.com/tpr/odin/data/ad/50/ad50ee5d0a540e00d148d1dce6a73562"
+    },
+    {
+      "build": "11531527",
+      "build_config": "c5dcafb637755b8f7398230f6e677303",
+      "path": "br_event_x2_sfx.sabs",
+      "bytes": 33136128,
+      "sha256": "903567fdc044cff12f7a24818723f686c192f461b17c1a206c9e7b9a72d2a4bf",
+      "encoding_key": "4525589d6a4d79b97284481acef84625",
+      "encoded_bytes": 33139315,
+      "url": "http://us.cdn.blizzard.com/tpr/odin/data/45/25/4525589d6a4d79b97284481acef84625"
+    },
+    {
+      "build": "11531527",
+      "build_config": "c5dcafb637755b8f7398230f6e677303",
+      "path": "nvngx_dlss.dll",
+      "bytes": 14463176,
+      "sha256": "201a9fa1bd89ce036fe88ecaf07a4bc4e2172780d82fb617e63ed4d5e143b6de",
+      "encoding_key": "71f1f7e02049ebb2f06ba54477de9850",
+      "encoded_bytes": 14464588,
+      "url": "http://us.cdn.blizzard.com/tpr/odin/data/71/f1/71f1f7e02049ebb2f06ba54477de9850"
+    },
+    {
+      "build": "11531527",
+      "build_config": "c5dcafb637755b8f7398230f6e677303",
+      "path": "campaignmenu.bik",
+      "bytes": 14903532,
+      "sha256": "08257af55cef778b7ace159802f37dad00dfbe806bf85c306bd413e9f25517c4",
+      "encoding_key": "3d66160fc43ae89f8384fe5b31554813",
+      "encoded_bytes": 14904969,
+      "url": "http://us.cdn.blizzard.com/tpr/odin/data/3d/66/3d66160fc43ae89f8384fe5b31554813"
+    },
+    {
+      "build": "11531527",
+      "build_config": "c5dcafb637755b8f7398230f6e677303",
+      "path": "code_post_gfx.fp",
+      "bytes": 15040840,
+      "sha256": "bacc250d297a24a5e306e9759fca5b8698b95bdb190e28135067d846510289a1",
+      "encoding_key": "5f7207848fa798d5c0ec554ff02414d2",
+      "encoded_bytes": 15042302,
+      "url": "http://us.cdn.blizzard.com/tpr/odin/data/5f/72/5f7207848fa798d5c0ec554ff02414d2"
+    },
+    {
+      "build": "11531527",
+      "build_config": "c5dcafb637755b8f7398230f6e677303",
+      "path": "common_base_mp.fp",
+      "bytes": 18841928,
+      "sha256": "fdc095d0f581652bd1e5869028bb14dcab71dfcfdad98ed81885974075f801b2",
+      "encoding_key": "fd3192260985cd2148c94b4817c756e8",
+      "encoded_bytes": 18843740,
+      "url": "http://us.cdn.blizzard.com/tpr/odin/data/fd/31/fd3192260985cd2148c94b4817c756e8"
+    },
+    {
+      "build": "11531527",
+      "build_config": "c5dcafb637755b8f7398230f6e677303",
+      "path": "cp_arms_dealer_00001_tr.ff",
+      "bytes": 7684232,
+      "sha256": "2a166566bf6023a7dda573171b716de05a4859baba6c625f37a4ca6f2ca20a90",
+      "encoding_key": "84d2cb3f7189278c872659bf4ae51700",
+      "encoded_bytes": 7684994,
+      "url": "http://us.cdn.blizzard.com/tpr/odin/data/84/d2/84d2cb3f7189278c872659bf4ae51700"
+    },
+    {
+      "build": "11744825",
+      "build_config": "8429ca4513e894bc28232b61ad1321fd",
+      "path": "common.ff",
+      "bytes": 5570696,
+      "sha256": "16ae0526fd956cd7b29a773ceffd8492fb9d06b7d76d126dbcbc8df2964565f1",
+      "encoding_key": "4ca769d5620b3bced939f27d70e91bb2",
+      "encoded_bytes": 5571258,
+      "url": "http://us.cdn.blizzard.com/tpr/odin/data/4c/a7/4ca769d5620b3bced939f27d70e91bb2"
+    },
+    {
+      "build": "11744825",
+      "build_config": "8429ca4513e894bc28232b61ad1321fd",
+      "path": "captive_exterior_tr.ff",
+      "bytes": 23380104,
+      "sha256": "559973defdcc0c20ff2cdcce1a1acd25395c44331a1eb15af3cad473c28f3d50",
+      "encoding_key": "3d90d3782db6a1f545e3246f1cd52231",
+      "encoded_bytes": 23382366,
+      "url": "http://us.cdn.blizzard.com/tpr/odin/data/3d/90/3d90d3782db6a1f545e3246f1cd52231"
+    },
+    {
+      "build": "11744825",
+      "build_config": "8429ca4513e894bc28232b61ad1321fd",
+      "path": "pak_base_vol138.xpak",
+      "bytes": 22511616,
+      "sha256": "0a16c401fa0511e82f7d6805a8a344d9563af1e949bbe189f5310c7236080412",
+      "encoding_key": "34998f7ac004e4929db11f9c25a4429a",
+      "encoded_bytes": 22513778,
+      "url": "http://us.cdn.blizzard.com/tpr/odin/data/34/99/34998f7ac004e4929db11f9c25a4429a"
+    },
+    {
+      "build": "11744825",
+      "build_config": "8429ca4513e894bc28232b61ad1321fd",
+      "path": "pak_base_vol140.xpak",
+      "bytes": 40599552,
+      "sha256": "674008523bc497cca17c40da3e7e5daee073141691bcea5206c7df2ae8af522b",
+      "encoding_key": "422dc4ca5ad1c246f43a982f57162807",
+      "encoded_bytes": 40603439,
+      "url": "http://us.cdn.blizzard.com/tpr/odin/data/42/2d/422dc4ca5ad1c246f43a982f57162807"
+    },
+    {
+      "build": "11744825",
+      "build_config": "8429ca4513e894bc28232b61ad1321fd",
+      "path": "ai_chatter_wz.sabs",
+      "bytes": 5043456,
+      "sha256": "9af30d4dddd08782fd2308a779dad83e7dc0b300afff131abfa1f78cf47d64a4",
+      "encoding_key": "ad50ee5d0a540e00d148d1dce6a73562",
+      "encoded_bytes": 5043968,
+      "url": "http://us.cdn.blizzard.com/tpr/odin/data/ad/50/ad50ee5d0a540e00d148d1dce6a73562"
+    },
+    {
+      "build": "11744825",
+      "build_config": "8429ca4513e894bc28232b61ad1321fd",
+      "path": "br_event_x2_sfx.sabs",
+      "bytes": 33136128,
+      "sha256": "903567fdc044cff12f7a24818723f686c192f461b17c1a206c9e7b9a72d2a4bf",
+      "encoding_key": "4525589d6a4d79b97284481acef84625",
+      "encoded_bytes": 33139315,
+      "url": "http://us.cdn.blizzard.com/tpr/odin/data/45/25/4525589d6a4d79b97284481acef84625"
+    },
+    {
+      "build": "11744825",
+      "build_config": "8429ca4513e894bc28232b61ad1321fd",
+      "path": "nvngx_dlss.dll",
+      "bytes": 14463176,
+      "sha256": "201a9fa1bd89ce036fe88ecaf07a4bc4e2172780d82fb617e63ed4d5e143b6de",
+      "encoding_key": "71f1f7e02049ebb2f06ba54477de9850",
+      "encoded_bytes": 14464588,
+      "url": "http://us.cdn.blizzard.com/tpr/odin/data/71/f1/71f1f7e02049ebb2f06ba54477de9850"
+    },
+    {
+      "build": "11744825",
+      "build_config": "8429ca4513e894bc28232b61ad1321fd",
+      "path": "campaignmenu.bik",
+      "bytes": 14903532,
+      "sha256": "08257af55cef778b7ace159802f37dad00dfbe806bf85c306bd413e9f25517c4",
+      "encoding_key": "3d66160fc43ae89f8384fe5b31554813",
+      "encoded_bytes": 14904969,
+      "url": "http://us.cdn.blizzard.com/tpr/odin/data/3d/66/3d66160fc43ae89f8384fe5b31554813"
+    },
+    {
+      "build": "11744825",
+      "build_config": "8429ca4513e894bc28232b61ad1321fd",
+      "path": "code_post_gfx.fp",
+      "bytes": 15417672,
+      "sha256": "5ee4de1a0298c9817f7fcccc7d547170ba81f2a67296445be75f3b713cbd50ed",
+      "encoding_key": "549c3f04c272d23601dd6dfef0e26f52",
+      "encoded_bytes": 15419159,
+      "url": "http://us.cdn.blizzard.com/tpr/odin/data/54/9c/549c3f04c272d23601dd6dfef0e26f52"
+    },
+    {
+      "build": "11744825",
+      "build_config": "8429ca4513e894bc28232b61ad1321fd",
+      "path": "common_base_mp.fp",
+      "bytes": 19022152,
+      "sha256": "2dc8cd9b51b44ca52a2ab702b3520712b87f23238889cad494bb77a1f1001215",
+      "encoding_key": "01940972d1ae926aa2462caf528a729c",
+      "encoded_bytes": 19023989,
+      "url": "http://us.cdn.blizzard.com/tpr/odin/data/01/94/01940972d1ae926aa2462caf528a729c"
+    },
+    {
+      "build": "11744825",
+      "build_config": "8429ca4513e894bc28232b61ad1321fd",
+      "path": "cp_arms_dealer_00001_tr.ff",
+      "bytes": 7684232,
+      "sha256": "d646386090485c3cddd572e6f580f2d1f15f51c9199373ad495ea3d68ee14a87",
+      "encoding_key": "957de25ef54e627d2036cc18128916e3",
+      "encoded_bytes": 7684994,
+      "url": "http://us.cdn.blizzard.com/tpr/odin/data/95/7d/957de25ef54e627d2036cc18128916e3"
+    }
+  ]
+}

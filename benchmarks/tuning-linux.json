@@ -1,0 +1,43 @@
+{
+  "measured_at_utc": "2026-10-22T18:12:03.090Z",
+  "platform": "linux",
+  "kernel": "6.18.55",
+  "cpu": "AMD EPYC 9V74 80-Core Processor",
+  "logical_cpus": 5,
+  "memory_bytes": 35743760384,
+  "threads": 4,
+  "repeats": 1,
+  "rust": "rustc 1.90.0 (1159e78c4 2025-09-14)",
+  "zstd": "*** Zstandard CLI (64-bit) v1.5.7, by Yann Collet ***",
+  "xz": "xz (XZ Utils) 5.8.1\nliblzma 5.8.1",
+  "notes": "Warm source cache; sequential runs on a shared cloud host. Cilo timers include checksums and file I/O/sync. Baselines include tar creation/extraction but not an fsync guarantee. Independent SHA-256 validation is outside timers. No network time included.",
+  "rows": [
+    {
+      "dataset": "three-builds",
+      "mode": "max-64m-64k",
+      "iteration": 1,
+      "bytes": 604082836,
+      "archive_bytes": 207389030,
+      "unique_bytes": 232454396,
+      "compression_seconds": 23.307073314,
+      "decompression_seconds": 1.051304932,
+      "compression_mib_s": 24.717744605411283,
+      "decompression_mib_s": 547.9840036316398,
+      "sha256_roundtrip": true,
+      "ratio": 2.912800334713943
+    },
+    {
+      "dataset": "three-builds",
+      "mode": "tar-zstd-19-long1g",
+      "iteration": 1,
+      "bytes": 604082836,
+      "archive_bytes": 207149241,
+      "compression_seconds": 46.07503756700001,
+      "decompression_seconds": 0.7089490470000018,
+      "compression_mib_s": 12.50347945646958,
+      "decompression_mib_s": 812.6088724046868,
+      "sha256_roundtrip": true,
+      "ratio": 2.9161720944949057
+    }
+  ]
+}
