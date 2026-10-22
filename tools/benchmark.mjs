@@ -1,5 +1,5 @@
 // Linux benchmark harness; requires Node 20+, GNU tar, zstd and xz.
-// Usage: node tools/benchmark.mjs SAMPLE_WORKSPACE RESULT.json [REPEATS=3]
+// Usage: node tools/benchmark.mjs SAMPLE_WORKSPACE RESULT.json [REPEATS=3] [MODES_CSV] [DATASETS_CSV]
 import { execFileSync } from 'node:child_process';
 import { readFileSync, writeFileSync, mkdirSync, mkdtempSync, rmSync, statSync, readdirSync } from 'node:fs';
 import { resolve, join, dirname } from 'node:path';
@@ -10,6 +10,8 @@ import { sha256 } from './casc.mjs';
 const workspace = resolve(process.argv[2]);
 const resultFile = resolve(process.argv[3]);
 const repeats = Number(process.argv[4] || 3);
+const modes = (process.argv[5] || 'fast,balanced,max,max-64m-64k,tar-zstd-19,tar-zstd-19-long1g,tar-xz-6').split(',');
+const datasetFilter = process.argv[6]?.split(',');
 if (!Number.isInteger(repeats) || repeats < 1 || repeats > 10) throw new Error('repeats must be 1..10');
 const executable = resolve('target/release/cilo');
 const corpus = JSON.parse(readFileSync(join(workspace, 'corpus.json')));
@@ -31,15 +33,17 @@ mkdirSync(dirname(resultFile), { recursive: true });
 const temp = mkdtempSync(join(workspace, 'bench-'));
 try {
   for (const dataset of datasets) {
+    if (datasetFilter && !datasetFilter.includes(dataset.name)) continue;
     checkTree(dataset.path, dataset.records);
     const bytes = dataset.records.reduce((n, r) => n + r.bytes, 0);
-    for (const mode of ['fast', 'balanced', 'max', 'tar-zstd-19', 'tar-xz-6']) {
+    for (const mode of modes) {
       for (let iteration = 1; iteration <= repeats; iteration++) {
         console.log(`${dataset.name} ${mode} run ${iteration}/${repeats}`);
         const archive = join(temp, 'archive'), output = join(temp, 'out'), tar = join(temp, 'input.tar');
         let row;
         if (!mode.startsWith('tar-')) {
-          const pack = JSON.parse(run(executable, ['pack', dataset.path, archive, '--profile', mode, '--threads', '4']));
+          const tuning = mode === 'max-64m-64k' ? ['--block-mib', '64', '--chunk-kib', '64'] : [];
+          const pack = JSON.parse(run(executable, ['pack', dataset.path, archive, '--profile', mode === 'max-64m-64k' ? 'max' : mode, '--threads', '4', ...tuning]));
           const unpack = JSON.parse(run(executable, ['unpack', archive, output]));
           row = { dataset: dataset.name, mode, iteration, bytes, archive_bytes: pack.archive_bytes, unique_bytes: pack.unique_bytes,
             compression_seconds: pack.elapsed_seconds, decompression_seconds: unpack.elapsed_seconds,
@@ -47,13 +51,13 @@ try {
         } else {
           const start = performance.now();
           run('tar', ['--sort=name', '--mtime=@0', '--owner=0', '--group=0', '--numeric-owner', '-cf', tar, '-C', dataset.path, '.']);
-          if (mode === 'tar-zstd-19') run('zstd', ['-q', '-T4', '-19', '--long=26', tar, '-o', archive]);
+          if (mode.startsWith('tar-zstd')) run('zstd', ['-q', '-T4', '-19', mode.endsWith('long1g') ? '--long=30' : '--long=26', tar, '-o', archive]);
           else run('xz', ['-T4', '-6', '--keep', tar]);
-          const archivePath = mode === 'tar-zstd-19' ? archive : `${tar}.xz`;
+          const archivePath = mode.startsWith('tar-zstd') ? archive : `${tar}.xz`;
           const compression = (performance.now() - start) / 1000;
           rmSync(tar); mkdirSync(output);
           const decodeStart = performance.now();
-          if (mode === 'tar-zstd-19') run('zstd', ['-q', '-d', archivePath, '-o', tar]);
+          if (mode.startsWith('tar-zstd')) run('zstd', ['-q', '-d', '--long=30', archivePath, '-o', tar]);
           else run('xz', ['--decompress', '--keep', archivePath]);
           run('tar', ['-xf', tar, '-C', output]);
           const decompression = (performance.now() - decodeStart) / 1000;

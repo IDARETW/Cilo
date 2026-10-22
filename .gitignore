@@ -3,3 +3,5 @@
 /bench-output/
 *.cilo
 *.part
+__pycache__/
+*.pyc

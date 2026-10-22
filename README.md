@@ -99,11 +99,16 @@ is 3:1. Speeds include checksums and file I/O. `list` checks metadata integrity;
 
 ## Development and reproducible experiments
 
+For the general Python build downloader, see [NGDP/CASC downloading](docs/DOWNLOADER.md).
+It supports catalog-based selection, verified local mirrors, resumable downloads,
+archive-backed objects, and named MW2019 file extraction.
+
 ```sh
 cargo fmt --all -- --check
 cargo clippy --all-targets --locked -- -D warnings
 cargo test --locked
 node --test tools/casc.test.mjs
+python3 -m unittest discover -s tests -p 'test_*.py' -v
 ```
 
 The optional sample downloader needs Node 20+ and curl. It selects complete files
