@@ -191,6 +191,12 @@ Repeat `--cdn-base` to provide fallback servers. A missing CDN configuration doe
 not prevent retrieval of loose objects, but archive-backed objects require the
 matching CDN configuration and available archive indexes.
 
+After a direct object request fails, the downloader also reads the CDN's
+`file-index` entries when available. It validates their identity, format and
+declared size, then reports whether the EKey is listed as a loose object. This
+is separate from payload verification: archive indexes are still searched for
+an alternate copy, and index membership alone never counts as a recovered file.
+
 ## Mirror part or all of a build
 
 ```powershell
@@ -232,9 +238,10 @@ and pack that parent with Cilo.
 
 - DOWNLOAD manifests v1–v3, including tag bitmaps; direct content keys must be
   present in the build configuration for the metadata needed by the operation.
-- Loose CDN objects, plus archive lookup using modern CDN index v1 with 16-byte
-  keys, 4-byte sizes/offsets, and 8-byte checksums. Index identity, footer, table
-  of contents, pages, BLTE headers and every encoded chunk are verified.
+- Loose CDN objects and loose-file index v1, plus archive lookup using modern
+  CDN index v1 with 16-byte keys, 4-byte sizes/offsets, and 8-byte checksums.
+  Index identity, footer, table of contents, pages, BLTE headers and every
+  encoded chunk are verified.
 - BLTE `N` (stored) and `Z` (zlib) extraction. Encrypted and other modes can be
   mirrored if structurally valid, but extraction fails explicitly. No keys are
   guessed or fetched.

@@ -479,6 +479,9 @@ class Storage:
         self.archive_map = {}
         self.archives = None
         self.index_failures = {}
+        self.loose_file_map = None
+        self.loose_file_indexes = []
+        self.loose_index_failures = {}
         self.timeout = timeout
         self.config_fallback = config_fallback
         self.recovered_configs = {}
@@ -561,7 +564,11 @@ class Storage:
             except (CascError, UnicodeError, urllib.error.URLError, OSError) as exc:
                 errors.append(f'{url}: {exc}')
         if kind == 'data' and self.cdn_key:
-            location = self.locate(key)
+            try:
+                location = self.locate(key, size)
+            except CascError as exc:
+                errors.append(f'index lookup: {exc}')
+                location = None
             if location:
                 archive, offset, length = location
                 check(size is None or size == length, "archive index disagrees with DOWNLOAD size")
@@ -600,14 +607,63 @@ class Storage:
                     path.with_name(path.name + '.part').unlink(missing_ok=True)
         raise CascError('; '.join(failures))
 
-    def locate(self, key):
+    def loose_file_index(self, index, size=None):
+        relative = key_path('data', index) + '.index'
+        path = self.path(relative)
+
+        def parse(p):
+            check(size is None or p.stat().st_size == size, 'loose-file index size mismatch')
+            parsed = parse_cdn_index(p.read_bytes(), index)
+            check(parsed['kind'] == 'loose', 'expected a loose-file index')
+            return parsed['entries']
+
+        if path.exists():
+            return parse(path)
+        failures = []
+        for base in self.ordered_bases():
+            url = f'{base}/{relative}'
+            try:
+                part = http_download(url, path, expected=size, limit=64*MIB,
+                                     timeout=self.timeout, attempts=self.attempts)
+                entries = parse(part)
+                os.replace(part, path)
+                self.prefer(base)
+                return entries
+            except (CascError, urllib.error.URLError, OSError) as exc:
+                failures.append(f'{url}: {exc}')
+                if isinstance(exc, CascError):
+                    path.with_name(path.name + '.part').unlink(missing_ok=True)
+        raise CascError('; '.join(failures))
+
+    def load_loose_file_indexes(self, config):
+        indexes = config.get('file-index', [])
+        sizes = config.get('file-index-size', [])
+        check(not sizes or len(indexes) == len(sizes), 'file-index size count mismatch')
+        self.loose_file_indexes = [
+            (key, int(sizes[i]) if sizes else None) for i, key in enumerate(indexes)
+        ]
+        entries = {}
+        for index, size in self.loose_file_indexes:
+            try:
+                for key, entry in self.loose_file_index(index, size).items():
+                    previous = entries.get(key)
+                    check(previous is None or previous['size'] == entry['size'],
+                          f'conflicting loose-file index sizes for {key}')
+                    if previous is None:
+                        entries[key] = {'size': entry['size'], 'index': index}
+            except (CascError, urllib.error.URLError, OSError, ValueError) as exc:
+                self.loose_index_failures[index] = str(exc)
+        self.loose_file_map = entries
+
+    def locate(self, key, size=None):
         with self.lock:
             retry_indexes = [a for a, (last, _) in self.index_failures.items() if time.monotonic() - last >= 30]
             if self.archives is None:
                 try:
                     cfg = parse_config(self.fetch('config', self.cdn_key).read_bytes())
                     self.archives = iter(cfg.get('archives', []))
-                except (CascError, urllib.error.URLError) as exc:
+                    self.load_loose_file_indexes(cfg)
+                except (CascError, urllib.error.URLError, ValueError) as exc:
                     raise CascError(f'loose-object retrieval failed and CDN configuration could not be retrieved: {exc}') from exc
             def load_index(archive):
                 try:
@@ -633,7 +689,14 @@ class Storage:
                         except (CascError, urllib.error.URLError, OSError) as exc:
                             self.index_failures[archive] = (time.monotonic(), str(exc))
             if key in self.archive_map:
-                return self.archive_map[key]
+                location = self.archive_map[key]
+                loose = (self.loose_file_map or {}).get(key)
+                if loose:
+                    check(size is None or size == loose['size'],
+                          f'loose-file index {loose["index"]} size disagrees with the requested size for {key}')
+                    check(loose['size'] == location[2],
+                          f'loose-file and archive indexes disagree on the size of {key}')
+                return location
             # Keep failed indexes retryable, with a cooldown to avoid hammering
             # unavailable mirrors for every object in a multi-file download.
             for archive in retry_indexes:
@@ -643,8 +706,28 @@ class Storage:
                         return self.archive_map[key]
             if self.index_failures:
                 examples = '; '.join(f'{k}: {v[1]}' for k, v in list(self.index_failures.items())[:3])
+                loose = (self.loose_file_map or {}).get(key)
+                loose_note = (f' The key is also listed in loose-file index {loose["index"]} '
+                              f'with size {loose["size"]}, but direct retrieval failed.' if loose else '')
+                loose_failures = ''
+                if self.loose_index_failures:
+                    failures = '; '.join(f'{k}: {v}' for k, v in list(self.loose_index_failures.items())[:3])
+                    loose_failures = (f' Loose-file index lookup was incomplete '
+                                      f'({len(self.loose_index_failures)} indexes): {failures}.')
                 raise CascError(f'archive search incomplete: {len(self.index_failures)} indexes could not be read; '
-                                f'this does not establish that object {key} is missing. {examples}')
+                                f'this does not establish that object {key} is missing.{loose_note} '
+                                f'{loose_failures} {examples}')
+            loose = (self.loose_file_map or {}).get(key)
+            if loose:
+                check(size is None or size == loose['size'],
+                      f'loose-file index {loose["index"]} size disagrees with the requested size for {key}')
+                raise CascError(f'object {key} is listed in loose-file index {loose["index"]} '
+                                f'with size {loose["size"]}, but direct CDN retrieval failed and the '
+                                'complete archive search found no alternate copy')
+            if self.loose_index_failures:
+                failures = '; '.join(f'{k}: {v}' for k, v in list(self.loose_index_failures.items())[:3])
+                raise CascError(f'loose-file index lookup incomplete; archive search found no alternate copy '
+                                f'for {key}, but loose-object membership is unknown: {failures}')
             return None
 
 
