@@ -221,9 +221,7 @@ impl<'a> BlockWriter<'a> {
                     // Bound the match window, including max mode, to the largest supported block.
                     compressor.set_parameter(CParameter::WindowLog(26))?;
                     compressor.set_parameter(CParameter::ChecksumFlag(true))?;
-                    if level >= 15 {
-                        compressor.set_parameter(CParameter::EnableLongDistanceMatching(true))?;
-                    }
+                    compressor.set_parameter(CParameter::EnableLongDistanceMatching(true))?;
                     let compressed = compressor.compress(raw)?;
                     let hash = *blake3::hash(raw).as_bytes();
                     let len = raw.len() as u32;

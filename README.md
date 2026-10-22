@@ -15,13 +15,13 @@ optimal compression.
 On the measured 576.1 MiB, three-build MW2019 sample, max mode produced 197.1 MiB
 (2.92:1) at 31.9 MiB/s compression and 705.5 MiB/s restoration. Balanced produced
 198.9 MiB at 77.5 / 793.5 MiB/s. Single-build savings were 6–7%.
+Fast mode produced 200.5 MiB at 525.4 / 780.6 MiB/s.
 See [the corpus, comparisons, and reproducible results](benchmarks/README.md).
 
 ## Windows
 
-Download `cilo-Windows-x64` from a successful [GitHub Actions run](../../actions)
-and extract `cilo.exe`, or build with Rust 1.90.0 and Visual Studio Build Tools
-(the **Desktop development with C++** workload):
+Build with Rust 1.90.0 and Visual Studio Build Tools (the **Desktop development
+with C++** workload):
 
 ```powershell
 cargo build --release --locked
@@ -33,6 +33,12 @@ cargo build --release --locked
 `D:\RestoredBuilds` must not already exist. The archive must be outside the input
 directory, and its parent directory must exist. No Python, Node, DLL downloads,
 or external compression executables are needed to run Cilo.
+
+The [GitHub Actions workflow](../../actions) is configured to publish
+`cilo-Windows-x64` and `cilo-Linux-x64` artifacts. As of 2026-10-22, this
+repository's Actions runs fail before starting jobs. A Windows x64 executable
+was cross-built locally and passed the applicable tests and a real-file round
+trip under Wine 10. Native Windows validation is still pending.
 
 ## Linux
 
@@ -56,7 +62,7 @@ Independent archives cannot share deduplicated chunks.
 
 | Option | Behavior |
 |---|---|
-| `--profile fast` | Zstandard level 3; prioritize throughput |
+| `--profile fast` | Zstandard level 3 with long-distance matching; prioritize throughput |
 | `--profile balanced` | Level 15 with long-distance matching; default |
 | `--profile max` | Level 22 with long-distance matching; much more CPU for potentially smaller output |
 | `--threads 4` | Parallel solid-block jobs; default is available CPUs capped at 4 |
@@ -115,6 +121,15 @@ cargo test --locked
 node --test tools/casc.test.mjs
 python3 -m unittest discover -s tests -p 'test_*.py' -v
 ```
+
+In the managed Linux cloud workspace, `bash scripts/setup-cloud.sh` installs
+the pinned Rust toolchain under `/workspace/toolchains` and runs these checks.
+The Python downloader has no third-party dependencies. The optional
+`bash scripts/build-windows-cross.sh` cross-builds the Windows executable and
+test binaries using a pinned, SHA-256-verified LLVM-MinGW toolchain. Run it from
+the repository root with `cargo` and `rustup` on `PATH`; output is
+`target/x86_64-pc-windows-gnullvm/release/cilo.exe`. This script compiles tests;
+it does not install Wine or run the Windows tests.
 
 The optional sample downloader needs Node 20+ and curl. It selects complete files
 from three pinned retail `odin` builds and verifies CASC configuration keys,

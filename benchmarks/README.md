@@ -22,7 +22,7 @@ No game payload is committed.
 
 | Method | Archive MiB | Original/archive | Space saved | Compress MiB/s | Restore MiB/s |
 |---|---:|---:|---:|---:|---:|
-| Cilo fast | 213.71 | 2.70:1 | 62.90% | 567.2 | 777.0 |
+| Cilo fast | 200.47 | 2.87:1 | 65.20% | 525.4 | 780.6 |
 | Cilo balanced | 198.91 | 2.90:1 | 65.47% | 77.5 | 793.5 |
 | Cilo max | **197.09** | **2.92:1** | **65.79%** | 31.9 | 705.5 |
 | tar + zstd -19, 64 MiB window | 533.04 | 1.08:1 | 7.47% | 5.3 | 674.1 |
@@ -48,13 +48,18 @@ not establish optimal settings for every game corpus.
 
 For this collection, balanced is a useful tradeoff: it is only 1.81 MiB larger
 than max and compresses about 2.4 times faster. Fast mode provides much higher
-throughput at the cost of another 14.81 MiB.
+throughput at the cost of another 1.56 MiB.
+
+Enabling long-distance matching in the fast profile reduced its archive from
+213.71 to 200.47 MiB, with median compression throughput changing from 567.2 to
+525.4 MiB/s. Balanced and max already used this setting. Both sets of raw
+measurements are retained; the tables show the updated fast profile.
 
 ## One build: 191.86 MiB, 11 files
 
 | Method | Archive MiB | Space saved | Compress MiB/s | Restore MiB/s |
 |---|---:|---:|---:|---:|
-| Cilo fast | 180.41 | 5.97% | 294.1 | 466.3 |
+| Cilo fast | 180.27 | 6.04% | 245.0 | 486.3 |
 | Cilo balanced | 179.24 | 6.58% | 24.8 | 505.1 |
 | Cilo max | 177.58 | 7.44% | 10.1 | 424.9 |
 | tar + zstd -19, 64 MiB window | **177.51** | **7.48%** | 4.6 | 655.1 |
@@ -79,6 +84,18 @@ include tar creation/extraction, but do not provide the same fsync guarantee.
 The baseline tar orders files by path; Cilo groups by extension and filename.
 Other solid ordering/window/dictionary choices may change the result.
 
-Raw per-run timings: [results-linux.json](results-linux.json) and
-[tuning-linux.json](tuning-linux.json). Only Linux was benchmarked. GitHub Actions
+Raw per-run timings: [initial results](results-linux.json),
+[updated fast profile](fast-ldm-linux.json), and
+[tuning experiments](tuning-linux.json). Only Linux was benchmarked. GitHub Actions
 did not start jobs in this session, so no Windows CI pass is claimed here.
+
+## Windows compatibility checks
+
+The Windows x64 executable was cross-built with Rust 1.90.0 and the pinned
+LLVM-MinGW MSVCRT 20261020 toolchain using `scripts/build-windows-cross.sh`.
+Its import table contains only Windows system DLLs. All six applicable Rust
+tests passed under Wine 10 on Linux. The release executable also packed and
+restored the full 33-file corpus; independent SHA-256 checks matched every file.
+Linux verified that Windows-created archive, and the Windows executable verified
+a Linux-created single-build archive. These are compatibility checks, not native
+Windows performance measurements. Testing on a Windows machine is still needed.
