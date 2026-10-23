@@ -1,5 +1,8 @@
 # MW2019 CDN investigation — 2026-10-22
 
+For the complete discovered endpoint inventory, URL layouts, provenance and
+per-endpoint results, see [the standalone CDN endpoint map](CDN_ENDPOINT_MAP.md).
+
 The tested regional endpoints did not recover the two reported older build
 configurations. Regional fallback does help with transient endpoint failures,
 and the downloader now tries every advertised region by default. The catalog
@@ -69,7 +72,7 @@ with four distinct storage paths: `tpr/odin`, `tpr/odinv`, `tpr/odind`, and
 `tpr/odine`. Eighteen historical retail CDN-table revisions and the product tables
 produced 29 distinct advertised base/path combinations; the user-supplied HTTPS
 Level3 spelling brings the map to 30. There are 17 distinct retail variants;
-the control run included one duplicate spelling, retained in its raw evidence.
+the saved control run contains 119 checks across those 17 bases and seven keys.
 The 3,917 distinct family configuration requests yielded 119 MD5-verified configs
 and 187 HTTP-200 bodies whose raw MD5 did not match. Those 187 are **unverified**;
 encryption/format differences have not been established as their cause.

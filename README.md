@@ -128,6 +128,9 @@ It supports catalog-based selection, verified local mirrors, resumable downloads
 regional CDN fallback, archive-backed objects, and named MW2019 file extraction.
 Use its `diagnose` command to distinguish catalog errors, CDN HTTP failures,
 and verified configurations; see the [regional investigation](docs/CDN_FINDINGS.md).
+The [standalone CDN endpoint map](docs/CDN_ENDPOINT_MAP.md) lists all 30 discovered
+Odin-family bases, regional/path associations, historical sources, object URL
+formats, per-endpoint results and investigation gaps.
 
 ```sh
 cargo fmt --all -- --check
