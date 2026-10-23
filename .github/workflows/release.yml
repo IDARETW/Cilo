@@ -21,8 +21,8 @@ jobs:
       - name: Install pinned Rust
         run: rustup toolchain install 1.90.0 --profile minimal
       - run: cargo test --locked
-      - run: python -m unittest discover -s tests -p "test_*.py" -v
       - run: cargo build --release --locked
+      - run: python -m unittest discover -s tests -p "test_*.py" -v
       - run: ./scripts/build-downloader-windows.ps1
       - name: Stage checksummed release assets
         shell: pwsh

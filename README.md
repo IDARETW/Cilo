@@ -3,7 +3,9 @@
 A native Rust compressor/decompressor for lossless local archives of game builds,
 including MW2019/CASC files. It combines FastCDC content-defined chunking,
 BLAKE3 deduplication across the entire input directory, and parallel solid
-Zstandard compression. Put several builds beneath one directory to share their
+Zstandard compression. Version 0.2 adds validated game-container boundaries,
+reversible executable/numeric filters, whole-file reuse and a bounded compression
+pipeline. Put several builds beneath one directory to share their
 unchanged data in one archive.
 
 Cilo preserves the **exact file bytes**. It does not decrypt game assets or
@@ -12,18 +14,24 @@ own; repeated assets across builds are the main opportunity. Compression results
 depend on the files and versions selected; this is not a claim of universally
 optimal compression.
 
-On the measured 576.1 MiB, three-build MW2019 sample, max mode produced 197.1 MiB
-(2.92:1) at 31.9 MiB/s compression and 705.5 MiB/s restoration. Balanced produced
-198.9 MiB at 77.5 / 793.5 MiB/s. Single-build savings were 6–7%.
-Fast mode produced 200.5 MiB at 525.4 / 780.6 MiB/s.
-See [the corpus, comparisons, and reproducible results](benchmarks/README.md).
+On a **selected six-build sample** of 1,152.38 MiB, max mode produced 226.30 MiB
+(80.36% saved) at 48.2 MiB/s compression and 1,069.9 MiB/s restoration. Balanced
+produced 228.32 MiB at 171.1 / 1,188.3 MiB/s. These are median Linux results;
+most savings come from unchanged files across the six nearby builds. The old
+version also saved 80.34% on this sample. The single-build sample saved only
+7.44%; this is not an 80% single-build or whole-game compression claim. See the
+[v0.2 before/after benchmarks](benchmarks/REFINEMENT.md) and
+[format modules and their limits](docs/GAME_FORMATS.md).
 
 ## Windows
 
 Download the prebuilt files from [GitHub Releases](https://github.com/IDARETW/Cilo/releases):
 `cilo.exe` is the native archiver; `CiloDownloader-windows-x64.zip` contains the
 downloader GUI. Extract the whole GUI folder and run `CiloDownloader.exe`.
-The downloader bundles Python; the archiver is a standalone native executable.
+The downloader bundles Python and the native archiver. Enable **Download directly
+to a .cilo archive**, or use **Browse a .cilo archive…** to inspect file details
+and text/hex previews without extracting. See [archive usage](docs/ARCHIVES.md).
+The separately distributed archiver is a standalone native executable.
 
 Build with Rust 1.90.0 and Visual Studio Build Tools (the **Desktop development
 with C++** workload):
@@ -59,6 +67,7 @@ cargo build --release --locked
 ./target/release/cilo verify /archives/mw2019.cilo
 ./target/release/cilo unpack /archives/mw2019.cilo /data/restored
 ./target/release/cilo list /archives/mw2019.cilo
+./target/release/cilo analyze /data/builds/11521872/common.ff
 ```
 
 For multiple builds, use a layout such as `builds/11521872/...`,
@@ -73,8 +82,9 @@ Independent archives cannot share deduplicated chunks.
 | `--profile balanced` | Level 15 with long-distance matching; default |
 | `--profile max` | Level 22 with long-distance matching; much more CPU for potentially smaller output |
 | `--threads 4` | Parallel solid-block jobs; default is available CPUs capped at 4 |
-| `--block-mib 32` | Solid compression block size, 4–64 MiB |
-| `--chunk-kib 256` | Average deduplication chunk size; powers of two from 64–1024 KiB |
+| `--block-mib 64` | Default solid compression block limit, configurable from 4–64 MiB |
+| `--chunk-kib 256` | Average CDC size within regions; powers of two from 16–1024 KiB |
+| `--generic` | Disable format boundaries and reversible filters for comparisons |
 | `--no-dedup` | Disable deduplication for comparisons |
 | `unpack/verify --cache-mib 256` | Decoded-block LRU cache, 64–65536 MiB |
 | `unpack --max-output-gib 500` | Optional cap on the total declared restored bytes |
@@ -82,7 +92,8 @@ Independent archives cannot share deduplicated chunks.
 Smaller chunks can match more partially changed data at the cost of metadata and
 CPU. Larger solid blocks can improve compression. Max mode can use over 1 GiB
 per active compression worker; reduce `--threads` on smaller machines. Working
-memory consists of pending solid blocks, compressor workspaces, the dedup index,
+memory consists of up to twice the thread count in pending solid blocks,
+compressor/filter workspaces, the dedup index,
 and archive metadata. Extraction does not load the complete payload into RAM.
 Related filenames from different builds are kept adjacent to improve solid
 compression and reuse of cached blocks during restoration.
@@ -90,7 +101,9 @@ compression and reuse of cached blocks during restoration.
 Commands print JSON with byte counts, deduplicated size, compression ratio,
 elapsed time, and logical MiB/s. A ratio of 3 means original size / archive size
 is 3:1. Speeds include checksums and file I/O. `list` checks metadata integrity;
-`verify` checks every referenced block, chunk, and file.
+`verify` checks every referenced block, chunk, and file. `contents` lists file
+details as JSON; `preview` reads a bounded prefix, and `cat` streams one full
+file directly from the archive. These commands also read old v1 archives.
 
 ## Integrity and supported files
 
@@ -113,7 +126,9 @@ is 3:1. Speeds include checksums and file I/O. `list` checks metadata integrity;
   modify the output directory or its parents while extracting.
 - Metadata is capped at 512 MiB uncompressed and held in memory. Extremely large
   collections with millions of unique chunks may need larger chunks or multiple
-  archives. V1 archives are immutable; adding a build requires repacking.
+  archives. Archives are immutable; adding a build requires repacking.
+- Version 0.2 writes v2 archives and restores both v1 and v2. Keep the newer
+  executable with new archives; the 0.1 reader cannot restore v2.
 
 ## Development and reproducible experiments
 
@@ -137,6 +152,7 @@ cargo fmt --all -- --check
 cargo clippy --all-targets --locked -- -D warnings
 cargo test --locked
 node --test tools/casc.test.mjs
+cargo build --release --locked
 python3 -m unittest discover -s tests -p 'test_*.py' -v
 ```
 

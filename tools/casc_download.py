@@ -82,7 +82,7 @@ def hash_file(path, algorithm="sha256"):
     return digest.hexdigest()
 
 
-def http_download(url, path, *, expected=None, limit=8 * 1024**3, start=None, attempts=4, timeout=30):
+def http_download(url, path, *, expected=None, limit=8 * 1024**3, start=None, attempts=4, timeout=30, cancel=None):
     """Resume into .part. Never silently accept ignored archive Range requests."""
     path = Path(path)
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -90,6 +90,8 @@ def http_download(url, path, *, expected=None, limit=8 * 1024**3, start=None, at
     check(not path.is_symlink() and not part.is_symlink(), "symlink in download cache")
     check(expected is None or expected <= limit, "object exceeds download size limit")
     for attempt in range(attempts):
+        if cancel:
+            cancel()
         pos = part.stat().st_size if part.exists() else 0
         if expected is not None and pos == expected:
             return part
@@ -121,6 +123,8 @@ def http_download(url, path, *, expected=None, limit=8 * 1024**3, start=None, at
                 with open(part, "ab" if pos else "wb") as target:
                     count = pos
                     while chunk := response.read(MIB):
+                        if cancel:
+                            cancel()
                         count += len(chunk)
                         check(count <= limit and (expected is None or count <= expected), "download exceeded declared size")
                         target.write(chunk)
@@ -483,6 +487,7 @@ class Storage:
         self.loose_file_indexes = []
         self.loose_index_failures = {}
         self.timeout = timeout
+        self.cancel = None
         self.config_fallback = config_fallback
         self.recovered_configs = {}
         self.attempts, self.index_jobs = attempts, index_jobs
@@ -533,7 +538,7 @@ class Storage:
             url = f'{base}/{relative}'
             try:
                 part = http_download(url, path, expected=size, limit=4*MIB if kind == 'config' else self.limit,
-                                     timeout=self.timeout, attempts=self.attempts)
+                                     timeout=self.timeout, attempts=self.attempts, cancel=self.cancel)
                 validate(part)
                 os.replace(part, path)
                 self.prefer(base)
@@ -552,7 +557,7 @@ class Storage:
                 # a retry burst or make a cached error look like missing data.
                 with tempfile.TemporaryDirectory(dir=self.output) as directory:
                     page = http_download(url, Path(directory) / 'page', limit=4*MIB,
-                                         timeout=self.timeout, attempts=1)
+                                         timeout=self.timeout, attempts=1, cancel=self.cancel)
                     raw = config_from_cache_page(page.read_bytes(), key)
                     recovered = Path(directory) / 'config'
                     recovered.write_bytes(raw)
@@ -577,7 +582,7 @@ class Storage:
                     url = f'{base}/{key_path("data", archive)}'
                     try:
                         part = http_download(url, path, expected=length, start=offset, limit=self.limit,
-                                             timeout=self.timeout, attempts=self.attempts)
+                                             timeout=self.timeout, attempts=self.attempts, cancel=self.cancel)
                         validate(part)
                         os.replace(part, path)
                         self.prefer(base)
@@ -597,7 +602,7 @@ class Storage:
         for base in self.ordered_bases():
             url = f'{base}/{relative}'
             try:
-                part = http_download(url, path, limit=64*MIB, timeout=self.timeout, attempts=self.attempts)
+                part = http_download(url, path, limit=64*MIB, timeout=self.timeout, attempts=self.attempts, cancel=self.cancel)
                 entries = parse_archive_index(part.read_bytes(), archive)
                 os.replace(part, path)
                 self.prefer(base)
@@ -625,7 +630,7 @@ class Storage:
             url = f'{base}/{relative}'
             try:
                 part = http_download(url, path, expected=size, limit=64*MIB,
-                                     timeout=self.timeout, attempts=self.attempts)
+                                     timeout=self.timeout, attempts=self.attempts, cancel=self.cancel)
                 entries = parse(part)
                 os.replace(part, path)
                 self.prefer(base)
@@ -948,7 +953,13 @@ def main(argv=None):
     parser.add_argument('--current-cdns-only', action='store_true', help='do not append historical endpoints to advertised CDN rows')
     parser.add_argument('--config-fallback', choices=['blizztrack', 'none'], default='blizztrack',
                         help='public metadata cache to try after CDN config failures (default: blizztrack; requires --product)')
-    parser.add_argument('--output', type=Path, required=True)
+    destination = parser.add_mutually_exclusive_group(required=True)
+    destination.add_argument('--output', type=Path, help='directory for ordinary downloads')
+    destination.add_argument('--archive', type=Path, help='stream extract/mirror directly into a NEW .cilo archive')
+    parser.add_argument('--cilo', help='native Cilo 0.2+ executable path')
+    parser.add_argument('--compression', choices=['fast', 'balanced', 'max'], default='balanced')
+    parser.add_argument('--archive-threads', type=int, default=4)
+    parser.add_argument('--cancel-file', type=Path, help='cooperatively cancel archive output when this file appears')
     parser.add_argument('--pattern', action='append', default=[], help='TVFS filename glob; repeat to OR patterns')
     parser.add_argument('--tag', action='append', default=[], help='mirror only objects with ALL these DOWNLOAD tags')
     parser.add_argument('--limit', type=int, default=0, help='maximum selected files/objects; 0 means all')
@@ -962,11 +973,32 @@ def main(argv=None):
           and args.max_total_gib >= 0 and 0 < args.http_timeout <= 600, 'invalid resource limits')
     check(not args.tag or args.command in ('mirror', 'info'), '--tag only applies to mirror/info')
     check(not args.pattern or args.command in ('list', 'extract'), '--pattern only applies to list/extract')
+    check(1 <= args.archive_threads <= 64, 'archive-threads must be 1..64')
+    if args.archive:
+        check(args.command in ('extract', 'mirror'), '--archive supports extract and mirror')
+        from cilo_bridge import find_cilo, check_cancelled
+        args.cilo = find_cilo(args.cilo)
+        args.archive = args.archive.expanduser()
+        args.archive = args.archive.parent.resolve() / args.archive.name
+        check(not args.archive.exists() and not args.archive.is_symlink(), 'archive destination already exists')
+        args.archive.parent.mkdir(parents=True, exist_ok=True)
+        check_cancelled(args.cancel_file)
+        with tempfile.TemporaryDirectory(prefix='.cilo-download-', dir=args.archive.parent) as scratch:
+            args.output = Path(scratch)
+            return run(args)
+    check(not args.cancel_file, '--cancel-file currently applies to archive downloads')
+    return run(args)
+
+
+def run(args):
     key, cdn_key, bases, row = resolve_build(args)
     fallback = None
     if args.product and args.config_fallback == 'blizztrack':
         fallback = lambda kind, value: blizztrack_config_url(args.product, kind, value)
     storage = Storage(bases, args.output, cdn_key, args.max_object_gib, args.http_timeout, fallback)
+    if args.archive:
+        from cilo_bridge import check_cancelled
+        storage.cancel = lambda: check_cancelled(args.cancel_file)
     if args.command == 'diagnose':
         diagnose(storage, key, row, args.jobs)
         return
@@ -1008,6 +1040,8 @@ def main(argv=None):
     if args.command == 'list' or args.dry_run:
         print(json.dumps({'selected': len(selection), 'bytes': total, 'entries': selection}, indent=2))
         return
+    if args.archive:
+        return download_archive(args, storage, build, selection, report_path)
     if args.command == 'mirror':
         # Preserve core manifests as well as DOWNLOAD-listed payloads. Keep encoded
         # bytes, so mirroring does not depend on decryption or a game's root format.
@@ -1051,9 +1085,56 @@ def main(argv=None):
     check(not failures, f'{len(failures)} objects/files failed; see {journal}; rerunning verifies and reuses completed objects')
 
 
+def download_archive(args, storage, build, selection, report_path):
+    from cilo_bridge import ArchiveStream, check_cancelled
+    # Stream in the same extension/name order as directory packing for solid blocks.
+    if args.command == 'extract':
+        selection.sort(key=lambda r: (Path(r['path']).suffix, Path(r['path']).name, r['path']))
+    with ArchiveStream(args.archive, args.compression, args.archive_threads, args.cilo,
+                       args.cancel_file, max_file_gib=1024) as archive:
+        if args.command == 'mirror':
+            archive.add_path('build.json', report_path)
+            core = set()
+            for name, values in build.config.items():
+                if name in ('encoding', 'install', 'download', 'size') or name.startswith('vfs-') and not name.endswith('-size'):
+                    if len(values) >= 2 and all(re.fullmatch(r'[0-9a-f]{32}', v) for v in values[:2]):
+                        core.add(values[1])
+            config_path = storage.fetch('config', build.key)
+            archive.add_path('cdn/' + key_path('config', build.key), config_path)
+            for key in sorted(core):
+                check_cancelled(args.cancel_file)
+                path = storage.fetch('data', key)
+                archive.add_path('cdn/' + key_path('data', key), path)
+                path.unlink(missing_ok=True)
+            selection = [r for r in selection if r['key'] not in core]
+        for i, record in enumerate(selection, 1):
+            check_cancelled(args.cancel_file)
+            if args.command == 'extract':
+                def write(sink):
+                    for span in record['spans']:
+                        check_cancelled(args.cancel_file)
+                        check(span['offset'] == 0, 'nonzero TVFS span source offsets are not supported')
+                        encoded = storage.fetch('data', span['encoding_key'], span['encoded_size'])
+                        try:
+                            count = decode_blte(encoded, sink, limit=span['size'])
+                            check(count == span['size'], 'TVFS span length mismatch')
+                        finally:
+                            encoded.unlink(missing_ok=True)
+                result = archive.add(safe_name(record['path']), record['size'], write)
+            else:
+                encoded = storage.fetch('data', record['key'], record['size'])
+                try:
+                    result = archive.add_path('cdn/' + key_path('data', record['key']), encoded)
+                finally:
+                    encoded.unlink(missing_ok=True)
+            print(json.dumps({'completed': i, 'selected': len(selection), **result}), flush=True)
+        stats = archive.finish()
+    print(json.dumps({'archive': str(args.archive), 'state': 'published', 'compression': stats}), flush=True)
+
+
 if __name__ == '__main__':
     try:
         main()
-    except (CascError, OSError, ValueError, urllib.error.URLError, zlib.error) as error:
+    except (CascError, OSError, ValueError, RuntimeError, urllib.error.URLError, zlib.error) as error:
         print(f'casc_download: {error}', file=sys.stderr)
         sys.exit(1)

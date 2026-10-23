@@ -8,6 +8,7 @@ from pathlib import Path
 import queue
 import subprocess
 import sys
+import tempfile
 import threading
 
 import casc_catalog as catalog
@@ -19,7 +20,7 @@ def cache_path():
     return root / 'Cilo' / 'casc-availability.json.gz'
 
 
-def download_command(row, bases, output, action='extract', pattern='*', limit=0):
+def download_command(row, bases, output, action='extract', pattern='*', limit=0, archive=False, profile='balanced', cancel=None):
     if action not in ('extract', 'mirror', 'list') or limit < 0:
         raise ValueError('invalid download action or file limit')
     if not row.get('build_config'):
@@ -30,7 +31,13 @@ def download_command(row, bases, output, action='extract', pattern='*', limit=0)
                 [sys.executable, '-u', str(Path(__file__).with_name('casc_download.py'))])
     args = launcher + [action,
             '--product', row['product'], '--build-config', row['build_config'],
-            '--output', str(output), '--limit', str(limit)]
+            '--archive' if archive else '--output', str(output), '--limit', str(limit)]
+    if archive:
+        if action == 'list' or profile not in ('fast', 'balanced', 'max'):
+            raise ValueError('invalid archive action/profile')
+        args += ['--compression', profile]
+        if cancel:
+            args += ['--cancel-file', str(cancel)]
     if row.get('cdn_config'):
         args += ['--cdn-config', row['cdn_config']]
     for base in bases:
@@ -50,6 +57,7 @@ class App:
         self.events = queue.Queue(maxsize=256)
         self.data, self.visible, self.busy = None, [], False
         self.process = None
+        self.cancel_path = None
         self.github_token = None
         self.cache = cache_path()
         root.title('Cilo - CASC Build Browser')
@@ -112,6 +120,12 @@ class App:
         ttk.Label(options, text='File limit (0 = all)').pack(side='left', padx=(16, 6))
         self.limit = tk.StringVar(value='0')
         ttk.Spinbox(options, from_=0, to=999999, textvariable=self.limit, width=8).pack(side='left')
+        archive_options = ttk.Frame(frame); archive_options.pack(fill='x', pady=4)
+        self.archive_mode = tk.BooleanVar(value=False)
+        ttk.Checkbutton(archive_options, text='Download directly to a .cilo archive', variable=self.archive_mode).pack(side='left')
+        self.compression = tk.StringVar(value='balanced')
+        ttk.Combobox(archive_options, textvariable=self.compression, values=['fast', 'balanced', 'max'], state='readonly', width=11).pack(side='left', padx=10)
+        ttk.Button(archive_options, text='Browse a .cilo archive...', command=self.open_archive).pack(side='right')
         buttons = ttk.Frame(frame)
         buttons.pack(fill='x', pady=(6, 10))
         self.check_button = ttk.Button(buttons, text='Check selected build', command=self.check_build)
@@ -120,6 +134,8 @@ class App:
         self.list_button.pack(side='left', padx=8)
         self.download_button = ttk.Button(buttons, text='Download', command=self.download)
         self.download_button.pack(side='left')
+        self.cancel_button = ttk.Button(buttons, text='Cancel archive download', command=self.cancel_archive, state='disabled')
+        self.cancel_button.pack(side='left', padx=8)
         self.progress = ttk.Progressbar(buttons, mode='indeterminate', length=140)
         self.progress.pack(side='right')
         self.status = tk.StringVar(value='Ready')
@@ -251,6 +267,8 @@ class App:
         self.start('Checking build...', work)
 
     def download(self, command=None):
+        if self.busy:
+            return
         try:
             row = self.selected().copy()
             action = command or ('extract' if self.action.get() == 'Extract named files' else 'mirror')
@@ -259,25 +277,55 @@ class App:
                 raise ValueError('Choose a destination and a nonnegative file limit.')
             pattern = self.pattern.get()
             output = Path(self.destination.get()).expanduser() / row['product'] / f"{row['build']}-{row['build_config'][:8]}"
+            archive_mode = self.archive_mode.get() and action != 'list'
+            profile = self.compression.get()
+            if archive_mode:
+                from cilo_bridge import find_cilo
+                find_cilo()  # report a missing native tool before starting any download
+                output = output.with_suffix('.cilo')
         except (ValueError, TypeError) as exc:
             self.status.set(str(exc))
             return
+        control = tempfile.TemporaryDirectory(prefix='cilo-control-') if archive_mode else None
+        self.cancel_path = Path(control.name) / 'cancel' if control else None
+        cancel = self.cancel_path
         def work():
-            bases = probe.build_bases(row)
-            args = download_command(row, bases, output, action, pattern, limit)
-            self.events.put(('log', f'{action}: {row["product"]} {row["build"]} -> {output}\n'))
-            with subprocess.Popen(args, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
-                                  text=True, encoding='utf-8', errors='replace',
-                                  creationflags=subprocess.CREATE_NO_WINDOW if os.name == 'nt' else 0) as child:
-                self.process = child
-                for line in child.stdout:
-                    self.events.put(('log', line))
-                code = child.wait()
+            try:
+                bases = probe.build_bases(row)
+                args = download_command(row, bases, output, action, pattern, limit, archive_mode, profile, cancel)
+                self.events.put(('log', f'{action}: {row["product"]} {row["build"]} -> {output}\n'))
+                with subprocess.Popen(args, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
+                                      text=True, encoding='utf-8', errors='replace',
+                                      creationflags=subprocess.CREATE_NO_WINDOW if os.name == 'nt' else 0) as child:
+                    self.process = child
+                    for line in child.stdout:
+                        self.events.put(('log', line))
+                    code = child.wait()
+                    if code:
+                        raise RuntimeError(f'Downloader exited with status {code}; see the log. ' +
+                                           ('Incomplete archive and staging files were discarded.' if archive_mode else 'Verified downloads can be resumed.'))
+                self.events.put(('log', f'Completed. Saved to {output}\n'))
+            finally:
                 self.process = None
-                if code:
-                    raise RuntimeError(f'Downloader exited with status {code}; see the log. Verified downloads can be resumed.')
-            self.events.put(('log', f'Completed. Files saved in {output}\n'))
+                self.cancel_path = None
+                if control:
+                    control.cleanup()
         self.start('Downloading...' if action != 'list' else 'Listing files...', work)
+        if archive_mode:
+            self.cancel_button.configure(state='normal')
+
+    def cancel_archive(self):
+        if self.cancel_path:
+            try:
+                self.cancel_path.touch()
+                self.status.set('Cancelling and cleaning up; an active network read may need its timeout.')
+                self.cancel_button.configure(state='disabled')
+            except OSError as exc:
+                self.status.set(str(exc))
+
+    def open_archive(self):
+        from cilo_browser import ArchiveBrowser
+        ArchiveBrowser(self.root).choose()
 
     def poll(self):
         try:
@@ -310,6 +358,7 @@ class App:
                     self.busy = False
                     self.progress.stop()
                     self.status.set('Ready - see log for results')
+                    self.cancel_button.configure(state='disabled')
                     for button in (self.update_button, self.check_button, self.list_button, self.download_button):
                         button.configure(state='normal')
         except queue.Empty:

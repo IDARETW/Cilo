@@ -12,6 +12,7 @@ fn options() -> PackOptions {
         block_mib: 4,
         chunk_kib: 64,
         dedup: true,
+        format_aware: true,
     }
 }
 
@@ -181,6 +182,49 @@ fn rejects_malicious_paths_and_references() {
         tamper_manifest(&archive, |v| v["chunks"][0][field] = u32::MAX.into());
         assert!(verify(&archive, 64).is_err());
     }
+    for (field, value) in [("codec", 255), ("raw_len", u32::MAX)] {
+        let archive = temp.path().join("evil.cilo");
+        fs::copy(&original, &archive).unwrap();
+        tamper_manifest(&archive, |v| v["blocks"][0][field] = value.into());
+        assert!(verify(&archive, 64).is_err());
+    }
+}
+
+#[test]
+fn bounded_compression_pipeline_is_deterministic_and_handles_hash_misses() {
+    let temp = tempfile::tempdir().unwrap();
+    let input = temp.path().join("input");
+    fs::create_dir(&input).unwrap();
+    let mut data = random_bytes(36 * 1024 * 1024);
+    fs::write(input.join("a.bin"), &data).unwrap();
+    data[13] ^= 0x80;
+    fs::write(input.join("b.bin"), &data).unwrap(); // same length, different digest
+    fs::write(input.join("c.bin"), &data).unwrap(); // whole-file reuse
+    let one = temp.path().join("one.cilo");
+    let four = temp.path().join("four.cilo");
+    pack(
+        &input,
+        &one,
+        PackOptions {
+            threads: 1,
+            ..options()
+        },
+    )
+    .unwrap();
+    pack(
+        &input,
+        &four,
+        PackOptions {
+            threads: 4,
+            ..options()
+        },
+    )
+    .unwrap();
+    assert_eq!(fs::read(&one).unwrap(), fs::read(&four).unwrap());
+    verify(&four, 64).unwrap();
+    let out = temp.path().join("out");
+    unpack(&four, &out, 64, 0).unwrap();
+    same_tree(&input, &out);
 }
 
 #[test]

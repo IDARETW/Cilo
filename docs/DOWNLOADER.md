@@ -27,6 +27,13 @@ the same build number. Choose named extraction or encoded mirroring, a filename
 pattern, and optionally a file limit. Downloads go into separate product/build
 subdirectories of your chosen destination. Downloaded files are never executed.
 
+Version 0.2 adds **Download directly to a .cilo archive** and **Browse a .cilo
+archive…**. The release bundle includes native Cilo. File details and text/hex
+previews are available without extracting. For CLI `--archive` examples,
+temporary-space requirements, cancellation and archive browsing, see
+[archive usage](ARCHIVES.md). Directory output retains its resume behavior;
+archive output publishes only after every selected file succeeds.
+
 **Update availability from GitHub** retrieves the published compressed catalog
 from this repository. All 35,536 distinct records across 500 products from the
 supplied `ngdp_data` snapshot are included, including records with failed or

@@ -1,0 +1,1646 @@
+{
+  "measured_at_utc": "2026-10-23T12:30:59.064Z",
+  "platform": "linux",
+  "kernel": "6.18.55",
+  "cpu": "AMD EPYC 9V74 80-Core Processor",
+  "logical_cpus": 5,
+  "memory_bytes": 35743760384,
+  "threads": 4,
+  "repeats": 3,
+  "binaries": {
+    "previous": {
+      "version": "cilo 0.1.0",
+      "sha256": "0cc1b942370bbcc9d7e5e03c95fe6b7c83543a65b70ff2f0ecccb55e175adf79"
+    },
+    "current": {
+      "version": "cilo 0.2.0",
+      "sha256": "ae22f7f0f23075b02b75e2a2ff2d58b82180b2ec3e2bdd68daef01b829d55310"
+    }
+  },
+  "notes": "Warm source cache, sequential runs, alternating version order, shared cloud host. Default block/chunk sizes for each version. CLI times include hashes, I/O and sync. Independent SHA-256 validation excluded from timings. No network time.",
+  "datasets": [
+    {
+      "name": "single-build",
+      "input_bytes": 201175260,
+      "files": [
+        {
+          "path": "ai_chatter_wz.sabs",
+          "bytes": 5043456,
+          "sha256": "9af30d4dddd08782fd2308a779dad83e7dc0b300afff131abfa1f78cf47d64a4"
+        },
+        {
+          "path": "br_event_x2_sfx.sabs",
+          "bytes": 33136128,
+          "sha256": "903567fdc044cff12f7a24818723f686c192f461b17c1a206c9e7b9a72d2a4bf"
+        },
+        {
+          "path": "campaignmenu.bik",
+          "bytes": 14903532,
+          "sha256": "08257af55cef778b7ace159802f37dad00dfbe806bf85c306bd413e9f25517c4"
+        },
+        {
+          "path": "captive_exterior_tr.ff",
+          "bytes": 23380104,
+          "sha256": "559973defdcc0c20ff2cdcce1a1acd25395c44331a1eb15af3cad473c28f3d50"
+        },
+        {
+          "path": "code_post_gfx.fp",
+          "bytes": 15040840,
+          "sha256": "bacc250d297a24a5e306e9759fca5b8698b95bdb190e28135067d846510289a1"
+        },
+        {
+          "path": "common_base_mp.fp",
+          "bytes": 18841928,
+          "sha256": "fdc095d0f581652bd1e5869028bb14dcab71dfcfdad98ed81885974075f801b2"
+        },
+        {
+          "path": "common.ff",
+          "bytes": 5570696,
+          "sha256": "16ae0526fd956cd7b29a773ceffd8492fb9d06b7d76d126dbcbc8df2964565f1"
+        },
+        {
+          "path": "cp_arms_dealer_00001_tr.ff",
+          "bytes": 7684232,
+          "sha256": "2a166566bf6023a7dda573171b716de05a4859baba6c625f37a4ca6f2ca20a90"
+        },
+        {
+          "path": "nvngx_dlss.dll",
+          "bytes": 14463176,
+          "sha256": "201a9fa1bd89ce036fe88ecaf07a4bc4e2172780d82fb617e63ed4d5e143b6de"
+        },
+        {
+          "path": "pak_base_vol138.xpak",
+          "bytes": 22511616,
+          "sha256": "0a16c401fa0511e82f7d6805a8a344d9563af1e949bbe189f5310c7236080412"
+        },
+        {
+          "path": "pak_base_vol140.xpak",
+          "bytes": 40599552,
+          "sha256": "674008523bc497cca17c40da3e7e5daee073141691bcea5206c7df2ae8af522b"
+        }
+      ]
+    },
+    {
+      "name": "three-builds",
+      "input_bytes": 604082836,
+      "files": [
+        {
+          "path": "11521872/ai_chatter_wz.sabs",
+          "bytes": 5043456,
+          "sha256": "9af30d4dddd08782fd2308a779dad83e7dc0b300afff131abfa1f78cf47d64a4"
+        },
+        {
+          "path": "11521872/br_event_x2_sfx.sabs",
+          "bytes": 33136128,
+          "sha256": "903567fdc044cff12f7a24818723f686c192f461b17c1a206c9e7b9a72d2a4bf"
+        },
+        {
+          "path": "11521872/campaignmenu.bik",
+          "bytes": 14903532,
+          "sha256": "08257af55cef778b7ace159802f37dad00dfbe806bf85c306bd413e9f25517c4"
+        },
+        {
+          "path": "11521872/captive_exterior_tr.ff",
+          "bytes": 23380104,
+          "sha256": "559973defdcc0c20ff2cdcce1a1acd25395c44331a1eb15af3cad473c28f3d50"
+        },
+        {
+          "path": "11521872/code_post_gfx.fp",
+          "bytes": 15040840,
+          "sha256": "bacc250d297a24a5e306e9759fca5b8698b95bdb190e28135067d846510289a1"
+        },
+        {
+          "path": "11521872/common_base_mp.fp",
+          "bytes": 18841928,
+          "sha256": "fdc095d0f581652bd1e5869028bb14dcab71dfcfdad98ed81885974075f801b2"
+        },
+        {
+          "path": "11521872/common.ff",
+          "bytes": 5570696,
+          "sha256": "16ae0526fd956cd7b29a773ceffd8492fb9d06b7d76d126dbcbc8df2964565f1"
+        },
+        {
+          "path": "11521872/cp_arms_dealer_00001_tr.ff",
+          "bytes": 7684232,
+          "sha256": "2a166566bf6023a7dda573171b716de05a4859baba6c625f37a4ca6f2ca20a90"
+        },
+        {
+          "path": "11521872/nvngx_dlss.dll",
+          "bytes": 14463176,
+          "sha256": "201a9fa1bd89ce036fe88ecaf07a4bc4e2172780d82fb617e63ed4d5e143b6de"
+        },
+        {
+          "path": "11521872/pak_base_vol138.xpak",
+          "bytes": 22511616,
+          "sha256": "0a16c401fa0511e82f7d6805a8a344d9563af1e949bbe189f5310c7236080412"
+        },
+        {
+          "path": "11521872/pak_base_vol140.xpak",
+          "bytes": 40599552,
+          "sha256": "674008523bc497cca17c40da3e7e5daee073141691bcea5206c7df2ae8af522b"
+        },
+        {
+          "path": "11531527/ai_chatter_wz.sabs",
+          "bytes": 5043456,
+          "sha256": "9af30d4dddd08782fd2308a779dad83e7dc0b300afff131abfa1f78cf47d64a4"
+        },
+        {
+          "path": "11531527/br_event_x2_sfx.sabs",
+          "bytes": 33136128,
+          "sha256": "903567fdc044cff12f7a24818723f686c192f461b17c1a206c9e7b9a72d2a4bf"
+        },
+        {
+          "path": "11531527/campaignmenu.bik",
+          "bytes": 14903532,
+          "sha256": "08257af55cef778b7ace159802f37dad00dfbe806bf85c306bd413e9f25517c4"
+        },
+        {
+          "path": "11531527/captive_exterior_tr.ff",
+          "bytes": 23380104,
+          "sha256": "559973defdcc0c20ff2cdcce1a1acd25395c44331a1eb15af3cad473c28f3d50"
+        },
+        {
+          "path": "11531527/code_post_gfx.fp",
+          "bytes": 15040840,
+          "sha256": "bacc250d297a24a5e306e9759fca5b8698b95bdb190e28135067d846510289a1"
+        },
+        {
+          "path": "11531527/common_base_mp.fp",
+          "bytes": 18841928,
+          "sha256": "fdc095d0f581652bd1e5869028bb14dcab71dfcfdad98ed81885974075f801b2"
+        },
+        {
+          "path": "11531527/common.ff",
+          "bytes": 5570696,
+          "sha256": "16ae0526fd956cd7b29a773ceffd8492fb9d06b7d76d126dbcbc8df2964565f1"
+        },
+        {
+          "path": "11531527/cp_arms_dealer_00001_tr.ff",
+          "bytes": 7684232,
+          "sha256": "2a166566bf6023a7dda573171b716de05a4859baba6c625f37a4ca6f2ca20a90"
+        },
+        {
+          "path": "11531527/nvngx_dlss.dll",
+          "bytes": 14463176,
+          "sha256": "201a9fa1bd89ce036fe88ecaf07a4bc4e2172780d82fb617e63ed4d5e143b6de"
+        },
+        {
+          "path": "11531527/pak_base_vol138.xpak",
+          "bytes": 22511616,
+          "sha256": "0a16c401fa0511e82f7d6805a8a344d9563af1e949bbe189f5310c7236080412"
+        },
+        {
+          "path": "11531527/pak_base_vol140.xpak",
+          "bytes": 40599552,
+          "sha256": "674008523bc497cca17c40da3e7e5daee073141691bcea5206c7df2ae8af522b"
+        },
+        {
+          "path": "11744825/ai_chatter_wz.sabs",
+          "bytes": 5043456,
+          "sha256": "9af30d4dddd08782fd2308a779dad83e7dc0b300afff131abfa1f78cf47d64a4"
+        },
+        {
+          "path": "11744825/br_event_x2_sfx.sabs",
+          "bytes": 33136128,
+          "sha256": "903567fdc044cff12f7a24818723f686c192f461b17c1a206c9e7b9a72d2a4bf"
+        },
+        {
+          "path": "11744825/campaignmenu.bik",
+          "bytes": 14903532,
+          "sha256": "08257af55cef778b7ace159802f37dad00dfbe806bf85c306bd413e9f25517c4"
+        },
+        {
+          "path": "11744825/captive_exterior_tr.ff",
+          "bytes": 23380104,
+          "sha256": "559973defdcc0c20ff2cdcce1a1acd25395c44331a1eb15af3cad473c28f3d50"
+        },
+        {
+          "path": "11744825/code_post_gfx.fp",
+          "bytes": 15417672,
+          "sha256": "5ee4de1a0298c9817f7fcccc7d547170ba81f2a67296445be75f3b713cbd50ed"
+        },
+        {
+          "path": "11744825/common_base_mp.fp",
+          "bytes": 19022152,
+          "sha256": "2dc8cd9b51b44ca52a2ab702b3520712b87f23238889cad494bb77a1f1001215"
+        },
+        {
+          "path": "11744825/common.ff",
+          "bytes": 5570696,
+          "sha256": "16ae0526fd956cd7b29a773ceffd8492fb9d06b7d76d126dbcbc8df2964565f1"
+        },
+        {
+          "path": "11744825/cp_arms_dealer_00001_tr.ff",
+          "bytes": 7684232,
+          "sha256": "d646386090485c3cddd572e6f580f2d1f15f51c9199373ad495ea3d68ee14a87"
+        },
+        {
+          "path": "11744825/nvngx_dlss.dll",
+          "bytes": 14463176,
+          "sha256": "201a9fa1bd89ce036fe88ecaf07a4bc4e2172780d82fb617e63ed4d5e143b6de"
+        },
+        {
+          "path": "11744825/pak_base_vol138.xpak",
+          "bytes": 22511616,
+          "sha256": "0a16c401fa0511e82f7d6805a8a344d9563af1e949bbe189f5310c7236080412"
+        },
+        {
+          "path": "11744825/pak_base_vol140.xpak",
+          "bytes": 40599552,
+          "sha256": "674008523bc497cca17c40da3e7e5daee073141691bcea5206c7df2ae8af522b"
+        }
+      ]
+    },
+    {
+      "name": "six-builds",
+      "input_bytes": 1208362280,
+      "files": [
+        {
+          "path": "11521872/ai_chatter_wz.sabs",
+          "bytes": 5043456,
+          "sha256": "9af30d4dddd08782fd2308a779dad83e7dc0b300afff131abfa1f78cf47d64a4"
+        },
+        {
+          "path": "11521872/br_event_x2_sfx.sabs",
+          "bytes": 33136128,
+          "sha256": "903567fdc044cff12f7a24818723f686c192f461b17c1a206c9e7b9a72d2a4bf"
+        },
+        {
+          "path": "11521872/campaignmenu.bik",
+          "bytes": 14903532,
+          "sha256": "08257af55cef778b7ace159802f37dad00dfbe806bf85c306bd413e9f25517c4"
+        },
+        {
+          "path": "11521872/captive_exterior_tr.ff",
+          "bytes": 23380104,
+          "sha256": "559973defdcc0c20ff2cdcce1a1acd25395c44331a1eb15af3cad473c28f3d50"
+        },
+        {
+          "path": "11521872/code_post_gfx.fp",
+          "bytes": 15040840,
+          "sha256": "bacc250d297a24a5e306e9759fca5b8698b95bdb190e28135067d846510289a1"
+        },
+        {
+          "path": "11521872/common_base_mp.fp",
+          "bytes": 18841928,
+          "sha256": "fdc095d0f581652bd1e5869028bb14dcab71dfcfdad98ed81885974075f801b2"
+        },
+        {
+          "path": "11521872/common.ff",
+          "bytes": 5570696,
+          "sha256": "16ae0526fd956cd7b29a773ceffd8492fb9d06b7d76d126dbcbc8df2964565f1"
+        },
+        {
+          "path": "11521872/cp_arms_dealer_00001_tr.ff",
+          "bytes": 7684232,
+          "sha256": "2a166566bf6023a7dda573171b716de05a4859baba6c625f37a4ca6f2ca20a90"
+        },
+        {
+          "path": "11521872/nvngx_dlss.dll",
+          "bytes": 14463176,
+          "sha256": "201a9fa1bd89ce036fe88ecaf07a4bc4e2172780d82fb617e63ed4d5e143b6de"
+        },
+        {
+          "path": "11521872/pak_base_vol138.xpak",
+          "bytes": 22511616,
+          "sha256": "0a16c401fa0511e82f7d6805a8a344d9563af1e949bbe189f5310c7236080412"
+        },
+        {
+          "path": "11521872/pak_base_vol140.xpak",
+          "bytes": 40599552,
+          "sha256": "674008523bc497cca17c40da3e7e5daee073141691bcea5206c7df2ae8af522b"
+        },
+        {
+          "path": "11531527/ai_chatter_wz.sabs",
+          "bytes": 5043456,
+          "sha256": "9af30d4dddd08782fd2308a779dad83e7dc0b300afff131abfa1f78cf47d64a4"
+        },
+        {
+          "path": "11531527/br_event_x2_sfx.sabs",
+          "bytes": 33136128,
+          "sha256": "903567fdc044cff12f7a24818723f686c192f461b17c1a206c9e7b9a72d2a4bf"
+        },
+        {
+          "path": "11531527/campaignmenu.bik",
+          "bytes": 14903532,
+          "sha256": "08257af55cef778b7ace159802f37dad00dfbe806bf85c306bd413e9f25517c4"
+        },
+        {
+          "path": "11531527/captive_exterior_tr.ff",
+          "bytes": 23380104,
+          "sha256": "559973defdcc0c20ff2cdcce1a1acd25395c44331a1eb15af3cad473c28f3d50"
+        },
+        {
+          "path": "11531527/code_post_gfx.fp",
+          "bytes": 15040840,
+          "sha256": "bacc250d297a24a5e306e9759fca5b8698b95bdb190e28135067d846510289a1"
+        },
+        {
+          "path": "11531527/common_base_mp.fp",
+          "bytes": 18841928,
+          "sha256": "fdc095d0f581652bd1e5869028bb14dcab71dfcfdad98ed81885974075f801b2"
+        },
+        {
+          "path": "11531527/common.ff",
+          "bytes": 5570696,
+          "sha256": "16ae0526fd956cd7b29a773ceffd8492fb9d06b7d76d126dbcbc8df2964565f1"
+        },
+        {
+          "path": "11531527/cp_arms_dealer_00001_tr.ff",
+          "bytes": 7684232,
+          "sha256": "2a166566bf6023a7dda573171b716de05a4859baba6c625f37a4ca6f2ca20a90"
+        },
+        {
+          "path": "11531527/nvngx_dlss.dll",
+          "bytes": 14463176,
+          "sha256": "201a9fa1bd89ce036fe88ecaf07a4bc4e2172780d82fb617e63ed4d5e143b6de"
+        },
+        {
+          "path": "11531527/pak_base_vol138.xpak",
+          "bytes": 22511616,
+          "sha256": "0a16c401fa0511e82f7d6805a8a344d9563af1e949bbe189f5310c7236080412"
+        },
+        {
+          "path": "11531527/pak_base_vol140.xpak",
+          "bytes": 40599552,
+          "sha256": "674008523bc497cca17c40da3e7e5daee073141691bcea5206c7df2ae8af522b"
+        },
+        {
+          "path": "11558592/ai_chatter_wz.sabs",
+          "bytes": 5043456,
+          "sha256": "9af30d4dddd08782fd2308a779dad83e7dc0b300afff131abfa1f78cf47d64a4"
+        },
+        {
+          "path": "11558592/br_event_x2_sfx.sabs",
+          "bytes": 33136128,
+          "sha256": "903567fdc044cff12f7a24818723f686c192f461b17c1a206c9e7b9a72d2a4bf"
+        },
+        {
+          "path": "11558592/campaignmenu.bik",
+          "bytes": 14903532,
+          "sha256": "08257af55cef778b7ace159802f37dad00dfbe806bf85c306bd413e9f25517c4"
+        },
+        {
+          "path": "11558592/captive_exterior_tr.ff",
+          "bytes": 23380104,
+          "sha256": "559973defdcc0c20ff2cdcce1a1acd25395c44331a1eb15af3cad473c28f3d50"
+        },
+        {
+          "path": "11558592/code_post_gfx.fp",
+          "bytes": 15040840,
+          "sha256": "bacc250d297a24a5e306e9759fca5b8698b95bdb190e28135067d846510289a1"
+        },
+        {
+          "path": "11558592/common_base_mp.fp",
+          "bytes": 18841928,
+          "sha256": "fdc095d0f581652bd1e5869028bb14dcab71dfcfdad98ed81885974075f801b2"
+        },
+        {
+          "path": "11558592/common.ff",
+          "bytes": 5570696,
+          "sha256": "16ae0526fd956cd7b29a773ceffd8492fb9d06b7d76d126dbcbc8df2964565f1"
+        },
+        {
+          "path": "11558592/cp_arms_dealer_00001_tr.ff",
+          "bytes": 7684232,
+          "sha256": "2a166566bf6023a7dda573171b716de05a4859baba6c625f37a4ca6f2ca20a90"
+        },
+        {
+          "path": "11558592/nvngx_dlss.dll",
+          "bytes": 14463176,
+          "sha256": "201a9fa1bd89ce036fe88ecaf07a4bc4e2172780d82fb617e63ed4d5e143b6de"
+        },
+        {
+          "path": "11558592/pak_base_vol138.xpak",
+          "bytes": 22511616,
+          "sha256": "0a16c401fa0511e82f7d6805a8a344d9563af1e949bbe189f5310c7236080412"
+        },
+        {
+          "path": "11558592/pak_base_vol140.xpak",
+          "bytes": 40599552,
+          "sha256": "674008523bc497cca17c40da3e7e5daee073141691bcea5206c7df2ae8af522b"
+        },
+        {
+          "path": "11642448/ai_chatter_wz.sabs",
+          "bytes": 5043456,
+          "sha256": "9af30d4dddd08782fd2308a779dad83e7dc0b300afff131abfa1f78cf47d64a4"
+        },
+        {
+          "path": "11642448/br_event_x2_sfx.sabs",
+          "bytes": 33136128,
+          "sha256": "903567fdc044cff12f7a24818723f686c192f461b17c1a206c9e7b9a72d2a4bf"
+        },
+        {
+          "path": "11642448/campaignmenu.bik",
+          "bytes": 14903532,
+          "sha256": "08257af55cef778b7ace159802f37dad00dfbe806bf85c306bd413e9f25517c4"
+        },
+        {
+          "path": "11642448/captive_exterior_tr.ff",
+          "bytes": 23380104,
+          "sha256": "559973defdcc0c20ff2cdcce1a1acd25395c44331a1eb15af3cad473c28f3d50"
+        },
+        {
+          "path": "11642448/code_post_gfx.fp",
+          "bytes": 15188296,
+          "sha256": "2cc6fbf8d5962f78f83c0776369a252d9cb4f0aa728720833c6b55513f0d2a71"
+        },
+        {
+          "path": "11642448/common_base_mp.fp",
+          "bytes": 18891080,
+          "sha256": "49104d369d6ce3b28bf0c92dd1a807788b98f65986caf12dca46fabc18ffcab8"
+        },
+        {
+          "path": "11642448/common.ff",
+          "bytes": 5570696,
+          "sha256": "16ae0526fd956cd7b29a773ceffd8492fb9d06b7d76d126dbcbc8df2964565f1"
+        },
+        {
+          "path": "11642448/cp_arms_dealer_00001_tr.ff",
+          "bytes": 7684232,
+          "sha256": "2a166566bf6023a7dda573171b716de05a4859baba6c625f37a4ca6f2ca20a90"
+        },
+        {
+          "path": "11642448/nvngx_dlss.dll",
+          "bytes": 14463176,
+          "sha256": "201a9fa1bd89ce036fe88ecaf07a4bc4e2172780d82fb617e63ed4d5e143b6de"
+        },
+        {
+          "path": "11642448/pak_base_vol138.xpak",
+          "bytes": 22511616,
+          "sha256": "0a16c401fa0511e82f7d6805a8a344d9563af1e949bbe189f5310c7236080412"
+        },
+        {
+          "path": "11642448/pak_base_vol140.xpak",
+          "bytes": 40599552,
+          "sha256": "674008523bc497cca17c40da3e7e5daee073141691bcea5206c7df2ae8af522b"
+        },
+        {
+          "path": "11744825/ai_chatter_wz.sabs",
+          "bytes": 5043456,
+          "sha256": "9af30d4dddd08782fd2308a779dad83e7dc0b300afff131abfa1f78cf47d64a4"
+        },
+        {
+          "path": "11744825/br_event_x2_sfx.sabs",
+          "bytes": 33136128,
+          "sha256": "903567fdc044cff12f7a24818723f686c192f461b17c1a206c9e7b9a72d2a4bf"
+        },
+        {
+          "path": "11744825/campaignmenu.bik",
+          "bytes": 14903532,
+          "sha256": "08257af55cef778b7ace159802f37dad00dfbe806bf85c306bd413e9f25517c4"
+        },
+        {
+          "path": "11744825/captive_exterior_tr.ff",
+          "bytes": 23380104,
+          "sha256": "559973defdcc0c20ff2cdcce1a1acd25395c44331a1eb15af3cad473c28f3d50"
+        },
+        {
+          "path": "11744825/code_post_gfx.fp",
+          "bytes": 15417672,
+          "sha256": "5ee4de1a0298c9817f7fcccc7d547170ba81f2a67296445be75f3b713cbd50ed"
+        },
+        {
+          "path": "11744825/common_base_mp.fp",
+          "bytes": 19022152,
+          "sha256": "2dc8cd9b51b44ca52a2ab702b3520712b87f23238889cad494bb77a1f1001215"
+        },
+        {
+          "path": "11744825/common.ff",
+          "bytes": 5570696,
+          "sha256": "16ae0526fd956cd7b29a773ceffd8492fb9d06b7d76d126dbcbc8df2964565f1"
+        },
+        {
+          "path": "11744825/cp_arms_dealer_00001_tr.ff",
+          "bytes": 7684232,
+          "sha256": "d646386090485c3cddd572e6f580f2d1f15f51c9199373ad495ea3d68ee14a87"
+        },
+        {
+          "path": "11744825/nvngx_dlss.dll",
+          "bytes": 14463176,
+          "sha256": "201a9fa1bd89ce036fe88ecaf07a4bc4e2172780d82fb617e63ed4d5e143b6de"
+        },
+        {
+          "path": "11744825/pak_base_vol138.xpak",
+          "bytes": 22511616,
+          "sha256": "0a16c401fa0511e82f7d6805a8a344d9563af1e949bbe189f5310c7236080412"
+        },
+        {
+          "path": "11744825/pak_base_vol140.xpak",
+          "bytes": 40599552,
+          "sha256": "674008523bc497cca17c40da3e7e5daee073141691bcea5206c7df2ae8af522b"
+        },
+        {
+          "path": "11810757/ai_chatter_wz.sabs",
+          "bytes": 5043456,
+          "sha256": "9af30d4dddd08782fd2308a779dad83e7dc0b300afff131abfa1f78cf47d64a4"
+        },
+        {
+          "path": "11810757/br_event_x2_sfx.sabs",
+          "bytes": 33136128,
+          "sha256": "903567fdc044cff12f7a24818723f686c192f461b17c1a206c9e7b9a72d2a4bf"
+        },
+        {
+          "path": "11810757/campaignmenu.bik",
+          "bytes": 14903532,
+          "sha256": "08257af55cef778b7ace159802f37dad00dfbe806bf85c306bd413e9f25517c4"
+        },
+        {
+          "path": "11810757/captive_exterior_tr.ff",
+          "bytes": 23380104,
+          "sha256": "559973defdcc0c20ff2cdcce1a1acd25395c44331a1eb15af3cad473c28f3d50"
+        },
+        {
+          "path": "11810757/code_post_gfx.fp",
+          "bytes": 15417672,
+          "sha256": "5ee4de1a0298c9817f7fcccc7d547170ba81f2a67296445be75f3b713cbd50ed"
+        },
+        {
+          "path": "11810757/common_base_mp.fp",
+          "bytes": 19022152,
+          "sha256": "2dc8cd9b51b44ca52a2ab702b3520712b87f23238889cad494bb77a1f1001215"
+        },
+        {
+          "path": "11810757/common.ff",
+          "bytes": 5570696,
+          "sha256": "16ae0526fd956cd7b29a773ceffd8492fb9d06b7d76d126dbcbc8df2964565f1"
+        },
+        {
+          "path": "11810757/cp_arms_dealer_00001_tr.ff",
+          "bytes": 7684232,
+          "sha256": "d646386090485c3cddd572e6f580f2d1f15f51c9199373ad495ea3d68ee14a87"
+        },
+        {
+          "path": "11810757/nvngx_dlss.dll",
+          "bytes": 14463176,
+          "sha256": "201a9fa1bd89ce036fe88ecaf07a4bc4e2172780d82fb617e63ed4d5e143b6de"
+        },
+        {
+          "path": "11810757/pak_base_vol138.xpak",
+          "bytes": 22511616,
+          "sha256": "0a16c401fa0511e82f7d6805a8a344d9563af1e949bbe189f5310c7236080412"
+        },
+        {
+          "path": "11810757/pak_base_vol140.xpak",
+          "bytes": 40599552,
+          "sha256": "674008523bc497cca17c40da3e7e5daee073141691bcea5206c7df2ae8af522b"
+        }
+      ]
+    }
+  ],
+  "rows": [
+    {
+      "dataset": "single-build",
+      "version": "previous",
+      "profile": "fast",
+      "iteration": 1,
+      "operation": "pack",
+      "files": 11,
+      "input_bytes": 201175260,
+      "unique_bytes": 198196089,
+      "archive_bytes": 189022021,
+      "compression_ratio": 1.0642953605918752,
+      "space_saved_percent": 6.041120066155248,
+      "elapsed_seconds": 0.663315779,
+      "throughput_mib_s": 289.2373204924914,
+      "blocks_decoded": 6,
+      "decompression_seconds": 0.34681462,
+      "decompression_mib_s": 553.1937452877552,
+      "sha256_roundtrip": true
+    },
+    {
+      "dataset": "single-build",
+      "version": "current",
+      "profile": "fast",
+      "iteration": 1,
+      "operation": "pack",
+      "files": 11,
+      "input_bytes": 201175260,
+      "unique_bytes": 198171192,
+      "archive_bytes": 188993228,
+      "compression_ratio": 1.0644575053239473,
+      "space_saved_percent": 6.055432462222243,
+      "elapsed_seconds": 0.549886647,
+      "throughput_mib_s": 348.90041357623585,
+      "blocks_decoded": 7,
+      "filtered_blocks": 2,
+      "decompression_seconds": 0.39071645,
+      "decompression_mib_s": 491.03557978771977,
+      "sha256_roundtrip": true
+    },
+    {
+      "dataset": "single-build",
+      "version": "current",
+      "profile": "fast",
+      "iteration": 2,
+      "operation": "pack",
+      "files": 11,
+      "input_bytes": 201175260,
+      "unique_bytes": 198171192,
+      "archive_bytes": 188993228,
+      "compression_ratio": 1.0644575053239473,
+      "space_saved_percent": 6.055432462222243,
+      "elapsed_seconds": 0.509448977,
+      "throughput_mib_s": 376.59449173523336,
+      "blocks_decoded": 7,
+      "filtered_blocks": 2,
+      "decompression_seconds": 0.393081099,
+      "decompression_mib_s": 488.08166825225453,
+      "sha256_roundtrip": true
+    },
+    {
+      "dataset": "single-build",
+      "version": "previous",
+      "profile": "fast",
+      "iteration": 2,
+      "operation": "pack",
+      "files": 11,
+      "input_bytes": 201175260,
+      "unique_bytes": 198196089,
+      "archive_bytes": 189022021,
+      "compression_ratio": 1.0642953605918752,
+      "space_saved_percent": 6.041120066155248,
+      "elapsed_seconds": 0.743791346,
+      "throughput_mib_s": 257.9428754987822,
+      "blocks_decoded": 6,
+      "decompression_seconds": 0.356786991,
+      "decompression_mib_s": 537.7317093894536,
+      "sha256_roundtrip": true
+    },
+    {
+      "dataset": "single-build",
+      "version": "previous",
+      "profile": "fast",
+      "iteration": 3,
+      "operation": "pack",
+      "files": 11,
+      "input_bytes": 201175260,
+      "unique_bytes": 198196089,
+      "archive_bytes": 189022021,
+      "compression_ratio": 1.0642953605918752,
+      "space_saved_percent": 6.041120066155248,
+      "elapsed_seconds": 0.583566661,
+      "throughput_mib_s": 328.76394657224876,
+      "blocks_decoded": 6,
+      "decompression_seconds": 0.324001738,
+      "decompression_mib_s": 592.1439796670153,
+      "sha256_roundtrip": true
+    },
+    {
+      "dataset": "single-build",
+      "version": "current",
+      "profile": "fast",
+      "iteration": 3,
+      "operation": "pack",
+      "files": 11,
+      "input_bytes": 201175260,
+      "unique_bytes": 198171192,
+      "archive_bytes": 188993228,
+      "compression_ratio": 1.0644575053239473,
+      "space_saved_percent": 6.055432462222243,
+      "elapsed_seconds": 0.514350556,
+      "throughput_mib_s": 373.0056793374004,
+      "blocks_decoded": 7,
+      "filtered_blocks": 2,
+      "decompression_seconds": 0.361883778,
+      "decompression_mib_s": 530.1582724118394,
+      "sha256_roundtrip": true
+    },
+    {
+      "dataset": "single-build",
+      "version": "previous",
+      "profile": "balanced",
+      "iteration": 1,
+      "operation": "pack",
+      "files": 11,
+      "input_bytes": 201175260,
+      "unique_bytes": 198196089,
+      "archive_bytes": 187944318,
+      "compression_ratio": 1.0703982016631117,
+      "space_saved_percent": 6.576823611412264,
+      "elapsed_seconds": 7.011253136,
+      "throughput_mib_s": 27.363964021388263,
+      "blocks_decoded": 6,
+      "decompression_seconds": 0.360025109,
+      "decompression_mib_s": 532.8952724748696,
+      "sha256_roundtrip": true
+    },
+    {
+      "dataset": "single-build",
+      "version": "current",
+      "profile": "balanced",
+      "iteration": 1,
+      "operation": "pack",
+      "files": 11,
+      "input_bytes": 201175260,
+      "unique_bytes": 198171192,
+      "archive_bytes": 187929296,
+      "compression_ratio": 1.070483763212735,
+      "space_saved_percent": 6.5842907323693804,
+      "elapsed_seconds": 5.923768577,
+      "throughput_mib_s": 32.38743648819447,
+      "blocks_decoded": 7,
+      "filtered_blocks": 2,
+      "decompression_seconds": 0.410752418,
+      "decompression_mib_s": 467.08350371378606,
+      "sha256_roundtrip": true
+    },
+    {
+      "dataset": "single-build",
+      "version": "current",
+      "profile": "balanced",
+      "iteration": 2,
+      "operation": "pack",
+      "files": 11,
+      "input_bytes": 201175260,
+      "unique_bytes": 198171192,
+      "archive_bytes": 187929296,
+      "compression_ratio": 1.070483763212735,
+      "space_saved_percent": 6.5842907323693804,
+      "elapsed_seconds": 5.823489275,
+      "throughput_mib_s": 32.945141563491525,
+      "blocks_decoded": 7,
+      "filtered_blocks": 2,
+      "decompression_seconds": 0.359151022,
+      "decompression_mib_s": 534.1922110926072,
+      "sha256_roundtrip": true
+    },
+    {
+      "dataset": "single-build",
+      "version": "previous",
+      "profile": "balanced",
+      "iteration": 2,
+      "operation": "pack",
+      "files": 11,
+      "input_bytes": 201175260,
+      "unique_bytes": 198196089,
+      "archive_bytes": 187944318,
+      "compression_ratio": 1.0703982016631117,
+      "space_saved_percent": 6.576823611412264,
+      "elapsed_seconds": 6.783535841,
+      "throughput_mib_s": 28.282548077473866,
+      "blocks_decoded": 6,
+      "decompression_seconds": 0.345991297,
+      "decompression_mib_s": 554.5101284971039,
+      "sha256_roundtrip": true
+    },
+    {
+      "dataset": "single-build",
+      "version": "previous",
+      "profile": "balanced",
+      "iteration": 3,
+      "operation": "pack",
+      "files": 11,
+      "input_bytes": 201175260,
+      "unique_bytes": 198196089,
+      "archive_bytes": 187944318,
+      "compression_ratio": 1.0703982016631117,
+      "space_saved_percent": 6.576823611412264,
+      "elapsed_seconds": 6.809733235,
+      "throughput_mib_s": 28.17374366036375,
+      "blocks_decoded": 6,
+      "decompression_seconds": 0.313103147,
+      "decompression_mib_s": 612.7555101142103,
+      "sha256_roundtrip": true
+    },
+    {
+      "dataset": "single-build",
+      "version": "current",
+      "profile": "balanced",
+      "iteration": 3,
+      "operation": "pack",
+      "files": 11,
+      "input_bytes": 201175260,
+      "unique_bytes": 198171192,
+      "archive_bytes": 187929296,
+      "compression_ratio": 1.070483763212735,
+      "space_saved_percent": 6.5842907323693804,
+      "elapsed_seconds": 6.329104818,
+      "throughput_mib_s": 30.313240825576354,
+      "blocks_decoded": 7,
+      "filtered_blocks": 2,
+      "decompression_seconds": 0.386706998,
+      "decompression_mib_s": 496.12673044605623,
+      "sha256_roundtrip": true
+    },
+    {
+      "dataset": "single-build",
+      "version": "previous",
+      "profile": "max",
+      "iteration": 1,
+      "operation": "pack",
+      "files": 11,
+      "input_bytes": 201175260,
+      "unique_bytes": 198196089,
+      "archive_bytes": 186208905,
+      "compression_ratio": 1.0803740025215227,
+      "space_saved_percent": 7.439460995353009,
+      "elapsed_seconds": 17.557420068,
+      "throughput_mib_s": 10.92732746697928,
+      "blocks_decoded": 6,
+      "decompression_seconds": 0.404945811,
+      "decompression_mib_s": 473.7811167488521,
+      "sha256_roundtrip": true
+    },
+    {
+      "dataset": "single-build",
+      "version": "current",
+      "profile": "max",
+      "iteration": 1,
+      "operation": "pack",
+      "files": 11,
+      "input_bytes": 201175260,
+      "unique_bytes": 198171192,
+      "archive_bytes": 186211029,
+      "compression_ratio": 1.0803616793288866,
+      "space_saved_percent": 7.438405199526022,
+      "elapsed_seconds": 19.723346764,
+      "throughput_mib_s": 9.727338917375516,
+      "blocks_decoded": 7,
+      "filtered_blocks": 2,
+      "decompression_seconds": 0.443382262,
+      "decompression_mib_s": 432.7094135271239,
+      "sha256_roundtrip": true
+    },
+    {
+      "dataset": "single-build",
+      "version": "current",
+      "profile": "max",
+      "iteration": 2,
+      "operation": "pack",
+      "files": 11,
+      "input_bytes": 201175260,
+      "unique_bytes": 198171192,
+      "archive_bytes": 186211029,
+      "compression_ratio": 1.0803616793288866,
+      "space_saved_percent": 7.438405199526022,
+      "elapsed_seconds": 20.189429758,
+      "throughput_mib_s": 9.502778476560358,
+      "blocks_decoded": 7,
+      "filtered_blocks": 2,
+      "decompression_seconds": 0.513201451,
+      "decompression_mib_s": 373.840873178571,
+      "sha256_roundtrip": true
+    },
+    {
+      "dataset": "single-build",
+      "version": "previous",
+      "profile": "max",
+      "iteration": 2,
+      "operation": "pack",
+      "files": 11,
+      "input_bytes": 201175260,
+      "unique_bytes": 198196089,
+      "archive_bytes": 186208905,
+      "compression_ratio": 1.0803740025215227,
+      "space_saved_percent": 7.439460995353009,
+      "elapsed_seconds": 18.548897208,
+      "throughput_mib_s": 10.343239083539894,
+      "blocks_decoded": 6,
+      "decompression_seconds": 0.435410753,
+      "decompression_mib_s": 440.6314663486265,
+      "sha256_roundtrip": true
+    },
+    {
+      "dataset": "single-build",
+      "version": "previous",
+      "profile": "max",
+      "iteration": 3,
+      "operation": "pack",
+      "files": 11,
+      "input_bytes": 201175260,
+      "unique_bytes": 198196089,
+      "archive_bytes": 186208905,
+      "compression_ratio": 1.0803740025215227,
+      "space_saved_percent": 7.439460995353009,
+      "elapsed_seconds": 19.476158495,
+      "throughput_mib_s": 9.850796737334193,
+      "blocks_decoded": 6,
+      "decompression_seconds": 0.448250994,
+      "decompression_mib_s": 428.00948826975633,
+      "sha256_roundtrip": true
+    },
+    {
+      "dataset": "single-build",
+      "version": "current",
+      "profile": "max",
+      "iteration": 3,
+      "operation": "pack",
+      "files": 11,
+      "input_bytes": 201175260,
+      "unique_bytes": 198171192,
+      "archive_bytes": 186211029,
+      "compression_ratio": 1.0803616793288866,
+      "space_saved_percent": 7.438405199526022,
+      "elapsed_seconds": 20.361564353,
+      "throughput_mib_s": 9.422442953411009,
+      "blocks_decoded": 7,
+      "filtered_blocks": 2,
+      "decompression_seconds": 0.458798212,
+      "decompression_mib_s": 418.1700659250817,
+      "sha256_roundtrip": true
+    },
+    {
+      "dataset": "three-builds",
+      "version": "previous",
+      "profile": "fast",
+      "iteration": 1,
+      "operation": "pack",
+      "files": 33,
+      "input_bytes": 604082836,
+      "unique_bytes": 234419389,
+      "archive_bytes": 210207992,
+      "compression_ratio": 2.87373867307576,
+      "space_saved_percent": 65.20212469668647,
+      "elapsed_seconds": 1.077380525,
+      "throughput_mib_s": 534.7212728530144,
+      "blocks_decoded": 8,
+      "decompression_seconds": 0.646916317,
+      "decompression_mib_s": 890.5298421697545,
+      "sha256_roundtrip": true
+    },
+    {
+      "dataset": "three-builds",
+      "version": "current",
+      "profile": "fast",
+      "iteration": 1,
+      "operation": "pack",
+      "files": 33,
+      "input_bytes": 604082836,
+      "unique_bytes": 232830900,
+      "archive_bytes": 209867749,
+      "compression_ratio": 2.8783976522281183,
+      "space_saved_percent": 65.25844859462288,
+      "elapsed_seconds": 0.731614511,
+      "throughput_mib_s": 787.4341979461487,
+      "blocks_decoded": 8,
+      "filtered_blocks": 2,
+      "decompression_seconds": 0.59061164,
+      "decompression_mib_s": 975.4265690988562,
+      "sha256_roundtrip": true
+    },
+    {
+      "dataset": "three-builds",
+      "version": "current",
+      "profile": "fast",
+      "iteration": 2,
+      "operation": "pack",
+      "files": 33,
+      "input_bytes": 604082836,
+      "unique_bytes": 232830900,
+      "archive_bytes": 209867749,
+      "compression_ratio": 2.8783976522281183,
+      "space_saved_percent": 65.25844859462288,
+      "elapsed_seconds": 0.793108515,
+      "throughput_mib_s": 726.380154517757,
+      "blocks_decoded": 8,
+      "filtered_blocks": 2,
+      "decompression_seconds": 0.659344662,
+      "decompression_mib_s": 873.7437623708992,
+      "sha256_roundtrip": true
+    },
+    {
+      "dataset": "three-builds",
+      "version": "previous",
+      "profile": "fast",
+      "iteration": 2,
+      "operation": "pack",
+      "files": 33,
+      "input_bytes": 604082836,
+      "unique_bytes": 234419389,
+      "archive_bytes": 210207992,
+      "compression_ratio": 2.87373867307576,
+      "space_saved_percent": 65.20212469668647,
+      "elapsed_seconds": 1.062859157,
+      "throughput_mib_s": 542.0269297967283,
+      "blocks_decoded": 8,
+      "decompression_seconds": 0.611892218,
+      "decompression_mib_s": 941.5028802916543,
+      "sha256_roundtrip": true
+    },
+    {
+      "dataset": "three-builds",
+      "version": "previous",
+      "profile": "fast",
+      "iteration": 3,
+      "operation": "pack",
+      "files": 33,
+      "input_bytes": 604082836,
+      "unique_bytes": 234419389,
+      "archive_bytes": 210207992,
+      "compression_ratio": 2.87373867307576,
+      "space_saved_percent": 65.20212469668647,
+      "elapsed_seconds": 1.072530552,
+      "throughput_mib_s": 537.1392773854044,
+      "blocks_decoded": 8,
+      "decompression_seconds": 0.586555203,
+      "decompression_mib_s": 982.1723219375293,
+      "sha256_roundtrip": true
+    },
+    {
+      "dataset": "three-builds",
+      "version": "current",
+      "profile": "fast",
+      "iteration": 3,
+      "operation": "pack",
+      "files": 33,
+      "input_bytes": 604082836,
+      "unique_bytes": 232830900,
+      "archive_bytes": 209867749,
+      "compression_ratio": 2.8783976522281183,
+      "space_saved_percent": 65.25844859462288,
+      "elapsed_seconds": 0.703002506,
+      "throughput_mib_s": 819.4825491490478,
+      "blocks_decoded": 8,
+      "filtered_blocks": 2,
+      "decompression_seconds": 0.626006208,
+      "decompression_mib_s": 920.2756750857155,
+      "sha256_roundtrip": true
+    },
+    {
+      "dataset": "three-builds",
+      "version": "previous",
+      "profile": "balanced",
+      "iteration": 1,
+      "operation": "pack",
+      "files": 33,
+      "input_bytes": 604082836,
+      "unique_bytes": 234419389,
+      "archive_bytes": 208568075,
+      "compression_ratio": 2.8963341393451514,
+      "space_saved_percent": 65.47359690252812,
+      "elapsed_seconds": 7.233688844,
+      "throughput_mib_s": 79.64101001564298,
+      "blocks_decoded": 8,
+      "decompression_seconds": 0.679231696,
+      "decompression_mib_s": 848.1616642269427,
+      "sha256_roundtrip": true
+    },
+    {
+      "dataset": "three-builds",
+      "version": "current",
+      "profile": "balanced",
+      "iteration": 1,
+      "operation": "pack",
+      "files": 33,
+      "input_bytes": 604082836,
+      "unique_bytes": 232830900,
+      "archive_bytes": 208122092,
+      "compression_ratio": 2.902540668291956,
+      "space_saved_percent": 65.5474250223524,
+      "elapsed_seconds": 7.332740719,
+      "throughput_mib_s": 78.56520607394584,
+      "blocks_decoded": 8,
+      "filtered_blocks": 2,
+      "decompression_seconds": 0.600238594,
+      "decompression_mib_s": 959.7821456896336,
+      "sha256_roundtrip": true
+    },
+    {
+      "dataset": "three-builds",
+      "version": "current",
+      "profile": "balanced",
+      "iteration": 2,
+      "operation": "pack",
+      "files": 33,
+      "input_bytes": 604082836,
+      "unique_bytes": 232830900,
+      "archive_bytes": 208122092,
+      "compression_ratio": 2.902540668291956,
+      "space_saved_percent": 65.5474250223524,
+      "elapsed_seconds": 7.118769389,
+      "throughput_mib_s": 80.92666782621758,
+      "blocks_decoded": 8,
+      "filtered_blocks": 2,
+      "decompression_seconds": 0.608839429,
+      "decompression_mib_s": 946.2236810471893,
+      "sha256_roundtrip": true
+    },
+    {
+      "dataset": "three-builds",
+      "version": "previous",
+      "profile": "balanced",
+      "iteration": 2,
+      "operation": "pack",
+      "files": 33,
+      "input_bytes": 604082836,
+      "unique_bytes": 234419389,
+      "archive_bytes": 208568075,
+      "compression_ratio": 2.8963341393451514,
+      "space_saved_percent": 65.47359690252812,
+      "elapsed_seconds": 7.2858346,
+      "throughput_mib_s": 79.071007963185,
+      "blocks_decoded": 8,
+      "decompression_seconds": 0.597521785,
+      "decompression_mib_s": 964.146078247254,
+      "sha256_roundtrip": true
+    },
+    {
+      "dataset": "three-builds",
+      "version": "previous",
+      "profile": "balanced",
+      "iteration": 3,
+      "operation": "pack",
+      "files": 33,
+      "input_bytes": 604082836,
+      "unique_bytes": 234419389,
+      "archive_bytes": 208568075,
+      "compression_ratio": 2.8963341393451514,
+      "space_saved_percent": 65.47359690252812,
+      "elapsed_seconds": 7.161434943,
+      "throughput_mib_s": 80.4445324519998,
+      "blocks_decoded": 8,
+      "decompression_seconds": 0.576422841,
+      "decompression_mib_s": 999.4369492291664,
+      "sha256_roundtrip": true
+    },
+    {
+      "dataset": "three-builds",
+      "version": "current",
+      "profile": "balanced",
+      "iteration": 3,
+      "operation": "pack",
+      "files": 33,
+      "input_bytes": 604082836,
+      "unique_bytes": 232830900,
+      "archive_bytes": 208122092,
+      "compression_ratio": 2.902540668291956,
+      "space_saved_percent": 65.5474250223524,
+      "elapsed_seconds": 7.778958648,
+      "throughput_mib_s": 74.05853556287587,
+      "blocks_decoded": 8,
+      "filtered_blocks": 2,
+      "decompression_seconds": 0.598692832,
+      "decompression_mib_s": 962.260202365424,
+      "sha256_roundtrip": true
+    },
+    {
+      "dataset": "three-builds",
+      "version": "previous",
+      "profile": "max",
+      "iteration": 1,
+      "operation": "pack",
+      "files": 33,
+      "input_bytes": 604082836,
+      "unique_bytes": 234419389,
+      "archive_bytes": 206667694,
+      "compression_ratio": 2.922966934541787,
+      "space_saved_percent": 65.78818637383036,
+      "elapsed_seconds": 19.249657269,
+      "throughput_mib_s": 29.92771651071461,
+      "blocks_decoded": 8,
+      "decompression_seconds": 0.723795414,
+      "decompression_mib_s": 795.9407790266115,
+      "sha256_roundtrip": true
+    },
+    {
+      "dataset": "three-builds",
+      "version": "current",
+      "profile": "max",
+      "iteration": 1,
+      "operation": "pack",
+      "files": 33,
+      "input_bytes": 604082836,
+      "unique_bytes": 232830900,
+      "archive_bytes": 206192118,
+      "compression_ratio": 2.929708671017192,
+      "space_saved_percent": 65.86691332511225,
+      "elapsed_seconds": 25.40788842,
+      "throughput_mib_s": 22.673993058847383,
+      "blocks_decoded": 8,
+      "filtered_blocks": 2,
+      "decompression_seconds": 0.694225736,
+      "decompression_mib_s": 829.8428822221722,
+      "sha256_roundtrip": true
+    },
+    {
+      "dataset": "three-builds",
+      "version": "current",
+      "profile": "max",
+      "iteration": 2,
+      "operation": "pack",
+      "files": 33,
+      "input_bytes": 604082836,
+      "unique_bytes": 232830900,
+      "archive_bytes": 206192118,
+      "compression_ratio": 2.929708671017192,
+      "space_saved_percent": 65.86691332511225,
+      "elapsed_seconds": 25.681176227999998,
+      "throughput_mib_s": 22.432706374520848,
+      "blocks_decoded": 8,
+      "filtered_blocks": 2,
+      "decompression_seconds": 0.709924403,
+      "decompression_mib_s": 811.4924395338031,
+      "sha256_roundtrip": true
+    },
+    {
+      "dataset": "three-builds",
+      "version": "previous",
+      "profile": "max",
+      "iteration": 2,
+      "operation": "pack",
+      "files": 33,
+      "input_bytes": 604082836,
+      "unique_bytes": 234419389,
+      "archive_bytes": 206667694,
+      "compression_ratio": 2.922966934541787,
+      "space_saved_percent": 65.78818637383036,
+      "elapsed_seconds": 17.90313875,
+      "throughput_mib_s": 32.17861927563114,
+      "blocks_decoded": 8,
+      "decompression_seconds": 0.644852081,
+      "decompression_mib_s": 893.3805172523726,
+      "sha256_roundtrip": true
+    },
+    {
+      "dataset": "three-builds",
+      "version": "previous",
+      "profile": "max",
+      "iteration": 3,
+      "operation": "pack",
+      "files": 33,
+      "input_bytes": 604082836,
+      "unique_bytes": 234419389,
+      "archive_bytes": 206667694,
+      "compression_ratio": 2.922966934541787,
+      "space_saved_percent": 65.78818637383036,
+      "elapsed_seconds": 17.222741725,
+      "throughput_mib_s": 33.44985919627433,
+      "blocks_decoded": 8,
+      "decompression_seconds": 0.71177286,
+      "decompression_mib_s": 809.3850131839093,
+      "sha256_roundtrip": true
+    },
+    {
+      "dataset": "three-builds",
+      "version": "current",
+      "profile": "max",
+      "iteration": 3,
+      "operation": "pack",
+      "files": 33,
+      "input_bytes": 604082836,
+      "unique_bytes": 232830900,
+      "archive_bytes": 206192118,
+      "compression_ratio": 2.929708671017192,
+      "space_saved_percent": 65.86691332511225,
+      "elapsed_seconds": 25.507584479,
+      "throughput_mib_s": 22.585372054705598,
+      "blocks_decoded": 8,
+      "filtered_blocks": 2,
+      "decompression_seconds": 0.731236583,
+      "decompression_mib_s": 787.8411707897945,
+      "sha256_roundtrip": true
+    },
+    {
+      "dataset": "six-builds",
+      "version": "previous",
+      "profile": "fast",
+      "iteration": 1,
+      "operation": "pack",
+      "files": 66,
+      "input_bytes": 1208362280,
+      "unique_bytes": 268498765,
+      "archive_bytes": 241423600,
+      "compression_ratio": 5.005153928613441,
+      "space_saved_percent": 80.02059448595168,
+      "elapsed_seconds": 1.807490607,
+      "throughput_mib_s": 637.5601991441483,
+      "blocks_decoded": 9,
+      "decompression_seconds": 1.024132122,
+      "decompression_mib_s": 1125.2298864521874,
+      "sha256_roundtrip": true
+    },
+    {
+      "dataset": "six-builds",
+      "version": "current",
+      "profile": "fast",
+      "iteration": 1,
+      "operation": "pack",
+      "files": 66,
+      "input_bytes": 1208362280,
+      "unique_bytes": 266910072,
+      "archive_bytes": 241580750,
+      "compression_ratio": 5.001898040303294,
+      "space_saved_percent": 80.00758928026121,
+      "elapsed_seconds": 0.993904143,
+      "throughput_mib_s": 1159.4519244801031,
+      "blocks_decoded": 8,
+      "filtered_blocks": 2,
+      "decompression_seconds": 1.071595816,
+      "decompression_mib_s": 1075.390603568853,
+      "sha256_roundtrip": true
+    },
+    {
+      "dataset": "six-builds",
+      "version": "current",
+      "profile": "fast",
+      "iteration": 2,
+      "operation": "pack",
+      "files": 66,
+      "input_bytes": 1208362280,
+      "unique_bytes": 266910072,
+      "archive_bytes": 241580750,
+      "compression_ratio": 5.001898040303294,
+      "space_saved_percent": 80.00758928026121,
+      "elapsed_seconds": 0.980785514,
+      "throughput_mib_s": 1174.9603301646007,
+      "blocks_decoded": 8,
+      "filtered_blocks": 2,
+      "decompression_seconds": 0.992200387,
+      "decompression_mib_s": 1161.4428763068984,
+      "sha256_roundtrip": true
+    },
+    {
+      "dataset": "six-builds",
+      "version": "previous",
+      "profile": "fast",
+      "iteration": 2,
+      "operation": "pack",
+      "files": 66,
+      "input_bytes": 1208362280,
+      "unique_bytes": 268498765,
+      "archive_bytes": 241423600,
+      "compression_ratio": 5.005153928613441,
+      "space_saved_percent": 80.02059448595168,
+      "elapsed_seconds": 1.7071949100000001,
+      "throughput_mib_s": 675.0161124543756,
+      "blocks_decoded": 9,
+      "decompression_seconds": 1.050193389,
+      "decompression_mib_s": 1097.3065374629755,
+      "sha256_roundtrip": true
+    },
+    {
+      "dataset": "six-builds",
+      "version": "previous",
+      "profile": "fast",
+      "iteration": 3,
+      "operation": "pack",
+      "files": 66,
+      "input_bytes": 1208362280,
+      "unique_bytes": 268498765,
+      "archive_bytes": 241423600,
+      "compression_ratio": 5.005153928613441,
+      "space_saved_percent": 80.02059448595168,
+      "elapsed_seconds": 1.586348643,
+      "throughput_mib_s": 726.4380856220757,
+      "blocks_decoded": 9,
+      "decompression_seconds": 0.986887664,
+      "decompression_mib_s": 1167.6952842629692,
+      "sha256_roundtrip": true
+    },
+    {
+      "dataset": "six-builds",
+      "version": "current",
+      "profile": "fast",
+      "iteration": 3,
+      "operation": "pack",
+      "files": 66,
+      "input_bytes": 1208362280,
+      "unique_bytes": 266910072,
+      "archive_bytes": 241580750,
+      "compression_ratio": 5.001898040303294,
+      "space_saved_percent": 80.00758928026121,
+      "elapsed_seconds": 0.838892009,
+      "throughput_mib_s": 1373.6977572641267,
+      "blocks_decoded": 8,
+      "filtered_blocks": 2,
+      "decompression_seconds": 1.002635604,
+      "decompression_mib_s": 1149.3548271701886,
+      "sha256_roundtrip": true
+    },
+    {
+      "dataset": "six-builds",
+      "version": "previous",
+      "profile": "balanced",
+      "iteration": 1,
+      "operation": "pack",
+      "files": 66,
+      "input_bytes": 1208362280,
+      "unique_bytes": 268498765,
+      "archive_bytes": 239645297,
+      "compression_ratio": 5.042294988163277,
+      "space_saved_percent": 80.1677608639025,
+      "elapsed_seconds": 7.529452751,
+      "throughput_mib_s": 153.0501763487456,
+      "blocks_decoded": 9,
+      "decompression_seconds": 0.99299099,
+      "decompression_mib_s": 1160.5181547015825,
+      "sha256_roundtrip": true
+    },
+    {
+      "dataset": "six-builds",
+      "version": "current",
+      "profile": "balanced",
+      "iteration": 1,
+      "operation": "pack",
+      "files": 66,
+      "input_bytes": 1208362280,
+      "unique_bytes": 266910072,
+      "archive_bytes": 239415903,
+      "compression_ratio": 5.047126213666767,
+      "space_saved_percent": 80.18674474016187,
+      "elapsed_seconds": 6.733582484,
+      "throughput_mib_s": 171.13981659663852,
+      "blocks_decoded": 8,
+      "filtered_blocks": 2,
+      "decompression_seconds": 0.969757101,
+      "decompression_mib_s": 1188.3223852259243,
+      "sha256_roundtrip": true
+    },
+    {
+      "dataset": "six-builds",
+      "version": "current",
+      "profile": "balanced",
+      "iteration": 2,
+      "operation": "pack",
+      "files": 66,
+      "input_bytes": 1208362280,
+      "unique_bytes": 266910072,
+      "archive_bytes": 239415903,
+      "compression_ratio": 5.047126213666767,
+      "space_saved_percent": 80.18674474016187,
+      "elapsed_seconds": 6.255061131,
+      "throughput_mib_s": 184.23226363670494,
+      "blocks_decoded": 8,
+      "filtered_blocks": 2,
+      "decompression_seconds": 0.906630934,
+      "decompression_mib_s": 1271.0619372602364,
+      "sha256_roundtrip": true
+    },
+    {
+      "dataset": "six-builds",
+      "version": "previous",
+      "profile": "balanced",
+      "iteration": 2,
+      "operation": "pack",
+      "files": 66,
+      "input_bytes": 1208362280,
+      "unique_bytes": 268498765,
+      "archive_bytes": 239645297,
+      "compression_ratio": 5.042294988163277,
+      "space_saved_percent": 80.1677608639025,
+      "elapsed_seconds": 7.590199394,
+      "throughput_mib_s": 151.82526986854248,
+      "blocks_decoded": 9,
+      "decompression_seconds": 0.953392637,
+      "decompression_mib_s": 1208.71929006737,
+      "sha256_roundtrip": true
+    },
+    {
+      "dataset": "six-builds",
+      "version": "previous",
+      "profile": "balanced",
+      "iteration": 3,
+      "operation": "pack",
+      "files": 66,
+      "input_bytes": 1208362280,
+      "unique_bytes": 268498765,
+      "archive_bytes": 239645297,
+      "compression_ratio": 5.042294988163277,
+      "space_saved_percent": 80.1677608639025,
+      "elapsed_seconds": 7.975557517,
+      "throughput_mib_s": 144.48946909275955,
+      "blocks_decoded": 9,
+      "decompression_seconds": 0.997514081,
+      "decompression_mib_s": 1155.2559440512775,
+      "sha256_roundtrip": true
+    },
+    {
+      "dataset": "six-builds",
+      "version": "current",
+      "profile": "balanced",
+      "iteration": 3,
+      "operation": "pack",
+      "files": 66,
+      "input_bytes": 1208362280,
+      "unique_bytes": 266910072,
+      "archive_bytes": 239415903,
+      "compression_ratio": 5.047126213666767,
+      "space_saved_percent": 80.18674474016187,
+      "elapsed_seconds": 7.172156774,
+      "throughput_mib_s": 160.67469070498285,
+      "blocks_decoded": 8,
+      "filtered_blocks": 2,
+      "decompression_seconds": 1.067988788,
+      "decompression_mib_s": 1079.022630479242,
+      "sha256_roundtrip": true
+    },
+    {
+      "dataset": "six-builds",
+      "version": "previous",
+      "profile": "max",
+      "iteration": 1,
+      "operation": "pack",
+      "files": 66,
+      "input_bytes": 1208362280,
+      "unique_bytes": 268498765,
+      "archive_bytes": 237565197,
+      "compression_ratio": 5.086444880223764,
+      "space_saved_percent": 80.33990294698705,
+      "elapsed_seconds": 20.257588344,
+      "throughput_mib_s": 56.88653811012094,
+      "blocks_decoded": 9,
+      "decompression_seconds": 1.037084595,
+      "decompression_mib_s": 1111.176539412484,
+      "sha256_roundtrip": true
+    },
+    {
+      "dataset": "six-builds",
+      "version": "current",
+      "profile": "max",
+      "iteration": 1,
+      "operation": "pack",
+      "files": 66,
+      "input_bytes": 1208362280,
+      "unique_bytes": 266910072,
+      "archive_bytes": 237290139,
+      "compression_ratio": 5.092340900015234,
+      "space_saved_percent": 80.36266582237242,
+      "elapsed_seconds": 23.57593251,
+      "throughput_mib_s": 48.87968146588903,
+      "blocks_decoded": 8,
+      "filtered_blocks": 2,
+      "decompression_seconds": 1.077067233,
+      "decompression_mib_s": 1069.9277037147576,
+      "sha256_roundtrip": true
+    },
+    {
+      "dataset": "six-builds",
+      "version": "current",
+      "profile": "max",
+      "iteration": 2,
+      "operation": "pack",
+      "files": 66,
+      "input_bytes": 1208362280,
+      "unique_bytes": 266910072,
+      "archive_bytes": 237290139,
+      "compression_ratio": 5.092340900015234,
+      "space_saved_percent": 80.36266582237242,
+      "elapsed_seconds": 23.896251849,
+      "throughput_mib_s": 48.22446962109341,
+      "blocks_decoded": 8,
+      "filtered_blocks": 2,
+      "decompression_seconds": 1.000575371,
+      "decompression_mib_s": 1151.7214042540106,
+      "sha256_roundtrip": true
+    },
+    {
+      "dataset": "six-builds",
+      "version": "previous",
+      "profile": "max",
+      "iteration": 2,
+      "operation": "pack",
+      "files": 66,
+      "input_bytes": 1208362280,
+      "unique_bytes": 268498765,
+      "archive_bytes": 237565197,
+      "compression_ratio": 5.086444880223764,
+      "space_saved_percent": 80.33990294698705,
+      "elapsed_seconds": 20.873085596,
+      "throughput_mib_s": 55.20909048401229,
+      "blocks_decoded": 9,
+      "decompression_seconds": 1.041768317,
+      "decompression_mib_s": 1106.1807625985784,
+      "sha256_roundtrip": true
+    },
+    {
+      "dataset": "six-builds",
+      "version": "previous",
+      "profile": "max",
+      "iteration": 3,
+      "operation": "pack",
+      "files": 66,
+      "input_bytes": 1208362280,
+      "unique_bytes": 268498765,
+      "archive_bytes": 237565197,
+      "compression_ratio": 5.086444880223764,
+      "space_saved_percent": 80.33990294698705,
+      "elapsed_seconds": 19.514034865,
+      "throughput_mib_s": 59.05411563125737,
+      "blocks_decoded": 9,
+      "decompression_seconds": 1.110291034,
+      "decompression_mib_s": 1037.9117150918987,
+      "sha256_roundtrip": true
+    },
+    {
+      "dataset": "six-builds",
+      "version": "current",
+      "profile": "max",
+      "iteration": 3,
+      "operation": "pack",
+      "files": 66,
+      "input_bytes": 1208362280,
+      "unique_bytes": 266910072,
+      "archive_bytes": 237290139,
+      "compression_ratio": 5.092340900015234,
+      "space_saved_percent": 80.36266582237242,
+      "elapsed_seconds": 27.250534973,
+      "throughput_mib_s": 42.288493510013176,
+      "blocks_decoded": 8,
+      "filtered_blocks": 2,
+      "decompression_seconds": 1.168440218,
+      "decompression_mib_s": 986.2584782665343,
+      "sha256_roundtrip": true
+    }
+  ]
+}

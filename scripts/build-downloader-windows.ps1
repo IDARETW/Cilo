@@ -9,6 +9,11 @@ python -m PyInstaller --noconfirm --clean --onedir --console --name CiloDownload
   --paths tools --add-data 'data/casc-availability.json.gz;data' `
   --add-data 'data/cdn-endpoints.json;data' tools/casc_app.py
 if ($LASTEXITCODE -ne 0) { throw 'Downloader build failed' }
+$ciloBinary = if ($env:CILO_BINARY) { $env:CILO_BINARY } else { 'target\release\cilo.exe' }
+if (-not (Test-Path $ciloBinary)) { throw 'Build native Cilo first (cargo build --release --locked), or set CILO_BINARY.' }
+Copy-Item $ciloBinary dist\CiloDownloader\cilo.exe
+Copy-Item docs\THIRD-PARTY-NOTICES.txt dist\CiloDownloader\NATIVE-THIRD-PARTY-NOTICES.txt
+Copy-Item docs\ARCHIVES.md dist\CiloDownloader\ARCHIVES.md
 & .\dist\CiloDownloader\CiloDownloader.exe --self-test
 if ($LASTEXITCODE -ne 0) { throw 'Bundled GUI/resources smoke test failed' }
 & .\dist\CiloDownloader\CiloDownloader.exe --cli --help

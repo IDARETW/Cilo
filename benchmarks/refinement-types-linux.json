@@ -1,0 +1,400 @@
+{
+  "measured_at_utc": "2026-10-23T12:40:58.194Z",
+  "platform": "linux",
+  "kernel": "6.18.55",
+  "cpu": "AMD EPYC 9V74 80-Core Processor",
+  "logical_cpus": 5,
+  "memory_bytes": 35743760384,
+  "threads": 4,
+  "repeats": 1,
+  "binaries": {
+    "previous": {
+      "version": "cilo 0.1.0",
+      "sha256": "0cc1b942370bbcc9d7e5e03c95fe6b7c83543a65b70ff2f0ecccb55e175adf79"
+    },
+    "current": {
+      "version": "cilo 0.2.0",
+      "sha256": "ae22f7f0f23075b02b75e2a2ff2d58b82180b2ec3e2bdd68daef01b829d55310"
+    }
+  },
+  "notes": "Warm source cache, sequential runs, alternating version order, shared cloud host. Default block/chunk sizes for each version. CLI times include hashes, I/O and sync. Independent SHA-256 validation excluded from timings. No network time.",
+  "datasets": [
+    {
+      "name": "dll",
+      "input_bytes": 14463176,
+      "files": [
+        {
+          "path": "nvngx_dlss.dll",
+          "bytes": 14463176,
+          "sha256": "201a9fa1bd89ce036fe88ecaf07a4bc4e2172780d82fb617e63ed4d5e143b6de"
+        }
+      ]
+    },
+    {
+      "name": "ff",
+      "input_bytes": 36635032,
+      "files": [
+        {
+          "path": "captive_exterior_tr.ff",
+          "bytes": 23380104,
+          "sha256": "559973defdcc0c20ff2cdcce1a1acd25395c44331a1eb15af3cad473c28f3d50"
+        },
+        {
+          "path": "common.ff",
+          "bytes": 5570696,
+          "sha256": "16ae0526fd956cd7b29a773ceffd8492fb9d06b7d76d126dbcbc8df2964565f1"
+        },
+        {
+          "path": "cp_arms_dealer_00001_tr.ff",
+          "bytes": 7684232,
+          "sha256": "2a166566bf6023a7dda573171b716de05a4859baba6c625f37a4ca6f2ca20a90"
+        }
+      ]
+    },
+    {
+      "name": "fp",
+      "input_bytes": 33882768,
+      "files": [
+        {
+          "path": "code_post_gfx.fp",
+          "bytes": 15040840,
+          "sha256": "bacc250d297a24a5e306e9759fca5b8698b95bdb190e28135067d846510289a1"
+        },
+        {
+          "path": "common_base_mp.fp",
+          "bytes": 18841928,
+          "sha256": "fdc095d0f581652bd1e5869028bb14dcab71dfcfdad98ed81885974075f801b2"
+        }
+      ]
+    },
+    {
+      "name": "sabs",
+      "input_bytes": 38179584,
+      "files": [
+        {
+          "path": "ai_chatter_wz.sabs",
+          "bytes": 5043456,
+          "sha256": "9af30d4dddd08782fd2308a779dad83e7dc0b300afff131abfa1f78cf47d64a4"
+        },
+        {
+          "path": "br_event_x2_sfx.sabs",
+          "bytes": 33136128,
+          "sha256": "903567fdc044cff12f7a24818723f686c192f461b17c1a206c9e7b9a72d2a4bf"
+        }
+      ]
+    },
+    {
+      "name": "bik",
+      "input_bytes": 14903532,
+      "files": [
+        {
+          "path": "campaignmenu.bik",
+          "bytes": 14903532,
+          "sha256": "08257af55cef778b7ace159802f37dad00dfbe806bf85c306bd413e9f25517c4"
+        }
+      ]
+    },
+    {
+      "name": "xpak",
+      "input_bytes": 63111168,
+      "files": [
+        {
+          "path": "pak_base_vol138.xpak",
+          "bytes": 22511616,
+          "sha256": "0a16c401fa0511e82f7d6805a8a344d9563af1e949bbe189f5310c7236080412"
+        },
+        {
+          "path": "pak_base_vol140.xpak",
+          "bytes": 40599552,
+          "sha256": "674008523bc497cca17c40da3e7e5daee073141691bcea5206c7df2ae8af522b"
+        }
+      ]
+    },
+    {
+      "name": "exe",
+      "input_bytes": 303077984,
+      "files": [
+        {
+          "path": "modernwarfare.exe",
+          "bytes": 303077984,
+          "sha256": "3d92e9e37ee5ac74e444fea476b0541b38aff47d63d20932086de9fbe28983b9"
+        }
+      ]
+    }
+  ],
+  "rows": [
+    {
+      "dataset": "dll",
+      "version": "previous",
+      "profile": "max",
+      "iteration": 1,
+      "operation": "pack",
+      "files": 1,
+      "input_bytes": 14463176,
+      "unique_bytes": 11484005,
+      "archive_bytes": 4806045,
+      "compression_ratio": 3.0093717391326966,
+      "space_saved_percent": 66.77047282007769,
+      "elapsed_seconds": 2.1479365440000002,
+      "throughput_mib_s": 6.421586114074365,
+      "blocks_decoded": 1,
+      "decompression_seconds": 0.023198339,
+      "decompression_mib_s": 594.5753049329645,
+      "sha256_roundtrip": true
+    },
+    {
+      "dataset": "dll",
+      "version": "current",
+      "profile": "max",
+      "iteration": 1,
+      "operation": "pack",
+      "files": 1,
+      "input_bytes": 14463176,
+      "unique_bytes": 11484004,
+      "archive_bytes": 4597716,
+      "compression_ratio": 3.1457306192900996,
+      "space_saved_percent": 68.21088258899705,
+      "elapsed_seconds": 5.577318068,
+      "throughput_mib_s": 2.4730810250901545,
+      "blocks_decoded": 5,
+      "filtered_blocks": 2,
+      "decompression_seconds": 0.034988583,
+      "decompression_mib_s": 394.21886518991874,
+      "sha256_roundtrip": true
+    },
+    {
+      "dataset": "ff",
+      "version": "previous",
+      "profile": "max",
+      "iteration": 1,
+      "operation": "pack",
+      "files": 3,
+      "input_bytes": 36635032,
+      "unique_bytes": 36635032,
+      "archive_bytes": 35613085,
+      "compression_ratio": 1.028695829075184,
+      "space_saved_percent": 2.7895348910845774,
+      "elapsed_seconds": 7.63980797,
+      "throughput_mib_s": 4.573137078355269,
+      "blocks_decoded": 2,
+      "decompression_seconds": 0.08131152,
+      "decompression_mib_s": 429.6794488544931,
+      "sha256_roundtrip": true
+    },
+    {
+      "dataset": "ff",
+      "version": "current",
+      "profile": "max",
+      "iteration": 1,
+      "operation": "pack",
+      "files": 3,
+      "input_bytes": 36635032,
+      "unique_bytes": 36610408,
+      "archive_bytes": 35680362,
+      "compression_ratio": 1.026756174727151,
+      "space_saved_percent": 2.605893724891517,
+      "elapsed_seconds": 8.489539453,
+      "throughput_mib_s": 4.115404527247338,
+      "blocks_decoded": 1,
+      "filtered_blocks": 0,
+      "decompression_seconds": 0.091290841,
+      "decompression_mib_s": 382.70968605844143,
+      "sha256_roundtrip": true
+    },
+    {
+      "dataset": "fp",
+      "version": "previous",
+      "profile": "max",
+      "iteration": 1,
+      "operation": "pack",
+      "files": 2,
+      "input_bytes": 33882768,
+      "unique_bytes": 33882768,
+      "archive_bytes": 33574466,
+      "compression_ratio": 1.009182633016412,
+      "space_saved_percent": 0.9099079508498198,
+      "elapsed_seconds": 7.8757487059999995,
+      "throughput_mib_s": 4.102863970981499,
+      "blocks_decoded": 2,
+      "decompression_seconds": 0.074803105,
+      "decompression_mib_s": 431.97572627969873,
+      "sha256_roundtrip": true
+    },
+    {
+      "dataset": "fp",
+      "version": "current",
+      "profile": "max",
+      "iteration": 1,
+      "operation": "pack",
+      "files": 2,
+      "input_bytes": 33882768,
+      "unique_bytes": 33882632,
+      "archive_bytes": 33610496,
+      "compression_ratio": 1.0081008027968406,
+      "space_saved_percent": 0.8035707118143387,
+      "elapsed_seconds": 8.211479735,
+      "throughput_mib_s": 3.935116039149741,
+      "blocks_decoded": 1,
+      "filtered_blocks": 0,
+      "decompression_seconds": 0.071275909,
+      "decompression_mib_s": 453.35269747807166,
+      "sha256_roundtrip": true
+    },
+    {
+      "dataset": "sabs",
+      "version": "previous",
+      "profile": "max",
+      "iteration": 1,
+      "operation": "pack",
+      "files": 2,
+      "input_bytes": 38179584,
+      "unique_bytes": 38179584,
+      "archive_bytes": 37671220,
+      "compression_ratio": 1.013494758067299,
+      "space_saved_percent": 1.3315074360160661,
+      "elapsed_seconds": 9.217233726,
+      "throughput_mib_s": 3.9503054554390933,
+      "blocks_decoded": 2,
+      "decompression_seconds": 0.080214705,
+      "decompression_mib_s": 453.91787792369246,
+      "sha256_roundtrip": true
+    },
+    {
+      "dataset": "sabs",
+      "version": "current",
+      "profile": "max",
+      "iteration": 1,
+      "operation": "pack",
+      "files": 2,
+      "input_bytes": 38179584,
+      "unique_bytes": 38179584,
+      "archive_bytes": 37726690,
+      "compression_ratio": 1.0120046046976292,
+      "space_saved_percent": 1.1862203632182045,
+      "elapsed_seconds": 9.832157788,
+      "throughput_mib_s": 3.703244949579017,
+      "blocks_decoded": 1,
+      "filtered_blocks": 0,
+      "decompression_seconds": 0.083866909,
+      "decompression_mib_s": 434.1508362001871,
+      "sha256_roundtrip": true
+    },
+    {
+      "dataset": "bik",
+      "version": "previous",
+      "profile": "max",
+      "iteration": 1,
+      "operation": "pack",
+      "files": 1,
+      "input_bytes": 14903532,
+      "unique_bytes": 14903532,
+      "archive_bytes": 14642665,
+      "compression_ratio": 1.0178155410917342,
+      "space_saved_percent": 1.7503703149025385,
+      "elapsed_seconds": 2.75721665,
+      "throughput_mib_s": 5.154878087704378,
+      "blocks_decoded": 1,
+      "decompression_seconds": 0.042063039,
+      "decompression_mib_s": 337.9003521865995,
+      "sha256_roundtrip": true
+    },
+    {
+      "dataset": "bik",
+      "version": "current",
+      "profile": "max",
+      "iteration": 1,
+      "operation": "pack",
+      "files": 1,
+      "input_bytes": 14903532,
+      "unique_bytes": 14903532,
+      "archive_bytes": 14653181,
+      "compression_ratio": 1.0170850957208541,
+      "space_saved_percent": 1.6798098598372557,
+      "elapsed_seconds": 2.746311053,
+      "throughput_mib_s": 5.1753481007231965,
+      "blocks_decoded": 1,
+      "filtered_blocks": 0,
+      "decompression_seconds": 0.037723449,
+      "decompression_mib_s": 376.7713734801575,
+      "sha256_roundtrip": true
+    },
+    {
+      "dataset": "xpak",
+      "version": "previous",
+      "profile": "max",
+      "iteration": 1,
+      "operation": "pack",
+      "files": 2,
+      "input_bytes": 63111168,
+      "unique_bytes": 63111168,
+      "archive_bytes": 59925161,
+      "compression_ratio": 1.0531664320434617,
+      "space_saved_percent": 5.048245977637434,
+      "elapsed_seconds": 9.523852599,
+      "throughput_mib_s": 6.319658916846284,
+      "blocks_decoded": 2,
+      "decompression_seconds": 0.198162198,
+      "decompression_mib_s": 303.7284638919881,
+      "sha256_roundtrip": true
+    },
+    {
+      "dataset": "xpak",
+      "version": "current",
+      "profile": "max",
+      "iteration": 1,
+      "operation": "pack",
+      "files": 2,
+      "input_bytes": 63111168,
+      "unique_bytes": 63111168,
+      "archive_bytes": 59883683,
+      "compression_ratio": 1.0538959001569759,
+      "space_saved_percent": 5.113968101493538,
+      "elapsed_seconds": 19.353337183,
+      "throughput_mib_s": 3.1099287647852685,
+      "blocks_decoded": 1,
+      "filtered_blocks": 0,
+      "decompression_seconds": 0.18581125,
+      "decompression_mib_s": 323.9174161951981,
+      "sha256_roundtrip": true
+    },
+    {
+      "dataset": "exe",
+      "version": "previous",
+      "profile": "max",
+      "iteration": 1,
+      "operation": "pack",
+      "files": 1,
+      "input_bytes": 303077984,
+      "unique_bytes": 252746336,
+      "archive_bytes": 228111941,
+      "compression_ratio": 1.3286370834922667,
+      "space_saved_percent": 24.73490222239303,
+      "elapsed_seconds": 16.997053893,
+      "throughput_mib_s": 17.005164014218987,
+      "blocks_decoded": 8,
+      "decompression_seconds": 0.423764002,
+      "decompression_mib_s": 682.0723040296953,
+      "sha256_roundtrip": true
+    },
+    {
+      "dataset": "exe",
+      "version": "current",
+      "profile": "max",
+      "iteration": 1,
+      "operation": "pack",
+      "files": 1,
+      "input_bytes": 303077984,
+      "unique_bytes": 252746336,
+      "archive_bytes": 228089225,
+      "compression_ratio": 1.328769405919986,
+      "space_saved_percent": 24.74239732305993,
+      "elapsed_seconds": 23.244669102,
+      "throughput_mib_s": 12.434579642354006,
+      "blocks_decoded": 9,
+      "filtered_blocks": 1,
+      "decompression_seconds": 0.560095081,
+      "decompression_mib_s": 516.0511117022011,
+      "sha256_roundtrip": true
+    }
+  ]
+}

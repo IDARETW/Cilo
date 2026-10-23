@@ -23,14 +23,17 @@ enum Command {
         /// Parallel solid compression jobs (each may use substantial memory in max mode).
         #[arg(long, default_value_t = cilo::default_threads())]
         threads: usize,
-        #[arg(long, default_value_t = 32)]
+        #[arg(long, default_value_t = 64)]
         block_mib: usize,
-        /// Average content-defined chunk size, power of two, 64..1024 KiB.
+        /// Average content-defined chunk size, power of two, 16..1024 KiB.
         #[arg(long, default_value_t = 256)]
         chunk_kib: u32,
         /// Disable deduplication for comparative benchmarks.
         #[arg(long)]
         no_dedup: bool,
+        /// Disable container boundaries and reversible filters for comparison.
+        #[arg(long)]
+        generic: bool,
     },
     /// Restore into a NEW directory, verifying every restored file.
     Unpack {
@@ -50,6 +53,32 @@ enum Command {
     },
     /// Print checksum-verified archive metadata; does not verify payload blocks.
     List { archive: PathBuf },
+    /// Inspect validated container boundaries for one file without modifying it.
+    Analyze { file: PathBuf },
+    /// Download integration: archive a CILOSTR1 stdin stream, staging one file at a time.
+    PackStream {
+        archive: PathBuf,
+        #[arg(long, value_enum, default_value = "balanced")]
+        profile: cilo::Profile,
+        #[arg(long, default_value_t = cilo::default_threads())]
+        threads: usize,
+        #[arg(long, default_value_t = 16)]
+        max_file_gib: u64,
+        /// Abort before publication if this cooperative cancellation file exists.
+        #[arg(long)]
+        cancel_file: Option<PathBuf>,
+    },
+    /// List file details without decoding payload blocks.
+    Contents { archive: PathBuf },
+    /// Preview a file as bounded JSON bytes without extracting it.
+    Preview {
+        archive: PathBuf,
+        path: String,
+        #[arg(long, default_value_t = 65536)]
+        max_bytes: usize,
+    },
+    /// Stream one complete verified file to stdout without extracting the archive.
+    Cat { archive: PathBuf, path: String },
 }
 
 fn run() -> Result<()> {
@@ -62,6 +91,7 @@ fn run() -> Result<()> {
             block_mib,
             chunk_kib,
             no_dedup,
+            generic,
         } => cilo::pack(
             &source,
             &archive,
@@ -71,6 +101,7 @@ fn run() -> Result<()> {
                 block_mib,
                 chunk_kib,
                 dedup: !no_dedup,
+                format_aware: !generic,
             },
         )?,
         Command::Unpack {
@@ -82,6 +113,49 @@ fn run() -> Result<()> {
         Command::Verify { archive, cache_mib } => cilo::verify(&archive, cache_mib)?,
         Command::List { archive } => {
             println!("{}", serde_json::to_string_pretty(&cilo::list(&archive)?)?);
+            return Ok(());
+        }
+        Command::Analyze { file } => {
+            println!(
+                "{}",
+                serde_json::to_string_pretty(&cilo::formats::inspect(&file)?)?
+            );
+            return Ok(());
+        }
+        Command::PackStream {
+            archive,
+            profile,
+            threads,
+            max_file_gib,
+            cancel_file,
+        } => cilo::stream::pack(
+            std::io::stdin().lock(),
+            &archive,
+            cilo::PackOptions {
+                profile,
+                threads,
+                ..Default::default()
+            },
+            max_file_gib,
+            cancel_file.as_deref(),
+        )?,
+        Command::Contents { archive } => {
+            println!("{}", serde_json::to_string(&cilo::contents(&archive)?)?);
+            return Ok(());
+        }
+        Command::Preview {
+            archive,
+            path,
+            max_bytes,
+        } => {
+            println!(
+                "{}",
+                serde_json::to_string(&cilo::preview(&archive, &path, max_bytes)?)?
+            );
+            return Ok(());
+        }
+        Command::Cat { archive, path } => {
+            cilo::read_file(&archive, &path, &mut std::io::stdout().lock())?;
             return Ok(());
         }
     };

@@ -1,0 +1,9 @@
+{
+  "linux_binary_sha256": "f8ed5fab43c3db30db3041b780430978ea18d797669daac259a0b94c97a14e0f",
+  "windows_binary_sha256": "119b66847138b87a9af78d88c5bcee2d990d7575954c1dff3eef47ed5ede88af",
+  "six_build_archive_bytes": 237290139,
+  "matches_measured_development_archive_size": true,
+  "linux_to_windows_sha256_files": 66,
+  "windows_to_linux_dll_sha256": true,
+  "note": "Final integration build checks; not used as isolated performance measurements."
+}

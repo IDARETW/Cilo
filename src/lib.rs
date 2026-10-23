@@ -1,18 +1,22 @@
-//! Cilo v1: content-defined deduplication followed by independent solid Zstandard blocks.
+//! Byte-exact game archives with container-aware deduplication and reversible filters.
+mod filters;
+pub mod formats;
+pub mod stream;
 use anyhow::{Context, Result, bail, ensure};
 use bincode::Options;
 use clap::ValueEnum;
-use rayon::prelude::*;
 use serde::{Deserialize, Serialize};
 use std::{
     collections::{HashMap, HashSet, VecDeque},
     fs::{self, File, OpenOptions},
-    io::{Read, Seek, SeekFrom, Write},
+    io::{BufReader, Read, Seek, SeekFrom, Write},
     path::{Path, PathBuf},
+    sync::mpsc::{Receiver, channel},
     time::Instant,
 };
 
-const MAGIC: &[u8; 8] = b"CILO\x01\r\n\x1a";
+const MAGIC_V1: &[u8; 8] = b"CILO\x01\r\n\x1a";
+const MAGIC: &[u8; 8] = b"CILO\x02\r\n\x1a";
 const HEADER: u64 = 64;
 const MIB: usize = 1024 * 1024;
 const MAX_BLOCK: usize = 64 * MIB;
@@ -48,6 +52,7 @@ pub struct PackOptions {
     pub block_mib: usize,
     pub chunk_kib: u32,
     pub dedup: bool,
+    pub format_aware: bool,
 }
 
 impl Default for PackOptions {
@@ -55,9 +60,10 @@ impl Default for PackOptions {
         Self {
             profile: Profile::Balanced,
             threads: default_threads(),
-            block_mib: 32,
+            block_mib: 64,
             chunk_kib: 256,
             dedup: true,
+            format_aware: true,
         }
     }
 }
@@ -67,7 +73,7 @@ pub struct Block {
     pub offset: u64,
     pub stored_len: u32,
     pub raw_len: u32,
-    /// 0 = stored verbatim, 1 = Zstandard frame.
+    /// 0 = stored, 1 = Zstandard, 2 = branch filter, 3/4 = shuffle 2/4 + Zstandard.
     pub codec: u8,
     pub hash: Digest,
 }
@@ -114,6 +120,7 @@ pub struct Stats {
     /// Logical original bytes / wall time, including hashing and I/O.
     pub throughput_mib_s: f64,
     pub blocks_decoded: u64,
+    pub filtered_blocks: usize,
 }
 
 impl Stats {
@@ -135,6 +142,7 @@ impl Stats {
             elapsed_seconds: elapsed,
             throughput_mib_s: input as f64 / MIB as f64 / elapsed.max(1e-9),
             blocks_decoded: decoded,
+            filtered_blocks: m.blocks.iter().filter(|b| b.codec >= 2).count(),
         }
     }
 }
@@ -190,8 +198,9 @@ fn relative_name(root: &Path, p: &Path) -> Result<String> {
 struct BlockWriter<'a> {
     file: &'a mut File,
     blocks: Vec<Block>,
-    pending: Vec<Vec<u8>>,
+    pending: VecDeque<Receiver<Result<EncodedBlock>>>,
     current: Vec<u8>,
+    current_kind: formats::Kind,
     options: PackOptions,
     pool: rayon::ThreadPool,
 }
@@ -201,8 +210,9 @@ impl<'a> BlockWriter<'a> {
         Ok(Self {
             file,
             blocks: Vec::new(),
-            pending: Vec::new(),
+            pending: VecDeque::new(),
             current: Vec::new(),
+            current_kind: formats::Kind::Generic,
             options,
             pool: rayon::ThreadPoolBuilder::new()
                 .num_threads(options.threads)
@@ -211,58 +221,57 @@ impl<'a> BlockWriter<'a> {
     }
 
     fn flush_pending(&mut self) -> Result<()> {
-        let level = self.options.profile.level();
-        let results: Vec<Result<EncodedBlock>> = self.pool.install(|| {
-            self.pending
-                .par_iter()
-                .map(|raw| {
-                    let mut compressor = zstd::bulk::Compressor::new(level)?;
-                    use zstd::zstd_safe::CParameter;
-                    // Bound the match window, including max mode, to the largest supported block.
-                    compressor.set_parameter(CParameter::WindowLog(26))?;
-                    compressor.set_parameter(CParameter::ChecksumFlag(true))?;
-                    compressor.set_parameter(CParameter::EnableLongDistanceMatching(true))?;
-                    let compressed = compressor.compress(raw)?;
-                    let hash = *blake3::hash(raw).as_bytes();
-                    let len = raw.len() as u32;
-                    if compressed.len() < raw.len() {
-                        Ok((compressed, 1, hash, len))
-                    } else {
-                        Ok((raw.clone(), 0, hash, len))
-                    }
-                })
-                .collect()
-        });
-        for result in results {
-            let (bytes, codec, hash, raw_len) = result?;
-            let offset = self.file.stream_position()?;
-            self.file.write_all(&bytes)?;
-            self.blocks.push(Block {
-                offset,
-                stored_len: bytes.len() as u32,
-                raw_len,
-                codec,
-                hash,
-            });
+        while !self.pending.is_empty() {
+            self.write_next()?;
         }
-        self.pending.clear();
+        Ok(())
+    }
+
+    fn write_next(&mut self) -> Result<()> {
+        let result = self
+            .pending
+            .pop_front()
+            .context("missing compression job")?;
+        let (bytes, codec, hash, raw_len) =
+            result.recv().context("compression worker stopped")??;
+        let offset = self.file.stream_position()?;
+        self.file.write_all(&bytes)?;
+        self.blocks.push(Block {
+            offset,
+            stored_len: bytes.len() as u32,
+            raw_len,
+            codec,
+            hash,
+        });
         Ok(())
     }
 
     fn finish_current(&mut self) -> Result<()> {
         if !self.current.is_empty() {
-            self.pending.push(std::mem::take(&mut self.current));
+            let raw = std::mem::take(&mut self.current);
+            let kind = self.current_kind;
+            let level = self.options.profile.level();
+            let (sender, receiver) = channel();
+            self.pool.spawn(move || {
+                let _ = sender.send(encode_block(raw, kind, level));
+            });
+            self.pending.push_back(receiver);
         }
-        if self.pending.len() >= self.options.threads {
-            self.flush_pending()?;
+        // Bounded queue overlaps reads, hashing and compression. A second wave
+        // prevents small PE sections from stalling all workers behind one block.
+        if self.pending.len() >= self.options.threads * 2 {
+            self.write_next()?;
         }
         Ok(())
     }
 
-    fn push(&mut self, data: &[u8], hash: Digest) -> Result<Chunk> {
-        if self.current.len() + data.len() > self.options.block_mib * MIB {
+    fn push(&mut self, data: &[u8], hash: Digest, kind: formats::Kind) -> Result<Chunk> {
+        if self.current_kind != kind
+            || self.current.len() + data.len() > self.options.block_mib * MIB
+        {
             self.finish_current()?;
         }
+        self.current_kind = kind;
         let block =
             u32::try_from(self.blocks.len() + self.pending.len()).context("too many blocks")?;
         let chunk = Chunk {
@@ -282,6 +291,60 @@ impl<'a> BlockWriter<'a> {
     }
 }
 
+fn encode_block(raw: Vec<u8>, kind: formats::Kind, level: i32) -> Result<EncodedBlock> {
+    let mut compressor = zstd::bulk::Compressor::new(level)?;
+    use zstd::zstd_safe::CParameter;
+    compressor.set_parameter(CParameter::WindowLog(26))?;
+    compressor.set_parameter(CParameter::ChecksumFlag(true))?;
+    compressor.set_parameter(CParameter::EnableLongDistanceMatching(true))?;
+    let mut compressed = compressor.compress(&raw)?;
+    let mut codec = 1;
+    let candidates = if kind == formats::Kind::Numeric
+        && compressed.len() * 10 > raw.len()
+        && compressed.len() * 10 < raw.len() * 9
+    {
+        vec![3, 4]
+    } else {
+        filters::candidate(&raw, kind)?.into_iter().collect()
+    };
+    for filter in candidates {
+        let trial = compressor.compress(&filters::apply(&raw, filter, false))?;
+        if trial.len() < compressed.len() {
+            compressed = trial;
+            codec = filter;
+        }
+    }
+    let hash = *blake3::hash(&raw).as_bytes();
+    let len = raw.len() as u32;
+    if compressed.len() < raw.len() {
+        Ok((compressed, codec, hash, len))
+    } else {
+        Ok((raw, 0, hash, len))
+    }
+}
+
+// Keep numeric words aligned when CDC chunks are deduplicated out of a solid
+// block. Otherwise removing an odd-length chunk mixes the byte-shuffle lanes.
+fn aligned_piece(
+    data: &[u8],
+    kind: formats::Kind,
+    tail: &mut Vec<u8>,
+    consume: &mut impl FnMut(&[u8], formats::Kind) -> Result<()>,
+) -> Result<()> {
+    if kind != formats::Kind::Numeric {
+        return consume(data, kind);
+    }
+    tail.extend_from_slice(data);
+    let aligned = tail.len() & !3;
+    if aligned > 0 {
+        consume(&tail[..aligned], kind)?;
+    }
+    let remainder = tail[aligned..].to_vec();
+    tail.clear();
+    tail.extend_from_slice(&remainder);
+    Ok(())
+}
+
 /// Pack a directory without changing source files or replacing an existing archive.
 pub fn pack(source: &Path, archive: &Path, options: PackOptions) -> Result<Stats> {
     let start = Instant::now();
@@ -291,8 +354,8 @@ pub fn pack(source: &Path, archive: &Path, options: PackOptions) -> Result<Stats
         "block-mib must be 4..64"
     );
     ensure!(
-        (64..=1024).contains(&options.chunk_kib) && options.chunk_kib.is_power_of_two(),
-        "chunk-kib must be a power of two in 64..1024"
+        (16..=1024).contains(&options.chunk_kib) && options.chunk_kib.is_power_of_two(),
+        "chunk-kib must be a power of two in 16..1024"
     );
     ensure!(
         fs::symlink_metadata(source)?.file_type().is_dir(),
@@ -314,7 +377,7 @@ pub fn pack(source: &Path, archive: &Path, options: PackOptions) -> Result<Stats
         "archive destination already exists or is inaccessible"
     );
     let mut manifest = Manifest {
-        version: 1,
+        version: 2,
         directories: Vec::new(),
         files: Vec::new(),
         chunks: Vec::new(),
@@ -353,54 +416,159 @@ pub fn pack(source: &Path, archive: &Path, options: PackOptions) -> Result<Stats
             })
             .then_with(|| a.0.cmp(&b.0))
     });
+    pack_sources(
+        sources.into_iter().map(Ok),
+        manifest,
+        parent,
+        destination,
+        options,
+        start,
+        None,
+    )
+}
+
+fn check_cancelled(cancel: Option<&Path>) -> Result<()> {
+    if let Some(path) = cancel {
+        ensure!(!path.try_exists()?, "archive creation cancelled");
+    }
+    Ok(())
+}
+
+fn pack_sources(
+    sources: impl IntoIterator<Item = Result<(String, PathBuf)>>,
+    mut manifest: Manifest,
+    parent: PathBuf,
+    destination: PathBuf,
+    options: PackOptions,
+    start: Instant,
+    cancel: Option<&Path>,
+) -> Result<Stats> {
     let mut temp = tempfile::NamedTempFile::new_in(&parent)?;
     temp.write_all(&[0; HEADER as usize])?;
     let mut writer = BlockWriter::new(temp.as_file_mut(), options)?;
     let mut seen: HashMap<Digest, u32> = HashMap::new();
+    let mut file_sizes = HashSet::new();
+    let mut seen_files: HashMap<(u64, Digest), usize> = HashMap::new();
+    let mut hash_buffer = vec![0; 256 * 1024];
     let avg = options.chunk_kib * 1024;
-    for (name, path) in sources {
+    let mut small_buffer = Vec::new();
+    let mut alignment_tail = Vec::new();
+    let mut directories: HashSet<String> = manifest.directories.iter().cloned().collect();
+    let mut occupied: HashSet<String> = directories.iter().map(|s| s.to_lowercase()).collect();
+    for source in sources {
+        check_cancelled(cancel)?;
+        let (name, path) = source?;
+        portable_path(&name)?;
+        ensure!(
+            occupied.insert(name.to_lowercase()),
+            "duplicate archive path: {name}"
+        );
+        let mut ancestor = name.as_str();
+        while let Some((parent, _)) = ancestor.rsplit_once('/') {
+            if directories.insert(parent.to_owned()) {
+                ensure!(
+                    occupied.insert(parent.to_lowercase()),
+                    "conflicting archive directory: {parent}"
+                );
+            }
+            ancestor = parent;
+        }
         ensure!(
             fs::symlink_metadata(&path)?.is_file(),
             "source changed type: {name}"
         );
-        let file = File::open(&path).with_context(|| format!("opening {name}"))?;
+        let mut file = File::open(&path).with_context(|| format!("opening {name}"))?;
         let before = file.metadata()?;
         let modified = filetime::FileTime::from_last_modification_time(&before);
         let mut hash = blake3::Hasher::new();
         let mut chunks = Vec::new();
         let mut size = 0u64;
-        let mut stream = fastcdc::v2020::StreamCDC::new(file, avg / 4, avg, avg * 4);
-        for piece in &mut stream {
-            let piece = piece.with_context(|| format!("reading {name}"))?;
-            let data = piece.data;
-            hash.update(&data);
-            size = size
-                .checked_add(data.len() as u64)
-                .context("file size overflow")?;
-            let digest = *blake3::hash(&data).as_bytes();
-            let existing = if options.dedup {
-                seen.get(&digest).copied()
-            } else {
-                None
-            };
-            let id = match existing {
-                Some(id) => {
-                    ensure!(
-                        manifest.chunks[id as usize].len as usize == data.len(),
-                        "chunk hash collision"
-                    );
-                    id
+        // A length match is only a reason to hash; reuse requires the entire file digest.
+        // This avoids parsing and chunking identical assets again for every build.
+        let duplicate = if options.dedup && file_sizes.contains(&before.len()) {
+            loop {
+                let n = file.read(&mut hash_buffer)?;
+                if n == 0 {
+                    break;
                 }
-                None => {
-                    let id = u32::try_from(manifest.chunks.len()).context("too many chunks")?;
-                    manifest.chunks.push(writer.push(&data, digest)?);
-                    if options.dedup {
-                        seen.insert(digest, id);
+                hash.update(&hash_buffer[..n]);
+                size += n as u64;
+            }
+            seen_files
+                .get(&(size, *hash.finalize().as_bytes()))
+                .copied()
+        } else {
+            None
+        };
+        if let Some(index) = duplicate {
+            chunks.clone_from(&manifest.files[index].chunks);
+        } else {
+            hash = blake3::Hasher::new();
+            size = 0;
+            let plan = formats::plan(&mut file, before.len(), options.format_aware)?;
+            let mut consume = |data: &[u8], kind: formats::Kind| -> Result<()> {
+                hash.update(data);
+                size = size
+                    .checked_add(data.len() as u64)
+                    .context("file size overflow")?;
+                let digest = *blake3::hash(data).as_bytes();
+                let existing = if options.dedup {
+                    seen.get(&digest).copied()
+                } else {
+                    None
+                };
+                let id = match existing {
+                    Some(id) => {
+                        ensure!(
+                            manifest.chunks[id as usize].len as usize == data.len(),
+                            "chunk hash collision"
+                        );
+                        id
                     }
-                    id
-                }
+                    None => {
+                        let id = u32::try_from(manifest.chunks.len()).context("too many chunks")?;
+                        manifest.chunks.push(writer.push(data, digest, kind)?);
+                        if options.dedup {
+                            seen.insert(digest, id);
+                        }
+                        id
+                    }
+                };
+                chunks.push(id);
+                Ok(())
             };
-            chunks.push(id);
+            let mut input = BufReader::with_capacity(256 * 1024, file);
+            let mut position = 0;
+            for region in plan.regions {
+                let len = region.end - position;
+                if len <= (avg * 4) as u64 {
+                    small_buffer.resize(len as usize, 0);
+                    input
+                        .read_exact(&mut small_buffer)
+                        .with_context(|| format!("reading {name}"))?;
+                    for piece in fastcdc::v2020::FastCDC::new(&small_buffer, avg / 4, avg, avg * 4)
+                    {
+                        aligned_piece(
+                            &small_buffer[piece.offset..piece.offset + piece.length],
+                            region.kind,
+                            &mut alignment_tail,
+                            &mut consume,
+                        )?;
+                    }
+                } else {
+                    let limited = (&mut input).take(len);
+                    let mut stream = fastcdc::v2020::StreamCDC::new(limited, avg / 4, avg, avg * 4);
+                    for piece in &mut stream {
+                        let piece = piece.with_context(|| format!("reading {name}"))?;
+                        aligned_piece(&piece.data, region.kind, &mut alignment_tail, &mut consume)?;
+                    }
+                }
+                if !alignment_tail.is_empty() {
+                    consume(&alignment_tail, region.kind)?;
+                    alignment_tail.clear();
+                }
+                position = region.end;
+            }
         }
         let after = fs::metadata(&path)?;
         ensure!(
@@ -416,10 +584,15 @@ pub fn pack(source: &Path, archive: &Path, options: PackOptions) -> Result<Stats
         };
         #[cfg(not(unix))]
         let executable = false;
+        let digest = *hash.finalize().as_bytes();
+        if options.dedup {
+            file_sizes.insert(size);
+            seen_files.insert((size, digest), manifest.files.len());
+        }
         manifest.files.push(Entry {
             path: name,
             size,
-            hash: *hash.finalize().as_bytes(),
+            hash: digest,
             chunks,
             modified_seconds: modified.unix_seconds(),
             modified_nanos: modified.nanoseconds(),
@@ -427,6 +600,9 @@ pub fn pack(source: &Path, archive: &Path, options: PackOptions) -> Result<Stats
         });
     }
     manifest.blocks = writer.finish()?;
+    check_cancelled(cancel)?;
+    manifest.directories = directories.into_iter().collect();
+    manifest.directories.sort();
     let manifest_offset = temp.stream_position()?;
     let raw = bincode::serialize(&manifest)?;
     ensure!(
@@ -443,6 +619,7 @@ pub fn pack(source: &Path, archive: &Path, options: PackOptions) -> Result<Stats
     temp.write_all(blake3::hash(&raw).as_bytes())?;
     temp.as_file().sync_all()?;
     let size = temp.as_file().metadata()?.len();
+    check_cancelled(cancel)?;
     temp.persist_noclobber(&destination)
         .map_err(|e| e.error)
         .context("publishing archive")?;
@@ -458,7 +635,7 @@ fn decompress(bytes: &[u8], raw_len: usize) -> Result<Vec<u8>> {
 }
 
 fn validate_manifest(m: &Manifest, offset: u64) -> Result<()> {
-    ensure!(m.version == 1, "unsupported manifest version");
+    ensure!(matches!(m.version, 1 | 2), "unsupported manifest version");
     let mut end = HEADER;
     for b in &m.blocks {
         ensure!(
@@ -467,7 +644,7 @@ fn validate_manifest(m: &Manifest, offset: u64) -> Result<()> {
                 && b.raw_len as usize <= MAX_BLOCK
                 && b.stored_len > 0
                 && b.stored_len <= b.raw_len
-                && b.codec <= 1,
+                && b.codec <= if m.version == 1 { 1 } else { 4 },
             "invalid block bounds or codec"
         );
         ensure!(
@@ -545,6 +722,7 @@ struct Reader {
     cache_limit: usize,
     cache_bytes: usize,
     decoded: u64,
+    verified_chunks: Vec<bool>,
 }
 
 impl Reader {
@@ -558,7 +736,10 @@ impl Reader {
         let mut header = [0u8; HEADER as usize];
         file.read_exact(&mut header)
             .context("truncated archive header")?;
-        ensure!(&header[..8] == MAGIC, "not a supported Cilo archive");
+        ensure!(
+            &header[..8] == MAGIC || &header[..8] == MAGIC_V1,
+            "not a supported Cilo archive"
+        );
         let offset = u64::from_le_bytes(header[8..16].try_into()?);
         let stored_len = u64::from_le_bytes(header[16..24].try_into()?);
         let raw_len = u64::from_le_bytes(header[24..32].try_into()?);
@@ -589,8 +770,13 @@ impl Reader {
             .deserialize(&raw)
             .context("parsing manifest")?;
         validate_manifest(&manifest, offset)?;
+        ensure!(
+            manifest.version == header[4] as u32,
+            "header/manifest version mismatch"
+        );
         Ok(Self {
             file,
+            verified_chunks: vec![false; manifest.chunks.len()],
             manifest,
             archive_bytes,
             cache: VecDeque::new(),
@@ -616,11 +802,14 @@ impl Reader {
             self.file.seek(SeekFrom::Start(b.offset))?;
             let mut bytes = vec![0; b.stored_len as usize];
             self.file.read_exact(&mut bytes)?;
-            let raw = if b.codec == 0 {
+            let mut raw = if b.codec == 0 {
                 bytes
             } else {
                 decompress(&bytes, b.raw_len as usize)?
             };
+            if (2..=4).contains(&b.codec) {
+                raw = filters::apply(&raw, b.codec, true);
+            }
             ensure!(
                 *blake3::hash(&raw).as_bytes() == b.hash,
                 "block {block_id} checksum mismatch"
@@ -631,10 +820,13 @@ impl Reader {
         }
         let raw = &self.cache.back().context("empty cache")?.1;
         let chunk = &raw[start..start + len];
-        ensure!(
-            *blake3::hash(chunk).as_bytes() == hash,
-            "chunk {id} checksum mismatch"
-        );
+        if !self.verified_chunks[id as usize] {
+            ensure!(
+                *blake3::hash(chunk).as_bytes() == hash,
+                "chunk {id} checksum mismatch"
+            );
+            self.verified_chunks[id as usize] = true;
+        }
         Ok(chunk)
     }
 
@@ -683,6 +875,120 @@ impl Reader {
 
 pub fn list(archive: &Path) -> Result<Manifest> {
     Ok(Reader::open(archive, 64)?.manifest)
+}
+
+#[derive(Serialize)]
+pub struct FileInfo {
+    pub path: String,
+    pub size: u64,
+    pub blake3: String,
+    pub chunks: usize,
+    pub modified_seconds: i64,
+    pub modified_nanos: u32,
+    pub executable: bool,
+}
+
+impl From<&Entry> for FileInfo {
+    fn from(file: &Entry) -> Self {
+        Self {
+            path: file.path.clone(),
+            size: file.size,
+            blake3: blake3::Hash::from(file.hash).to_hex().to_string(),
+            chunks: file.chunks.len(),
+            modified_seconds: file.modified_seconds,
+            modified_nanos: file.modified_nanos,
+            executable: file.executable,
+        }
+    }
+}
+
+#[derive(Serialize)]
+pub struct Contents {
+    pub version: u32,
+    pub archive_bytes: u64,
+    pub input_bytes: u64,
+    pub files: Vec<FileInfo>,
+}
+
+/// Inspect checked metadata without decoding payload blocks.
+pub fn contents(archive: &Path) -> Result<Contents> {
+    let reader = Reader::open(archive, 64)?;
+    Ok(Contents {
+        version: reader.manifest.version,
+        archive_bytes: reader.archive_bytes,
+        input_bytes: reader.manifest.files.iter().map(|f| f.size).sum(),
+        files: reader.manifest.files.iter().map(FileInfo::from).collect(),
+    })
+}
+
+#[derive(Serialize)]
+pub struct Preview {
+    pub file: FileInfo,
+    pub bytes: Vec<u8>,
+    pub truncated: bool,
+    pub file_hash_verified: bool,
+}
+
+/// Read a bounded prefix directly from the archive. Unrelated blocks are untouched.
+pub fn preview(archive: &Path, name: &str, max_bytes: usize) -> Result<Preview> {
+    ensure!(
+        (1..=4 * MIB).contains(&max_bytes),
+        "max-bytes must be 1..4194304"
+    );
+    let mut reader = Reader::open(archive, 64)?;
+    let entry = reader
+        .manifest
+        .files
+        .iter()
+        .find(|f| f.path == name)
+        .context("file not found in archive")?
+        .clone();
+    let wanted = (max_bytes as u64).min(entry.size) as usize;
+    let mut bytes = Vec::with_capacity(wanted);
+    for &id in &entry.chunks {
+        if bytes.len() == wanted {
+            break;
+        }
+        let data = reader.chunk(id)?;
+        let n = data.len().min(wanted - bytes.len());
+        bytes.extend_from_slice(&data[..n]);
+    }
+    let complete = bytes.len() as u64 == entry.size;
+    if complete {
+        ensure!(
+            *blake3::hash(&bytes).as_bytes() == entry.hash,
+            "file checksum mismatch: {name}"
+        );
+    }
+    Ok(Preview {
+        file: FileInfo::from(&entry),
+        bytes,
+        truncated: !complete,
+        file_hash_verified: complete,
+    })
+}
+
+/// Stream one complete file to a writer, checking its full digest before returning.
+pub fn read_file(archive: &Path, name: &str, output: &mut impl Write) -> Result<()> {
+    let mut reader = Reader::open(archive, 64)?;
+    let entry = reader
+        .manifest
+        .files
+        .iter()
+        .find(|f| f.path == name)
+        .context("file not found in archive")?
+        .clone();
+    let mut hash = blake3::Hasher::new();
+    for id in entry.chunks {
+        let bytes = reader.chunk(id)?;
+        hash.update(bytes);
+        output.write_all(bytes)?;
+    }
+    ensure!(
+        *hash.finalize().as_bytes() == entry.hash,
+        "file checksum mismatch: {name}"
+    );
+    Ok(())
 }
 
 pub fn verify(archive: &Path, cache_mib: usize) -> Result<Stats> {
