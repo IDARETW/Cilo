@@ -1,0 +1,211 @@
+{
+  "measured_at_utc": "2026-10-23T13:24:50.619Z",
+  "platform": "linux",
+  "kernel": "6.18.55",
+  "cpu": "AMD EPYC 9V74 80-Core Processor",
+  "logical_cpus": 5,
+  "memory_bytes": 35743760384,
+  "binary": {
+    "version": "cilo 0.2.0",
+    "sha256": "f8ed5fab43c3db30db3041b780430978ea18d797669daac259a0b94c97a14e0f"
+  },
+  "profile": "balanced",
+  "threads": 4,
+  "budget_bytes": 1000000000,
+  "repeats": 3,
+  "input_bytes": 1106379552,
+  "files": [
+    {
+      "path": "ai_chatter_wz.sabs",
+      "bytes": 5043456,
+      "sha256": "9af30d4dddd08782fd2308a779dad83e7dc0b300afff131abfa1f78cf47d64a4"
+    },
+    {
+      "path": "br_event_ghosts_sfx.sabs",
+      "bytes": 66911232,
+      "sha256": "e305a3150edd83a96a3b45c4366dd21e1b26607c827a71b748c87cfb6d605643"
+    },
+    {
+      "path": "br_event_x2_sfx.sabs",
+      "bytes": 33136128,
+      "sha256": "903567fdc044cff12f7a24818723f686c192f461b17c1a206c9e7b9a72d2a4bf"
+    },
+    {
+      "path": "campaignmenu.bik",
+      "bytes": 14903532,
+      "sha256": "08257af55cef778b7ace159802f37dad00dfbe806bf85c306bd413e9f25517c4"
+    },
+    {
+      "path": "captive_basement_tr.ff",
+      "bytes": 35094664,
+      "sha256": "7cedd435ccf17bf249ff3095ce7e9625620b6bb87cba0592878f0bf9a2f4c22d"
+    },
+    {
+      "path": "captive_exterior_tr.ff",
+      "bytes": 23380104,
+      "sha256": "559973defdcc0c20ff2cdcce1a1acd25395c44331a1eb15af3cad473c28f3d50"
+    },
+    {
+      "path": "captive_gas_tr.ff",
+      "bytes": 31490184,
+      "sha256": "dbc5824fef99f1264187d1d5231eb75036d701aa465ad9a0dbec9871daa21cf5"
+    },
+    {
+      "path": "captive.sabs",
+      "bytes": 58229376,
+      "sha256": "17e7aa2d33a01cd4322937b5a996d013a068a6c1e2f2d974e160b64670a42db8"
+    },
+    {
+      "path": "code_post_gfx.ff",
+      "bytes": 78004360,
+      "sha256": "74061b1cc82416bbb472ac24b826780950785ac35f0d9bc6f3aa6c5d54740103"
+    },
+    {
+      "path": "code_post_gfx.fp",
+      "bytes": 15040840,
+      "sha256": "bacc250d297a24a5e306e9759fca5b8698b95bdb190e28135067d846510289a1"
+    },
+    {
+      "path": "common_base_mp.fp",
+      "bytes": 18841928,
+      "sha256": "fdc095d0f581652bd1e5869028bb14dcab71dfcfdad98ed81885974075f801b2"
+    },
+    {
+      "path": "common_br_mp.fp",
+      "bytes": 26542408,
+      "sha256": "5d308273f4b402db5883507c8a7f9173976659ddae0e26c697bbc33dc6340e72"
+    },
+    {
+      "path": "common.ff",
+      "bytes": 5570696,
+      "sha256": "16ae0526fd956cd7b29a773ceffd8492fb9d06b7d76d126dbcbc8df2964565f1"
+    },
+    {
+      "path": "cp_arms_dealer_00001_tr.ff",
+      "bytes": 7684232,
+      "sha256": "2a166566bf6023a7dda573171b716de05a4859baba6c625f37a4ca6f2ca20a90"
+    },
+    {
+      "path": "cp_dwn_twn_2_00280_tr.ff",
+      "bytes": 12615816,
+      "sha256": "42254eb78165eee42ea9ca523051a80b36cc5ade57bd376b7416c8a02a10a1df"
+    },
+    {
+      "path": "cp_mbi_arms_dealer.bik",
+      "bytes": 91963204,
+      "sha256": "e2be759b981bc29d53536632615cd7173c5303fdc2c55f11d0f1787f3348076d"
+    },
+    {
+      "path": "cp_mbi_banker.bik",
+      "bytes": 95241712,
+      "sha256": "c41235c6b2a3fa75b5f6cff58ccb9c4d426dc11ae147f8f7a49a51d56702921c"
+    },
+    {
+      "path": "cp_sv_aniyah.sabs",
+      "bytes": 11470208,
+      "sha256": "3839678909eb1923ae20a1b9e4ff6e0442382a697c490da7fc1fa74d399a33f2"
+    },
+    {
+      "path": "filler_load.bik",
+      "bytes": 26015052,
+      "sha256": "ae59abbb89b489d23e16279f6df4067086465ff082b242e3762e8abc7745dbf2"
+    },
+    {
+      "path": "global_stream_mp.fp",
+      "bytes": 24674632,
+      "sha256": "25cf98d56066df4c55d12c045f14776ad0fd96cd80ec945f3be52fcd1c99cc88"
+    },
+    {
+      "path": "main_menu_blade_ch2_mw.bik",
+      "bytes": 7375596,
+      "sha256": "4fb6f33c072dab1626a00694b9cb316cd43d6ad0a67f759aa4c8233688fc13c5"
+    },
+    {
+      "path": "modernwarfare.exe",
+      "bytes": 303077984,
+      "sha256": "3d92e9e37ee5ac74e444fea476b0541b38aff47d63d20932086de9fbe28983b9"
+    },
+    {
+      "path": "mp_aniyah.fp",
+      "bytes": 20021576,
+      "sha256": "b4cd505a95c969b0ed156d6314decd5634d92ffc7976220a5d59d582a2417955"
+    },
+    {
+      "path": "mp_deadzone.sabs",
+      "bytes": 16476288,
+      "sha256": "11855b915803fc55a4ecccc93b5d81d24e5263f487c730c9c6e9c315ef9014c3"
+    },
+    {
+      "path": "nvngx_dlss.dll",
+      "bytes": 14463176,
+      "sha256": "201a9fa1bd89ce036fe88ecaf07a4bc4e2172780d82fb617e63ed4d5e143b6de"
+    },
+    {
+      "path": "pak_base_vol138.xpak",
+      "bytes": 22511616,
+      "sha256": "0a16c401fa0511e82f7d6805a8a344d9563af1e949bbe189f5310c7236080412"
+    },
+    {
+      "path": "pak_base_vol140.xpak",
+      "bytes": 40599552,
+      "sha256": "674008523bc497cca17c40da3e7e5daee073141691bcea5206c7df2ae8af522b"
+    }
+  ],
+  "rows": [
+    {
+      "iteration": 1,
+      "operation": "pack",
+      "files": 27,
+      "input_bytes": 1106379552,
+      "unique_bytes": 1046971971,
+      "archive_bytes": 998352622,
+      "compression_ratio": 1.108205184840993,
+      "space_saved_percent": 9.764002760600555,
+      "elapsed_seconds": 29.889769203,
+      "throughput_mib_s": 35.30056574787976,
+      "blocks_decoded": 24,
+      "filtered_blocks": 3,
+      "headroom_bytes": 1647378,
+      "decompression_seconds": 2.694815651,
+      "decompression_mib_s": 391.539125337911,
+      "sha256_roundtrip": true
+    },
+    {
+      "iteration": 2,
+      "operation": "pack",
+      "files": 27,
+      "input_bytes": 1106379552,
+      "unique_bytes": 1046971971,
+      "archive_bytes": 998352622,
+      "compression_ratio": 1.108205184840993,
+      "space_saved_percent": 9.764002760600555,
+      "elapsed_seconds": 32.066658671,
+      "throughput_mib_s": 32.90413802588272,
+      "blocks_decoded": 24,
+      "filtered_blocks": 3,
+      "headroom_bytes": 1647378,
+      "decompression_seconds": 4.473698695,
+      "decompression_mib_s": 235.85087751186896,
+      "sha256_roundtrip": true
+    },
+    {
+      "iteration": 3,
+      "operation": "pack",
+      "files": 27,
+      "input_bytes": 1106379552,
+      "unique_bytes": 1046971971,
+      "archive_bytes": 998352622,
+      "compression_ratio": 1.108205184840993,
+      "space_saved_percent": 9.764002760600555,
+      "elapsed_seconds": 29.735274344,
+      "throughput_mib_s": 35.483976059308056,
+      "blocks_decoded": 24,
+      "filtered_blocks": 3,
+      "headroom_bytes": 1647378,
+      "decompression_seconds": 2.066115777,
+      "decompression_mib_s": 510.6808508434584,
+      "sha256_roundtrip": true
+    }
+  ],
+  "notes": "Fixed selected corpus, whole files only; no synthetic padding. Warm source cache, sequential runs on a shared host. CLI timings include hashes, I/O and sync. Network and independent SHA-256 comparison excluded. Capacity depends on this corpus; no claim of an optimal subset or a whole-build ratio."
+}

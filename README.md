@@ -23,6 +23,11 @@ version also saved 80.34% on this sample. The single-build sample saved only
 [v0.2 before/after benchmarks](benchmarks/REFINEMENT.md) and
 [format modules and their limits](docs/GAME_FORMATS.md).
 
+With a **1 GB archive budget**, balanced mode held 1.106 GB of selected files
+from one Odin build, or 5.700 GB of selected assets across six related builds.
+Both were actual archives below 1,000,000,000 bytes. See the
+[capacity test, timings and file selections](benchmarks/CAPACITY_1GB.md).
+
 ## Windows
 
 Download the prebuilt files from [GitHub Releases](https://github.com/IDARETW/Cilo/releases):

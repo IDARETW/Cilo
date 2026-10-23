@@ -1,0 +1,395 @@
+{
+  "build": "11521872",
+  "build_config": "d88aae6a2bcd3944b48a6b80b5b46c26",
+  "budget_bytes": 1000000000,
+  "files": [
+    {
+      "path": "ai_chatter_wz.sabs",
+      "bytes": 5043456,
+      "sha256": "9af30d4dddd08782fd2308a779dad83e7dc0b300afff131abfa1f78cf47d64a4",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 5043456,
+          "key": "ad50ee5d0a540e00d1",
+          "encoding_key": "ad50ee5d0a540e00d148d1dce6a73562",
+          "encoded_size": 5043968
+        }
+      ]
+    },
+    {
+      "path": "br_event_ghosts_sfx.sabs",
+      "bytes": 66911232,
+      "sha256": "e305a3150edd83a96a3b45c4366dd21e1b26607c827a71b748c87cfb6d605643",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 66911232,
+          "key": "2772ce830490f021ef",
+          "encoding_key": "2772ce830490f021ef19143f954282c4",
+          "encoded_size": 66917644
+        }
+      ]
+    },
+    {
+      "path": "br_event_x2_sfx.sabs",
+      "bytes": 33136128,
+      "sha256": "903567fdc044cff12f7a24818723f686c192f461b17c1a206c9e7b9a72d2a4bf",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 33136128,
+          "key": "4525589d6a4d79b972",
+          "encoding_key": "4525589d6a4d79b97284481acef84625",
+          "encoded_size": 33139315
+        }
+      ]
+    },
+    {
+      "path": "campaignmenu.bik",
+      "bytes": 14903532,
+      "sha256": "08257af55cef778b7ace159802f37dad00dfbe806bf85c306bd413e9f25517c4",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 14903532,
+          "key": "3d66160fc43ae89f83",
+          "encoding_key": "3d66160fc43ae89f8384fe5b31554813",
+          "encoded_size": 14904969
+        }
+      ]
+    },
+    {
+      "path": "captive.sabs",
+      "bytes": 58229376,
+      "sha256": "17e7aa2d33a01cd4322937b5a996d013a068a6c1e2f2d974e160b64670a42db8",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 58229376,
+          "key": "230adb4f3ce6bbfd2f",
+          "encoding_key": "230adb4f3ce6bbfd2fa987c9858669bd",
+          "encoded_size": 58234963
+        }
+      ]
+    },
+    {
+      "path": "captive_basement_tr.ff",
+      "bytes": 35094664,
+      "sha256": "7cedd435ccf17bf249ff3095ce7e9625620b6bb87cba0592878f0bf9a2f4c22d",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 35094664,
+          "key": "d738af8fbfe9f72550",
+          "encoding_key": "d738af8fbfe9f72550c0bef2d5caead6",
+          "encoded_size": 35098026
+        }
+      ]
+    },
+    {
+      "path": "captive_exterior_tr.ff",
+      "bytes": 23380104,
+      "sha256": "559973defdcc0c20ff2cdcce1a1acd25395c44331a1eb15af3cad473c28f3d50",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 23380104,
+          "key": "3d90d3782db6a1f545",
+          "encoding_key": "3d90d3782db6a1f545e3246f1cd52231",
+          "encoded_size": 23382366
+        }
+      ]
+    },
+    {
+      "path": "captive_gas_tr.ff",
+      "bytes": 31490184,
+      "sha256": "dbc5824fef99f1264187d1d5231eb75036d701aa465ad9a0dbec9871daa21cf5",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 31490184,
+          "key": "04df71302d2478f65a",
+          "encoding_key": "04df71302d2478f65a508ff446e9b86c",
+          "encoded_size": 31493221
+        }
+      ]
+    },
+    {
+      "path": "code_post_gfx.ff",
+      "bytes": 78004360,
+      "sha256": "74061b1cc82416bbb472ac24b826780950785ac35f0d9bc6f3aa6c5d54740103",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 78004360,
+          "key": "3617c2775ceea21128",
+          "encoding_key": "3617c2775ceea211283d4b88f43a444d",
+          "encoded_size": 78011822
+        }
+      ]
+    },
+    {
+      "path": "code_post_gfx.fp",
+      "bytes": 15040840,
+      "sha256": "bacc250d297a24a5e306e9759fca5b8698b95bdb190e28135067d846510289a1",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 15040840,
+          "key": "5f7207848fa798d5c0",
+          "encoding_key": "5f7207848fa798d5c0ec554ff02414d2",
+          "encoded_size": 15042302
+        }
+      ]
+    },
+    {
+      "path": "common.ff",
+      "bytes": 5570696,
+      "sha256": "16ae0526fd956cd7b29a773ceffd8492fb9d06b7d76d126dbcbc8df2964565f1",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 5570696,
+          "key": "4ca769d5620b3bced9",
+          "encoding_key": "4ca769d5620b3bced939f27d70e91bb2",
+          "encoded_size": 5571258
+        }
+      ]
+    },
+    {
+      "path": "common_base_mp.fp",
+      "bytes": 18841928,
+      "sha256": "fdc095d0f581652bd1e5869028bb14dcab71dfcfdad98ed81885974075f801b2",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 18841928,
+          "key": "fd3192260985cd2148",
+          "encoding_key": "fd3192260985cd2148c94b4817c756e8",
+          "encoded_size": 18843740
+        }
+      ]
+    },
+    {
+      "path": "common_br_mp.fp",
+      "bytes": 26542408,
+      "sha256": "5d308273f4b402db5883507c8a7f9173976659ddae0e26c697bbc33dc6340e72",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 26542408,
+          "key": "dead46aa7725f24f23",
+          "encoding_key": "dead46aa7725f24f2329c2924767051a",
+          "encoded_size": 26544970
+        }
+      ]
+    },
+    {
+      "path": "cp_arms_dealer_00001_tr.ff",
+      "bytes": 7684232,
+      "sha256": "2a166566bf6023a7dda573171b716de05a4859baba6c625f37a4ca6f2ca20a90",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 7684232,
+          "key": "84d2cb3f7189278c87",
+          "encoding_key": "84d2cb3f7189278c872659bf4ae51700",
+          "encoded_size": 7684994
+        }
+      ]
+    },
+    {
+      "path": "cp_dwn_twn_2_00280_tr.ff",
+      "bytes": 12615816,
+      "sha256": "42254eb78165eee42ea9ca523051a80b36cc5ade57bd376b7416c8a02a10a1df",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 12615816,
+          "key": "34af21d945f7ae0bef",
+          "encoding_key": "34af21d945f7ae0bef3e7594968726f6",
+          "encoded_size": 12617053
+        }
+      ]
+    },
+    {
+      "path": "cp_mbi_arms_dealer.bik",
+      "bytes": 91963204,
+      "sha256": "e2be759b981bc29d53536632615cd7173c5303fdc2c55f11d0f1787f3348076d",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 91963204,
+          "key": "af545291375478d2af",
+          "encoding_key": "af545291375478d2afb3591ec00ddcc9",
+          "encoded_size": 91971991
+        }
+      ]
+    },
+    {
+      "path": "cp_mbi_banker.bik",
+      "bytes": 95241712,
+      "sha256": "c41235c6b2a3fa75b5f6cff58ccb9c4d426dc11ae147f8f7a49a51d56702921c",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 95241712,
+          "key": "87b868b8d4a415854f",
+          "encoding_key": "87b868b8d4a415854f6596fad8ed2ca8",
+          "encoded_size": 95250824
+        }
+      ]
+    },
+    {
+      "path": "cp_sv_aniyah.sabs",
+      "bytes": 11470208,
+      "sha256": "3839678909eb1923ae20a1b9e4ff6e0442382a697c490da7fc1fa74d399a33f2",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 11470208,
+          "key": "321476835898194fbf",
+          "encoding_key": "321476835898194fbf3e9baa1e448196",
+          "encoded_size": 11471320
+        }
+      ]
+    },
+    {
+      "path": "filler_load.bik",
+      "bytes": 26015052,
+      "sha256": "ae59abbb89b489d23e16279f6df4067086465ff082b242e3762e8abc7745dbf2",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 26015052,
+          "key": "176dbd60b054cddaab",
+          "encoding_key": "176dbd60b054cddaab3eb3c9e14c9614",
+          "encoded_size": 26017564
+        }
+      ]
+    },
+    {
+      "path": "global_stream_mp.fp",
+      "bytes": 24674632,
+      "sha256": "25cf98d56066df4c55d12c045f14776ad0fd96cd80ec945f3be52fcd1c99cc88",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 24674632,
+          "key": "8ba32d3ffbed6ea849",
+          "encoding_key": "8ba32d3ffbed6ea84921e48e34280151",
+          "encoded_size": 24677019
+        }
+      ]
+    },
+    {
+      "path": "main_menu_blade_ch2_mw.bik",
+      "bytes": 7375596,
+      "sha256": "4fb6f33c072dab1626a00694b9cb316cd43d6ad0a67f759aa4c8233688fc13c5",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 7375596,
+          "key": "80d0756ff072e8c65a",
+          "encoding_key": "80d0756ff072e8c65af94adec4fd8495",
+          "encoded_size": 7376333
+        }
+      ]
+    },
+    {
+      "path": "modernwarfare.exe",
+      "bytes": 303077984,
+      "sha256": "3d92e9e37ee5ac74e444fea476b0541b38aff47d63d20932086de9fbe28983b9",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 303077984,
+          "key": "069d092bde741e60d6",
+          "encoding_key": "069d092bde741e60d6297f48b63ad4e7",
+          "encoded_size": 303106921
+        }
+      ]
+    },
+    {
+      "path": "mp_aniyah.fp",
+      "bytes": 20021576,
+      "sha256": "b4cd505a95c969b0ed156d6314decd5634d92ffc7976220a5d59d582a2417955",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 20021576,
+          "key": "5cdebe703663a347fe",
+          "encoding_key": "5cdebe703663a347feb7c4cc67a851c9",
+          "encoded_size": 20023513
+        }
+      ]
+    },
+    {
+      "path": "mp_deadzone.sabs",
+      "bytes": 16476288,
+      "sha256": "11855b915803fc55a4ecccc93b5d81d24e5263f487c730c9c6e9c315ef9014c3",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 16476288,
+          "key": "38b67a1102da74f84c",
+          "encoding_key": "38b67a1102da74f84cacddf4e0bdf25d",
+          "encoded_size": 16477875
+        }
+      ]
+    },
+    {
+      "path": "nvngx_dlss.dll",
+      "bytes": 14463176,
+      "sha256": "201a9fa1bd89ce036fe88ecaf07a4bc4e2172780d82fb617e63ed4d5e143b6de",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 14463176,
+          "key": "71f1f7e02049ebb2f0",
+          "encoding_key": "71f1f7e02049ebb2f06ba54477de9850",
+          "encoded_size": 14464588
+        }
+      ]
+    },
+    {
+      "path": "pak_base_vol138.xpak",
+      "bytes": 22511616,
+      "sha256": "0a16c401fa0511e82f7d6805a8a344d9563af1e949bbe189f5310c7236080412",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 22511616,
+          "key": "34998f7ac004e4929d",
+          "encoding_key": "34998f7ac004e4929db11f9c25a4429a",
+          "encoded_size": 22513778
+        }
+      ]
+    },
+    {
+      "path": "pak_base_vol140.xpak",
+      "bytes": 40599552,
+      "sha256": "674008523bc497cca17c40da3e7e5daee073141691bcea5206c7df2ae8af522b",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 40599552,
+          "key": "422dc4ca5ad1c246f4",
+          "encoding_key": "422dc4ca5ad1c246f43a982f57162807",
+          "encoded_size": 40603439
+        }
+      ]
+    }
+  ],
+  "failed_paths": [
+    "dx_vom_bkv_square_speech_12.bik",
+    "dx_vom_bkv_square_speech_20.bik",
+    "dx_vom_bkv_square_speech_32.bik",
+    "dx_vom_bkv_square_speech_74.bik",
+    "dx_vom_bkv_square_speech_76.bik",
+    "dx_vom_bkv_square_speech_88.bik",
+    "player_count_tut.bik",
+    "sp_safehouse_barkov_idle.bik"
+  ]
+}

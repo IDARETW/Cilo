@@ -1,0 +1,20 @@
+{
+  "checks": [
+    {
+      "selection": "single",
+      "archive_bytes": 998352622,
+      "archive_sha256": "ec425c2a6d85db39571fd615e191649a6b85b6a60ed5e3fd608744a949a2890b",
+      "native_verify": true,
+      "files": 27
+    },
+    {
+      "selection": "six",
+      "archive_bytes": 999261458,
+      "archive_sha256": "a4f9ca44877e702b85ace5a90b5021c11079ff080a531ad0e99b996f0c574838",
+      "native_verify": true,
+      "files": 174
+    }
+  ],
+  "temporary_benchmark_outputs_removed": true,
+  "download_staging_removed": true
+}

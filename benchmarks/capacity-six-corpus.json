@@ -1,0 +1,2816 @@
+{
+  "budget_bytes": 1000000000,
+  "scope": "Same selected non-EXE asset paths in six real builds. Identical CASC identities reuse verified source files; no invented copies.",
+  "records": [
+    {
+      "build": "11521872",
+      "build_config": "d88aae6a2bcd3944b48a6b80b5b46c26",
+      "path": "ai_chatter_wz.sabs",
+      "bytes": 5043456,
+      "sha256": "9af30d4dddd08782fd2308a779dad83e7dc0b300afff131abfa1f78cf47d64a4",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 5043456,
+          "key": "ad50ee5d0a540e00d1",
+          "encoding_key": "ad50ee5d0a540e00d148d1dce6a73562",
+          "encoded_size": 5043968
+        }
+      ]
+    },
+    {
+      "build": "11521872",
+      "build_config": "d88aae6a2bcd3944b48a6b80b5b46c26",
+      "path": "br_event_ghosts_sfx.sabs",
+      "bytes": 66911232,
+      "sha256": "e305a3150edd83a96a3b45c4366dd21e1b26607c827a71b748c87cfb6d605643",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 66911232,
+          "key": "2772ce830490f021ef",
+          "encoding_key": "2772ce830490f021ef19143f954282c4",
+          "encoded_size": 66917644
+        }
+      ]
+    },
+    {
+      "build": "11521872",
+      "build_config": "d88aae6a2bcd3944b48a6b80b5b46c26",
+      "path": "br_event_x2_sfx.sabs",
+      "bytes": 33136128,
+      "sha256": "903567fdc044cff12f7a24818723f686c192f461b17c1a206c9e7b9a72d2a4bf",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 33136128,
+          "key": "4525589d6a4d79b972",
+          "encoding_key": "4525589d6a4d79b97284481acef84625",
+          "encoded_size": 33139315
+        }
+      ]
+    },
+    {
+      "build": "11521872",
+      "build_config": "d88aae6a2bcd3944b48a6b80b5b46c26",
+      "path": "campaignmenu.bik",
+      "bytes": 14903532,
+      "sha256": "08257af55cef778b7ace159802f37dad00dfbe806bf85c306bd413e9f25517c4",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 14903532,
+          "key": "3d66160fc43ae89f83",
+          "encoding_key": "3d66160fc43ae89f8384fe5b31554813",
+          "encoded_size": 14904969
+        }
+      ]
+    },
+    {
+      "build": "11521872",
+      "build_config": "d88aae6a2bcd3944b48a6b80b5b46c26",
+      "path": "captive.sabs",
+      "bytes": 58229376,
+      "sha256": "17e7aa2d33a01cd4322937b5a996d013a068a6c1e2f2d974e160b64670a42db8",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 58229376,
+          "key": "230adb4f3ce6bbfd2f",
+          "encoding_key": "230adb4f3ce6bbfd2fa987c9858669bd",
+          "encoded_size": 58234963
+        }
+      ]
+    },
+    {
+      "build": "11521872",
+      "build_config": "d88aae6a2bcd3944b48a6b80b5b46c26",
+      "path": "captive_basement_tr.ff",
+      "bytes": 35094664,
+      "sha256": "7cedd435ccf17bf249ff3095ce7e9625620b6bb87cba0592878f0bf9a2f4c22d",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 35094664,
+          "key": "d738af8fbfe9f72550",
+          "encoding_key": "d738af8fbfe9f72550c0bef2d5caead6",
+          "encoded_size": 35098026
+        }
+      ]
+    },
+    {
+      "build": "11521872",
+      "build_config": "d88aae6a2bcd3944b48a6b80b5b46c26",
+      "path": "captive_exterior_tr.ff",
+      "bytes": 23380104,
+      "sha256": "559973defdcc0c20ff2cdcce1a1acd25395c44331a1eb15af3cad473c28f3d50",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 23380104,
+          "key": "3d90d3782db6a1f545",
+          "encoding_key": "3d90d3782db6a1f545e3246f1cd52231",
+          "encoded_size": 23382366
+        }
+      ]
+    },
+    {
+      "build": "11521872",
+      "build_config": "d88aae6a2bcd3944b48a6b80b5b46c26",
+      "path": "captive_gas_tr.ff",
+      "bytes": 31490184,
+      "sha256": "dbc5824fef99f1264187d1d5231eb75036d701aa465ad9a0dbec9871daa21cf5",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 31490184,
+          "key": "04df71302d2478f65a",
+          "encoding_key": "04df71302d2478f65a508ff446e9b86c",
+          "encoded_size": 31493221
+        }
+      ]
+    },
+    {
+      "build": "11521872",
+      "build_config": "d88aae6a2bcd3944b48a6b80b5b46c26",
+      "path": "code_post_gfx.ff",
+      "bytes": 78004360,
+      "sha256": "74061b1cc82416bbb472ac24b826780950785ac35f0d9bc6f3aa6c5d54740103",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 78004360,
+          "key": "3617c2775ceea21128",
+          "encoding_key": "3617c2775ceea211283d4b88f43a444d",
+          "encoded_size": 78011822
+        }
+      ]
+    },
+    {
+      "build": "11521872",
+      "build_config": "d88aae6a2bcd3944b48a6b80b5b46c26",
+      "path": "code_post_gfx.fp",
+      "bytes": 15040840,
+      "sha256": "bacc250d297a24a5e306e9759fca5b8698b95bdb190e28135067d846510289a1",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 15040840,
+          "key": "5f7207848fa798d5c0",
+          "encoding_key": "5f7207848fa798d5c0ec554ff02414d2",
+          "encoded_size": 15042302
+        }
+      ]
+    },
+    {
+      "build": "11521872",
+      "build_config": "d88aae6a2bcd3944b48a6b80b5b46c26",
+      "path": "common.ff",
+      "bytes": 5570696,
+      "sha256": "16ae0526fd956cd7b29a773ceffd8492fb9d06b7d76d126dbcbc8df2964565f1",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 5570696,
+          "key": "4ca769d5620b3bced9",
+          "encoding_key": "4ca769d5620b3bced939f27d70e91bb2",
+          "encoded_size": 5571258
+        }
+      ]
+    },
+    {
+      "build": "11521872",
+      "build_config": "d88aae6a2bcd3944b48a6b80b5b46c26",
+      "path": "common_base_mp.fp",
+      "bytes": 18841928,
+      "sha256": "fdc095d0f581652bd1e5869028bb14dcab71dfcfdad98ed81885974075f801b2",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 18841928,
+          "key": "fd3192260985cd2148",
+          "encoding_key": "fd3192260985cd2148c94b4817c756e8",
+          "encoded_size": 18843740
+        }
+      ]
+    },
+    {
+      "build": "11521872",
+      "build_config": "d88aae6a2bcd3944b48a6b80b5b46c26",
+      "path": "common_br_mp.fp",
+      "bytes": 26542408,
+      "sha256": "5d308273f4b402db5883507c8a7f9173976659ddae0e26c697bbc33dc6340e72",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 26542408,
+          "key": "dead46aa7725f24f23",
+          "encoding_key": "dead46aa7725f24f2329c2924767051a",
+          "encoded_size": 26544970
+        }
+      ]
+    },
+    {
+      "build": "11521872",
+      "build_config": "d88aae6a2bcd3944b48a6b80b5b46c26",
+      "path": "cp_arms_dealer_00001_tr.ff",
+      "bytes": 7684232,
+      "sha256": "2a166566bf6023a7dda573171b716de05a4859baba6c625f37a4ca6f2ca20a90",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 7684232,
+          "key": "84d2cb3f7189278c87",
+          "encoding_key": "84d2cb3f7189278c872659bf4ae51700",
+          "encoded_size": 7684994
+        }
+      ]
+    },
+    {
+      "build": "11521872",
+      "build_config": "d88aae6a2bcd3944b48a6b80b5b46c26",
+      "path": "cp_dwn_twn_2_00280_tr.ff",
+      "bytes": 12615816,
+      "sha256": "42254eb78165eee42ea9ca523051a80b36cc5ade57bd376b7416c8a02a10a1df",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 12615816,
+          "key": "34af21d945f7ae0bef",
+          "encoding_key": "34af21d945f7ae0bef3e7594968726f6",
+          "encoded_size": 12617053
+        }
+      ]
+    },
+    {
+      "build": "11521872",
+      "build_config": "d88aae6a2bcd3944b48a6b80b5b46c26",
+      "path": "cp_mbi_arms_dealer.bik",
+      "bytes": 91963204,
+      "sha256": "e2be759b981bc29d53536632615cd7173c5303fdc2c55f11d0f1787f3348076d",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 91963204,
+          "key": "af545291375478d2af",
+          "encoding_key": "af545291375478d2afb3591ec00ddcc9",
+          "encoded_size": 91971991
+        }
+      ]
+    },
+    {
+      "build": "11521872",
+      "build_config": "d88aae6a2bcd3944b48a6b80b5b46c26",
+      "path": "cp_mbi_banker.bik",
+      "bytes": 95241712,
+      "sha256": "c41235c6b2a3fa75b5f6cff58ccb9c4d426dc11ae147f8f7a49a51d56702921c",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 95241712,
+          "key": "87b868b8d4a415854f",
+          "encoding_key": "87b868b8d4a415854f6596fad8ed2ca8",
+          "encoded_size": 95250824
+        }
+      ]
+    },
+    {
+      "build": "11521872",
+      "build_config": "d88aae6a2bcd3944b48a6b80b5b46c26",
+      "path": "cp_sv_aniyah.sabs",
+      "bytes": 11470208,
+      "sha256": "3839678909eb1923ae20a1b9e4ff6e0442382a697c490da7fc1fa74d399a33f2",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 11470208,
+          "key": "321476835898194fbf",
+          "encoding_key": "321476835898194fbf3e9baa1e448196",
+          "encoded_size": 11471320
+        }
+      ]
+    },
+    {
+      "build": "11521872",
+      "build_config": "d88aae6a2bcd3944b48a6b80b5b46c26",
+      "path": "filler_load.bik",
+      "bytes": 26015052,
+      "sha256": "ae59abbb89b489d23e16279f6df4067086465ff082b242e3762e8abc7745dbf2",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 26015052,
+          "key": "176dbd60b054cddaab",
+          "encoding_key": "176dbd60b054cddaab3eb3c9e14c9614",
+          "encoded_size": 26017564
+        }
+      ]
+    },
+    {
+      "build": "11521872",
+      "build_config": "d88aae6a2bcd3944b48a6b80b5b46c26",
+      "path": "main_menu_blade_ch2_mw.bik",
+      "bytes": 7375596,
+      "sha256": "4fb6f33c072dab1626a00694b9cb316cd43d6ad0a67f759aa4c8233688fc13c5",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 7375596,
+          "key": "80d0756ff072e8c65a",
+          "encoding_key": "80d0756ff072e8c65af94adec4fd8495",
+          "encoded_size": 7376333
+        }
+      ]
+    },
+    {
+      "build": "11521872",
+      "build_config": "d88aae6a2bcd3944b48a6b80b5b46c26",
+      "path": "main_menu_blade_vg_lp.bik",
+      "bytes": 14212844,
+      "sha256": "99845da2782efdfaa9a05aef1a956caf9bc490368b5fa8338b2cd02ae3282ae5",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 14212844,
+          "key": "1ae2bd497f65d5b938",
+          "encoding_key": "1ae2bd497f65d5b938dee3a5abf1b209",
+          "encoded_size": 14214231
+        }
+      ]
+    },
+    {
+      "build": "11521872",
+      "build_config": "d88aae6a2bcd3944b48a6b80b5b46c26",
+      "path": "mp_aar_rankup.bik",
+      "bytes": 2507108,
+      "sha256": "04a839150058cc4a8abec5cfb859e4cde31442aa49a033a11e37fec4e3763167",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 2507108,
+          "key": "d8b3254caab4ae7812",
+          "encoding_key": "d8b3254caab4ae7812e4a01602f42161",
+          "encoded_size": 2507370
+        }
+      ]
+    },
+    {
+      "build": "11521872",
+      "build_config": "d88aae6a2bcd3944b48a6b80b5b46c26",
+      "path": "mp_aniyah.fp",
+      "bytes": 20021576,
+      "sha256": "b4cd505a95c969b0ed156d6314decd5634d92ffc7976220a5d59d582a2417955",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 20021576,
+          "key": "5cdebe703663a347fe",
+          "encoding_key": "5cdebe703663a347feb7c4cc67a851c9",
+          "encoded_size": 20023513
+        }
+      ]
+    },
+    {
+      "build": "11521872",
+      "build_config": "d88aae6a2bcd3944b48a6b80b5b46c26",
+      "path": "mp_deadzone.sabs",
+      "bytes": 16476288,
+      "sha256": "11855b915803fc55a4ecccc93b5d81d24e5263f487c730c9c6e9c315ef9014c3",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 16476288,
+          "key": "38b67a1102da74f84c",
+          "encoding_key": "38b67a1102da74f84cacddf4e0bdf25d",
+          "encoded_size": 16477875
+        }
+      ]
+    },
+    {
+      "build": "11521872",
+      "build_config": "d88aae6a2bcd3944b48a6b80b5b46c26",
+      "path": "mp_m_pine.ff",
+      "bytes": 100139144,
+      "sha256": "7f9c9e0c420bfde08eca9eb241df784192ab99c36af5a9889eef58e2d5e6ce0d",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 100139144,
+          "key": "e8c9867f97ddc0ebe2",
+          "encoding_key": "e8c9867f97ddc0ebe21b2f9ccd0fde82",
+          "encoded_size": 100148731
+        }
+      ]
+    },
+    {
+      "build": "11521872",
+      "build_config": "d88aae6a2bcd3944b48a6b80b5b46c26",
+      "path": "nvngx_dlss.dll",
+      "bytes": 14463176,
+      "sha256": "201a9fa1bd89ce036fe88ecaf07a4bc4e2172780d82fb617e63ed4d5e143b6de",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 14463176,
+          "key": "71f1f7e02049ebb2f0",
+          "encoding_key": "71f1f7e02049ebb2f06ba54477de9850",
+          "encoded_size": 14464588
+        }
+      ]
+    },
+    {
+      "build": "11521872",
+      "build_config": "d88aae6a2bcd3944b48a6b80b5b46c26",
+      "path": "pak_base_vol138.xpak",
+      "bytes": 22511616,
+      "sha256": "0a16c401fa0511e82f7d6805a8a344d9563af1e949bbe189f5310c7236080412",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 22511616,
+          "key": "34998f7ac004e4929d",
+          "encoding_key": "34998f7ac004e4929db11f9c25a4429a",
+          "encoded_size": 22513778
+        }
+      ]
+    },
+    {
+      "build": "11521872",
+      "build_config": "d88aae6a2bcd3944b48a6b80b5b46c26",
+      "path": "pak_base_vol140.xpak",
+      "bytes": 40599552,
+      "sha256": "674008523bc497cca17c40da3e7e5daee073141691bcea5206c7df2ae8af522b",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 40599552,
+          "key": "422dc4ca5ad1c246f4",
+          "encoding_key": "422dc4ca5ad1c246f43a982f57162807",
+          "encoded_size": 40603439
+        }
+      ]
+    },
+    {
+      "build": "11521872",
+      "build_config": "d88aae6a2bcd3944b48a6b80b5b46c26",
+      "path": "patch_mp_br_quarry.sabs",
+      "bytes": 54910592,
+      "sha256": "e5a6aba635690887ec17f6e13ad0d2594d34dede9731fcfaf1ec78bab369a079",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 54910592,
+          "key": "3303082cfa1212cbee",
+          "encoding_key": "3303082cfa1212cbeefac825719d73fb",
+          "encoded_size": 54915854
+        }
+      ]
+    },
+    {
+      "build": "11531527",
+      "build_config": "c5dcafb637755b8f7398230f6e677303",
+      "path": "ai_chatter_wz.sabs",
+      "bytes": 5043456,
+      "sha256": "9af30d4dddd08782fd2308a779dad83e7dc0b300afff131abfa1f78cf47d64a4",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 5043456,
+          "key": "ad50ee5d0a540e00d1",
+          "encoding_key": "ad50ee5d0a540e00d148d1dce6a73562",
+          "encoded_size": 5043968
+        }
+      ]
+    },
+    {
+      "build": "11531527",
+      "build_config": "c5dcafb637755b8f7398230f6e677303",
+      "path": "br_event_ghosts_sfx.sabs",
+      "bytes": 66911232,
+      "sha256": "e305a3150edd83a96a3b45c4366dd21e1b26607c827a71b748c87cfb6d605643",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 66911232,
+          "key": "2772ce830490f021ef",
+          "encoding_key": "2772ce830490f021ef19143f954282c4",
+          "encoded_size": 66917644
+        }
+      ]
+    },
+    {
+      "build": "11531527",
+      "build_config": "c5dcafb637755b8f7398230f6e677303",
+      "path": "br_event_x2_sfx.sabs",
+      "bytes": 33136128,
+      "sha256": "903567fdc044cff12f7a24818723f686c192f461b17c1a206c9e7b9a72d2a4bf",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 33136128,
+          "key": "4525589d6a4d79b972",
+          "encoding_key": "4525589d6a4d79b97284481acef84625",
+          "encoded_size": 33139315
+        }
+      ]
+    },
+    {
+      "build": "11531527",
+      "build_config": "c5dcafb637755b8f7398230f6e677303",
+      "path": "campaignmenu.bik",
+      "bytes": 14903532,
+      "sha256": "08257af55cef778b7ace159802f37dad00dfbe806bf85c306bd413e9f25517c4",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 14903532,
+          "key": "3d66160fc43ae89f83",
+          "encoding_key": "3d66160fc43ae89f8384fe5b31554813",
+          "encoded_size": 14904969
+        }
+      ]
+    },
+    {
+      "build": "11531527",
+      "build_config": "c5dcafb637755b8f7398230f6e677303",
+      "path": "captive.sabs",
+      "bytes": 58229376,
+      "sha256": "17e7aa2d33a01cd4322937b5a996d013a068a6c1e2f2d974e160b64670a42db8",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 58229376,
+          "key": "230adb4f3ce6bbfd2f",
+          "encoding_key": "230adb4f3ce6bbfd2fa987c9858669bd",
+          "encoded_size": 58234963
+        }
+      ]
+    },
+    {
+      "build": "11531527",
+      "build_config": "c5dcafb637755b8f7398230f6e677303",
+      "path": "captive_basement_tr.ff",
+      "bytes": 35094664,
+      "sha256": "7cedd435ccf17bf249ff3095ce7e9625620b6bb87cba0592878f0bf9a2f4c22d",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 35094664,
+          "key": "d738af8fbfe9f72550",
+          "encoding_key": "d738af8fbfe9f72550c0bef2d5caead6",
+          "encoded_size": 35098026
+        }
+      ]
+    },
+    {
+      "build": "11531527",
+      "build_config": "c5dcafb637755b8f7398230f6e677303",
+      "path": "captive_exterior_tr.ff",
+      "bytes": 23380104,
+      "sha256": "559973defdcc0c20ff2cdcce1a1acd25395c44331a1eb15af3cad473c28f3d50",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 23380104,
+          "key": "3d90d3782db6a1f545",
+          "encoding_key": "3d90d3782db6a1f545e3246f1cd52231",
+          "encoded_size": 23382366
+        }
+      ]
+    },
+    {
+      "build": "11531527",
+      "build_config": "c5dcafb637755b8f7398230f6e677303",
+      "path": "captive_gas_tr.ff",
+      "bytes": 31490184,
+      "sha256": "dbc5824fef99f1264187d1d5231eb75036d701aa465ad9a0dbec9871daa21cf5",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 31490184,
+          "key": "04df71302d2478f65a",
+          "encoding_key": "04df71302d2478f65a508ff446e9b86c",
+          "encoded_size": 31493221
+        }
+      ]
+    },
+    {
+      "build": "11531527",
+      "build_config": "c5dcafb637755b8f7398230f6e677303",
+      "path": "code_post_gfx.ff",
+      "bytes": 78004360,
+      "sha256": "74061b1cc82416bbb472ac24b826780950785ac35f0d9bc6f3aa6c5d54740103",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 78004360,
+          "key": "3617c2775ceea21128",
+          "encoding_key": "3617c2775ceea211283d4b88f43a444d",
+          "encoded_size": 78011822
+        }
+      ]
+    },
+    {
+      "build": "11531527",
+      "build_config": "c5dcafb637755b8f7398230f6e677303",
+      "path": "code_post_gfx.fp",
+      "bytes": 15040840,
+      "sha256": "bacc250d297a24a5e306e9759fca5b8698b95bdb190e28135067d846510289a1",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 15040840,
+          "key": "5f7207848fa798d5c0",
+          "encoding_key": "5f7207848fa798d5c0ec554ff02414d2",
+          "encoded_size": 15042302
+        }
+      ]
+    },
+    {
+      "build": "11531527",
+      "build_config": "c5dcafb637755b8f7398230f6e677303",
+      "path": "common.ff",
+      "bytes": 5570696,
+      "sha256": "16ae0526fd956cd7b29a773ceffd8492fb9d06b7d76d126dbcbc8df2964565f1",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 5570696,
+          "key": "4ca769d5620b3bced9",
+          "encoding_key": "4ca769d5620b3bced939f27d70e91bb2",
+          "encoded_size": 5571258
+        }
+      ]
+    },
+    {
+      "build": "11531527",
+      "build_config": "c5dcafb637755b8f7398230f6e677303",
+      "path": "common_base_mp.fp",
+      "bytes": 18841928,
+      "sha256": "fdc095d0f581652bd1e5869028bb14dcab71dfcfdad98ed81885974075f801b2",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 18841928,
+          "key": "fd3192260985cd2148",
+          "encoding_key": "fd3192260985cd2148c94b4817c756e8",
+          "encoded_size": 18843740
+        }
+      ]
+    },
+    {
+      "build": "11531527",
+      "build_config": "c5dcafb637755b8f7398230f6e677303",
+      "path": "common_br_mp.fp",
+      "bytes": 26542408,
+      "sha256": "5d308273f4b402db5883507c8a7f9173976659ddae0e26c697bbc33dc6340e72",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 26542408,
+          "key": "dead46aa7725f24f23",
+          "encoding_key": "dead46aa7725f24f2329c2924767051a",
+          "encoded_size": 26544970
+        }
+      ]
+    },
+    {
+      "build": "11531527",
+      "build_config": "c5dcafb637755b8f7398230f6e677303",
+      "path": "cp_arms_dealer_00001_tr.ff",
+      "bytes": 7684232,
+      "sha256": "2a166566bf6023a7dda573171b716de05a4859baba6c625f37a4ca6f2ca20a90",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 7684232,
+          "key": "84d2cb3f7189278c87",
+          "encoding_key": "84d2cb3f7189278c872659bf4ae51700",
+          "encoded_size": 7684994
+        }
+      ]
+    },
+    {
+      "build": "11531527",
+      "build_config": "c5dcafb637755b8f7398230f6e677303",
+      "path": "cp_dwn_twn_2_00280_tr.ff",
+      "bytes": 12615816,
+      "sha256": "42254eb78165eee42ea9ca523051a80b36cc5ade57bd376b7416c8a02a10a1df",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 12615816,
+          "key": "34af21d945f7ae0bef",
+          "encoding_key": "34af21d945f7ae0bef3e7594968726f6",
+          "encoded_size": 12617053
+        }
+      ]
+    },
+    {
+      "build": "11531527",
+      "build_config": "c5dcafb637755b8f7398230f6e677303",
+      "path": "cp_mbi_arms_dealer.bik",
+      "bytes": 91963204,
+      "sha256": "e2be759b981bc29d53536632615cd7173c5303fdc2c55f11d0f1787f3348076d",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 91963204,
+          "key": "af545291375478d2af",
+          "encoding_key": "af545291375478d2afb3591ec00ddcc9",
+          "encoded_size": 91971991
+        }
+      ]
+    },
+    {
+      "build": "11531527",
+      "build_config": "c5dcafb637755b8f7398230f6e677303",
+      "path": "cp_mbi_banker.bik",
+      "bytes": 95241712,
+      "sha256": "c41235c6b2a3fa75b5f6cff58ccb9c4d426dc11ae147f8f7a49a51d56702921c",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 95241712,
+          "key": "87b868b8d4a415854f",
+          "encoding_key": "87b868b8d4a415854f6596fad8ed2ca8",
+          "encoded_size": 95250824
+        }
+      ]
+    },
+    {
+      "build": "11531527",
+      "build_config": "c5dcafb637755b8f7398230f6e677303",
+      "path": "cp_sv_aniyah.sabs",
+      "bytes": 11470208,
+      "sha256": "3839678909eb1923ae20a1b9e4ff6e0442382a697c490da7fc1fa74d399a33f2",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 11470208,
+          "key": "321476835898194fbf",
+          "encoding_key": "321476835898194fbf3e9baa1e448196",
+          "encoded_size": 11471320
+        }
+      ]
+    },
+    {
+      "build": "11531527",
+      "build_config": "c5dcafb637755b8f7398230f6e677303",
+      "path": "filler_load.bik",
+      "bytes": 26015052,
+      "sha256": "ae59abbb89b489d23e16279f6df4067086465ff082b242e3762e8abc7745dbf2",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 26015052,
+          "key": "176dbd60b054cddaab",
+          "encoding_key": "176dbd60b054cddaab3eb3c9e14c9614",
+          "encoded_size": 26017564
+        }
+      ]
+    },
+    {
+      "build": "11531527",
+      "build_config": "c5dcafb637755b8f7398230f6e677303",
+      "path": "main_menu_blade_ch2_mw.bik",
+      "bytes": 7375596,
+      "sha256": "4fb6f33c072dab1626a00694b9cb316cd43d6ad0a67f759aa4c8233688fc13c5",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 7375596,
+          "key": "80d0756ff072e8c65a",
+          "encoding_key": "80d0756ff072e8c65af94adec4fd8495",
+          "encoded_size": 7376333
+        }
+      ]
+    },
+    {
+      "build": "11531527",
+      "build_config": "c5dcafb637755b8f7398230f6e677303",
+      "path": "main_menu_blade_vg_lp.bik",
+      "bytes": 14212844,
+      "sha256": "99845da2782efdfaa9a05aef1a956caf9bc490368b5fa8338b2cd02ae3282ae5",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 14212844,
+          "key": "1ae2bd497f65d5b938",
+          "encoding_key": "1ae2bd497f65d5b938dee3a5abf1b209",
+          "encoded_size": 14214231
+        }
+      ]
+    },
+    {
+      "build": "11531527",
+      "build_config": "c5dcafb637755b8f7398230f6e677303",
+      "path": "mp_aar_rankup.bik",
+      "bytes": 2507108,
+      "sha256": "04a839150058cc4a8abec5cfb859e4cde31442aa49a033a11e37fec4e3763167",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 2507108,
+          "key": "d8b3254caab4ae7812",
+          "encoding_key": "d8b3254caab4ae7812e4a01602f42161",
+          "encoded_size": 2507370
+        }
+      ]
+    },
+    {
+      "build": "11531527",
+      "build_config": "c5dcafb637755b8f7398230f6e677303",
+      "path": "mp_aniyah.fp",
+      "bytes": 20021576,
+      "sha256": "b4cd505a95c969b0ed156d6314decd5634d92ffc7976220a5d59d582a2417955",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 20021576,
+          "key": "5cdebe703663a347fe",
+          "encoding_key": "5cdebe703663a347feb7c4cc67a851c9",
+          "encoded_size": 20023513
+        }
+      ]
+    },
+    {
+      "build": "11531527",
+      "build_config": "c5dcafb637755b8f7398230f6e677303",
+      "path": "mp_deadzone.sabs",
+      "bytes": 16476288,
+      "sha256": "11855b915803fc55a4ecccc93b5d81d24e5263f487c730c9c6e9c315ef9014c3",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 16476288,
+          "key": "38b67a1102da74f84c",
+          "encoding_key": "38b67a1102da74f84cacddf4e0bdf25d",
+          "encoded_size": 16477875
+        }
+      ]
+    },
+    {
+      "build": "11531527",
+      "build_config": "c5dcafb637755b8f7398230f6e677303",
+      "path": "mp_m_pine.ff",
+      "bytes": 100139144,
+      "sha256": "7f9c9e0c420bfde08eca9eb241df784192ab99c36af5a9889eef58e2d5e6ce0d",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 100139144,
+          "key": "e8c9867f97ddc0ebe2",
+          "encoding_key": "e8c9867f97ddc0ebe21b2f9ccd0fde82",
+          "encoded_size": 100148731
+        }
+      ]
+    },
+    {
+      "build": "11531527",
+      "build_config": "c5dcafb637755b8f7398230f6e677303",
+      "path": "nvngx_dlss.dll",
+      "bytes": 14463176,
+      "sha256": "201a9fa1bd89ce036fe88ecaf07a4bc4e2172780d82fb617e63ed4d5e143b6de",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 14463176,
+          "key": "71f1f7e02049ebb2f0",
+          "encoding_key": "71f1f7e02049ebb2f06ba54477de9850",
+          "encoded_size": 14464588
+        }
+      ]
+    },
+    {
+      "build": "11531527",
+      "build_config": "c5dcafb637755b8f7398230f6e677303",
+      "path": "pak_base_vol138.xpak",
+      "bytes": 22511616,
+      "sha256": "0a16c401fa0511e82f7d6805a8a344d9563af1e949bbe189f5310c7236080412",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 22511616,
+          "key": "34998f7ac004e4929d",
+          "encoding_key": "34998f7ac004e4929db11f9c25a4429a",
+          "encoded_size": 22513778
+        }
+      ]
+    },
+    {
+      "build": "11531527",
+      "build_config": "c5dcafb637755b8f7398230f6e677303",
+      "path": "pak_base_vol140.xpak",
+      "bytes": 40599552,
+      "sha256": "674008523bc497cca17c40da3e7e5daee073141691bcea5206c7df2ae8af522b",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 40599552,
+          "key": "422dc4ca5ad1c246f4",
+          "encoding_key": "422dc4ca5ad1c246f43a982f57162807",
+          "encoded_size": 40603439
+        }
+      ]
+    },
+    {
+      "build": "11531527",
+      "build_config": "c5dcafb637755b8f7398230f6e677303",
+      "path": "patch_mp_br_quarry.sabs",
+      "bytes": 54910592,
+      "sha256": "e5a6aba635690887ec17f6e13ad0d2594d34dede9731fcfaf1ec78bab369a079",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 54910592,
+          "key": "3303082cfa1212cbee",
+          "encoding_key": "3303082cfa1212cbeefac825719d73fb",
+          "encoded_size": 54915854
+        }
+      ]
+    },
+    {
+      "build": "11558592",
+      "build_config": "6a25d5d105beed705cc47b6de642d738",
+      "path": "ai_chatter_wz.sabs",
+      "bytes": 5043456,
+      "sha256": "9af30d4dddd08782fd2308a779dad83e7dc0b300afff131abfa1f78cf47d64a4",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 5043456,
+          "key": "ad50ee5d0a540e00d1",
+          "encoding_key": "ad50ee5d0a540e00d148d1dce6a73562",
+          "encoded_size": 5043968
+        }
+      ]
+    },
+    {
+      "build": "11558592",
+      "build_config": "6a25d5d105beed705cc47b6de642d738",
+      "path": "br_event_ghosts_sfx.sabs",
+      "bytes": 66911232,
+      "sha256": "e305a3150edd83a96a3b45c4366dd21e1b26607c827a71b748c87cfb6d605643",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 66911232,
+          "key": "2772ce830490f021ef",
+          "encoding_key": "2772ce830490f021ef19143f954282c4",
+          "encoded_size": 66917644
+        }
+      ]
+    },
+    {
+      "build": "11558592",
+      "build_config": "6a25d5d105beed705cc47b6de642d738",
+      "path": "br_event_x2_sfx.sabs",
+      "bytes": 33136128,
+      "sha256": "903567fdc044cff12f7a24818723f686c192f461b17c1a206c9e7b9a72d2a4bf",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 33136128,
+          "key": "4525589d6a4d79b972",
+          "encoding_key": "4525589d6a4d79b97284481acef84625",
+          "encoded_size": 33139315
+        }
+      ]
+    },
+    {
+      "build": "11558592",
+      "build_config": "6a25d5d105beed705cc47b6de642d738",
+      "path": "campaignmenu.bik",
+      "bytes": 14903532,
+      "sha256": "08257af55cef778b7ace159802f37dad00dfbe806bf85c306bd413e9f25517c4",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 14903532,
+          "key": "3d66160fc43ae89f83",
+          "encoding_key": "3d66160fc43ae89f8384fe5b31554813",
+          "encoded_size": 14904969
+        }
+      ]
+    },
+    {
+      "build": "11558592",
+      "build_config": "6a25d5d105beed705cc47b6de642d738",
+      "path": "captive.sabs",
+      "bytes": 58229376,
+      "sha256": "17e7aa2d33a01cd4322937b5a996d013a068a6c1e2f2d974e160b64670a42db8",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 58229376,
+          "key": "230adb4f3ce6bbfd2f",
+          "encoding_key": "230adb4f3ce6bbfd2fa987c9858669bd",
+          "encoded_size": 58234963
+        }
+      ]
+    },
+    {
+      "build": "11558592",
+      "build_config": "6a25d5d105beed705cc47b6de642d738",
+      "path": "captive_basement_tr.ff",
+      "bytes": 35094664,
+      "sha256": "7cedd435ccf17bf249ff3095ce7e9625620b6bb87cba0592878f0bf9a2f4c22d",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 35094664,
+          "key": "d738af8fbfe9f72550",
+          "encoding_key": "d738af8fbfe9f72550c0bef2d5caead6",
+          "encoded_size": 35098026
+        }
+      ]
+    },
+    {
+      "build": "11558592",
+      "build_config": "6a25d5d105beed705cc47b6de642d738",
+      "path": "captive_exterior_tr.ff",
+      "bytes": 23380104,
+      "sha256": "559973defdcc0c20ff2cdcce1a1acd25395c44331a1eb15af3cad473c28f3d50",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 23380104,
+          "key": "3d90d3782db6a1f545",
+          "encoding_key": "3d90d3782db6a1f545e3246f1cd52231",
+          "encoded_size": 23382366
+        }
+      ]
+    },
+    {
+      "build": "11558592",
+      "build_config": "6a25d5d105beed705cc47b6de642d738",
+      "path": "captive_gas_tr.ff",
+      "bytes": 31490184,
+      "sha256": "dbc5824fef99f1264187d1d5231eb75036d701aa465ad9a0dbec9871daa21cf5",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 31490184,
+          "key": "04df71302d2478f65a",
+          "encoding_key": "04df71302d2478f65a508ff446e9b86c",
+          "encoded_size": 31493221
+        }
+      ]
+    },
+    {
+      "build": "11558592",
+      "build_config": "6a25d5d105beed705cc47b6de642d738",
+      "path": "code_post_gfx.ff",
+      "bytes": 78004360,
+      "sha256": "74061b1cc82416bbb472ac24b826780950785ac35f0d9bc6f3aa6c5d54740103",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 78004360,
+          "key": "3617c2775ceea21128",
+          "encoding_key": "3617c2775ceea211283d4b88f43a444d",
+          "encoded_size": 78011822
+        }
+      ]
+    },
+    {
+      "build": "11558592",
+      "build_config": "6a25d5d105beed705cc47b6de642d738",
+      "path": "code_post_gfx.fp",
+      "bytes": 15040840,
+      "sha256": "bacc250d297a24a5e306e9759fca5b8698b95bdb190e28135067d846510289a1",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 15040840,
+          "key": "5f7207848fa798d5c0",
+          "encoding_key": "5f7207848fa798d5c0ec554ff02414d2",
+          "encoded_size": 15042302
+        }
+      ]
+    },
+    {
+      "build": "11558592",
+      "build_config": "6a25d5d105beed705cc47b6de642d738",
+      "path": "common.ff",
+      "bytes": 5570696,
+      "sha256": "16ae0526fd956cd7b29a773ceffd8492fb9d06b7d76d126dbcbc8df2964565f1",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 5570696,
+          "key": "4ca769d5620b3bced9",
+          "encoding_key": "4ca769d5620b3bced939f27d70e91bb2",
+          "encoded_size": 5571258
+        }
+      ]
+    },
+    {
+      "build": "11558592",
+      "build_config": "6a25d5d105beed705cc47b6de642d738",
+      "path": "common_base_mp.fp",
+      "bytes": 18841928,
+      "sha256": "fdc095d0f581652bd1e5869028bb14dcab71dfcfdad98ed81885974075f801b2",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 18841928,
+          "key": "fd3192260985cd2148",
+          "encoding_key": "fd3192260985cd2148c94b4817c756e8",
+          "encoded_size": 18843740
+        }
+      ]
+    },
+    {
+      "build": "11558592",
+      "build_config": "6a25d5d105beed705cc47b6de642d738",
+      "path": "common_br_mp.fp",
+      "bytes": 26542408,
+      "sha256": "5d308273f4b402db5883507c8a7f9173976659ddae0e26c697bbc33dc6340e72",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 26542408,
+          "key": "dead46aa7725f24f23",
+          "encoding_key": "dead46aa7725f24f2329c2924767051a",
+          "encoded_size": 26544970
+        }
+      ]
+    },
+    {
+      "build": "11558592",
+      "build_config": "6a25d5d105beed705cc47b6de642d738",
+      "path": "cp_arms_dealer_00001_tr.ff",
+      "bytes": 7684232,
+      "sha256": "2a166566bf6023a7dda573171b716de05a4859baba6c625f37a4ca6f2ca20a90",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 7684232,
+          "key": "84d2cb3f7189278c87",
+          "encoding_key": "84d2cb3f7189278c872659bf4ae51700",
+          "encoded_size": 7684994
+        }
+      ]
+    },
+    {
+      "build": "11558592",
+      "build_config": "6a25d5d105beed705cc47b6de642d738",
+      "path": "cp_dwn_twn_2_00280_tr.ff",
+      "bytes": 12615816,
+      "sha256": "42254eb78165eee42ea9ca523051a80b36cc5ade57bd376b7416c8a02a10a1df",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 12615816,
+          "key": "34af21d945f7ae0bef",
+          "encoding_key": "34af21d945f7ae0bef3e7594968726f6",
+          "encoded_size": 12617053
+        }
+      ]
+    },
+    {
+      "build": "11558592",
+      "build_config": "6a25d5d105beed705cc47b6de642d738",
+      "path": "cp_mbi_arms_dealer.bik",
+      "bytes": 91963204,
+      "sha256": "e2be759b981bc29d53536632615cd7173c5303fdc2c55f11d0f1787f3348076d",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 91963204,
+          "key": "af545291375478d2af",
+          "encoding_key": "af545291375478d2afb3591ec00ddcc9",
+          "encoded_size": 91971991
+        }
+      ]
+    },
+    {
+      "build": "11558592",
+      "build_config": "6a25d5d105beed705cc47b6de642d738",
+      "path": "cp_mbi_banker.bik",
+      "bytes": 95241712,
+      "sha256": "c41235c6b2a3fa75b5f6cff58ccb9c4d426dc11ae147f8f7a49a51d56702921c",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 95241712,
+          "key": "87b868b8d4a415854f",
+          "encoding_key": "87b868b8d4a415854f6596fad8ed2ca8",
+          "encoded_size": 95250824
+        }
+      ]
+    },
+    {
+      "build": "11558592",
+      "build_config": "6a25d5d105beed705cc47b6de642d738",
+      "path": "cp_sv_aniyah.sabs",
+      "bytes": 11470208,
+      "sha256": "3839678909eb1923ae20a1b9e4ff6e0442382a697c490da7fc1fa74d399a33f2",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 11470208,
+          "key": "321476835898194fbf",
+          "encoding_key": "321476835898194fbf3e9baa1e448196",
+          "encoded_size": 11471320
+        }
+      ]
+    },
+    {
+      "build": "11558592",
+      "build_config": "6a25d5d105beed705cc47b6de642d738",
+      "path": "filler_load.bik",
+      "bytes": 26015052,
+      "sha256": "ae59abbb89b489d23e16279f6df4067086465ff082b242e3762e8abc7745dbf2",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 26015052,
+          "key": "176dbd60b054cddaab",
+          "encoding_key": "176dbd60b054cddaab3eb3c9e14c9614",
+          "encoded_size": 26017564
+        }
+      ]
+    },
+    {
+      "build": "11558592",
+      "build_config": "6a25d5d105beed705cc47b6de642d738",
+      "path": "main_menu_blade_ch2_mw.bik",
+      "bytes": 7375596,
+      "sha256": "4fb6f33c072dab1626a00694b9cb316cd43d6ad0a67f759aa4c8233688fc13c5",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 7375596,
+          "key": "80d0756ff072e8c65a",
+          "encoding_key": "80d0756ff072e8c65af94adec4fd8495",
+          "encoded_size": 7376333
+        }
+      ]
+    },
+    {
+      "build": "11558592",
+      "build_config": "6a25d5d105beed705cc47b6de642d738",
+      "path": "main_menu_blade_vg_lp.bik",
+      "bytes": 14212844,
+      "sha256": "99845da2782efdfaa9a05aef1a956caf9bc490368b5fa8338b2cd02ae3282ae5",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 14212844,
+          "key": "1ae2bd497f65d5b938",
+          "encoding_key": "1ae2bd497f65d5b938dee3a5abf1b209",
+          "encoded_size": 14214231
+        }
+      ]
+    },
+    {
+      "build": "11558592",
+      "build_config": "6a25d5d105beed705cc47b6de642d738",
+      "path": "mp_aar_rankup.bik",
+      "bytes": 2507108,
+      "sha256": "04a839150058cc4a8abec5cfb859e4cde31442aa49a033a11e37fec4e3763167",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 2507108,
+          "key": "d8b3254caab4ae7812",
+          "encoding_key": "d8b3254caab4ae7812e4a01602f42161",
+          "encoded_size": 2507370
+        }
+      ]
+    },
+    {
+      "build": "11558592",
+      "build_config": "6a25d5d105beed705cc47b6de642d738",
+      "path": "mp_aniyah.fp",
+      "bytes": 20021576,
+      "sha256": "b4cd505a95c969b0ed156d6314decd5634d92ffc7976220a5d59d582a2417955",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 20021576,
+          "key": "5cdebe703663a347fe",
+          "encoding_key": "5cdebe703663a347feb7c4cc67a851c9",
+          "encoded_size": 20023513
+        }
+      ]
+    },
+    {
+      "build": "11558592",
+      "build_config": "6a25d5d105beed705cc47b6de642d738",
+      "path": "mp_deadzone.sabs",
+      "bytes": 16476288,
+      "sha256": "11855b915803fc55a4ecccc93b5d81d24e5263f487c730c9c6e9c315ef9014c3",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 16476288,
+          "key": "38b67a1102da74f84c",
+          "encoding_key": "38b67a1102da74f84cacddf4e0bdf25d",
+          "encoded_size": 16477875
+        }
+      ]
+    },
+    {
+      "build": "11558592",
+      "build_config": "6a25d5d105beed705cc47b6de642d738",
+      "path": "mp_m_pine.ff",
+      "bytes": 100139144,
+      "sha256": "7f9c9e0c420bfde08eca9eb241df784192ab99c36af5a9889eef58e2d5e6ce0d",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 100139144,
+          "key": "e8c9867f97ddc0ebe2",
+          "encoding_key": "e8c9867f97ddc0ebe21b2f9ccd0fde82",
+          "encoded_size": 100148731
+        }
+      ]
+    },
+    {
+      "build": "11558592",
+      "build_config": "6a25d5d105beed705cc47b6de642d738",
+      "path": "nvngx_dlss.dll",
+      "bytes": 14463176,
+      "sha256": "201a9fa1bd89ce036fe88ecaf07a4bc4e2172780d82fb617e63ed4d5e143b6de",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 14463176,
+          "key": "71f1f7e02049ebb2f0",
+          "encoding_key": "71f1f7e02049ebb2f06ba54477de9850",
+          "encoded_size": 14464588
+        }
+      ]
+    },
+    {
+      "build": "11558592",
+      "build_config": "6a25d5d105beed705cc47b6de642d738",
+      "path": "pak_base_vol138.xpak",
+      "bytes": 22511616,
+      "sha256": "0a16c401fa0511e82f7d6805a8a344d9563af1e949bbe189f5310c7236080412",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 22511616,
+          "key": "34998f7ac004e4929d",
+          "encoding_key": "34998f7ac004e4929db11f9c25a4429a",
+          "encoded_size": 22513778
+        }
+      ]
+    },
+    {
+      "build": "11558592",
+      "build_config": "6a25d5d105beed705cc47b6de642d738",
+      "path": "pak_base_vol140.xpak",
+      "bytes": 40599552,
+      "sha256": "674008523bc497cca17c40da3e7e5daee073141691bcea5206c7df2ae8af522b",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 40599552,
+          "key": "422dc4ca5ad1c246f4",
+          "encoding_key": "422dc4ca5ad1c246f43a982f57162807",
+          "encoded_size": 40603439
+        }
+      ]
+    },
+    {
+      "build": "11558592",
+      "build_config": "6a25d5d105beed705cc47b6de642d738",
+      "path": "patch_mp_br_quarry.sabs",
+      "bytes": 54910592,
+      "sha256": "e5a6aba635690887ec17f6e13ad0d2594d34dede9731fcfaf1ec78bab369a079",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 54910592,
+          "key": "3303082cfa1212cbee",
+          "encoding_key": "3303082cfa1212cbeefac825719d73fb",
+          "encoded_size": 54915854
+        }
+      ]
+    },
+    {
+      "build": "11642448",
+      "build_config": "7efd43b9b2a5bdffb5e6c468f69e54b1",
+      "path": "ai_chatter_wz.sabs",
+      "bytes": 5043456,
+      "sha256": "9af30d4dddd08782fd2308a779dad83e7dc0b300afff131abfa1f78cf47d64a4",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 5043456,
+          "key": "ad50ee5d0a540e00d1",
+          "encoding_key": "ad50ee5d0a540e00d148d1dce6a73562",
+          "encoded_size": 5043968
+        }
+      ]
+    },
+    {
+      "build": "11642448",
+      "build_config": "7efd43b9b2a5bdffb5e6c468f69e54b1",
+      "path": "br_event_ghosts_sfx.sabs",
+      "bytes": 66911232,
+      "sha256": "e305a3150edd83a96a3b45c4366dd21e1b26607c827a71b748c87cfb6d605643",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 66911232,
+          "key": "2772ce830490f021ef",
+          "encoding_key": "2772ce830490f021ef19143f954282c4",
+          "encoded_size": 66917644
+        }
+      ]
+    },
+    {
+      "build": "11642448",
+      "build_config": "7efd43b9b2a5bdffb5e6c468f69e54b1",
+      "path": "br_event_x2_sfx.sabs",
+      "bytes": 33136128,
+      "sha256": "903567fdc044cff12f7a24818723f686c192f461b17c1a206c9e7b9a72d2a4bf",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 33136128,
+          "key": "4525589d6a4d79b972",
+          "encoding_key": "4525589d6a4d79b97284481acef84625",
+          "encoded_size": 33139315
+        }
+      ]
+    },
+    {
+      "build": "11642448",
+      "build_config": "7efd43b9b2a5bdffb5e6c468f69e54b1",
+      "path": "campaignmenu.bik",
+      "bytes": 14903532,
+      "sha256": "08257af55cef778b7ace159802f37dad00dfbe806bf85c306bd413e9f25517c4",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 14903532,
+          "key": "3d66160fc43ae89f83",
+          "encoding_key": "3d66160fc43ae89f8384fe5b31554813",
+          "encoded_size": 14904969
+        }
+      ]
+    },
+    {
+      "build": "11642448",
+      "build_config": "7efd43b9b2a5bdffb5e6c468f69e54b1",
+      "path": "captive.sabs",
+      "bytes": 58229376,
+      "sha256": "17e7aa2d33a01cd4322937b5a996d013a068a6c1e2f2d974e160b64670a42db8",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 58229376,
+          "key": "230adb4f3ce6bbfd2f",
+          "encoding_key": "230adb4f3ce6bbfd2fa987c9858669bd",
+          "encoded_size": 58234963
+        }
+      ]
+    },
+    {
+      "build": "11642448",
+      "build_config": "7efd43b9b2a5bdffb5e6c468f69e54b1",
+      "path": "captive_basement_tr.ff",
+      "bytes": 35094664,
+      "sha256": "7cedd435ccf17bf249ff3095ce7e9625620b6bb87cba0592878f0bf9a2f4c22d",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 35094664,
+          "key": "d738af8fbfe9f72550",
+          "encoding_key": "d738af8fbfe9f72550c0bef2d5caead6",
+          "encoded_size": 35098026
+        }
+      ]
+    },
+    {
+      "build": "11642448",
+      "build_config": "7efd43b9b2a5bdffb5e6c468f69e54b1",
+      "path": "captive_exterior_tr.ff",
+      "bytes": 23380104,
+      "sha256": "559973defdcc0c20ff2cdcce1a1acd25395c44331a1eb15af3cad473c28f3d50",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 23380104,
+          "key": "3d90d3782db6a1f545",
+          "encoding_key": "3d90d3782db6a1f545e3246f1cd52231",
+          "encoded_size": 23382366
+        }
+      ]
+    },
+    {
+      "build": "11642448",
+      "build_config": "7efd43b9b2a5bdffb5e6c468f69e54b1",
+      "path": "captive_gas_tr.ff",
+      "bytes": 31490184,
+      "sha256": "dbc5824fef99f1264187d1d5231eb75036d701aa465ad9a0dbec9871daa21cf5",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 31490184,
+          "key": "04df71302d2478f65a",
+          "encoding_key": "04df71302d2478f65a508ff446e9b86c",
+          "encoded_size": 31493221
+        }
+      ]
+    },
+    {
+      "build": "11642448",
+      "build_config": "7efd43b9b2a5bdffb5e6c468f69e54b1",
+      "path": "code_post_gfx.ff",
+      "bytes": 78004360,
+      "sha256": "74061b1cc82416bbb472ac24b826780950785ac35f0d9bc6f3aa6c5d54740103",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 78004360,
+          "key": "3617c2775ceea21128",
+          "encoding_key": "3617c2775ceea211283d4b88f43a444d",
+          "encoded_size": 78011822
+        }
+      ]
+    },
+    {
+      "build": "11642448",
+      "build_config": "7efd43b9b2a5bdffb5e6c468f69e54b1",
+      "path": "code_post_gfx.fp",
+      "bytes": 15188296,
+      "sha256": "2cc6fbf8d5962f78f83c0776369a252d9cb4f0aa728720833c6b55513f0d2a71",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 15188296,
+          "key": "0ffc22a55058a43f30",
+          "encoding_key": "0ffc22a55058a43f306e0dfcde55b0e1",
+          "encoded_size": 15189758
+        }
+      ]
+    },
+    {
+      "build": "11642448",
+      "build_config": "7efd43b9b2a5bdffb5e6c468f69e54b1",
+      "path": "common.ff",
+      "bytes": 5570696,
+      "sha256": "16ae0526fd956cd7b29a773ceffd8492fb9d06b7d76d126dbcbc8df2964565f1",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 5570696,
+          "key": "4ca769d5620b3bced9",
+          "encoding_key": "4ca769d5620b3bced939f27d70e91bb2",
+          "encoded_size": 5571258
+        }
+      ]
+    },
+    {
+      "build": "11642448",
+      "build_config": "7efd43b9b2a5bdffb5e6c468f69e54b1",
+      "path": "common_base_mp.fp",
+      "bytes": 18891080,
+      "sha256": "49104d369d6ce3b28bf0c92dd1a807788b98f65986caf12dca46fabc18ffcab8",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 18891080,
+          "key": "5af67b3c40c2266138",
+          "encoding_key": "5af67b3c40c226613895f02c0eb01762",
+          "encoded_size": 18892917
+        }
+      ]
+    },
+    {
+      "build": "11642448",
+      "build_config": "7efd43b9b2a5bdffb5e6c468f69e54b1",
+      "path": "common_br_mp.fp",
+      "bytes": 22987080,
+      "sha256": "298a494155bc0844256f12c0b5183056b67c4566639ddbb122115135139fb559",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 22987080,
+          "key": "dbd31a4fa21b69d271",
+          "encoding_key": "dbd31a4fa21b69d271b04835df4f7bae",
+          "encoded_size": 22989292
+        }
+      ]
+    },
+    {
+      "build": "11642448",
+      "build_config": "7efd43b9b2a5bdffb5e6c468f69e54b1",
+      "path": "cp_arms_dealer_00001_tr.ff",
+      "bytes": 7684232,
+      "sha256": "2a166566bf6023a7dda573171b716de05a4859baba6c625f37a4ca6f2ca20a90",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 7684232,
+          "key": "84d2cb3f7189278c87",
+          "encoding_key": "84d2cb3f7189278c872659bf4ae51700",
+          "encoded_size": 7684994
+        }
+      ]
+    },
+    {
+      "build": "11642448",
+      "build_config": "7efd43b9b2a5bdffb5e6c468f69e54b1",
+      "path": "cp_dwn_twn_2_00280_tr.ff",
+      "bytes": 12615816,
+      "sha256": "42254eb78165eee42ea9ca523051a80b36cc5ade57bd376b7416c8a02a10a1df",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 12615816,
+          "key": "34af21d945f7ae0bef",
+          "encoding_key": "34af21d945f7ae0bef3e7594968726f6",
+          "encoded_size": 12617053
+        }
+      ]
+    },
+    {
+      "build": "11642448",
+      "build_config": "7efd43b9b2a5bdffb5e6c468f69e54b1",
+      "path": "cp_mbi_arms_dealer.bik",
+      "bytes": 91963204,
+      "sha256": "e2be759b981bc29d53536632615cd7173c5303fdc2c55f11d0f1787f3348076d",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 91963204,
+          "key": "af545291375478d2af",
+          "encoding_key": "af545291375478d2afb3591ec00ddcc9",
+          "encoded_size": 91971991
+        }
+      ]
+    },
+    {
+      "build": "11642448",
+      "build_config": "7efd43b9b2a5bdffb5e6c468f69e54b1",
+      "path": "cp_mbi_banker.bik",
+      "bytes": 95241712,
+      "sha256": "c41235c6b2a3fa75b5f6cff58ccb9c4d426dc11ae147f8f7a49a51d56702921c",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 95241712,
+          "key": "87b868b8d4a415854f",
+          "encoding_key": "87b868b8d4a415854f6596fad8ed2ca8",
+          "encoded_size": 95250824
+        }
+      ]
+    },
+    {
+      "build": "11642448",
+      "build_config": "7efd43b9b2a5bdffb5e6c468f69e54b1",
+      "path": "cp_sv_aniyah.sabs",
+      "bytes": 11470208,
+      "sha256": "3839678909eb1923ae20a1b9e4ff6e0442382a697c490da7fc1fa74d399a33f2",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 11470208,
+          "key": "321476835898194fbf",
+          "encoding_key": "321476835898194fbf3e9baa1e448196",
+          "encoded_size": 11471320
+        }
+      ]
+    },
+    {
+      "build": "11642448",
+      "build_config": "7efd43b9b2a5bdffb5e6c468f69e54b1",
+      "path": "filler_load.bik",
+      "bytes": 26015052,
+      "sha256": "ae59abbb89b489d23e16279f6df4067086465ff082b242e3762e8abc7745dbf2",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 26015052,
+          "key": "176dbd60b054cddaab",
+          "encoding_key": "176dbd60b054cddaab3eb3c9e14c9614",
+          "encoded_size": 26017564
+        }
+      ]
+    },
+    {
+      "build": "11642448",
+      "build_config": "7efd43b9b2a5bdffb5e6c468f69e54b1",
+      "path": "main_menu_blade_ch2_mw.bik",
+      "bytes": 7375596,
+      "sha256": "4fb6f33c072dab1626a00694b9cb316cd43d6ad0a67f759aa4c8233688fc13c5",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 7375596,
+          "key": "80d0756ff072e8c65a",
+          "encoding_key": "80d0756ff072e8c65af94adec4fd8495",
+          "encoded_size": 7376333
+        }
+      ]
+    },
+    {
+      "build": "11642448",
+      "build_config": "7efd43b9b2a5bdffb5e6c468f69e54b1",
+      "path": "main_menu_blade_vg_lp.bik",
+      "bytes": 14212844,
+      "sha256": "99845da2782efdfaa9a05aef1a956caf9bc490368b5fa8338b2cd02ae3282ae5",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 14212844,
+          "key": "1ae2bd497f65d5b938",
+          "encoding_key": "1ae2bd497f65d5b938dee3a5abf1b209",
+          "encoded_size": 14214231
+        }
+      ]
+    },
+    {
+      "build": "11642448",
+      "build_config": "7efd43b9b2a5bdffb5e6c468f69e54b1",
+      "path": "mp_aar_rankup.bik",
+      "bytes": 2507108,
+      "sha256": "04a839150058cc4a8abec5cfb859e4cde31442aa49a033a11e37fec4e3763167",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 2507108,
+          "key": "d8b3254caab4ae7812",
+          "encoding_key": "d8b3254caab4ae7812e4a01602f42161",
+          "encoded_size": 2507370
+        }
+      ]
+    },
+    {
+      "build": "11642448",
+      "build_config": "7efd43b9b2a5bdffb5e6c468f69e54b1",
+      "path": "mp_aniyah.fp",
+      "bytes": 20021576,
+      "sha256": "a6b7595f49a3a7901d8c87906723433e246d40b9a2ec0e0054585cae4c30402e",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 20021576,
+          "key": "44d9c66c0c43271849",
+          "encoding_key": "44d9c66c0c43271849c6bba6ffe6d218",
+          "encoded_size": 20023513
+        }
+      ]
+    },
+    {
+      "build": "11642448",
+      "build_config": "7efd43b9b2a5bdffb5e6c468f69e54b1",
+      "path": "mp_deadzone.sabs",
+      "bytes": 16476288,
+      "sha256": "11855b915803fc55a4ecccc93b5d81d24e5263f487c730c9c6e9c315ef9014c3",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 16476288,
+          "key": "38b67a1102da74f84c",
+          "encoding_key": "38b67a1102da74f84cacddf4e0bdf25d",
+          "encoded_size": 16477875
+        }
+      ]
+    },
+    {
+      "build": "11642448",
+      "build_config": "7efd43b9b2a5bdffb5e6c468f69e54b1",
+      "path": "mp_m_pine.ff",
+      "bytes": 100139144,
+      "sha256": "7f9c9e0c420bfde08eca9eb241df784192ab99c36af5a9889eef58e2d5e6ce0d",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 100139144,
+          "key": "e8c9867f97ddc0ebe2",
+          "encoding_key": "e8c9867f97ddc0ebe21b2f9ccd0fde82",
+          "encoded_size": 100148731
+        }
+      ]
+    },
+    {
+      "build": "11642448",
+      "build_config": "7efd43b9b2a5bdffb5e6c468f69e54b1",
+      "path": "nvngx_dlss.dll",
+      "bytes": 14463176,
+      "sha256": "201a9fa1bd89ce036fe88ecaf07a4bc4e2172780d82fb617e63ed4d5e143b6de",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 14463176,
+          "key": "71f1f7e02049ebb2f0",
+          "encoding_key": "71f1f7e02049ebb2f06ba54477de9850",
+          "encoded_size": 14464588
+        }
+      ]
+    },
+    {
+      "build": "11642448",
+      "build_config": "7efd43b9b2a5bdffb5e6c468f69e54b1",
+      "path": "pak_base_vol138.xpak",
+      "bytes": 22511616,
+      "sha256": "0a16c401fa0511e82f7d6805a8a344d9563af1e949bbe189f5310c7236080412",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 22511616,
+          "key": "34998f7ac004e4929d",
+          "encoding_key": "34998f7ac004e4929db11f9c25a4429a",
+          "encoded_size": 22513778
+        }
+      ]
+    },
+    {
+      "build": "11642448",
+      "build_config": "7efd43b9b2a5bdffb5e6c468f69e54b1",
+      "path": "pak_base_vol140.xpak",
+      "bytes": 40599552,
+      "sha256": "674008523bc497cca17c40da3e7e5daee073141691bcea5206c7df2ae8af522b",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 40599552,
+          "key": "422dc4ca5ad1c246f4",
+          "encoding_key": "422dc4ca5ad1c246f43a982f57162807",
+          "encoded_size": 40603439
+        }
+      ]
+    },
+    {
+      "build": "11642448",
+      "build_config": "7efd43b9b2a5bdffb5e6c468f69e54b1",
+      "path": "patch_mp_br_quarry.sabs",
+      "bytes": 54910592,
+      "sha256": "e5a6aba635690887ec17f6e13ad0d2594d34dede9731fcfaf1ec78bab369a079",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 54910592,
+          "key": "3303082cfa1212cbee",
+          "encoding_key": "3303082cfa1212cbeefac825719d73fb",
+          "encoded_size": 54915854
+        }
+      ]
+    },
+    {
+      "build": "11744825",
+      "build_config": "8429ca4513e894bc28232b61ad1321fd",
+      "path": "ai_chatter_wz.sabs",
+      "bytes": 5043456,
+      "sha256": "9af30d4dddd08782fd2308a779dad83e7dc0b300afff131abfa1f78cf47d64a4",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 5043456,
+          "key": "ad50ee5d0a540e00d1",
+          "encoding_key": "ad50ee5d0a540e00d148d1dce6a73562",
+          "encoded_size": 5043968
+        }
+      ]
+    },
+    {
+      "build": "11744825",
+      "build_config": "8429ca4513e894bc28232b61ad1321fd",
+      "path": "br_event_ghosts_sfx.sabs",
+      "bytes": 66911232,
+      "sha256": "e305a3150edd83a96a3b45c4366dd21e1b26607c827a71b748c87cfb6d605643",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 66911232,
+          "key": "2772ce830490f021ef",
+          "encoding_key": "2772ce830490f021ef19143f954282c4",
+          "encoded_size": 66917644
+        }
+      ]
+    },
+    {
+      "build": "11744825",
+      "build_config": "8429ca4513e894bc28232b61ad1321fd",
+      "path": "br_event_x2_sfx.sabs",
+      "bytes": 33136128,
+      "sha256": "903567fdc044cff12f7a24818723f686c192f461b17c1a206c9e7b9a72d2a4bf",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 33136128,
+          "key": "4525589d6a4d79b972",
+          "encoding_key": "4525589d6a4d79b97284481acef84625",
+          "encoded_size": 33139315
+        }
+      ]
+    },
+    {
+      "build": "11744825",
+      "build_config": "8429ca4513e894bc28232b61ad1321fd",
+      "path": "campaignmenu.bik",
+      "bytes": 14903532,
+      "sha256": "08257af55cef778b7ace159802f37dad00dfbe806bf85c306bd413e9f25517c4",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 14903532,
+          "key": "3d66160fc43ae89f83",
+          "encoding_key": "3d66160fc43ae89f8384fe5b31554813",
+          "encoded_size": 14904969
+        }
+      ]
+    },
+    {
+      "build": "11744825",
+      "build_config": "8429ca4513e894bc28232b61ad1321fd",
+      "path": "captive.sabs",
+      "bytes": 58229376,
+      "sha256": "17e7aa2d33a01cd4322937b5a996d013a068a6c1e2f2d974e160b64670a42db8",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 58229376,
+          "key": "230adb4f3ce6bbfd2f",
+          "encoding_key": "230adb4f3ce6bbfd2fa987c9858669bd",
+          "encoded_size": 58234963
+        }
+      ]
+    },
+    {
+      "build": "11744825",
+      "build_config": "8429ca4513e894bc28232b61ad1321fd",
+      "path": "captive_basement_tr.ff",
+      "bytes": 35094664,
+      "sha256": "7cedd435ccf17bf249ff3095ce7e9625620b6bb87cba0592878f0bf9a2f4c22d",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 35094664,
+          "key": "d738af8fbfe9f72550",
+          "encoding_key": "d738af8fbfe9f72550c0bef2d5caead6",
+          "encoded_size": 35098026
+        }
+      ]
+    },
+    {
+      "build": "11744825",
+      "build_config": "8429ca4513e894bc28232b61ad1321fd",
+      "path": "captive_exterior_tr.ff",
+      "bytes": 23380104,
+      "sha256": "559973defdcc0c20ff2cdcce1a1acd25395c44331a1eb15af3cad473c28f3d50",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 23380104,
+          "key": "3d90d3782db6a1f545",
+          "encoding_key": "3d90d3782db6a1f545e3246f1cd52231",
+          "encoded_size": 23382366
+        }
+      ]
+    },
+    {
+      "build": "11744825",
+      "build_config": "8429ca4513e894bc28232b61ad1321fd",
+      "path": "captive_gas_tr.ff",
+      "bytes": 31490184,
+      "sha256": "dbc5824fef99f1264187d1d5231eb75036d701aa465ad9a0dbec9871daa21cf5",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 31490184,
+          "key": "04df71302d2478f65a",
+          "encoding_key": "04df71302d2478f65a508ff446e9b86c",
+          "encoded_size": 31493221
+        }
+      ]
+    },
+    {
+      "build": "11744825",
+      "build_config": "8429ca4513e894bc28232b61ad1321fd",
+      "path": "code_post_gfx.ff",
+      "bytes": 78004360,
+      "sha256": "74061b1cc82416bbb472ac24b826780950785ac35f0d9bc6f3aa6c5d54740103",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 78004360,
+          "key": "3617c2775ceea21128",
+          "encoding_key": "3617c2775ceea211283d4b88f43a444d",
+          "encoded_size": 78011822
+        }
+      ]
+    },
+    {
+      "build": "11744825",
+      "build_config": "8429ca4513e894bc28232b61ad1321fd",
+      "path": "code_post_gfx.fp",
+      "bytes": 15417672,
+      "sha256": "5ee4de1a0298c9817f7fcccc7d547170ba81f2a67296445be75f3b713cbd50ed",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 15417672,
+          "key": "549c3f04c272d23601",
+          "encoding_key": "549c3f04c272d23601dd6dfef0e26f52",
+          "encoded_size": 15419159
+        }
+      ]
+    },
+    {
+      "build": "11744825",
+      "build_config": "8429ca4513e894bc28232b61ad1321fd",
+      "path": "common.ff",
+      "bytes": 5570696,
+      "sha256": "16ae0526fd956cd7b29a773ceffd8492fb9d06b7d76d126dbcbc8df2964565f1",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 5570696,
+          "key": "4ca769d5620b3bced9",
+          "encoding_key": "4ca769d5620b3bced939f27d70e91bb2",
+          "encoded_size": 5571258
+        }
+      ]
+    },
+    {
+      "build": "11744825",
+      "build_config": "8429ca4513e894bc28232b61ad1321fd",
+      "path": "common_base_mp.fp",
+      "bytes": 19022152,
+      "sha256": "2dc8cd9b51b44ca52a2ab702b3520712b87f23238889cad494bb77a1f1001215",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 19022152,
+          "key": "01940972d1ae926aa2",
+          "encoding_key": "01940972d1ae926aa2462caf528a729c",
+          "encoded_size": 19023989
+        }
+      ]
+    },
+    {
+      "build": "11744825",
+      "build_config": "8429ca4513e894bc28232b61ad1321fd",
+      "path": "common_br_mp.fp",
+      "bytes": 26689864,
+      "sha256": "76f3cd97db7792843b0ee0a69313ea7acaf48e6b7a67e96943cbefd42ef36b76",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 26689864,
+          "key": "3375cf87f73bd66e27",
+          "encoding_key": "3375cf87f73bd66e27587d81aaa02f22",
+          "encoded_size": 26692426
+        }
+      ]
+    },
+    {
+      "build": "11744825",
+      "build_config": "8429ca4513e894bc28232b61ad1321fd",
+      "path": "cp_arms_dealer_00001_tr.ff",
+      "bytes": 7684232,
+      "sha256": "d646386090485c3cddd572e6f580f2d1f15f51c9199373ad495ea3d68ee14a87",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 7684232,
+          "key": "957de25ef54e627d20",
+          "encoding_key": "957de25ef54e627d2036cc18128916e3",
+          "encoded_size": 7684994
+        }
+      ]
+    },
+    {
+      "build": "11744825",
+      "build_config": "8429ca4513e894bc28232b61ad1321fd",
+      "path": "cp_dwn_twn_2_00280_tr.ff",
+      "bytes": 12615816,
+      "sha256": "9f7ea9b6543fb987402b15e527e3d8261ed06eb815e3e3b42e1c24ab4e359e90",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 12615816,
+          "key": "4fb20596bd94266cc8",
+          "encoding_key": "4fb20596bd94266cc8977335fca07b12",
+          "encoded_size": 12617053
+        }
+      ]
+    },
+    {
+      "build": "11744825",
+      "build_config": "8429ca4513e894bc28232b61ad1321fd",
+      "path": "cp_mbi_arms_dealer.bik",
+      "bytes": 91963204,
+      "sha256": "e2be759b981bc29d53536632615cd7173c5303fdc2c55f11d0f1787f3348076d",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 91963204,
+          "key": "af545291375478d2af",
+          "encoding_key": "af545291375478d2afb3591ec00ddcc9",
+          "encoded_size": 91971991
+        }
+      ]
+    },
+    {
+      "build": "11744825",
+      "build_config": "8429ca4513e894bc28232b61ad1321fd",
+      "path": "cp_mbi_banker.bik",
+      "bytes": 95241712,
+      "sha256": "c41235c6b2a3fa75b5f6cff58ccb9c4d426dc11ae147f8f7a49a51d56702921c",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 95241712,
+          "key": "87b868b8d4a415854f",
+          "encoding_key": "87b868b8d4a415854f6596fad8ed2ca8",
+          "encoded_size": 95250824
+        }
+      ]
+    },
+    {
+      "build": "11744825",
+      "build_config": "8429ca4513e894bc28232b61ad1321fd",
+      "path": "cp_sv_aniyah.sabs",
+      "bytes": 11470208,
+      "sha256": "3839678909eb1923ae20a1b9e4ff6e0442382a697c490da7fc1fa74d399a33f2",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 11470208,
+          "key": "321476835898194fbf",
+          "encoding_key": "321476835898194fbf3e9baa1e448196",
+          "encoded_size": 11471320
+        }
+      ]
+    },
+    {
+      "build": "11744825",
+      "build_config": "8429ca4513e894bc28232b61ad1321fd",
+      "path": "filler_load.bik",
+      "bytes": 26015052,
+      "sha256": "ae59abbb89b489d23e16279f6df4067086465ff082b242e3762e8abc7745dbf2",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 26015052,
+          "key": "176dbd60b054cddaab",
+          "encoding_key": "176dbd60b054cddaab3eb3c9e14c9614",
+          "encoded_size": 26017564
+        }
+      ]
+    },
+    {
+      "build": "11744825",
+      "build_config": "8429ca4513e894bc28232b61ad1321fd",
+      "path": "main_menu_blade_ch2_mw.bik",
+      "bytes": 7375596,
+      "sha256": "4fb6f33c072dab1626a00694b9cb316cd43d6ad0a67f759aa4c8233688fc13c5",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 7375596,
+          "key": "80d0756ff072e8c65a",
+          "encoding_key": "80d0756ff072e8c65af94adec4fd8495",
+          "encoded_size": 7376333
+        }
+      ]
+    },
+    {
+      "build": "11744825",
+      "build_config": "8429ca4513e894bc28232b61ad1321fd",
+      "path": "main_menu_blade_vg_lp.bik",
+      "bytes": 14212844,
+      "sha256": "99845da2782efdfaa9a05aef1a956caf9bc490368b5fa8338b2cd02ae3282ae5",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 14212844,
+          "key": "1ae2bd497f65d5b938",
+          "encoding_key": "1ae2bd497f65d5b938dee3a5abf1b209",
+          "encoded_size": 14214231
+        }
+      ]
+    },
+    {
+      "build": "11744825",
+      "build_config": "8429ca4513e894bc28232b61ad1321fd",
+      "path": "mp_aar_rankup.bik",
+      "bytes": 2507108,
+      "sha256": "04a839150058cc4a8abec5cfb859e4cde31442aa49a033a11e37fec4e3763167",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 2507108,
+          "key": "d8b3254caab4ae7812",
+          "encoding_key": "d8b3254caab4ae7812e4a01602f42161",
+          "encoded_size": 2507370
+        }
+      ]
+    },
+    {
+      "build": "11744825",
+      "build_config": "8429ca4513e894bc28232b61ad1321fd",
+      "path": "mp_aniyah.fp",
+      "bytes": 20005192,
+      "sha256": "cd30d2862f1edb7cbc412f3a60a72f63940ce50657dc4d4a395845252f2d1cce",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 20005192,
+          "key": "ea5a961d4fff790fa2",
+          "encoding_key": "ea5a961d4fff790fa2b78dae415d870d",
+          "encoded_size": 20007129
+        }
+      ]
+    },
+    {
+      "build": "11744825",
+      "build_config": "8429ca4513e894bc28232b61ad1321fd",
+      "path": "mp_deadzone.sabs",
+      "bytes": 16476288,
+      "sha256": "11855b915803fc55a4ecccc93b5d81d24e5263f487c730c9c6e9c315ef9014c3",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 16476288,
+          "key": "38b67a1102da74f84c",
+          "encoding_key": "38b67a1102da74f84cacddf4e0bdf25d",
+          "encoded_size": 16477875
+        }
+      ]
+    },
+    {
+      "build": "11744825",
+      "build_config": "8429ca4513e894bc28232b61ad1321fd",
+      "path": "mp_m_pine.ff",
+      "bytes": 100139144,
+      "sha256": "7f9c9e0c420bfde08eca9eb241df784192ab99c36af5a9889eef58e2d5e6ce0d",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 100139144,
+          "key": "e8c9867f97ddc0ebe2",
+          "encoding_key": "e8c9867f97ddc0ebe21b2f9ccd0fde82",
+          "encoded_size": 100148731
+        }
+      ]
+    },
+    {
+      "build": "11744825",
+      "build_config": "8429ca4513e894bc28232b61ad1321fd",
+      "path": "nvngx_dlss.dll",
+      "bytes": 14463176,
+      "sha256": "201a9fa1bd89ce036fe88ecaf07a4bc4e2172780d82fb617e63ed4d5e143b6de",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 14463176,
+          "key": "71f1f7e02049ebb2f0",
+          "encoding_key": "71f1f7e02049ebb2f06ba54477de9850",
+          "encoded_size": 14464588
+        }
+      ]
+    },
+    {
+      "build": "11744825",
+      "build_config": "8429ca4513e894bc28232b61ad1321fd",
+      "path": "pak_base_vol138.xpak",
+      "bytes": 22511616,
+      "sha256": "0a16c401fa0511e82f7d6805a8a344d9563af1e949bbe189f5310c7236080412",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 22511616,
+          "key": "34998f7ac004e4929d",
+          "encoding_key": "34998f7ac004e4929db11f9c25a4429a",
+          "encoded_size": 22513778
+        }
+      ]
+    },
+    {
+      "build": "11744825",
+      "build_config": "8429ca4513e894bc28232b61ad1321fd",
+      "path": "pak_base_vol140.xpak",
+      "bytes": 40599552,
+      "sha256": "674008523bc497cca17c40da3e7e5daee073141691bcea5206c7df2ae8af522b",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 40599552,
+          "key": "422dc4ca5ad1c246f4",
+          "encoding_key": "422dc4ca5ad1c246f43a982f57162807",
+          "encoded_size": 40603439
+        }
+      ]
+    },
+    {
+      "build": "11744825",
+      "build_config": "8429ca4513e894bc28232b61ad1321fd",
+      "path": "patch_mp_br_quarry.sabs",
+      "bytes": 54910592,
+      "sha256": "e5a6aba635690887ec17f6e13ad0d2594d34dede9731fcfaf1ec78bab369a079",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 54910592,
+          "key": "3303082cfa1212cbee",
+          "encoding_key": "3303082cfa1212cbeefac825719d73fb",
+          "encoded_size": 54915854
+        }
+      ]
+    },
+    {
+      "build": "11810757",
+      "build_config": "5f45cdb01b6eb5f9ff286ba1c64a0730",
+      "path": "ai_chatter_wz.sabs",
+      "bytes": 5043456,
+      "sha256": "9af30d4dddd08782fd2308a779dad83e7dc0b300afff131abfa1f78cf47d64a4",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 5043456,
+          "key": "ad50ee5d0a540e00d1",
+          "encoding_key": "ad50ee5d0a540e00d148d1dce6a73562",
+          "encoded_size": 5043968
+        }
+      ]
+    },
+    {
+      "build": "11810757",
+      "build_config": "5f45cdb01b6eb5f9ff286ba1c64a0730",
+      "path": "br_event_ghosts_sfx.sabs",
+      "bytes": 66911232,
+      "sha256": "e305a3150edd83a96a3b45c4366dd21e1b26607c827a71b748c87cfb6d605643",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 66911232,
+          "key": "2772ce830490f021ef",
+          "encoding_key": "2772ce830490f021ef19143f954282c4",
+          "encoded_size": 66917644
+        }
+      ]
+    },
+    {
+      "build": "11810757",
+      "build_config": "5f45cdb01b6eb5f9ff286ba1c64a0730",
+      "path": "br_event_x2_sfx.sabs",
+      "bytes": 33136128,
+      "sha256": "903567fdc044cff12f7a24818723f686c192f461b17c1a206c9e7b9a72d2a4bf",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 33136128,
+          "key": "4525589d6a4d79b972",
+          "encoding_key": "4525589d6a4d79b97284481acef84625",
+          "encoded_size": 33139315
+        }
+      ]
+    },
+    {
+      "build": "11810757",
+      "build_config": "5f45cdb01b6eb5f9ff286ba1c64a0730",
+      "path": "campaignmenu.bik",
+      "bytes": 14903532,
+      "sha256": "08257af55cef778b7ace159802f37dad00dfbe806bf85c306bd413e9f25517c4",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 14903532,
+          "key": "3d66160fc43ae89f83",
+          "encoding_key": "3d66160fc43ae89f8384fe5b31554813",
+          "encoded_size": 14904969
+        }
+      ]
+    },
+    {
+      "build": "11810757",
+      "build_config": "5f45cdb01b6eb5f9ff286ba1c64a0730",
+      "path": "captive.sabs",
+      "bytes": 58229376,
+      "sha256": "17e7aa2d33a01cd4322937b5a996d013a068a6c1e2f2d974e160b64670a42db8",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 58229376,
+          "key": "230adb4f3ce6bbfd2f",
+          "encoding_key": "230adb4f3ce6bbfd2fa987c9858669bd",
+          "encoded_size": 58234963
+        }
+      ]
+    },
+    {
+      "build": "11810757",
+      "build_config": "5f45cdb01b6eb5f9ff286ba1c64a0730",
+      "path": "captive_basement_tr.ff",
+      "bytes": 35094664,
+      "sha256": "7cedd435ccf17bf249ff3095ce7e9625620b6bb87cba0592878f0bf9a2f4c22d",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 35094664,
+          "key": "d738af8fbfe9f72550",
+          "encoding_key": "d738af8fbfe9f72550c0bef2d5caead6",
+          "encoded_size": 35098026
+        }
+      ]
+    },
+    {
+      "build": "11810757",
+      "build_config": "5f45cdb01b6eb5f9ff286ba1c64a0730",
+      "path": "captive_exterior_tr.ff",
+      "bytes": 23380104,
+      "sha256": "559973defdcc0c20ff2cdcce1a1acd25395c44331a1eb15af3cad473c28f3d50",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 23380104,
+          "key": "3d90d3782db6a1f545",
+          "encoding_key": "3d90d3782db6a1f545e3246f1cd52231",
+          "encoded_size": 23382366
+        }
+      ]
+    },
+    {
+      "build": "11810757",
+      "build_config": "5f45cdb01b6eb5f9ff286ba1c64a0730",
+      "path": "captive_gas_tr.ff",
+      "bytes": 31490184,
+      "sha256": "dbc5824fef99f1264187d1d5231eb75036d701aa465ad9a0dbec9871daa21cf5",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 31490184,
+          "key": "04df71302d2478f65a",
+          "encoding_key": "04df71302d2478f65a508ff446e9b86c",
+          "encoded_size": 31493221
+        }
+      ]
+    },
+    {
+      "build": "11810757",
+      "build_config": "5f45cdb01b6eb5f9ff286ba1c64a0730",
+      "path": "code_post_gfx.ff",
+      "bytes": 78004360,
+      "sha256": "74061b1cc82416bbb472ac24b826780950785ac35f0d9bc6f3aa6c5d54740103",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 78004360,
+          "key": "3617c2775ceea21128",
+          "encoding_key": "3617c2775ceea211283d4b88f43a444d",
+          "encoded_size": 78011822
+        }
+      ]
+    },
+    {
+      "build": "11810757",
+      "build_config": "5f45cdb01b6eb5f9ff286ba1c64a0730",
+      "path": "code_post_gfx.fp",
+      "bytes": 15417672,
+      "sha256": "5ee4de1a0298c9817f7fcccc7d547170ba81f2a67296445be75f3b713cbd50ed",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 15417672,
+          "key": "549c3f04c272d23601",
+          "encoding_key": "549c3f04c272d23601dd6dfef0e26f52",
+          "encoded_size": 15419159
+        }
+      ]
+    },
+    {
+      "build": "11810757",
+      "build_config": "5f45cdb01b6eb5f9ff286ba1c64a0730",
+      "path": "common.ff",
+      "bytes": 5570696,
+      "sha256": "16ae0526fd956cd7b29a773ceffd8492fb9d06b7d76d126dbcbc8df2964565f1",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 5570696,
+          "key": "4ca769d5620b3bced9",
+          "encoding_key": "4ca769d5620b3bced939f27d70e91bb2",
+          "encoded_size": 5571258
+        }
+      ]
+    },
+    {
+      "build": "11810757",
+      "build_config": "5f45cdb01b6eb5f9ff286ba1c64a0730",
+      "path": "common_base_mp.fp",
+      "bytes": 19022152,
+      "sha256": "2dc8cd9b51b44ca52a2ab702b3520712b87f23238889cad494bb77a1f1001215",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 19022152,
+          "key": "01940972d1ae926aa2",
+          "encoding_key": "01940972d1ae926aa2462caf528a729c",
+          "encoded_size": 19023989
+        }
+      ]
+    },
+    {
+      "build": "11810757",
+      "build_config": "5f45cdb01b6eb5f9ff286ba1c64a0730",
+      "path": "common_br_mp.fp",
+      "bytes": 26689864,
+      "sha256": "76f3cd97db7792843b0ee0a69313ea7acaf48e6b7a67e96943cbefd42ef36b76",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 26689864,
+          "key": "3375cf87f73bd66e27",
+          "encoding_key": "3375cf87f73bd66e27587d81aaa02f22",
+          "encoded_size": 26692426
+        }
+      ]
+    },
+    {
+      "build": "11810757",
+      "build_config": "5f45cdb01b6eb5f9ff286ba1c64a0730",
+      "path": "cp_arms_dealer_00001_tr.ff",
+      "bytes": 7684232,
+      "sha256": "d646386090485c3cddd572e6f580f2d1f15f51c9199373ad495ea3d68ee14a87",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 7684232,
+          "key": "957de25ef54e627d20",
+          "encoding_key": "957de25ef54e627d2036cc18128916e3",
+          "encoded_size": 7684994
+        }
+      ]
+    },
+    {
+      "build": "11810757",
+      "build_config": "5f45cdb01b6eb5f9ff286ba1c64a0730",
+      "path": "cp_dwn_twn_2_00280_tr.ff",
+      "bytes": 12615816,
+      "sha256": "9f7ea9b6543fb987402b15e527e3d8261ed06eb815e3e3b42e1c24ab4e359e90",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 12615816,
+          "key": "4fb20596bd94266cc8",
+          "encoding_key": "4fb20596bd94266cc8977335fca07b12",
+          "encoded_size": 12617053
+        }
+      ]
+    },
+    {
+      "build": "11810757",
+      "build_config": "5f45cdb01b6eb5f9ff286ba1c64a0730",
+      "path": "cp_mbi_arms_dealer.bik",
+      "bytes": 91963204,
+      "sha256": "e2be759b981bc29d53536632615cd7173c5303fdc2c55f11d0f1787f3348076d",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 91963204,
+          "key": "af545291375478d2af",
+          "encoding_key": "af545291375478d2afb3591ec00ddcc9",
+          "encoded_size": 91971991
+        }
+      ]
+    },
+    {
+      "build": "11810757",
+      "build_config": "5f45cdb01b6eb5f9ff286ba1c64a0730",
+      "path": "cp_mbi_banker.bik",
+      "bytes": 95241712,
+      "sha256": "c41235c6b2a3fa75b5f6cff58ccb9c4d426dc11ae147f8f7a49a51d56702921c",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 95241712,
+          "key": "87b868b8d4a415854f",
+          "encoding_key": "87b868b8d4a415854f6596fad8ed2ca8",
+          "encoded_size": 95250824
+        }
+      ]
+    },
+    {
+      "build": "11810757",
+      "build_config": "5f45cdb01b6eb5f9ff286ba1c64a0730",
+      "path": "cp_sv_aniyah.sabs",
+      "bytes": 11470208,
+      "sha256": "3839678909eb1923ae20a1b9e4ff6e0442382a697c490da7fc1fa74d399a33f2",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 11470208,
+          "key": "321476835898194fbf",
+          "encoding_key": "321476835898194fbf3e9baa1e448196",
+          "encoded_size": 11471320
+        }
+      ]
+    },
+    {
+      "build": "11810757",
+      "build_config": "5f45cdb01b6eb5f9ff286ba1c64a0730",
+      "path": "filler_load.bik",
+      "bytes": 26015052,
+      "sha256": "ae59abbb89b489d23e16279f6df4067086465ff082b242e3762e8abc7745dbf2",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 26015052,
+          "key": "176dbd60b054cddaab",
+          "encoding_key": "176dbd60b054cddaab3eb3c9e14c9614",
+          "encoded_size": 26017564
+        }
+      ]
+    },
+    {
+      "build": "11810757",
+      "build_config": "5f45cdb01b6eb5f9ff286ba1c64a0730",
+      "path": "main_menu_blade_ch2_mw.bik",
+      "bytes": 7375596,
+      "sha256": "4fb6f33c072dab1626a00694b9cb316cd43d6ad0a67f759aa4c8233688fc13c5",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 7375596,
+          "key": "80d0756ff072e8c65a",
+          "encoding_key": "80d0756ff072e8c65af94adec4fd8495",
+          "encoded_size": 7376333
+        }
+      ]
+    },
+    {
+      "build": "11810757",
+      "build_config": "5f45cdb01b6eb5f9ff286ba1c64a0730",
+      "path": "main_menu_blade_vg_lp.bik",
+      "bytes": 14212844,
+      "sha256": "99845da2782efdfaa9a05aef1a956caf9bc490368b5fa8338b2cd02ae3282ae5",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 14212844,
+          "key": "1ae2bd497f65d5b938",
+          "encoding_key": "1ae2bd497f65d5b938dee3a5abf1b209",
+          "encoded_size": 14214231
+        }
+      ]
+    },
+    {
+      "build": "11810757",
+      "build_config": "5f45cdb01b6eb5f9ff286ba1c64a0730",
+      "path": "mp_aar_rankup.bik",
+      "bytes": 2507108,
+      "sha256": "04a839150058cc4a8abec5cfb859e4cde31442aa49a033a11e37fec4e3763167",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 2507108,
+          "key": "d8b3254caab4ae7812",
+          "encoding_key": "d8b3254caab4ae7812e4a01602f42161",
+          "encoded_size": 2507370
+        }
+      ]
+    },
+    {
+      "build": "11810757",
+      "build_config": "5f45cdb01b6eb5f9ff286ba1c64a0730",
+      "path": "mp_aniyah.fp",
+      "bytes": 20005192,
+      "sha256": "cd30d2862f1edb7cbc412f3a60a72f63940ce50657dc4d4a395845252f2d1cce",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 20005192,
+          "key": "ea5a961d4fff790fa2",
+          "encoding_key": "ea5a961d4fff790fa2b78dae415d870d",
+          "encoded_size": 20007129
+        }
+      ]
+    },
+    {
+      "build": "11810757",
+      "build_config": "5f45cdb01b6eb5f9ff286ba1c64a0730",
+      "path": "mp_deadzone.sabs",
+      "bytes": 16476288,
+      "sha256": "11855b915803fc55a4ecccc93b5d81d24e5263f487c730c9c6e9c315ef9014c3",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 16476288,
+          "key": "38b67a1102da74f84c",
+          "encoding_key": "38b67a1102da74f84cacddf4e0bdf25d",
+          "encoded_size": 16477875
+        }
+      ]
+    },
+    {
+      "build": "11810757",
+      "build_config": "5f45cdb01b6eb5f9ff286ba1c64a0730",
+      "path": "mp_m_pine.ff",
+      "bytes": 100139144,
+      "sha256": "7f9c9e0c420bfde08eca9eb241df784192ab99c36af5a9889eef58e2d5e6ce0d",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 100139144,
+          "key": "e8c9867f97ddc0ebe2",
+          "encoding_key": "e8c9867f97ddc0ebe21b2f9ccd0fde82",
+          "encoded_size": 100148731
+        }
+      ]
+    },
+    {
+      "build": "11810757",
+      "build_config": "5f45cdb01b6eb5f9ff286ba1c64a0730",
+      "path": "nvngx_dlss.dll",
+      "bytes": 14463176,
+      "sha256": "201a9fa1bd89ce036fe88ecaf07a4bc4e2172780d82fb617e63ed4d5e143b6de",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 14463176,
+          "key": "71f1f7e02049ebb2f0",
+          "encoding_key": "71f1f7e02049ebb2f06ba54477de9850",
+          "encoded_size": 14464588
+        }
+      ]
+    },
+    {
+      "build": "11810757",
+      "build_config": "5f45cdb01b6eb5f9ff286ba1c64a0730",
+      "path": "pak_base_vol138.xpak",
+      "bytes": 22511616,
+      "sha256": "0a16c401fa0511e82f7d6805a8a344d9563af1e949bbe189f5310c7236080412",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 22511616,
+          "key": "34998f7ac004e4929d",
+          "encoding_key": "34998f7ac004e4929db11f9c25a4429a",
+          "encoded_size": 22513778
+        }
+      ]
+    },
+    {
+      "build": "11810757",
+      "build_config": "5f45cdb01b6eb5f9ff286ba1c64a0730",
+      "path": "pak_base_vol140.xpak",
+      "bytes": 40599552,
+      "sha256": "674008523bc497cca17c40da3e7e5daee073141691bcea5206c7df2ae8af522b",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 40599552,
+          "key": "422dc4ca5ad1c246f4",
+          "encoding_key": "422dc4ca5ad1c246f43a982f57162807",
+          "encoded_size": 40603439
+        }
+      ]
+    },
+    {
+      "build": "11810757",
+      "build_config": "5f45cdb01b6eb5f9ff286ba1c64a0730",
+      "path": "patch_mp_br_quarry.sabs",
+      "bytes": 54910592,
+      "sha256": "e5a6aba635690887ec17f6e13ad0d2594d34dede9731fcfaf1ec78bab369a079",
+      "spans": [
+        {
+          "offset": 0,
+          "size": 54910592,
+          "key": "3303082cfa1212cbee",
+          "encoding_key": "3303082cfa1212cbeefac825719d73fb",
+          "encoded_size": 54915854
+        }
+      ]
+    }
+  ],
+  "failed_selections": [
+    {
+      "path": "global_stream_mp.fp",
+      "error": "could not retrieve data/d811d2588acfe0aa925344d8ecf26ce1 from the tested endpoints: https://level3.ssl.blizzard.com/tpr/odin/data/d8/11/d811d2588acfe0aa925344d8ecf26ce1: HTTP Error 403: Forbidden; http://us.cdn.blizzard.com/tpr/odin/data/d8/11/d811d2588acfe0aa925344d8ecf26ce1: HTTP Error 404: Not Found"
+    },
+    {
+      "path": "dx_vom_bkv_square_speech_22.bik",
+      "error": "could not retrieve data/d9f98b6ba3c69a5ce334f90e4c7ce65b from the tested endpoints: http://us.cdn.blizzard.com/tpr/odin/data/d9/f9/d9f98b6ba3c69a5ce334f90e4c7ce65b: HTTP Error 404: Not Found; https://level3.ssl.blizzard.com/tpr/odin/data/d9/f9/d9f98b6ba3c69a5ce334f90e4c7ce65b: HTTP Error 403: Forbidden"
+    },
+    {
+      "path": "seasonal_event_outro.bik",
+      "error": "could not retrieve data/4e94dab4564b710122c1e5eea31d248f from the tested endpoints: http://us.cdn.blizzard.com/tpr/odin/data/4e/94/4e94dab4564b710122c1e5eea31d248f: HTTP Error 404: Not Found; https://level3.ssl.blizzard.com/tpr/odin/data/4e/94/4e94dab4564b710122c1e5eea31d248f: HTTP Error 403: Forbidden"
+    },
+    {
+      "path": "sp_piccadilly_london_title.bik",
+      "error": "could not retrieve data/cad68f74b2975d146b9963a22a2f336a from the tested endpoints: http://us.cdn.blizzard.com/tpr/odin/data/ca/d6/cad68f74b2975d146b9963a22a2f336a: HTTP Error 404: Not Found; https://level3.ssl.blizzard.com/tpr/odin/data/ca/d6/cad68f74b2975d146b9963a22a2f336a: HTTP Error 403: Forbidden"
+    },
+    {
+      "path": "sp_st_petersburg_title.bik",
+      "error": "could not retrieve data/3bbc617022dd0ce0e8edf395e831334b from the tested endpoints: http://us.cdn.blizzard.com/tpr/odin/data/3b/bc/3bbc617022dd0ce0e8edf395e831334b: HTTP Error 404: Not Found; https://level3.ssl.blizzard.com/tpr/odin/data/3b/bc/3bbc617022dd0ce0e8edf395e831334b: HTTP Error 403: Forbidden"
+    },
+    {
+      "path": "sp_hometown_bag_fade.bik",
+      "error": "could not retrieve data/07ebe19b4178b42bce0d62c2685a58b0 from the tested endpoints: http://us.cdn.blizzard.com/tpr/odin/data/07/eb/07ebe19b4178b42bce0d62c2685a58b0: HTTP Error 404: Not Found; https://level3.ssl.blizzard.com/tpr/odin/data/07/eb/07ebe19b4178b42bce0d62c2685a58b0: HTTP Error 403: Forbidden"
+    }
+  ]
+}
