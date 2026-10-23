@@ -288,6 +288,42 @@ def parse_rows(data):
     return rows
 
 
+def parse_encoding(data):
+    """Read EN v1 CKey pages, verifying page hashes and index boundaries.
+
+    Entry layout is one-byte encoding count, five-byte BE decoded length,
+    16-byte CKey and count full EKeys. Encoding-spec pages remain preserved
+    in the original manifest; this resolver does not regenerate BLTE streams.
+    """
+    check(len(data) >= 22 and data[:5] == b'EN\x01\x10\x10', 'unsupported ENCODING header')
+    page_size, epage_size = be(data[5:7])*1024, be(data[7:9])*1024
+    count, ecount, spec = be(data[9:13]), be(data[13:17]), be(data[18:22])
+    check(data[17] == 0 and 1024 <= page_size <= 65536 and 1024 <= epage_size <= 65536,
+          'unsupported ENCODING page layout')
+    index = 22 + spec
+    start = index + count*32
+    check(start + count*page_size + ecount*(32+epage_size) <= len(data), 'truncated ENCODING pages')
+    result = {}
+    previous = None
+    for i in range(count):
+        page = data[start+i*page_size:start+(i+1)*page_size]
+        first, digest = data[index+i*32:index+i*32+16], data[index+i*32+16:index+(i+1)*32]
+        check(md5(page) == digest, 'ENCODING page checksum mismatch')
+        at = 0
+        while at < len(page) and page[at]:
+            keys = page[at]; end = at+22+keys*16
+            check(end <= len(page), 'ENCODING entry crosses page boundary')
+            ckey = page[at+6:at+22]
+            check(at != 0 or ckey == first, 'ENCODING page index mismatch')
+            check(previous is None or ckey > previous, 'unsorted/duplicate ENCODING content key')
+            previous = ckey
+            result[ckey.hex()] = {'size':be(page[at+1:at+6]),
+                'keys':[page[p:p+16].hex() for p in range(at+22,end,16)]}
+            at=end
+        check(not any(page[at:]), 'nonzero ENCODING page padding')
+    return result
+
+
 def parse_download(data):
     check(len(data) >= 11 and data[:2] == b"DL" and data[2] in (1, 2, 3), "unsupported DOWNLOAD manifest version")
     version, key_size, checksums = data[2:5]
@@ -849,10 +885,31 @@ class Build:
         self.storage, self.key = storage, key
         self.config = parse_config(storage.fetch('config', key).read_bytes())
         self.records = None
+        self.encoding = None
+
+    def encoding_records(self):
+        if self.encoding is None:
+            values = self.config.get('encoding', [])
+            check(len(values) >= 2, 'ENCODING has no direct encoding key')
+            self.encoding = parse_encoding(self.manifest('encoding'))
+        return self.encoding
 
     def manifest(self, name):
         values = self.config.get(name, [])
-        check(len(values) >= 2, f'{name} has no direct encoding key; this legacy build requires an encoding-table resolver')
+        check(values, f'{name} is missing from the build configuration')
+        if len(values) == 1:
+            entry = self.encoding_records().get(values[0])
+            check(entry, f'{name} content key is absent from ENCODING')
+            errors = []
+            for ekey in entry['keys']:
+                try:
+                    path = self.storage.fetch('data',ekey)
+                    output = io.BytesIO()
+                    decode_blte(path,output,ckey=values[0])
+                    return output.getvalue()
+                except (CascError,OSError) as exc:
+                    errors.append(str(exc))
+            raise CascError(f'could not resolve {name}: ' + '; '.join(errors))
         ckey, ekey = values[:2]
         path = self.storage.fetch('data', ekey)
         output = io.BytesIO()

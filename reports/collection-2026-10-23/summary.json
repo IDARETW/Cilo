@@ -1,0 +1,366 @@
+{
+  "totals": {
+    "unique_objects": 243525,
+    "unique_encoded_bytes": 1703585210671,
+    "unknown_size_objects": 1531,
+    "archived_objects": 0,
+    "archived_encoded_bytes": 0,
+    "referenced_encoded_bytes": 23950390531989,
+    "archive_bytes": 0,
+    "damaged_volumes": 0,
+    "exact_sharing_saved_bytes": 22246805321318,
+    "pending_bytes": 416412972,
+    "named_recipe_unique_bytes": 2785128905382,
+    "named_recipe_referenced_bytes": 37296739245704,
+    "named_recipe_unique_files": 241958,
+    "named_recipe_file_references": 6865404
+  },
+  "retail": {
+    "unique_objects": 237586,
+    "unique_encoded_bytes": 1649466064059,
+    "referenced_encoded_bytes": 23895673242893
+  },
+  "products": {
+    "odinv2": [
+      343,
+      0
+    ],
+    "odin": [
+      315,
+      101
+    ],
+    "odinv3": [
+      545,
+      0
+    ],
+    "odinv4": [
+      303,
+      0
+    ],
+    "odinv7": [
+      110,
+      0
+    ],
+    "odine": [
+      27,
+      0
+    ],
+    "odinv10": [
+      111,
+      0
+    ],
+    "odinv1": [
+      200,
+      0
+    ],
+    "brynhildr_odin": [
+      4,
+      4
+    ],
+    "odindev": [
+      50,
+      0
+    ],
+    "odinv16": [
+      3,
+      0
+    ],
+    "odinv13": [
+      38,
+      0
+    ],
+    "odinv14": [
+      58,
+      0
+    ],
+    "brynhildr_odin_vendor2": [
+      2,
+      0
+    ],
+    "odinv8": [
+      35,
+      0
+    ],
+    "brynhildr_odin_vendor": [
+      3,
+      0
+    ],
+    "odinv6": [
+      18,
+      0
+    ],
+    "odinv12": [
+      3,
+      0
+    ],
+    "brynhildr_odin_qa": [
+      5,
+      0
+    ],
+    "odinv9": [
+      6,
+      0
+    ],
+    "odina": [
+      1,
+      0
+    ],
+    "odinv5": [
+      6,
+      0
+    ],
+    "odinv15": [
+      1,
+      0
+    ],
+    "brynhildr_odin2": [
+      1,
+      1
+    ],
+    "brynhildr_odin_qa2": [
+      1,
+      0
+    ],
+    "odinv11": [
+      2,
+      0
+    ],
+    "odinb": [
+      1,
+      1
+    ]
+  },
+  "file_types": {
+    ".xpak": [
+      483392,
+      10770509168640
+    ],
+    ".sabs": [
+      530964,
+      7935756008192
+    ],
+    ".xpak_1": [
+      5039,
+      5019585740800
+    ],
+    ".ff": [
+      5509806,
+      4313017071633
+    ],
+    ".sabs_1": [
+      2242,
+      2233362022400
+    ],
+    ".xpak_2": [
+      5039,
+      1101096058880
+    ],
+    ".sabs_2": [
+      2242,
+      826693356800
+    ],
+    ".bik": [
+      21807,
+      763719708620
+    ],
+    ".xpak_3": [
+      750,
+      676779032576
+    ],
+    ".xpak_4": [
+      561,
+      539925872640
+    ],
+    ".xpak_5": [
+      519,
+      499387269120
+    ],
+    ".xpak_6": [
+      414,
+      412404940800
+    ],
+    ".xpak_7": [
+      414,
+      352636960768
+    ],
+    ".xpak_8": [
+      328,
+      238511325184
+    ],
+    ".fp": [
+      281854,
+      193104450672
+    ],
+    ".xpak_9": [
+      195,
+      179279101952
+    ],
+    ".xpak_10": [
+      176,
+      175321907200
+    ],
+    ".xpak_11": [
+      176,
+      175022211072
+    ],
+    ".xpak_12": [
+      174,
+      167759708160
+    ],
+    ".xpak_13": [
+      159,
+      156568977408
+    ],
+    ".xpak_14": [
+      157,
+      156395110400
+    ],
+    ".xpak_15": [
+      157,
+      122300825600
+    ],
+    ".sabs_3": [
+      181,
+      82576038144
+    ],
+    ".xpak_16": [
+      82,
+      81226498048
+    ],
+    ".xpak_17": [
+      78,
+      49789304832
+    ],
+    ".exe": [
+      323,
+      30985376256
+    ],
+    ".dll": [
+      5096,
+      27663734192
+    ],
+    ".pak": [
+      5916,
+      2597838491
+    ],
+    ".sabl": [
+      343,
+      2501691008
+    ],
+    ".xpak_18": [
+      2,
+      1992294400
+    ],
+    ".xpak_19": [
+      2,
+      1697316864
+    ],
+    ".dat": [
+      102,
+      1069256736
+    ],
+    ".xpak_20": [
+      1,
+      996147200
+    ],
+    ".xpak_21": [
+      1,
+      996147200
+    ],
+    ".xpak_22": [
+      1,
+      996147200
+    ],
+    ".xpak_23": [
+      1,
+      996147200
+    ],
+    ".xpak_24": [
+      1,
+      977960960
+    ],
+    ".sabs_4": [
+      1,
+      478685184
+    ],
+    ".bin": [
+      402,
+      48581729
+    ],
+    ".sys": [
+      5,
+      12026672
+    ],
+    ".csv": [
+      102,
+      707105
+    ],
+    ".xpaklist": [
+      5995,
+      300016
+    ],
+    ".icn": [
+      102,
+      208896
+    ],
+    ".cfg": [
+      102,
+      7854
+    ]
+  },
+  "indexed_records": 107,
+  "indexed_unique_configs": 104,
+  "named_recipe_builds": 107,
+  "unknown_size_by_kind": [
+    {
+      "kind": "config",
+      "objects": 1531
+    }
+  ],
+  "unresolved_reference_builds": 107,
+  "encoding_resolver_errors": 0,
+  "named_file_errors": 0,
+  "endpoints": [
+    "http://blizzard.gcdn.cloudn.co.kr/tpr/odin",
+    "http://blizzard.gcdn.cloudn.co.kr/tpr/odine",
+    "http://blzddist1-a.akamaihd.net/tpr/odin",
+    "http://blzddistkr1-a.akamaihd.net/tpr/odin",
+    "http://eu.cdn.blizzard.com/tpr/odin",
+    "http://eu.cdn.blizzard.com/tpr/odinv",
+    "http://gcp.cdn.blizzard.com/tpr/odin",
+    "http://kr.cdn.blizzard.com/tpr/odin",
+    "http://level3.blizzard.com/tpr/odin",
+    "http://level3.blizzard.com/tpr/odind",
+    "http://level3.blizzard.com/tpr/odine",
+    "http://level3.blizzard.com/tpr/odinv",
+    "http://us.cdn.blizzard.com/tpr/odin",
+    "http://us.cdn.blizzard.com/tpr/odinv",
+    "https://blizzard.gcdn.cloudn.co.kr/tpr/odin",
+    "https://blizzard.gcdn.cloudn.co.kr/tpr/odine",
+    "https://blzddist1-a.akamaihd.net/tpr/odin",
+    "https://blzddistkr1-a.akamaihd.net/tpr/odin",
+    "https://eu.cdn.blizzard.com/tpr/odin",
+    "https://eu.cdn.blizzard.com/tpr/odinv",
+    "https://gcp.cdn.blizzard.com/tpr/odin",
+    "https://kr.cdn.blizzard.com/tpr/odin",
+    "https://level3.blizzard.com/tpr/odin",
+    "https://level3.ssl.blizzard.com/tpr/odin",
+    "https://level3.ssl.blizzard.com/tpr/odind",
+    "https://level3.ssl.blizzard.com/tpr/odine",
+    "https://level3.ssl.blizzard.com/tpr/odinv",
+    "https://us.cdn.blizzard.com/tpr/odin",
+    "https://us.cdn.blizzard.com/tpr/odind",
+    "https://us.cdn.blizzard.com/tpr/odinv"
+  ],
+  "database_bytes": 1904844800,
+  "verified_metadata_objects": 416,
+  "native_archives_written_by_full_audit": 0,
+  "scratch_clean": true,
+  "pending_purpose": "Hash-verified metadata retained inside the collection for reuse by the future archive run.",
+  "indexed_object_union": {
+    "unique_objects": 242189,
+    "known_bytes": 1703585210671,
+    "unknown_sizes": 195
+  },
+  "indexed_object_references": 6298879
+}

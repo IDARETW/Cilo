@@ -189,3 +189,11 @@ compares single-build and three-build corpora, validates every restored file
 with independent SHA-256, and writes every timing rather than only the best run.
 
 MIT licensed. Uses FastCDC, BLAKE3, and Zstandard under their respective licenses.
+
+## Archive the Odin family
+
+Cilo 0.3 adds **Odin collection…** to the downloader: metadata audit, global
+encoded-object sharing, resumable compressed volumes, offline file browsing
+and verified restore. See [the collection guide](docs/COLLECTIONS.md) and
+[the measured storage audit](reports/ODIN_COLLECTION_AUDIT.md). No full collection
+download starts until you click **Archive / resume all indexed builds**.

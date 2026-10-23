@@ -363,5 +363,24 @@ class Network(unittest.TestCase):
         self.assertEqual([p.name for p in output.iterdir()], ['cdn'])
 
 
+
+class EncodingResolver(unittest.TestCase):
+    def fixture(self):
+        key=b'c'*16; alternatives=[b'a'*16,b'b'*16]
+        entry=bytes([2])+(2**32+123).to_bytes(5,'big')+key+b''.join(alternatives)
+        page=entry+bytes(4096-len(entry))
+        header=struct.pack('>2sBBBHHIIBI',b'EN',1,16,16,4,4,1,0,0,0)
+        return header+key+casc.md5(page)+page,key,alternatives
+
+    def test_encoding_alternatives_large_decoded_size_and_page_integrity(self):
+        data,key,alternatives=self.fixture()
+        record=casc.parse_encoding(data)[key.hex()]
+        self.assertEqual(record,{'size':2**32+123,'keys':[k.hex() for k in alternatives]})
+        for damaged in [data[:-1],data[:70]+bytes([data[70]^1])+data[71:]]:
+            with self.assertRaises(casc.CascError): casc.parse_encoding(damaged)
+        wrong_index=data[:22]+b'z'*16+data[38:]
+        with self.assertRaisesRegex(casc.CascError,'index mismatch'): casc.parse_encoding(wrong_index)
+
+
 if __name__ == '__main__':
     unittest.main()

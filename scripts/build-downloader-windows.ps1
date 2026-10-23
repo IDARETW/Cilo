@@ -14,6 +14,7 @@ if (-not (Test-Path $ciloBinary)) { throw 'Build native Cilo first (cargo build 
 Copy-Item $ciloBinary dist\CiloDownloader\cilo.exe
 Copy-Item docs\THIRD-PARTY-NOTICES.txt dist\CiloDownloader\NATIVE-THIRD-PARTY-NOTICES.txt
 Copy-Item docs\ARCHIVES.md dist\CiloDownloader\ARCHIVES.md
+Copy-Item docs\COLLECTIONS.md dist\CiloDownloader\COLLECTIONS.md
 & .\dist\CiloDownloader\CiloDownloader.exe --self-test
 if ($LASTEXITCODE -ne 0) { throw 'Bundled GUI/resources smoke test failed' }
 & .\dist\CiloDownloader\CiloDownloader.exe --cli --help

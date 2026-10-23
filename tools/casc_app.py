@@ -6,6 +6,14 @@ import sys
 
 
 def main():
+    if sys.argv[1:2] == ['--collection']:
+        import casc_collection
+        try:
+            casc_collection.main(sys.argv[2:])
+        except Exception as exc:
+            print(f'casc_collection: {exc}', file=sys.stderr)
+            return 1
+        return 0
     if sys.argv[1:2] == ['--cli']:
         import casc_download
         try:
@@ -20,6 +28,8 @@ def main():
         import casc_gui
         import cilo_bridge
         import cilo_browser
+        import casc_collection
+        import cilo_collection_gui
         import tkinter
         import tempfile
         import time
@@ -57,9 +67,22 @@ def main():
             wait_browser()
             assert browser.status.get().startswith('Verified all 1 files')
             browser.close()
+            collection = casc_collection.Collection(Path(directory) / 'collection')
+            collection.report()
+            collection.close()
+            window = cilo_collection_gui.CollectionWindow(root, data)
+            window.directory.set(str(Path(directory) / 'collection'))
+            window.run('status')
+            deadline = time.monotonic() + 30
+            while window.busy and time.monotonic() < deadline:
+                root.update()
+                time.sleep(0.02)
+            assert not window.busy and window.status.get() == 'Finished', 'Collection GUI worker failed'
+            window.close()
         root.destroy()
         print(json.dumps({'builds': len(data['builds']), 'endpoints': len(endpoints),
-                          'visible_rows': visible, 'tk': tkinter.TkVersion, 'archive_stream_preview': True}))
+                          'visible_rows': visible, 'tk': tkinter.TkVersion, 'archive_stream_preview': True,
+                          'collection_gui_worker': True}))
         return 0
     if os.name == 'nt' and getattr(sys, 'frozen', False):
         # Keep the console-enabled bootloader for piped --cli worker output,

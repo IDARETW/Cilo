@@ -1,0 +1,69 @@
+{
+  "scope": "Bounded real encoded-object trial: six retail builds and one companion build; most game payloads were not downloaded.",
+  "catalog_builds": [
+    {
+      "product": "odin",
+      "build": "11642448",
+      "status": "partial"
+    },
+    {
+      "product": "brynhildr_odin",
+      "build": "10885062",
+      "status": "encoded_set_archived"
+    },
+    {
+      "product": "odin",
+      "build": "11521872",
+      "status": "partial"
+    },
+    {
+      "product": "odin",
+      "build": "11531527",
+      "status": "partial"
+    },
+    {
+      "product": "odin",
+      "build": "11744825",
+      "status": "partial"
+    },
+    {
+      "product": "odin",
+      "build": "11810757",
+      "status": "partial"
+    },
+    {
+      "product": "odin",
+      "build": "11558592",
+      "status": "partial"
+    }
+  ],
+  "totals": {
+    "unique_objects": 74662,
+    "unique_encoded_bytes": 284083589423,
+    "unknown_size_objects": 13,
+    "archived_objects": 48,
+    "archived_encoded_bytes": 264646204,
+    "referenced_encoded_bytes": 1363367720024,
+    "archive_bytes": 224452087,
+    "damaged_volumes": 0,
+    "exact_sharing_saved_bytes": 1079284130601,
+    "pending_bytes": 0,
+    "named_recipe_unique_bytes": 443654802144,
+    "named_recipe_referenced_bytes": 2118193397717,
+    "named_recipe_unique_files": 74702,
+    "named_recipe_file_references": 422923
+  },
+  "stored_subset": {
+    "references_to_stored_objects": 98,
+    "referenced_stored_encoded_bytes": 1195719817
+  },
+  "offline_restored_named_file": {
+    "path": "brynhildr.sys",
+    "bytes": 2355952,
+    "sha256": "707fdf62fe278cf7b4ea753fddaa145e4a3817d6c1f5b9bf3e5b920b9f70c224"
+  },
+  "full_native_volume_verification": true,
+  "normal_scratch_and_pending_empty": true,
+  "network_note": "Existing verified caches imported; 863,915 additional payload/manifest bytes fetched. An expensive CDN archive-index search was interrupted; verified pending objects were then published and read back.",
+  "limitations": "Selection is opportunistic, not a representative full-build compression benchmark. Unknown-size objects skipped by the byte budget; six retail builds remain partial."
+}

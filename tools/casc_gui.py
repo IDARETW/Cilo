@@ -57,6 +57,7 @@ class App:
         self.events = queue.Queue(maxsize=256)
         self.data, self.visible, self.busy = None, [], False
         self.process = None
+        self.collection_windows = []
         self.cancel_path = None
         self.github_token = None
         self.cache = cache_path()
@@ -71,6 +72,7 @@ class App:
         top.pack(fill='x')
         self.update_button = ttk.Button(top, text='Update availability from GitHub', command=self.update_cache)
         self.update_button.pack(side='right')
+        ttk.Button(top, text='Odin collection…', command=self.open_collection).pack(side='right', padx=8)
         self.cache_status = tk.StringVar(value='Loading local availability cache...')
         ttk.Label(top, textvariable=self.cache_status).pack(side='left')
         filters = ttk.Frame(frame)
@@ -146,6 +148,10 @@ class App:
         self.load_local()
         root.protocol('WM_DELETE_WINDOW', self.close)
         root.after(100, self.poll)
+
+    def open_collection(self):
+        from cilo_collection_gui import CollectionWindow
+        self.collection_windows.append(CollectionWindow(self.root, self.data))
 
     def set_text(self, widget, text, append=False):
         widget.configure(state='normal')
@@ -366,6 +372,9 @@ class App:
         self.root.after(100, self.poll)
 
     def close(self):
+        if any(window.busy for window in self.collection_windows):
+            self.status.set('Stop the collection worker and wait for it before closing.')
+            return
         if self.busy:
             self.status.set('A task is running; close after it finishes.')
             return

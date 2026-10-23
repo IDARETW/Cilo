@@ -45,6 +45,16 @@ enum Command {
         #[arg(long, default_value_t = 0)]
         max_output_gib: u64,
     },
+    /// Restore selected members from a JSON array of paths into a NEW directory.
+    UnpackSelected {
+        archive: PathBuf,
+        destination: PathBuf,
+        selection: PathBuf,
+        #[arg(long, default_value_t = 256)]
+        cache_mib: usize,
+        #[arg(long, default_value_t = 0)]
+        max_output_gib: u64,
+    },
     /// Read and verify all blocks, chunks and files without extracting.
     Verify {
         archive: PathBuf,
@@ -110,6 +120,20 @@ fn run() -> Result<()> {
             cache_mib,
             max_output_gib,
         } => cilo::unpack(&archive, &destination, cache_mib, max_output_gib)?,
+        Command::UnpackSelected {
+            archive,
+            destination,
+            selection,
+            cache_mib,
+            max_output_gib,
+        } => {
+            anyhow::ensure!(
+                std::fs::metadata(&selection)?.len() <= 8 * 1024 * 1024,
+                "selection JSON exceeds 8 MiB"
+            );
+            let names: Vec<String> = serde_json::from_reader(std::fs::File::open(selection)?)?;
+            cilo::unpack_selected(&archive, &destination, &names, cache_mib, max_output_gib)?
+        }
         Command::Verify { archive, cache_mib } => cilo::verify(&archive, cache_mib)?,
         Command::List { archive } => {
             println!("{}", serde_json::to_string_pretty(&cilo::list(&archive)?)?);

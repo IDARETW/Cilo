@@ -125,3 +125,24 @@ fn preview_and_full_file_reads_are_bounded_and_do_not_touch_unrelated_blocks() {
     assert_eq!(output, b"hello world\n");
     assert_eq!(fs::read_dir(temp.path()).unwrap().count(), 2); // no extracted preview files
 }
+
+#[test]
+fn selected_restore_preserves_integrity_and_refuses_unknown_members() {
+    let temp = tempfile::tempdir().unwrap();
+    let archive = temp.path().join("selection.cilo");
+    let mut input = stream::MAGIC.to_vec();
+    append(&mut input, "one/a", b"shared data");
+    append(&mut input, "two/b", b"shared data");
+    append(&mut input, "unused/c", b"not selected");
+    input.extend([0; 4]);
+    stream::pack(Cursor::new(input), &archive, options(), 1, None).unwrap();
+    let out = temp.path().join("out");
+    assert!(cilo::unpack_selected(&archive, &out, &["missing".into()], 64, 0).is_err());
+    assert!(!out.exists());
+    let result =
+        cilo::unpack_selected(&archive, &out, &["one/a".into(), "two/b".into()], 64, 0).unwrap();
+    assert_eq!(result.files, 2);
+    assert_eq!(fs::read(out.join("one/a")).unwrap(), b"shared data");
+    assert!(!out.join("unused").exists());
+    assert!(cilo::unpack_selected(&archive, &out, &["one/a".into()], 64, 0).is_err());
+}

@@ -1010,6 +1010,26 @@ pub fn unpack(
     cache_mib: usize,
     max_output_gib: u64,
 ) -> Result<Stats> {
+    unpack_inner(archive, destination, None, cache_mib, max_output_gib)
+}
+
+pub fn unpack_selected(
+    archive: &Path,
+    destination: &Path,
+    names: &[String],
+    cache_mib: usize,
+    max_output_gib: u64,
+) -> Result<Stats> {
+    unpack_inner(archive, destination, Some(names), cache_mib, max_output_gib)
+}
+
+fn unpack_inner(
+    archive: &Path,
+    destination: &Path,
+    names: Option<&[String]>,
+    cache_mib: usize,
+    max_output_gib: u64,
+) -> Result<Stats> {
     let start = Instant::now();
     ensure!(
         fs::symlink_metadata(destination).is_err_and(|e| e.kind() == std::io::ErrorKind::NotFound),
@@ -1020,6 +1040,18 @@ pub fn unpack(
         .filter(|p| !p.as_os_str().is_empty())
         .unwrap_or(Path::new("."));
     let mut reader = Reader::open(archive, cache_mib)?;
+    if let Some(names) = names {
+        let selected: std::collections::HashSet<&str> = names.iter().map(String::as_str).collect();
+        ensure!(!selected.is_empty(), "empty file selection");
+        reader
+            .manifest
+            .files
+            .retain(|file| selected.contains(file.path.as_str()));
+        ensure!(
+            reader.manifest.files.len() == selected.len(),
+            "selected file not found in archive"
+        );
+    }
     let total: u64 = reader.manifest.files.iter().map(|f| f.size).sum();
     if max_output_gib != 0 {
         let limit = max_output_gib
@@ -1030,8 +1062,16 @@ pub fn unpack(
     let temp = tempfile::Builder::new()
         .prefix(".cilo-restore-")
         .tempdir_in(parent)?;
-    for dir in &reader.manifest.directories {
-        fs::create_dir_all(temp.path().join(dir))?;
+    if names.is_none() {
+        for dir in &reader.manifest.directories {
+            fs::create_dir_all(temp.path().join(dir))?;
+        }
+    } else {
+        for entry in &reader.manifest.files {
+            if let Some(parent) = temp.path().join(&entry.path).parent() {
+                fs::create_dir_all(parent)?;
+            }
+        }
     }
     reader.process(Some(temp.path()))?;
     ensure!(

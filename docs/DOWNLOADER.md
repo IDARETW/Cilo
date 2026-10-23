@@ -272,3 +272,10 @@ HTTP Range retrieval. Local HTTP tests exercise interrupted-file resume,
 ignored Range responses, concurrent reuse, archive-index lookup, encoded
 corruption, parser bounds, and unsupported encryption. This does not establish
 compatibility with every historical build of every CASC game.
+
+## Archive every available Odin-family build
+
+Open **Odin collection…** for the metadata audit and resumable shared-object
+archive workflow. It includes offline named-file browsing, verified cache import,
+compressed volumes and restore. See [the collection guide](COLLECTIONS.md) and
+[the full catalog audit](../reports/ODIN_COLLECTION_AUDIT.md).

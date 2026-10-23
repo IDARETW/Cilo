@@ -1,0 +1,7 @@
+{
+  "frozen_windows_audit_archive_verify_preview_restore": true,
+  "fixture_files": 2,
+  "offline_restore": true,
+  "uses_bundled_native_binary": true,
+  "scratch_pending_empty": true
+}
