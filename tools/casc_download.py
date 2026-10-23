@@ -487,6 +487,7 @@ class Storage:
         self.recovered_configs = {}
         self.attempts, self.index_jobs = attempts, index_jobs
         check(1 <= attempts <= 4 and 1 <= index_jobs <= 8, 'invalid storage concurrency/retries')
+        self.extract_path_lock = threading.Lock()
         self.endpoint_lock = threading.Lock()
         self.lock = threading.Lock()
         self.object_locks = {}
@@ -873,10 +874,27 @@ class Build:
         return files
 
 
+def extraction_destination(storage, relative_path):
+    parts = safe_name(relative_path).split('/')
+    current = storage.output
+    # Create and validate parents before resolving the target. Parallel extractors can otherwise
+    # resolve a still-missing shared directory inconsistently and report a false escape.
+    with storage.extract_path_lock:
+        for component in ('files', *parts[:-1]):
+            current = current / component
+            try:
+                current.mkdir()
+            except FileExistsError:
+                pass
+            check(current.is_dir(), f'extraction parent is not a directory: {current}')
+            check(current.resolve().is_relative_to(storage.output), 'extraction path escapes output')
+        destination = current / parts[-1]
+        check(destination.resolve().is_relative_to(storage.output), 'extraction path escapes output')
+    return destination
+
+
 def extract_file(storage, record):
-    destination = storage.output / 'files' / safe_name(record['path'])
-    check(destination.resolve().is_relative_to(storage.output), 'extraction path escapes output')
-    destination.parent.mkdir(parents=True, exist_ok=True)
+    destination = extraction_destination(storage, record['path'])
     check(not destination.is_symlink(), 'symlink extraction target')
     # Existing content is compared against freshly verified bytes, never trusted by size alone.
     with tempfile.NamedTemporaryFile(dir=destination.parent, prefix='.casc-', delete=False) as output:
